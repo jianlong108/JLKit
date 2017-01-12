@@ -15,6 +15,7 @@
 		348D54121E27A5640005E96A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 348D54101E27A5640005E96A /* LaunchScreen.storyboard */; };
 		348D541B1E27A9D60005E96A /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D541A1E27A9D60005E96A /* UserViewController.m */; };
 		348D541E1E27AA040005E96A /* JLBothSidesBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D541D1E27AA040005E96A /* JLBothSidesBtn.m */; };
+		348D54201E27B2410005E96A /* ezgif.com-video-to-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 348D541F1E27B2410005E96A /* ezgif.com-video-to-gif.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		348D541A1E27A9D60005E96A /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		348D541C1E27AA040005E96A /* JLBothSidesBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLBothSidesBtn.h; sourceTree = "<group>"; };
 		348D541D1E27AA040005E96A /* JLBothSidesBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLBothSidesBtn.m; sourceTree = "<group>"; };
+		348D541F1E27B2410005E96A /* ezgif.com-video-to-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-video-to-gif.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				348D54081E27A5640005E96A /* ViewController.h */,
 				348D54091E27A5640005E96A /* ViewController.m */,
 				348D54191E27A9D60005E96A /* UserViewController.h */,
+				348D541F1E27B2410005E96A /* ezgif.com-video-to-gif.gif */,
 				348D541A1E27A9D60005E96A /* UserViewController.m */,
 				348D541C1E27AA040005E96A /* JLBothSidesBtn.h */,
 				348D541D1E27AA040005E96A /* JLBothSidesBtn.m */,
@@ -151,6 +154,7 @@
 				348D54121E27A5640005E96A /* LaunchScreen.storyboard in Resources */,
 				348D540F1E27A5640005E96A /* Assets.xcassets in Resources */,
 				348D540D1E27A5640005E96A /* Main.storyboard in Resources */,
+				348D54201E27B2410005E96A /* ezgif.com-video-to-gif.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
