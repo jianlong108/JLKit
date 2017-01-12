@@ -1,6 +1,4 @@
 # JLKit
->some useful custom view
+## JLBothSidesBtn 
+![image](https://github.com/jianlong108/JLKit/blob/master/JLKitDemo/JLKitDemo/ezgif.com-video-to-gif.gif)
 
-JLBothSidesBtn
-
-<iframe height=576 width=320 src="http://v.youku.com/v_show/id_XMjIwNjg4MDU4OA==.html">
