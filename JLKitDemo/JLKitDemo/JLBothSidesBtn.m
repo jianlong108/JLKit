@@ -66,4 +66,22 @@
         }];
     }
 }
+/**
+ 翻转view 从正面翻转到反面
+ */
+- (void)transitionFromPositiveViewToOppositeView{
+    [UIView transitionFromView:_positiveBtn toView:_oppositeBtn duration:_animationDuration options:_animationOptions completion:^(BOOL finished) {
+        NSLog(@"%@--->%@",_oppositeBtn.superview,_positiveBtn.superview);
+    }];
+    
+}
+
+/**
+ 翻转view 从反面翻转到正面
+ */
+- (void)transitionFromOppositeViewToPositiveView{
+    [UIView transitionFromView:_oppositeBtn toView:_positiveBtn duration:_animationDuration options:_animationOptions completion:^(BOOL finished) {
+        NSLog(@"%@--->%@",_oppositeBtn.superview,_positiveBtn.superview);
+    }];
+}
 @end

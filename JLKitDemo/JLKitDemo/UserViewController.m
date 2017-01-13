@@ -20,18 +20,14 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _bothSidesView  =[[JLBothSidesBtn alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    _bothSidesView  =[[JLBothSidesBtn alloc]initWithFrame:CGRectMake(100, 100, 44, 44)];
     [self.view addSubview:_bothSidesView];
     _bothSidesView.autoTransition = NO;
     
     // Do any additional setup after loading the view.
     
     [_bothSidesView.positiveBtn addTarget:self action:@selector(dbtn1) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    
     [_bothSidesView.oppositeBtn addTarget:self action:@selector(dbtn2) forControlEvents:UIControlEventTouchUpInside];
-    
 }
 -(void)dbtn1{
     NSLog(@"positiveBtn");
@@ -40,9 +36,7 @@
 -(void)dbtn2{
     NSLog(@"oppositeBtn");
 }
--(void)dbtn3{
-    
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

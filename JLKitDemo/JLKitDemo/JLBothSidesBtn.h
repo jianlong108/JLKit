@@ -42,5 +42,14 @@
  */
 - (void)transitionView;
 
+/**
+ 翻转view 从正面翻转到反面
+ */
+- (void)transitionFromPositiveViewToOppositeView;
+
+/**
+ 翻转view 从反面翻转到正面
+ */
+- (void)transitionFromOppositeViewToPositiveView;
 
 @end
