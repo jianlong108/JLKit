@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserViewController : UIViewController
+@interface BothsidesBtnViewController : UIViewController
 
 @end

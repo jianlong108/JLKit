@@ -13,9 +13,10 @@
 		348D540D1E27A5640005E96A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 348D540B1E27A5640005E96A /* Main.storyboard */; };
 		348D540F1E27A5640005E96A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348D540E1E27A5640005E96A /* Assets.xcassets */; };
 		348D54121E27A5640005E96A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 348D54101E27A5640005E96A /* LaunchScreen.storyboard */; };
-		348D541B1E27A9D60005E96A /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D541A1E27A9D60005E96A /* UserViewController.m */; };
-		348D541E1E27AA040005E96A /* JLBothSidesBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D541D1E27AA040005E96A /* JLBothSidesBtn.m */; };
-		348D54201E27B2410005E96A /* ezgif.com-video-to-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 348D541F1E27B2410005E96A /* ezgif.com-video-to-gif.gif */; };
+		349EB9AD1E28DDA000351FC4 /* ezgif.com-video-to-gif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 349EB9A81E28DDA000351FC4 /* ezgif.com-video-to-gif.gif */; };
+		349EB9AE1E28DDA000351FC4 /* JLBothSidesBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9AA1E28DDA000351FC4 /* JLBothSidesBtn.m */; };
+		349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9AC1E28DDA000351FC4 /* BothsidesBtnViewController.m */; };
+		349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9B31E28DDDF00351FC4 /* JLTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +30,13 @@
 		348D540E1E27A5640005E96A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		348D54111E27A5640005E96A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		348D54131E27A5640005E96A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		348D54191E27A9D60005E96A /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
-		348D541A1E27A9D60005E96A /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
-		348D541C1E27AA040005E96A /* JLBothSidesBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLBothSidesBtn.h; sourceTree = "<group>"; };
-		348D541D1E27AA040005E96A /* JLBothSidesBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLBothSidesBtn.m; sourceTree = "<group>"; };
-		348D541F1E27B2410005E96A /* ezgif.com-video-to-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-video-to-gif.gif"; sourceTree = "<group>"; };
+		349EB9A81E28DDA000351FC4 /* ezgif.com-video-to-gif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "ezgif.com-video-to-gif.gif"; sourceTree = "<group>"; };
+		349EB9A91E28DDA000351FC4 /* JLBothSidesBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLBothSidesBtn.h; sourceTree = "<group>"; };
+		349EB9AA1E28DDA000351FC4 /* JLBothSidesBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLBothSidesBtn.m; sourceTree = "<group>"; };
+		349EB9AB1E28DDA000351FC4 /* BothsidesBtnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BothsidesBtnViewController.h; sourceTree = "<group>"; };
+		349EB9AC1E28DDA000351FC4 /* BothsidesBtnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BothsidesBtnViewController.m; sourceTree = "<group>"; };
+		349EB9B21E28DDDF00351FC4 /* JLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTableView.h; sourceTree = "<group>"; };
+		349EB9B31E28DDDF00351FC4 /* JLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,15 +69,12 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				349EB9B11E28DDCE00351FC4 /* can drag tableview */,
+				349EB9A71E28DDA000351FC4 /* bothsides btn */,
 				348D54051E27A5640005E96A /* AppDelegate.h */,
 				348D54061E27A5640005E96A /* AppDelegate.m */,
 				348D54081E27A5640005E96A /* ViewController.h */,
 				348D54091E27A5640005E96A /* ViewController.m */,
-				348D54191E27A9D60005E96A /* UserViewController.h */,
-				348D541F1E27B2410005E96A /* ezgif.com-video-to-gif.gif */,
-				348D541A1E27A9D60005E96A /* UserViewController.m */,
-				348D541C1E27AA040005E96A /* JLBothSidesBtn.h */,
-				348D541D1E27AA040005E96A /* JLBothSidesBtn.m */,
 				348D540B1E27A5640005E96A /* Main.storyboard */,
 				348D540E1E27A5640005E96A /* Assets.xcassets */,
 				348D54101E27A5640005E96A /* LaunchScreen.storyboard */,
@@ -90,6 +90,27 @@
 				348D54031E27A5640005E96A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		349EB9A71E28DDA000351FC4 /* bothsides btn */ = {
+			isa = PBXGroup;
+			children = (
+				349EB9A81E28DDA000351FC4 /* ezgif.com-video-to-gif.gif */,
+				349EB9A91E28DDA000351FC4 /* JLBothSidesBtn.h */,
+				349EB9AA1E28DDA000351FC4 /* JLBothSidesBtn.m */,
+				349EB9AB1E28DDA000351FC4 /* BothsidesBtnViewController.h */,
+				349EB9AC1E28DDA000351FC4 /* BothsidesBtnViewController.m */,
+			);
+			path = "bothsides btn";
+			sourceTree = "<group>";
+		};
+		349EB9B11E28DDCE00351FC4 /* can drag tableview */ = {
+			isa = PBXGroup;
+			children = (
+				349EB9B21E28DDDF00351FC4 /* JLTableView.h */,
+				349EB9B31E28DDDF00351FC4 /* JLTableView.m */,
+			);
+			path = "can drag tableview";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +175,7 @@
 				348D54121E27A5640005E96A /* LaunchScreen.storyboard in Resources */,
 				348D540F1E27A5640005E96A /* Assets.xcassets in Resources */,
 				348D540D1E27A5640005E96A /* Main.storyboard in Resources */,
-				348D54201E27B2410005E96A /* ezgif.com-video-to-gif.gif in Resources */,
+				349EB9AD1E28DDA000351FC4 /* ezgif.com-video-to-gif.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,9 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				348D540A1E27A5640005E96A /* ViewController.m in Sources */,
-				348D541B1E27A9D60005E96A /* UserViewController.m in Sources */,
+				349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */,
+				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
 				348D54071E27A5640005E96A /* AppDelegate.m in Sources */,
-				348D541E1E27AA040005E96A /* JLBothSidesBtn.m in Sources */,
+				349EB9AE1E28DDA000351FC4 /* JLBothSidesBtn.m in Sources */,
 				348D54041E27A5640005E96A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +350,7 @@
 				348D54181E27A5640005E96A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
