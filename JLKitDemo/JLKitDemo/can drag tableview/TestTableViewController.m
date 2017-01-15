@@ -37,7 +37,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"testttt"];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld--%ld",indexPath.section,indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"section%ld--row%ld",indexPath.section,indexPath.row];
     return cell;
 }
 
