@@ -20,4 +20,5 @@
 /**代理*/
 @property (nonatomic, weak)id <JLTableViewDelegate>delegate;
 
+
 @end

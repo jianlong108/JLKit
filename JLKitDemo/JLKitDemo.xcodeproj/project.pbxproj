@@ -17,6 +17,7 @@
 		349EB9AE1E28DDA000351FC4 /* JLBothSidesBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9AA1E28DDA000351FC4 /* JLBothSidesBtn.m */; };
 		349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9AC1E28DDA000351FC4 /* BothsidesBtnViewController.m */; };
 		349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9B31E28DDDF00351FC4 /* JLTableView.m */; };
+		349EB9B71E28E59D00351FC4 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9B61E28E59D00351FC4 /* TestTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		349EB9AC1E28DDA000351FC4 /* BothsidesBtnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BothsidesBtnViewController.m; sourceTree = "<group>"; };
 		349EB9B21E28DDDF00351FC4 /* JLTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTableView.h; sourceTree = "<group>"; };
 		349EB9B31E28DDDF00351FC4 /* JLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTableView.m; sourceTree = "<group>"; };
+		349EB9B51E28E59D00351FC4 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		349EB9B61E28E59D00351FC4 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,8 @@
 			children = (
 				349EB9B21E28DDDF00351FC4 /* JLTableView.h */,
 				349EB9B31E28DDDF00351FC4 /* JLTableView.m */,
+				349EB9B51E28E59D00351FC4 /* TestTableViewController.h */,
+				349EB9B61E28E59D00351FC4 /* TestTableViewController.m */,
 			);
 			path = "can drag tableview";
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
 				348D54071E27A5640005E96A /* AppDelegate.m in Sources */,
 				349EB9AE1E28DDA000351FC4 /* JLBothSidesBtn.m in Sources */,
+				349EB9B71E28E59D00351FC4 /* TestTableViewController.m in Sources */,
 				348D54041E27A5640005E96A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

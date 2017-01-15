@@ -16,7 +16,9 @@
 @implementation ViewController
 - (NSMutableArray *)datas{
     if (_datas==nil) {
-        _datas = [NSMutableArray arrayWithObjects:@{@"name":@"双面button",@"vc":@"BothsidesBtnViewController"}, nil];
+        _datas = [NSMutableArray arrayWithObjects:
+                  @{@"name":@"双面button",@"vc":@"BothsidesBtnViewController"},
+                  @{@"name":@"可拖动tableview",@"vc":@"TestTableViewController"}, nil];
     }
     return _datas;
 }

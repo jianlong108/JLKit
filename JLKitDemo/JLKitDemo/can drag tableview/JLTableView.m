@@ -11,6 +11,8 @@
 @interface JLTableView ()
 /**长按手势*/
 @property (nonatomic, strong)UILongPressGestureRecognizer *longPress;
+
+
 @end
 
 
@@ -18,8 +20,6 @@
 @implementation JLTableView
 
 @synthesize delegate;
-
-
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
     if (self = [super initWithFrame:frame style:style]) {
@@ -81,6 +81,11 @@
             break;
         }
         case UIGestureRecognizerStateChanged: {
+            
+            if (indexPath.section != sourceIndexPath.section) {
+                return;
+            }
+            
             CGPoint center = snapshot.center;
             center.y = location.y;
             snapshot.center = center;
