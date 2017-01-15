@@ -18,6 +18,10 @@
 		349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9AC1E28DDA000351FC4 /* BothsidesBtnViewController.m */; };
 		349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9B31E28DDDF00351FC4 /* JLTableView.m */; };
 		349EB9B71E28E59D00351FC4 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9B61E28E59D00351FC4 /* TestTableViewController.m */; };
+		349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9BA1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m */; };
+		349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9BD1E2B7B9100351FC4 /* JLTabMoreView.m */; };
+		349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */; };
+		349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,14 @@
 		349EB9B31E28DDDF00351FC4 /* JLTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTableView.m; sourceTree = "<group>"; };
 		349EB9B51E28E59D00351FC4 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		349EB9B61E28E59D00351FC4 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		349EB9B91E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLDragOrderCollectionViewLayout.h; sourceTree = "<group>"; };
+		349EB9BA1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLDragOrderCollectionViewLayout.m; sourceTree = "<group>"; };
+		349EB9BC1E2B7B9100351FC4 /* JLTabMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLTabMoreView.h; sourceTree = "<group>"; };
+		349EB9BD1E2B7B9100351FC4 /* JLTabMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLTabMoreView.m; sourceTree = "<group>"; };
+		349EB9BF1E2B7C6C00351FC4 /* JLCellitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLCellitem.h; sourceTree = "<group>"; };
+		349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCellitem.m; sourceTree = "<group>"; };
+		349EB9C21E2B7EE100351FC4 /* TestDragCollecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDragCollecViewController.h; sourceTree = "<group>"; };
+		349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDragCollecViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,7 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				349EB9B81E2B764D00351FC4 /* can drag Collectionview */,
 				349EB9B11E28DDCE00351FC4 /* can drag tableview */,
 				349EB9A71E28DDA000351FC4 /* bothsides btn */,
 				348D54051E27A5640005E96A /* AppDelegate.h */,
@@ -116,6 +129,21 @@
 				349EB9B61E28E59D00351FC4 /* TestTableViewController.m */,
 			);
 			path = "can drag tableview";
+			sourceTree = "<group>";
+		};
+		349EB9B81E2B764D00351FC4 /* can drag Collectionview */ = {
+			isa = PBXGroup;
+			children = (
+				349EB9BF1E2B7C6C00351FC4 /* JLCellitem.h */,
+				349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */,
+				349EB9BC1E2B7B9100351FC4 /* JLTabMoreView.h */,
+				349EB9BD1E2B7B9100351FC4 /* JLTabMoreView.m */,
+				349EB9B91E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.h */,
+				349EB9BA1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m */,
+				349EB9C21E2B7EE100351FC4 /* TestDragCollecViewController.h */,
+				349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */,
+			);
+			path = "can drag Collectionview";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,10 +222,14 @@
 				348D540A1E27A5640005E96A /* ViewController.m in Sources */,
 				349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */,
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
+				349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */,
+				349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */,
+				349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */,
 				348D54071E27A5640005E96A /* AppDelegate.m in Sources */,
 				349EB9AE1E28DDA000351FC4 /* JLBothSidesBtn.m in Sources */,
 				349EB9B71E28E59D00351FC4 /* TestTableViewController.m in Sources */,
 				348D54041E27A5640005E96A /* main.m in Sources */,
+				349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

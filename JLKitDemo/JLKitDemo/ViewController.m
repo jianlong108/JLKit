@@ -18,7 +18,8 @@
     if (_datas==nil) {
         _datas = [NSMutableArray arrayWithObjects:
                   @{@"name":@"双面button",@"vc":@"BothsidesBtnViewController"},
-                  @{@"name":@"可拖动tableview",@"vc":@"TestTableViewController"}, nil];
+                  @{@"name":@"可拖动tableview",@"vc":@"TestTableViewController"},
+                  @{@"name":@"可拖动九宫格",@"vc":@"TestDragCollecViewController"}, nil];
     }
     return _datas;
 }
