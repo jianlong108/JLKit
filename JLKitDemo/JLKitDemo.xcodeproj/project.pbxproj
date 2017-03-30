@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D002FFC1E8C9B7A000A633A /* UIImage+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */; };
 		348D54041E27A5640005E96A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54031E27A5640005E96A /* main.m */; };
 		348D54071E27A5640005E96A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54061E27A5640005E96A /* AppDelegate.m */; };
 		348D540A1E27A5640005E96A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54091E27A5640005E96A /* ViewController.m */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D002FFA1E8C9B7A000A633A /* UIImage+JL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JL.h"; sourceTree = "<group>"; };
+		0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JL.m"; sourceTree = "<group>"; };
 		348D53FF1E27A5640005E96A /* JLKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		348D54031E27A5640005E96A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		348D54051E27A5640005E96A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				349EB9A71E28DDA000351FC4 /* bothsides btn */,
 				348D54051E27A5640005E96A /* AppDelegate.h */,
 				348D54061E27A5640005E96A /* AppDelegate.m */,
+				0D002FFA1E8C9B7A000A633A /* UIImage+JL.h */,
+				0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */,
 				348D54081E27A5640005E96A /* ViewController.h */,
 				348D54091E27A5640005E96A /* ViewController.m */,
 				348D540B1E27A5640005E96A /* Main.storyboard */,
@@ -224,6 +229,7 @@
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
 				349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */,
 				349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */,
+				0D002FFC1E8C9B7A000A633A /* UIImage+JL.m in Sources */,
 				349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */,
 				348D54071E27A5640005E96A /* AppDelegate.m in Sources */,
 				349EB9AE1E28DDA000351FC4 /* JLBothSidesBtn.m in Sources */,
