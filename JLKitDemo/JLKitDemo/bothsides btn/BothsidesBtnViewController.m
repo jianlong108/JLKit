@@ -63,7 +63,7 @@ JLMenuDataSource
 }
 
 - (CGSize)contentViewSizeOfMenuView:(JLMenuView *)menuView{
-    return CGSizeMake(300, 40);
+    return CGSizeMake(200, 256);
 }
 - (PointDirection)menuViewDirection:(JLMenuView *)menuView{
     return PointDirectionMiddle;
@@ -72,7 +72,7 @@ JLMenuDataSource
     return PointAppearDirectionBottom;
 }
 - (MenuViewType)menuViewType:(JLMenuView *)menuView{
-    return MenuViewTypeCustomView;
+    return MenuViewTypeCollectionView;
 }
 - (UIView *)menuViewContentView:(JLMenuView *)menuView{
     UILabel *label = [[UILabel alloc]init];

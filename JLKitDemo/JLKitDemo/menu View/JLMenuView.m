@@ -106,7 +106,6 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self creatSubViews];
-        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
@@ -140,7 +139,14 @@
 
 @end
 #pragma mark - 类:JLMenuView -
-@interface JLMenuView ()<UITableViewDataSource, UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface JLMenuView ()
+<
+UITableViewDataSource,
+UITableViewDelegate,
+UICollectionViewDataSource,
+UICollectionViewDelegate,
+UICollectionViewDelegateFlowLayout
+>
 
 @property (nonatomic, weak) UITableView *tableView;
 @property (nonatomic, weak) UICollectionView *collectionView;
@@ -240,7 +246,7 @@
         tableView.backgroundColor = self.contentColor;
         tableView.showsHorizontalScrollIndicator = NO;
         tableView.showsVerticalScrollIndicator = NO;
-        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         tableView.dataSource = self;
         tableView.delegate = self;
         [mainView addSubview:tableView];
@@ -250,17 +256,16 @@
         self.tableView = tableView;
     }else if (self.viewType == MenuViewTypeCollectionView){
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-        layout.minimumLineSpacing = 0;
-        layout.minimumInteritemSpacing = 0;
-        layout.itemSize = CGSizeMake((width)/2, (width)/2);
         UICollectionView * collectionView = [[UICollectionView alloc]initWithFrame:frame collectionViewLayout:layout];
+        
         [collectionView registerClass:[JLMenuViewCell class] forCellWithReuseIdentifier:@"jlcollectionView"];
         collectionView.delegate = self;
         collectionView.showsHorizontalScrollIndicator = NO;
         collectionView.showsVerticalScrollIndicator = NO;
-        collectionView.backgroundColor = self.contentColor;
+        collectionView.backgroundColor = [UIColor whiteColor];
         collectionView.dataSource = self;
         collectionView.layer.cornerRadius = 5;
+        collectionView.bounces = NO;
         [mainView addSubview:collectionView];
         self.collectionView = collectionView;
     }else if (self.viewType == MenuViewTypeCustomView){
@@ -281,18 +286,21 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44.0;
+    return ceil([self.dataSource contentViewSizeOfMenuView:self].height / self.dataArray.count);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JLMenu"];
+    UIView *selectBackView  = [[UIView alloc]initWithFrame:cell.frame];
+    selectBackView.backgroundColor = [UIColor orangeColor];
+    cell.selectedBackgroundView = selectBackView;
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = self.titleColor;
     cell.textLabel.font = [UIFont systemFontOfSize:15];
     cell.textLabel.text = self.dataArray[indexPath.row];
     //设置cell点击不变色
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (self.imageArray.count > indexPath.row && self.imageArray[indexPath.row] != nil) {
         cell.imageView.image = self.imageArray[indexPath.row];
         
@@ -305,8 +313,10 @@
     if([self.delegate respondsToSelector:@selector(menuView:didSelectRowAtIndexPath:)]){
         [self.delegate menuView:self didSelectRowAtIndexPath:indexPath];
     }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self dismissWithCompletion];
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    [cell setSelected:YES animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    [self dismissWithCompletion];
 }
 #pragma mark - lazy -
 - (NSArray *)imageArray{
@@ -391,6 +401,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     JLMenuViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"jlcollectionView" forIndexPath:indexPath];
+    cell.backgroundColor = self.contentColor;
     NSLog(@"%lu",indexPath.row);
     if (self.imageArray.count > indexPath.row && self.imageArray.count <= self.dataArray.count) {
         if (self.imageArray[indexPath.row]) {
@@ -410,6 +421,19 @@
     }
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     [self dismissWithCompletion];
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    return 0.5;
+}
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+    return 0.5;
+}
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsMake(0, 0.5, 0, 0.5);
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    CGFloat width = [self.dataSource contentViewSizeOfMenuView:self].width;
+    return CGSizeMake(((width - 1.5)/2), ((width - 1.5)/2));
 }
 @end
 
