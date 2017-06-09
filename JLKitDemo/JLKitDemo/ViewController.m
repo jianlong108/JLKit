@@ -19,7 +19,8 @@
         _datas = [NSMutableArray arrayWithObjects:
                   @{@"name":@"双面button",@"vc":@"BothsidesBtnViewController"},
                   @{@"name":@"可拖动tableview",@"vc":@"TestTableViewController"},
-                  @{@"name":@"可拖动九宫格",@"vc":@"TestDragCollecViewController"}, nil];
+                  @{@"name":@"可拖动九宫格",@"vc":@"TestDragCollecViewController"},
+                  @{@"name":@"菜单view",@"vc":@"BothsidesBtnViewController"}, nil];
     }
     return _datas;
 }

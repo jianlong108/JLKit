@@ -91,16 +91,6 @@
     return [UIColor blackColor];
 }
 
-//- (PointDirection)pointStyle{
-//    if (_pointStyle == 1) {
-//        return PointDirectionMiddle;
-//    }
-//    return _pointStyle;
-//}
-//- (void)setPointStyle:(PointDirection)pointStyle{
-//    _pointStyle = pointStyle;
-//    [self setNeedsDisplay];
-//}
 @end
 
 #pragma mark - 类:JLMenuViewCell -
@@ -200,11 +190,13 @@
 - (void)creatSubviewsWithFrame:(CGPoint)origin{
     CGFloat x;
     CGFloat y;
-    CGFloat width = [self.dataSource menuViewWidth:self];
+    CGSize size = [self.dataSource contentViewSizeOfMenuView:self];
+    CGFloat width = size.width;
+    CGFloat height = size.height;
+    
     CGFloat locationX = width/6;
-    CGFloat height = self.dataArray.count *44.0f;
-    if ( height>=100 || height <=0) {
-        height = 200;
+    if (width<=0||height <=0) {
+        return;
     }
     if (self.pointType == PointDirectionLeft) {
         x = origin.x - Margin - locationX;
@@ -237,7 +229,7 @@
     }
     
     JLView *mainView = [[JLView alloc]initWithFrame:backViewFram];
-    mainView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.3];
+    mainView.backgroundColor = [UIColor clearColor];
     mainView.pointFillColor = self.contentColor;
     mainView.pointStyle = self.pointType;
     mainView.pointAppearDirection = self.pointAppearDirection;
@@ -271,11 +263,17 @@
         collectionView.layer.cornerRadius = 5;
         [mainView addSubview:collectionView];
         self.collectionView = collectionView;
+    }else if (self.viewType == MenuViewTypeCustomView){
+        UIView *contentView = [self.dataSource menuViewContentView:self];
+        contentView.backgroundColor = self.contentColor;
+        contentView.frame = frame;
+        [mainView addSubview:contentView];
     }
     [self addSubview:mainView];
     self.mainView = mainView;
     
 }
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataArray.count;

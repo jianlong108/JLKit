@@ -19,9 +19,10 @@ typedef NS_ENUM(NSInteger, PointDirection) {
 };
 typedef NS_ENUM(NSInteger, PointAppearDirection) {
     PointAppearDirectionTop    = 1,             //箭头出现在顶部
-    PointAppearDirectionLeft   = 2,             //箭头出现在左部
-    PointAppearDirectionBottom = 3,             //箭头出现在底部
-    PointAppearDirectionRight  = 4              //箭头出现在右部
+    PointAppearDirectionBottom = 2,             //箭头出现在底部
+    
+//    PointAppearDirectionLeft   = 2,             //箭头出现在左部
+//    PointAppearDirectionRight  = 4              //箭头出现在右部
 };
 
 typedef void(^Dismiss)(void);
@@ -29,16 +30,26 @@ typedef void(^Dismiss)(void);
 @protocol JLMenuDataSource <NSObject>
 
 @required
+
 - (NSUInteger)numberOfSubmenusInCustomMenu:(JLMenuView *)menuView;
+
 - (NSArray<NSString *> *)titleForSubmenuInCustomMenu:(JLMenuView *)menuView;
-- (CGFloat)menuViewWidth:(JLMenuView *)menuView;
+
+- (CGSize)contentViewSizeOfMenuView:(JLMenuView *)menuView;
+
 @optional
+
 - (NSArray<UIImage *> *)imageForSubmenuInCustomMenu:(JLMenuView *)menuView;
+//当 此方法返回MenuViewTypeCustomView.需要实现以下方法,返回自定义的view
 - (MenuViewType)menuViewType:(JLMenuView *)menuView;
+- (UIView *)menuViewContentView:(JLMenuView *)menuView;
+
+
 - (PointAppearDirection)menuViewPointAppearanceDirection:(JLMenuView *)menuView;
 - (PointDirection)menuViewDirection:(JLMenuView *)menuView;
 - (UIColor *)menuViewContentColor:(JLMenuView *)menuView;
 - (UIColor *)menuViewTitleColor:(JLMenuView *)menuView;
+
 @end
 @protocol JLMenuDelegate <NSObject>
 @optional
