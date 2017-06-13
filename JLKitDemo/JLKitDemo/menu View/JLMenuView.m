@@ -16,6 +16,9 @@
 #pragma mark - 类:JLView -
 @interface JLView : UIView
 
+/**strokecolor*/
+@property (nonatomic, strong) UIColor *strokeColor;
+
 @property (nonatomic, strong) UIColor *pointFillColor;
 /**箭头样式*/
 @property (nonatomic, assign) PointDirection pointStyle;
@@ -29,7 +32,6 @@
 - (void)drawRect:(CGRect)rect
 
 {
-//    [super drawRect:rect];
     CGFloat x = 0.0 ;//x为起始点的坐标x
     CGFloat y = 0.0;//y为起始点的坐标y
     CGFloat w = rect.size.width;
@@ -46,31 +48,74 @@
         y = rect.origin.y + Margin;
     }
     
-    
+    CGFloat radious = 10;
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     if (self.pointAppearDirection == PointAppearDirectionTop) {
+        
         CGContextMoveToPoint(context,x, y);//设置起点
         
         CGContextAddLineToPoint(context,x+Margin, y-Margin);//三角顶点
         
         CGContextAddLineToPoint(context,x+2*Margin, y);//终点
-        CGContextSetLineWidth(context, 0);
+        
+        
+        CGContextAddLineToPoint(context,rect.origin.x + w - radious, y);
+        
+        CGContextAddArcToPoint(context, rect.origin.x + w, y, rect.origin.x + w, y + radious, radious);
+        
+        
+        CGContextAddLineToPoint(context,rect.origin.x + w, rect.origin.y + h - radious);
+        
+        CGContextAddArcToPoint(context, rect.origin.x + w, rect.origin.y + h, rect.origin.x + w -radious, rect.origin.y + h, radious);
+        
+        CGContextAddLineToPoint(context,rect.origin.x + radious, rect.origin.y + h);
+        
+        CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y + h, rect.origin.x , rect.origin.y + h - radious, radious);
+        
+        
+        CGContextAddLineToPoint(context,rect.origin.x, y + Margin);
+        
+        CGContextAddArcToPoint(context, rect.origin.x, y, rect.origin.x + radious, y, radious);
+        
     }else if (self.pointAppearDirection == PointAppearDirectionBottom) {
         
-            CGContextMoveToPoint(context,x, h - Margin);//设置起点
+        CGContextMoveToPoint(context,rect.origin.x, radious);
         
-            CGContextAddLineToPoint(context,x+Margin, h);//三角顶点
+        CGContextAddLineToPoint(context,rect.origin.x, rect.origin.y + h - Margin - radious);
         
-            CGContextAddLineToPoint(context,x+2*Margin, h - Margin);//终点
-            CGContextSetLineWidth(context, 0);
+        CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y + h - Margin, rect.origin.x + radious, h - Margin, radious);
+        
+        CGContextAddLineToPoint(context,rect.origin.x + x, rect.origin.y + h - Margin);
+
+        CGContextAddLineToPoint(context,x+Margin, h);//三角顶点
+
+        CGContextAddLineToPoint(context,x+2*Margin, h - Margin);//终点
+
+        CGContextAddLineToPoint(context,rect.origin.x + w - radious, h - Margin);
+
+        CGContextAddArcToPoint(context, rect.origin.x + w, rect.origin.y + h - Margin, rect.origin.x + w, rect.origin.y + h - Margin - radious, radious);
+
+        CGContextAddLineToPoint(context,rect.origin.x + w, rect.origin.y + radious);
+
+        CGContextAddArcToPoint(context, rect.origin.x + w, rect.origin.y, rect.origin.x + w - radious, rect.origin.y, radious);
+
+        CGContextAddLineToPoint(context,rect.origin.x + radious, rect.origin.y);
+
+        CGContextAddArcToPoint(context, rect.origin.x, rect.origin.y, rect.origin.x, rect.origin.y + radious, radious);
+        
+        
+        
     }else{
         
     }
     
     
     
+    CGContextSetLineWidth(context, 1);
     
+    CGContextSetLineJoin(context, kCGLineJoinRound);
+    CGContextSetStrokeColorWithColor(context, self.strokeColor.CGColor);
     
     
     CGContextClosePath(context);//路径结束标志，不写默认封闭
@@ -90,7 +135,6 @@
     }
     return [UIColor blackColor];
 }
-
 @end
 
 #pragma mark - 类:JLMenuViewCell -
@@ -221,13 +265,13 @@ UICollectionViewDelegateFlowLayout
         case PointAppearDirectionTop:
         {
             backViewFram = CGRectMake(x, y, width, height+ Margin);
-            frame = CGRectMake(0, Margin, width, height);
+            frame = CGRectMake(0+1, Margin+1, width - 2, height-2);
         }
             break;
         case PointAppearDirectionBottom:
         {
             backViewFram = CGRectMake(x, y-height - Margin, width, height+ Margin);
-            frame = CGRectMake(0, 0, width, height);
+            frame = CGRectMake(0 + 1, 0+1, width-2, height-2);
         }
             break;
         default:
@@ -239,6 +283,7 @@ UICollectionViewDelegateFlowLayout
     mainView.pointFillColor = self.contentColor;
     mainView.pointStyle = self.pointType;
     mainView.pointAppearDirection = self.pointAppearDirection;
+    mainView.strokeColor = [self strokeColor];
     
     if (self.viewType == MenuViewTypeTableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
@@ -250,7 +295,7 @@ UICollectionViewDelegateFlowLayout
         tableView.dataSource = self;
         tableView.delegate = self;
         [mainView addSubview:tableView];
-        tableView.layer.cornerRadius = 5;
+        tableView.layer.cornerRadius = 10;
         tableView.bounces = NO;
         [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"JLMenu"];
         self.tableView = tableView;
@@ -264,7 +309,7 @@ UICollectionViewDelegateFlowLayout
         collectionView.showsVerticalScrollIndicator = NO;
         collectionView.backgroundColor = [UIColor whiteColor];
         collectionView.dataSource = self;
-        collectionView.layer.cornerRadius = 5;
+        collectionView.layer.cornerRadius = 10;
         collectionView.bounces = NO;
         [mainView addSubview:collectionView];
         self.collectionView = collectionView;
@@ -338,6 +383,12 @@ UICollectionViewDelegateFlowLayout
         _dataArray = [array copy];
     }
     return _dataArray;
+}
+- (UIColor *)strokeColor{
+    if ([self.dataSource respondsToSelector:@selector(menuViewStrokeColor:)]) {
+        return [self.dataSource menuViewStrokeColor:self];
+    }
+    return [UIColor blackColor];
 }
 - (UIColor *)contentColor{
     if ([self.dataSource respondsToSelector:@selector(menuViewContentColor:)]) {

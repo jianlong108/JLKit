@@ -49,7 +49,7 @@ typedef void(^Dismiss)(void);
 - (PointDirection)menuViewDirection:(JLMenuView *)menuView;
 - (UIColor *)menuViewContentColor:(JLMenuView *)menuView;
 - (UIColor *)menuViewTitleColor:(JLMenuView *)menuView;
-
+- (UIColor *)menuViewStrokeColor:(JLMenuView *)menuView;
 @end
 @protocol JLMenuDelegate <NSObject>
 @optional
@@ -60,7 +60,6 @@ typedef void(^Dismiss)(void);
 
 
 @interface JLMenuView : UIView
-
 
 @property (nonatomic, weak) id<JLMenuDelegate> delegate;
 @property (nonatomic, weak) id<JLMenuDataSource> dataSource;

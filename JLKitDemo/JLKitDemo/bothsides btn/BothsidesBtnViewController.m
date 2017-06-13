@@ -69,10 +69,10 @@ JLMenuDataSource
     return PointDirectionMiddle;
 }
 - (PointAppearDirection)menuViewPointAppearanceDirection:(JLMenuView *)menuView{
-    return PointAppearDirectionBottom;
+    return PointAppearDirectionTop;
 }
 - (MenuViewType)menuViewType:(JLMenuView *)menuView{
-    return MenuViewTypeCollectionView;
+    return MenuViewTypeTableView;
 }
 - (UIView *)menuViewContentView:(JLMenuView *)menuView{
     UILabel *label = [[UILabel alloc]init];
