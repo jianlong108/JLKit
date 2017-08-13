@@ -6,16 +6,16 @@
 //  Copyright © 2016年 autohome. All rights reserved.
 //
 
-#import "JLSetItem.h"
+#import "SettingItem.h"
 
-@interface JLSetItem ()
+@interface SettingItem ()
 
 @end
 
-@implementation JLSetItem
+@implementation SettingItem
 + (instancetype)itemWithIcon:(NSString *)icon title:(NSString *)title
 {
-    JLSetItem *item = [[self alloc] init];
+    SettingItem *item = [[self alloc] init];
     item.icon = icon;
     item.title = title;
     return item;

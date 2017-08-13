@@ -6,9 +6,9 @@
 //  Copyright © 2016年 autohome. All rights reserved.
 //
 
-#import "JLSetGroupModel.h"
+#import "SettingGroupModel.h"
 
-@implementation JLSetGroupModel
+@implementation SettingGroupModel
 
 - (CGFloat )heightOfGroupHeader{
     return self.headerHeight;

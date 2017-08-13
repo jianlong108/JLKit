@@ -1,13 +1,13 @@
 //
-//  JLSetLabelItem.m
+//  JLSetSwitchItem.m
 //  我的控件集合
 //
 //  Created by Wangjianlong on 16/1/7.
 //  Copyright © 2016年 autohome. All rights reserved.
 //
 
-#import "JLSetLabelItem.h"
+#import "SettingSwitchItem.h"
 
-@implementation JLSetLabelItem
+@implementation SettingSwitchItem
 
 @end

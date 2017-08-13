@@ -6,8 +6,8 @@
 //  Copyright © 2016年 autohome. All rights reserved.
 //
 
-#import "JLSetItem.h"
+#import "SettingItem.h"
 
-@interface JLSetLabelItem : JLSetItem
+@interface SettingLabelItem : SettingItem
 
 @end

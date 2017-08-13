@@ -7,7 +7,7 @@
 //
 
 #import "LoginCell.h"
-#import "JLSetItem.h"
+#import "SettingItem.h"
 
 @implementation LoginCell
 
@@ -29,7 +29,7 @@
 
     // Configure the view for the selected state
 }
-- (void)setUpItem:(JLSetItem *)item{
+- (void)setUpItem:(SettingItem *)item{
     
 }
 @end

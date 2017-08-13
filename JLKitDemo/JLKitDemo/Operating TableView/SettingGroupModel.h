@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "OTPotocol.h"
-#import "JLSetItem.h"
+#import "SettingItem.h"
 
-@interface JLSetGroupModel : NSObject<OTGroupItemProtocol>
+@interface SettingGroupModel : NSObject<OTGroupItemProtocol>
 /**
  *  头部标题
  */
@@ -26,5 +26,5 @@
 /**
  *  存放着这组所有行的模型数据(这个数组中都是JLSetItemModel对象)
  */
-@property (nonatomic, copy) NSArray<JLSetItem *> *items;
+@property (nonatomic, copy) NSArray<SettingItem *> *items;
 @end

@@ -6,12 +6,9 @@
 //  Copyright © 2016年 autohome. All rights reserved.
 //
 
-#import "JLSetCell.h"
-#import "JLSetLabelItem.h"
-#import "JLSetSwitchItem.h"
-#import "JLSetArrowItem.h"
+#import "SettingCell.h"
 
-@interface JLSetCell()
+@interface SettingCell()
 /**
  *  箭头
  */
@@ -25,11 +22,11 @@
  */
 @property (nonatomic, strong) UILabel *labelView;
 
-@property(nonatomic,strong) JLSetItem *item;
+@property(nonatomic,strong) SettingItem *item;
 
 @end
 
-@implementation JLSetCell
+@implementation SettingCell
 - (UIImageView *)arrowView
 {
     if (_arrowView == nil) {
@@ -59,14 +56,14 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView
 {
     static NSString *ID = @"setting";
-    JLSetCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    SettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[JLSetCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+        cell = [[SettingCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     return cell;
 }
 
-- (void)setUpItem:(JLSetItem *)item
+- (void)setUpItem:(SettingItem *)item
 {
     _item = item;
     
@@ -82,12 +79,12 @@
  */
 - (void)setupRightContent
 {
-    if ([self.item isKindOfClass:[JLSetArrowItem class]]) { // 箭头
+    if ([self.item isKindOfClass:[SettingArrowItem class]]) { // 箭头
         self.accessoryView = self.arrowView;
-    } else if ([self.item isKindOfClass:[JLSetSwitchItem class]]) { // 开关
+    } else if ([self.item isKindOfClass:[SettingSwitchItem class]]) { // 开关
         self.accessoryView = self.switchView;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-    } else if ([self.item isKindOfClass:[JLSetLabelItem class]]) { // 标签
+    } else if ([self.item isKindOfClass:[SettingLabelItem class]]) { // 标签
         self.accessoryView = self.labelView;
     } else {
         self.accessoryView = nil;

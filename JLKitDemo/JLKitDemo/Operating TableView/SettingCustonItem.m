@@ -6,9 +6,9 @@
 //  Copyright © 2017年 autohome. All rights reserved.
 //
 
-#import "JLCustonItem.h"
+#import "SettingCustonItem.h"
 
-@implementation JLCustonItem
+@implementation SettingCustonItem
 - (NSString *)reuseableIdentierOfCell{
     return self.reuseableIdentifer;
 }

@@ -6,12 +6,12 @@
 //  Copyright © 2016年 autohome. All rights reserved.
 //
 
-#import "JLSetArrowItem.h"
+#import "SettingArrowItem.h"
 
-@implementation JLSetArrowItem
+@implementation SettingArrowItem
 + (instancetype)itemWithIcon:(NSString *)icon title:(NSString *)title destVcClass:(Class)destVcClass
 {
-    JLSetArrowItem *item = [self itemWithIcon:icon title:title];
+    SettingArrowItem *item = [self itemWithIcon:icon title:title];
     item.destVcClass = destVcClass;
     return item;
 }

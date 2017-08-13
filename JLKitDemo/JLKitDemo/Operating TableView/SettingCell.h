@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JLSetLabelItem.h"
-#import "JLSetSwitchItem.h"
-#import "JLSetArrowItem.h"
-#import "JLSetItem.h"
+#import "SettingLabelItem.h"
+#import "SettingSwitchItem.h"
+#import "SettingArrowItem.h"
+#import "SettingItem.h"
 #import "OTPotocol.h"
 
-@interface JLSetCell : UITableViewCell<OTCellProtocol>
+@interface SettingCell : UITableViewCell<OTCellProtocol>
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

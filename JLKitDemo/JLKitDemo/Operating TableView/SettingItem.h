@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "OTPotocol.h"
 
-typedef void (^JLSettingItemOption)(id);
+typedef void (^SettingItemOption)(id);
 
-@interface JLSetItem : NSObject<OTItemProtocol>
+@interface SettingItem : NSObject<OTItemProtocol>
 /**
  *  图标
  */
@@ -25,7 +25,7 @@ typedef void (^JLSettingItemOption)(id);
 /**
  *  点击那个cell需要做什么事情
  */
-@property (nonatomic, copy) JLSettingItemOption option;
+@property (nonatomic, copy) SettingItemOption option;
 
 
 

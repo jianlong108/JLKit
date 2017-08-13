@@ -6,9 +6,10 @@
 //  Copyright © 2017年 autohome. All rights reserved.
 //
 
-#import "JLSetItem.h"
+#import <UIKit/UIKit.h>
+#import "SettingItem.h"
 
-@interface JLCustonItem : JLSetItem
+@interface SettingCustonItem : SettingItem
 @property(nonatomic,copy) NSString *reuseableIdentifer;
 
 @property(nonatomic,assign)CGFloat cellHeight;

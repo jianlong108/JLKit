@@ -7,9 +7,9 @@
 //
 #import "SettingViewController.h"
 #import "LoginCell.h"
-#import "JLCustonItem.h"
-#import "JLSetCell.h"
-#import "JLSetGroupModel.h"
+#import "SettingCustonItem.h"
+#import "SettingCell.h"
+#import "SettingGroupModel.h"
 
 
 @implementation  SettingViewController
@@ -19,8 +19,8 @@
  */
 - (void)setupGroup0
 {
-    JLSetItem *pushNotice = [JLSetArrowItem itemWithIcon:@"MorePush" title:@"我的车库" destVcClass:[UIViewController class]];
-    JLSetGroupModel *group = [[JLSetGroupModel alloc] init];
+    SettingItem *pushNotice = [SettingArrowItem itemWithIcon:@"MorePush" title:@"我的车库" destVcClass:[UIViewController class]];
+    SettingGroupModel *group = [[SettingGroupModel alloc] init];
     group.headerHeight = 20;
     group.footerHeight = 40;
     group.footer =@"免费获取车辆违章提醒,车主认证服务";
@@ -29,9 +29,9 @@
 }
 - (void)setupGroup1
 {
-    JLSetItem *pushNotice = [JLSetArrowItem itemWithIcon:@"MorePush" title:@"设置" destVcClass:[UIViewController class]];
+    SettingItem *pushNotice = [SettingArrowItem itemWithIcon:@"MorePush" title:@"设置" destVcClass:[UIViewController class]];
     
-    JLSetGroupModel *group = [[JLSetGroupModel alloc] init];
+    SettingGroupModel *group = [[SettingGroupModel alloc] init];
     
     group.headerHeight = 20;
     group.items = @[pushNotice];
@@ -39,29 +39,29 @@
 }
 - (void)setupGroup2
 {
-    JLSetItem *pushNotice = [JLSetArrowItem itemWithIcon:@"MorePush" title:@"我的订单" destVcClass:[UIViewController class]];
-    JLSetItem *pushNotice1 = [JLSetArrowItem itemWithIcon:@"MorePush" title:@"我的好友" destVcClass:[UIViewController class]];
-    JLSetItem *pushNotice2 = [JLSetArrowItem itemWithIcon:@"MorePush" title:@"我的收藏" destVcClass:[UIViewController class]];
-    JLSetItem *pushNotice3 = [JLSetArrowItem itemWithIcon:@"MorePush" title:@"我的主贴" destVcClass:[UIViewController class]];
-    JLSetItem *pushNotice4 = [JLSetArrowItem itemWithIcon:@"MorePush" title:@"我的口碑" destVcClass:[UIViewController class]];
-    JLSetItem *pushNotice5 = [JLSetArrowItem itemWithIcon:@"MorePush" title:@"车主价格" destVcClass:[UIViewController class]];
-    JLSetGroupModel *group = [[JLSetGroupModel alloc] init];
+    SettingItem *pushNotice = [SettingArrowItem itemWithIcon:@"MorePush" title:@"我的订单" destVcClass:[UIViewController class]];
+    SettingItem *pushNotice1 = [SettingArrowItem itemWithIcon:@"MorePush" title:@"我的好友" destVcClass:[UIViewController class]];
+    SettingItem *pushNotice2 = [SettingArrowItem itemWithIcon:@"MorePush" title:@"我的收藏" destVcClass:[UIViewController class]];
+    SettingItem *pushNotice3 = [SettingArrowItem itemWithIcon:@"MorePush" title:@"我的主贴" destVcClass:[UIViewController class]];
+    SettingItem *pushNotice4 = [SettingArrowItem itemWithIcon:@"MorePush" title:@"我的口碑" destVcClass:[UIViewController class]];
+    SettingItem *pushNotice5 = [SettingArrowItem itemWithIcon:@"MorePush" title:@"车主价格" destVcClass:[UIViewController class]];
+    SettingGroupModel *group = [[SettingGroupModel alloc] init];
     group.headerHeight = 20;
     group.items = @[pushNotice,pushNotice1,pushNotice2,pushNotice3,pushNotice4,pushNotice5];
     [self.data addObject:group];
 }
 - (void)setupGroup3
 {
-    JLSetItem *pushNotice = [JLSetArrowItem itemWithIcon:@"MorePush" title:@"浏览历史" destVcClass:[UIViewController class]];
-    JLSetItem *pushNotice1 = [JLSetArrowItem itemWithIcon:@"MorePush" title:@"草稿箱" destVcClass:[UIViewController class]];
-    JLSetGroupModel *group = [[JLSetGroupModel alloc] init];
+    SettingItem *pushNotice = [SettingArrowItem itemWithIcon:@"MorePush" title:@"浏览历史" destVcClass:[UIViewController class]];
+    SettingItem *pushNotice1 = [SettingArrowItem itemWithIcon:@"MorePush" title:@"草稿箱" destVcClass:[UIViewController class]];
+    SettingGroupModel *group = [[SettingGroupModel alloc] init];
     group.headerHeight = 30;
     group.items = @[pushNotice,pushNotice1];
     [self.data addObject:group];
 }
 - (void)setupGroup4
 {
-    JLCustonItem *login = [[JLCustonItem alloc]init];
+    SettingCustonItem *login = [[SettingCustonItem alloc]init];
     login.reuseableIdentifer = @"loginCell";
     login.cellHeight = 64;
     login.option = ^(id objct){
@@ -70,7 +70,7 @@
         NSLog(@"%@",objct);
     };
     
-    JLSetGroupModel *group = [[JLSetGroupModel alloc] init];
+    SettingGroupModel *group = [[SettingGroupModel alloc] init];
     group.headerHeight = 10;
     group.items = @[login];
     [self.data addObject:group];
@@ -83,7 +83,7 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[LoginCell class] forCellReuseIdentifier:@"loginCell"];
-    [self.tableView registerClass:[JLSetCell class] forCellReuseIdentifier:@"settingCell"];
+    [self.tableView registerClass:[SettingCell class] forCellReuseIdentifier:@"settingCell"];
     // 2.添加数据
     [self setupGroup0];
     [self setupGroup1];

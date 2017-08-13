@@ -6,9 +6,9 @@
 //  Copyright © 2016年 autohome. All rights reserved.
 //
 
-#import "JLSetItem.h"
+#import "SettingItem.h"
 
-@interface JLSetArrowItem : JLSetItem
+@interface SettingArrowItem : SettingItem
 /**
  *  点击这行cell需要跳转的控制器
  */
