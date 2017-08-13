@@ -23,6 +23,16 @@
 		349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9BD1E2B7B9100351FC4 /* JLTabMoreView.m */; };
 		349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */; };
 		349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */; };
+		F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */; };
+		F4C8B0D81F4046AC00FDEDC7 /* JLCustonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0C91F4046AC00FDEDC7 /* JLCustonItem.m */; };
+		F4C8B0D91F4046AC00FDEDC7 /* JLSetArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0CB1F4046AC00FDEDC7 /* JLSetArrowItem.m */; };
+		F4C8B0DA1F4046AC00FDEDC7 /* JLSetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0CD1F4046AC00FDEDC7 /* JLSetCell.m */; };
+		F4C8B0DB1F4046AC00FDEDC7 /* JLSetGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0CF1F4046AC00FDEDC7 /* JLSetGroupModel.m */; };
+		F4C8B0DC1F4046AC00FDEDC7 /* JLSetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0D11F4046AC00FDEDC7 /* JLSetItem.m */; };
+		F4C8B0DD1F4046AC00FDEDC7 /* JLSetLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0D31F4046AC00FDEDC7 /* JLSetLabelItem.m */; };
+		F4C8B0DE1F4046AC00FDEDC7 /* JLSetSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0D51F4046AC00FDEDC7 /* JLSetSwitchItem.m */; };
+		F4C8B0DF1F4046AC00FDEDC7 /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0D71F4046AC00FDEDC7 /* LoginCell.m */; };
+		F4C8B0E21F4046E700FDEDC7 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0E11F4046E700FDEDC7 /* SettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +66,27 @@
 		349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCellitem.m; sourceTree = "<group>"; };
 		349EB9C21E2B7EE100351FC4 /* TestDragCollecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDragCollecViewController.h; sourceTree = "<group>"; };
 		349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDragCollecViewController.m; sourceTree = "<group>"; };
+		F4C8B0C41F40468A00FDEDC7 /* OTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewController.h; sourceTree = "<group>"; };
+		F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewController.m; sourceTree = "<group>"; };
+		F4C8B0C61F40468A00FDEDC7 /* OTPotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPotocol.h; sourceTree = "<group>"; };
+		F4C8B0C81F4046AC00FDEDC7 /* JLCustonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLCustonItem.h; sourceTree = "<group>"; };
+		F4C8B0C91F4046AC00FDEDC7 /* JLCustonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCustonItem.m; sourceTree = "<group>"; };
+		F4C8B0CA1F4046AC00FDEDC7 /* JLSetArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLSetArrowItem.h; sourceTree = "<group>"; };
+		F4C8B0CB1F4046AC00FDEDC7 /* JLSetArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLSetArrowItem.m; sourceTree = "<group>"; };
+		F4C8B0CC1F4046AC00FDEDC7 /* JLSetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLSetCell.h; sourceTree = "<group>"; };
+		F4C8B0CD1F4046AC00FDEDC7 /* JLSetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLSetCell.m; sourceTree = "<group>"; };
+		F4C8B0CE1F4046AC00FDEDC7 /* JLSetGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLSetGroupModel.h; sourceTree = "<group>"; };
+		F4C8B0CF1F4046AC00FDEDC7 /* JLSetGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLSetGroupModel.m; sourceTree = "<group>"; };
+		F4C8B0D01F4046AC00FDEDC7 /* JLSetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLSetItem.h; sourceTree = "<group>"; };
+		F4C8B0D11F4046AC00FDEDC7 /* JLSetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLSetItem.m; sourceTree = "<group>"; };
+		F4C8B0D21F4046AC00FDEDC7 /* JLSetLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLSetLabelItem.h; sourceTree = "<group>"; };
+		F4C8B0D31F4046AC00FDEDC7 /* JLSetLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLSetLabelItem.m; sourceTree = "<group>"; };
+		F4C8B0D41F4046AC00FDEDC7 /* JLSetSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLSetSwitchItem.h; sourceTree = "<group>"; };
+		F4C8B0D51F4046AC00FDEDC7 /* JLSetSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLSetSwitchItem.m; sourceTree = "<group>"; };
+		F4C8B0D61F4046AC00FDEDC7 /* LoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCell.h; sourceTree = "<group>"; };
+		F4C8B0D71F4046AC00FDEDC7 /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
+		F4C8B0E01F4046E700FDEDC7 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		F4C8B0E11F4046E700FDEDC7 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +128,7 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F4C8B0C21F40462400FDEDC7 /* Operating TableView */,
 				0D5411A81EEA3525007F6412 /* menu View */,
 				349EB9B81E2B764D00351FC4 /* can drag Collectionview */,
 				349EB9B11E28DDCE00351FC4 /* can drag tableview */,
@@ -107,6 +139,8 @@
 				0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */,
 				348D54081E27A5640005E96A /* ViewController.h */,
 				348D54091E27A5640005E96A /* ViewController.m */,
+				F4C8B0E01F4046E700FDEDC7 /* SettingViewController.h */,
+				F4C8B0E11F4046E700FDEDC7 /* SettingViewController.m */,
 				348D540B1E27A5640005E96A /* Main.storyboard */,
 				348D540E1E27A5640005E96A /* Assets.xcassets */,
 				348D54101E27A5640005E96A /* LaunchScreen.storyboard */,
@@ -159,6 +193,40 @@
 				349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */,
 			);
 			path = "can drag Collectionview";
+			sourceTree = "<group>";
+		};
+		F4C8B0C21F40462400FDEDC7 /* Operating TableView */ = {
+			isa = PBXGroup;
+			children = (
+				F4C8B0C81F4046AC00FDEDC7 /* JLCustonItem.h */,
+				F4C8B0C91F4046AC00FDEDC7 /* JLCustonItem.m */,
+				F4C8B0CA1F4046AC00FDEDC7 /* JLSetArrowItem.h */,
+				F4C8B0CB1F4046AC00FDEDC7 /* JLSetArrowItem.m */,
+				F4C8B0CC1F4046AC00FDEDC7 /* JLSetCell.h */,
+				F4C8B0CD1F4046AC00FDEDC7 /* JLSetCell.m */,
+				F4C8B0CE1F4046AC00FDEDC7 /* JLSetGroupModel.h */,
+				F4C8B0CF1F4046AC00FDEDC7 /* JLSetGroupModel.m */,
+				F4C8B0D01F4046AC00FDEDC7 /* JLSetItem.h */,
+				F4C8B0D11F4046AC00FDEDC7 /* JLSetItem.m */,
+				F4C8B0D21F4046AC00FDEDC7 /* JLSetLabelItem.h */,
+				F4C8B0D31F4046AC00FDEDC7 /* JLSetLabelItem.m */,
+				F4C8B0D41F4046AC00FDEDC7 /* JLSetSwitchItem.h */,
+				F4C8B0D51F4046AC00FDEDC7 /* JLSetSwitchItem.m */,
+				F4C8B0D61F4046AC00FDEDC7 /* LoginCell.h */,
+				F4C8B0D71F4046AC00FDEDC7 /* LoginCell.m */,
+				F4C8B0C31F40468A00FDEDC7 /* OT */,
+			);
+			path = "Operating TableView";
+			sourceTree = "<group>";
+		};
+		F4C8B0C31F40468A00FDEDC7 /* OT */ = {
+			isa = PBXGroup;
+			children = (
+				F4C8B0C41F40468A00FDEDC7 /* OTTableViewController.h */,
+				F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */,
+				F4C8B0C61F40468A00FDEDC7 /* OTPotocol.h */,
+			);
+			path = OT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,18 +301,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C8B0DD1F4046AC00FDEDC7 /* JLSetLabelItem.m in Sources */,
 				348D540A1E27A5640005E96A /* ViewController.m in Sources */,
 				349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */,
+				F4C8B0DB1F4046AC00FDEDC7 /* JLSetGroupModel.m in Sources */,
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
+				F4C8B0DA1F4046AC00FDEDC7 /* JLSetCell.m in Sources */,
 				349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */,
+				F4C8B0D81F4046AC00FDEDC7 /* JLCustonItem.m in Sources */,
+				F4C8B0DE1F4046AC00FDEDC7 /* JLSetSwitchItem.m in Sources */,
 				349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */,
+				F4C8B0E21F4046E700FDEDC7 /* SettingViewController.m in Sources */,
 				0D002FFC1E8C9B7A000A633A /* UIImage+JL.m in Sources */,
+				F4C8B0D91F4046AC00FDEDC7 /* JLSetArrowItem.m in Sources */,
+				F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */,
+				F4C8B0DF1F4046AC00FDEDC7 /* LoginCell.m in Sources */,
 				349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */,
 				348D54071E27A5640005E96A /* AppDelegate.m in Sources */,
 				349EB9AE1E28DDA000351FC4 /* JLBothSidesBtn.m in Sources */,
 				349EB9B71E28E59D00351FC4 /* TestTableViewController.m in Sources */,
 				348D54041E27A5640005E96A /* main.m in Sources */,
 				349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */,
+				F4C8B0DC1F4046AC00FDEDC7 /* JLSetItem.m in Sources */,
 				0D5411AB1EEA3525007F6412 /* JLMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
