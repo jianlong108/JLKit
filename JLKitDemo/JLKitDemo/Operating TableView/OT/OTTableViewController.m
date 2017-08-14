@@ -36,6 +36,11 @@
     
 }
 
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+}
+
 - (NSArray *)data
 {
     if (_data == nil) {
