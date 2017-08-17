@@ -9,5 +9,12 @@
 #import "SettingSwitchItem.h"
 
 @implementation SettingSwitchItem
-
++ (instancetype)itemWithIcon:(NSString *)icon title:(NSString *)title on:(BOOL)isOn{
+    SettingSwitchItem *item = [super itemWithIcon:icon title:title];
+    item.on = isOn;
+    return item;
+}
+- (BOOL)switchStateOfCell{
+    return self.on;
+}
 @end

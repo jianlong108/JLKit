@@ -8,6 +8,8 @@
 
 #import "SettingCell.h"
 
+NSString  * const settingCell_ReuseIdentifer = @"SettingCell_ReuseIdentifer";
+
 @interface SettingCell()
 /**
  *  箭头
@@ -39,6 +41,7 @@
 {
     if (_switchView == nil) {
         _switchView = [[UISwitch alloc] init];
+        [_switchView addTarget:self action:@selector(clickSwitch:) forControlEvents:UIControlEventValueChanged];
     }
     return _switchView;
 }
@@ -51,16 +54,6 @@
         _labelView.backgroundColor = [UIColor redColor];
     }
     return _labelView;
-}
-
-+ (instancetype)cellWithTableView:(UITableView *)tableView
-{
-    static NSString *ID = @"setting";
-    SettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (cell == nil) {
-        cell = [[SettingCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    return cell;
 }
 
 - (void)setUpItem:(SettingItem *)item
@@ -100,6 +93,13 @@
         self.imageView.image = [UIImage imageNamed:self.item.icon];
     }
     self.textLabel.text = self.item.title;
+}
+
+- (void)clickSwitch:(UISwitch *)sender{
+    NSNumber *state = [NSNumber numberWithBool:[sender isOn]];
+    if (self.item.option) {
+        self.item.option(state);
+    }
 }
 
 @end

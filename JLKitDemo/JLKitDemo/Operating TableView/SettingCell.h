@@ -13,8 +13,9 @@
 #import "SettingItem.h"
 #import "OTPotocol.h"
 
+extern NSString * const settingCell_ReuseIdentifer;
+
 @interface SettingCell : UITableViewCell<OTCellProtocol>
 
-+ (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

@@ -12,7 +12,11 @@
 
 @end
 
+
 @implementation SettingItem
+
+@synthesize indexPath;
+
 + (instancetype)itemWithIcon:(NSString *)icon title:(NSString *)title
 {
     SettingItem *item = [[self alloc] init];

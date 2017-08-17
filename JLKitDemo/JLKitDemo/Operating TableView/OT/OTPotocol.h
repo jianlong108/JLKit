@@ -17,7 +17,10 @@ typedef void (^SettingCellClickBlock)(id);
 @protocol OTItemProtocol <NSObject>
 
 @required
+@property (nonatomic, strong) NSIndexPath *indexPath;
+
 - (NSString *)titleOfCell;
+
 - (SettingCellClickBlock)doSomeThingOfClickCell;
 
 - (NSString *)reuseableIdentierOfCell;
@@ -25,6 +28,8 @@ typedef void (^SettingCellClickBlock)(id);
 @optional
 - (UIImage *)imageOfCell;
 - (CGFloat)heightOfCell;
+- (NSString *)tagTextOfCell;
+- (BOOL)switchStateOfCell;
 
 @end
 

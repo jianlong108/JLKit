@@ -66,19 +66,14 @@
     id<OTGroupItemProtocol> group = self.data[indexPath.section];
     
     id<OTItemProtocol> item = [group itemsOfGroup][indexPath.row];
-    
+    item.indexPath = indexPath;
     UITableViewCell<OTCellProtocol> *cell;
     
-//    if ([item respondsToSelector:@selector(reuseableIdentierOfCell)]) {
-        NSString *identifer = [item reuseableIdentierOfCell];
-        cell = [tableView dequeueReusableCellWithIdentifier:identifer];
-//    }else{
-//        cell = [tableView dequeueReusableCellWithIdentifier:defaultReuseIdentifer];
-//    }
+    NSString *identifer = [item reuseableIdentierOfCell];
+    cell = [tableView dequeueReusableCellWithIdentifier:identifer];
     
     [cell setUpItem:[group itemsOfGroup][indexPath.row]];
     
-    // 3.返回cell
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

@@ -9,5 +9,8 @@
 #import "SettingItem.h"
 
 @interface SettingSwitchItem : SettingItem
+/**开关是否开启*/
+@property (nonatomic, assign)  BOOL on;
 
++ (instancetype)itemWithIcon:(NSString *)icon title:(NSString *)title on:(BOOL)isOn;
 @end
