@@ -22,7 +22,8 @@
                   @{@"name":@"可拖动tableview",@"vc":@"TestTableViewController"},
                   @{@"name":@"可拖动九宫格",@"vc":@"TestDragCollecViewController"},
                   @{@"name":@"菜单view",@"vc":@"BothsidesBtnViewController"},
-                  @{@"name":@"简易tableview使用--设置界面",@"vc":@"SettingViewController"}, nil];
+                  @{@"name":@"简易tableview使用--设置界面",@"vc":@"SettingViewController"},
+                  @{@"name":@"collectionview布局",@"vc":@"TestCollectionViewController"},nil];
     }
     return _datas;
 }

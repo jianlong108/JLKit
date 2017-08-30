@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0D002FFC1E8C9B7A000A633A /* UIImage+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */; };
 		0D5411AB1EEA3525007F6412 /* JLMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5411AA1EEA3525007F6412 /* JLMenuView.m */; };
+		0D65C0A61F56AC82007F8EE7 /* UINavigationController+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D65C0A31F56AC82007F8EE7 /* UINavigationController+JL.m */; };
+		0D65C0A71F56AC82007F8EE7 /* UIViewController+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D65C0A51F56AC82007F8EE7 /* UIViewController+JL.m */; };
+		0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCDB1F50124800614DC0 /* WaterFlowLayout.m */; };
+		0DCCCCDF1F5013A700614DC0 /* TestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCDE1F5013A700614DC0 /* TestCollectionViewController.m */; };
+		0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */; };
 		348D54041E27A5640005E96A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54031E27A5640005E96A /* main.m */; };
 		348D54071E27A5640005E96A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54061E27A5640005E96A /* AppDelegate.m */; };
 		348D540A1E27A5640005E96A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54091E27A5640005E96A /* ViewController.m */; };
@@ -40,6 +45,16 @@
 		0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JL.m"; sourceTree = "<group>"; };
 		0D5411A91EEA3525007F6412 /* JLMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLMenuView.h; sourceTree = "<group>"; };
 		0D5411AA1EEA3525007F6412 /* JLMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLMenuView.m; sourceTree = "<group>"; };
+		0D65C0A21F56AC82007F8EE7 /* UINavigationController+JL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JL.h"; sourceTree = "<group>"; };
+		0D65C0A31F56AC82007F8EE7 /* UINavigationController+JL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JL.m"; sourceTree = "<group>"; };
+		0D65C0A41F56AC82007F8EE7 /* UIViewController+JL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JL.h"; sourceTree = "<group>"; };
+		0D65C0A51F56AC82007F8EE7 /* UIViewController+JL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JL.m"; sourceTree = "<group>"; };
+		0DCCCCDA1F50124800614DC0 /* WaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFlowLayout.h; sourceTree = "<group>"; };
+		0DCCCCDB1F50124800614DC0 /* WaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFlowLayout.m; sourceTree = "<group>"; };
+		0DCCCCDD1F5013A700614DC0 /* TestCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewController.h; sourceTree = "<group>"; };
+		0DCCCCDE1F5013A700614DC0 /* TestCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewController.m; sourceTree = "<group>"; };
+		0DCCCCE01F5014C700614DC0 /* OTCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTCollectionViewDataSource.h; sourceTree = "<group>"; };
+		0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTCollectionViewDataSource.m; sourceTree = "<group>"; };
 		348D53FF1E27A5640005E96A /* JLKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		348D54031E27A5640005E96A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		348D54051E27A5640005E96A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +124,28 @@
 			path = "menu View";
 			sourceTree = "<group>";
 		};
+		0D65C0A11F56AC6D007F8EE7 /* navgationbar */ = {
+			isa = PBXGroup;
+			children = (
+				0D65C0A21F56AC82007F8EE7 /* UINavigationController+JL.h */,
+				0D65C0A31F56AC82007F8EE7 /* UINavigationController+JL.m */,
+				0D65C0A41F56AC82007F8EE7 /* UIViewController+JL.h */,
+				0D65C0A51F56AC82007F8EE7 /* UIViewController+JL.m */,
+			);
+			path = navgationbar;
+			sourceTree = "<group>";
+		};
+		0DCCCCD91F50122500614DC0 /* waterflowlayout */ = {
+			isa = PBXGroup;
+			children = (
+				0DCCCCDA1F50124800614DC0 /* WaterFlowLayout.h */,
+				0DCCCCDB1F50124800614DC0 /* WaterFlowLayout.m */,
+				0DCCCCE01F5014C700614DC0 /* OTCollectionViewDataSource.h */,
+				0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */,
+			);
+			path = waterflowlayout;
+			sourceTree = "<group>";
+		};
 		348D53F61E27A5640005E96A = {
 			isa = PBXGroup;
 			children = (
@@ -128,11 +165,13 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0DCCCCD91F50122500614DC0 /* waterflowlayout */,
 				F4C8B0C21F40462400FDEDC7 /* Operating TableView */,
 				0D5411A81EEA3525007F6412 /* menu View */,
 				349EB9B81E2B764D00351FC4 /* can drag Collectionview */,
 				349EB9B11E28DDCE00351FC4 /* can drag tableview */,
 				349EB9A71E28DDA000351FC4 /* bothsides btn */,
+				0D65C0A11F56AC6D007F8EE7 /* navgationbar */,
 				348D54051E27A5640005E96A /* AppDelegate.h */,
 				348D54061E27A5640005E96A /* AppDelegate.m */,
 				0D002FFA1E8C9B7A000A633A /* UIImage+JL.h */,
@@ -141,6 +180,8 @@
 				348D54091E27A5640005E96A /* ViewController.m */,
 				F4C8B0E01F4046E700FDEDC7 /* SettingViewController.h */,
 				F4C8B0E11F4046E700FDEDC7 /* SettingViewController.m */,
+				0DCCCCDD1F5013A700614DC0 /* TestCollectionViewController.h */,
+				0DCCCCDE1F5013A700614DC0 /* TestCollectionViewController.m */,
 				348D540B1E27A5640005E96A /* Main.storyboard */,
 				348D540E1E27A5640005E96A /* Assets.xcassets */,
 				348D54101E27A5640005E96A /* LaunchScreen.storyboard */,
@@ -302,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C8B0DD1F4046AC00FDEDC7 /* SettingLabelItem.m in Sources */,
+				0D65C0A71F56AC82007F8EE7 /* UIViewController+JL.m in Sources */,
 				348D540A1E27A5640005E96A /* ViewController.m in Sources */,
 				349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */,
 				F4C8B0DB1F4046AC00FDEDC7 /* SettingGroupModel.m in Sources */,
@@ -309,11 +351,14 @@
 				F4C8B0DA1F4046AC00FDEDC7 /* SettingCell.m in Sources */,
 				349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */,
 				F4C8B0D81F4046AC00FDEDC7 /* SettingCustonItem.m in Sources */,
+				0D65C0A61F56AC82007F8EE7 /* UINavigationController+JL.m in Sources */,
 				F4C8B0DE1F4046AC00FDEDC7 /* SettingSwitchItem.m in Sources */,
 				349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */,
 				F4C8B0E21F4046E700FDEDC7 /* SettingViewController.m in Sources */,
+				0DCCCCDF1F5013A700614DC0 /* TestCollectionViewController.m in Sources */,
 				0D002FFC1E8C9B7A000A633A /* UIImage+JL.m in Sources */,
 				F4C8B0D91F4046AC00FDEDC7 /* SettingArrowItem.m in Sources */,
+				0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */,
 				F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */,
 				F4C8B0DF1F4046AC00FDEDC7 /* LoginCell.m in Sources */,
 				349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */,
@@ -323,6 +368,7 @@
 				348D54041E27A5640005E96A /* main.m in Sources */,
 				349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */,
 				F4C8B0DC1F4046AC00FDEDC7 /* SettingItem.m in Sources */,
+				0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */,
 				0D5411AB1EEA3525007F6412 /* JLMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
