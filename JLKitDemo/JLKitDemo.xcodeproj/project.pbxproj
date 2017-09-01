@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D002FFC1E8C9B7A000A633A /* UIImage+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */; };
 		0D5411AB1EEA3525007F6412 /* JLMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5411AA1EEA3525007F6412 /* JLMenuView.m */; };
+		0D60826D1F597706005FE1C0 /* MultifunctionBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D60826C1F597706005FE1C0 /* MultifunctionBtn.m */; };
 		0D65C0A61F56AC82007F8EE7 /* UINavigationController+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D65C0A31F56AC82007F8EE7 /* UINavigationController+JL.m */; };
 		0D65C0A71F56AC82007F8EE7 /* UIViewController+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D65C0A51F56AC82007F8EE7 /* UIViewController+JL.m */; };
 		0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCDB1F50124800614DC0 /* WaterFlowLayout.m */; };
@@ -45,6 +46,8 @@
 		0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JL.m"; sourceTree = "<group>"; };
 		0D5411A91EEA3525007F6412 /* JLMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLMenuView.h; sourceTree = "<group>"; };
 		0D5411AA1EEA3525007F6412 /* JLMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLMenuView.m; sourceTree = "<group>"; };
+		0D60826B1F597706005FE1C0 /* MultifunctionBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultifunctionBtn.h; sourceTree = "<group>"; };
+		0D60826C1F597706005FE1C0 /* MultifunctionBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultifunctionBtn.m; sourceTree = "<group>"; };
 		0D65C0A21F56AC82007F8EE7 /* UINavigationController+JL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JL.h"; sourceTree = "<group>"; };
 		0D65C0A31F56AC82007F8EE7 /* UINavigationController+JL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JL.m"; sourceTree = "<group>"; };
 		0D65C0A41F56AC82007F8EE7 /* UIViewController+JL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JL.h"; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 		349EB9A71E28DDA000351FC4 /* bothsides btn */ = {
 			isa = PBXGroup;
 			children = (
+				0D60826B1F597706005FE1C0 /* MultifunctionBtn.h */,
+				0D60826C1F597706005FE1C0 /* MultifunctionBtn.m */,
 				349EB9A91E28DDA000351FC4 /* JLBothSidesBtn.h */,
 				349EB9AA1E28DDA000351FC4 /* JLBothSidesBtn.m */,
 				349EB9AB1E28DDA000351FC4 /* BothsidesBtnViewController.h */,
@@ -358,6 +363,7 @@
 				0DCCCCDF1F5013A700614DC0 /* TestCollectionViewController.m in Sources */,
 				0D002FFC1E8C9B7A000A633A /* UIImage+JL.m in Sources */,
 				F4C8B0D91F4046AC00FDEDC7 /* SettingArrowItem.m in Sources */,
+				0D60826D1F597706005FE1C0 /* MultifunctionBtn.m in Sources */,
 				0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */,
 				F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */,
 				F4C8B0DF1F4046AC00FDEDC7 /* LoginCell.m in Sources */,
