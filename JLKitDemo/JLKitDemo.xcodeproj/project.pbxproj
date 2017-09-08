@@ -15,6 +15,10 @@
 		0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCDB1F50124800614DC0 /* WaterFlowLayout.m */; };
 		0DCCCCDF1F5013A700614DC0 /* TestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCDE1F5013A700614DC0 /* TestCollectionViewController.m */; };
 		0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */; };
+		344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074CD1F627B59008B0162 /* MTScrollTitleBar.m */; };
+		344074D11F627B7C008B0162 /* MTScrollNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D01F627B7C008B0162 /* MTScrollNavgationController.m */; };
+		344074D41F627C05008B0162 /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D31F627C05008B0162 /* TestScrollViewController.m */; };
+		344074DA1F62920A008B0162 /* MTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D91F62920A008B0162 /* MTScrollView.m */; };
 		348D54041E27A5640005E96A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54031E27A5640005E96A /* main.m */; };
 		348D54071E27A5640005E96A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54061E27A5640005E96A /* AppDelegate.m */; };
 		348D540A1E27A5640005E96A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54091E27A5640005E96A /* ViewController.m */; };
@@ -58,6 +62,14 @@
 		0DCCCCDE1F5013A700614DC0 /* TestCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewController.m; sourceTree = "<group>"; };
 		0DCCCCE01F5014C700614DC0 /* OTCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTCollectionViewDataSource.h; sourceTree = "<group>"; };
 		0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTCollectionViewDataSource.m; sourceTree = "<group>"; };
+		344074CC1F627B59008B0162 /* MTScrollTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleBar.h; sourceTree = "<group>"; };
+		344074CD1F627B59008B0162 /* MTScrollTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollTitleBar.m; sourceTree = "<group>"; };
+		344074CF1F627B7C008B0162 /* MTScrollNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollNavgationController.h; sourceTree = "<group>"; };
+		344074D01F627B7C008B0162 /* MTScrollNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollNavgationController.m; sourceTree = "<group>"; };
+		344074D21F627C05008B0162 /* TestScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScrollViewController.h; sourceTree = "<group>"; };
+		344074D31F627C05008B0162 /* TestScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestScrollViewController.m; sourceTree = "<group>"; };
+		344074D81F62920A008B0162 /* MTScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollView.h; sourceTree = "<group>"; };
+		344074D91F62920A008B0162 /* MTScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollView.m; sourceTree = "<group>"; };
 		348D53FF1E27A5640005E96A /* JLKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		348D54031E27A5640005E96A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		348D54051E27A5640005E96A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -149,6 +161,21 @@
 			path = waterflowlayout;
 			sourceTree = "<group>";
 		};
+		344074CB1F627B2A008B0162 /* scrollContainer */ = {
+			isa = PBXGroup;
+			children = (
+				344074CC1F627B59008B0162 /* MTScrollTitleBar.h */,
+				344074CD1F627B59008B0162 /* MTScrollTitleBar.m */,
+				344074CF1F627B7C008B0162 /* MTScrollNavgationController.h */,
+				344074D01F627B7C008B0162 /* MTScrollNavgationController.m */,
+				344074D81F62920A008B0162 /* MTScrollView.h */,
+				344074D91F62920A008B0162 /* MTScrollView.m */,
+				344074D21F627C05008B0162 /* TestScrollViewController.h */,
+				344074D31F627C05008B0162 /* TestScrollViewController.m */,
+			);
+			path = scrollContainer;
+			sourceTree = "<group>";
+		};
 		348D53F61E27A5640005E96A = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +195,7 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				344074CB1F627B2A008B0162 /* scrollContainer */,
 				0DCCCCD91F50122500614DC0 /* waterflowlayout */,
 				F4C8B0C21F40462400FDEDC7 /* Operating TableView */,
 				0D5411A81EEA3525007F6412 /* menu View */,
@@ -348,12 +376,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C8B0DD1F4046AC00FDEDC7 /* SettingLabelItem.m in Sources */,
+				344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */,
+				344074DA1F62920A008B0162 /* MTScrollView.m in Sources */,
 				0D65C0A71F56AC82007F8EE7 /* UIViewController+JL.m in Sources */,
+				344074D41F627C05008B0162 /* TestScrollViewController.m in Sources */,
 				348D540A1E27A5640005E96A /* ViewController.m in Sources */,
 				349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */,
 				F4C8B0DB1F4046AC00FDEDC7 /* SettingGroupModel.m in Sources */,
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
 				F4C8B0DA1F4046AC00FDEDC7 /* SettingCell.m in Sources */,
+				344074D11F627B7C008B0162 /* MTScrollNavgationController.m in Sources */,
 				349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */,
 				F4C8B0D81F4046AC00FDEDC7 /* SettingCustonItem.m in Sources */,
 				0D65C0A61F56AC82007F8EE7 /* UINavigationController+JL.m in Sources */,

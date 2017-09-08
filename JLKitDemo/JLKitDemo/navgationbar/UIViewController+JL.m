@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Xiaomi. All rights reserved.
 //
 
-#import "UIViewController+MT.h"
-#import "UINavigationController+MT.h"
+#import "UIViewController+JL.h"
+#import "UINavigationController+JL.h"
 #import <objc/runtime.h>
 
 @implementation UIViewController (JL)
