@@ -33,6 +33,8 @@
 		349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9BD1E2B7B9100351FC4 /* JLTabMoreView.m */; };
 		349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */; };
 		349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */; };
+		F4B7CF2C1F5C0D58008C545C /* InfiniteLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B7CF2B1F5C0D58008C545C /* InfiniteLoopView.m */; };
+		F4B7CF2F1F5C0F0E008C545C /* infinitLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B7CF2E1F5C0F0E008C545C /* infinitLoopViewController.m */; };
 		F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */; };
 		F4C8B0D81F4046AC00FDEDC7 /* SettingCustonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0C91F4046AC00FDEDC7 /* SettingCustonItem.m */; };
 		F4C8B0D91F4046AC00FDEDC7 /* SettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0CB1F4046AC00FDEDC7 /* SettingArrowItem.m */; };
@@ -96,6 +98,10 @@
 		349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCellitem.m; sourceTree = "<group>"; };
 		349EB9C21E2B7EE100351FC4 /* TestDragCollecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDragCollecViewController.h; sourceTree = "<group>"; };
 		349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDragCollecViewController.m; sourceTree = "<group>"; };
+		F4B7CF2A1F5C0D58008C545C /* InfiniteLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteLoopView.h; sourceTree = "<group>"; };
+		F4B7CF2B1F5C0D58008C545C /* InfiniteLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteLoopView.m; sourceTree = "<group>"; };
+		F4B7CF2D1F5C0F0E008C545C /* infinitLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infinitLoopViewController.h; sourceTree = "<group>"; };
+		F4B7CF2E1F5C0F0E008C545C /* infinitLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infinitLoopViewController.m; sourceTree = "<group>"; };
 		F4C8B0C41F40468A00FDEDC7 /* OTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewController.h; sourceTree = "<group>"; };
 		F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewController.m; sourceTree = "<group>"; };
 		F4C8B0C61F40468A00FDEDC7 /* OTPotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPotocol.h; sourceTree = "<group>"; };
@@ -269,6 +275,17 @@
 			path = "can drag Collectionview";
 			sourceTree = "<group>";
 		};
+		F4B7CF291F5C0D34008C545C /* infiniteLoop */ = {
+			isa = PBXGroup;
+			children = (
+				F4B7CF2A1F5C0D58008C545C /* InfiniteLoopView.h */,
+				F4B7CF2B1F5C0D58008C545C /* InfiniteLoopView.m */,
+				F4B7CF2D1F5C0F0E008C545C /* infinitLoopViewController.h */,
+				F4B7CF2E1F5C0F0E008C545C /* infinitLoopViewController.m */,
+			);
+			path = infiniteLoop;
+			sourceTree = "<group>";
+		};
 		F4C8B0C21F40462400FDEDC7 /* Operating TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +399,7 @@
 				344074D41F627C05008B0162 /* TestScrollViewController.m in Sources */,
 				348D540A1E27A5640005E96A /* ViewController.m in Sources */,
 				349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */,
+				F4B7CF2C1F5C0D58008C545C /* InfiniteLoopView.m in Sources */,
 				F4C8B0DB1F4046AC00FDEDC7 /* SettingGroupModel.m in Sources */,
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
 				F4C8B0DA1F4046AC00FDEDC7 /* SettingCell.m in Sources */,
@@ -407,6 +425,7 @@
 				349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */,
 				F4C8B0DC1F4046AC00FDEDC7 /* SettingItem.m in Sources */,
 				0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */,
+				F4B7CF2F1F5C0F0E008C545C /* infinitLoopViewController.m in Sources */,
 				0D5411AB1EEA3525007F6412 /* JLMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

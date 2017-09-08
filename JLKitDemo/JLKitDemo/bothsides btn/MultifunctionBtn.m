@@ -12,6 +12,9 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        
+        self.backgroundColor = [[UIColor orangeColor]colorWithAlphaComponent:0.3];
+        
         self.imageView.contentMode = UIViewContentModeCenter;
         self.titleLabel.font = [UIFont systemFontOfSize:13];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
