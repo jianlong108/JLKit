@@ -47,10 +47,16 @@ typedef void (^SettingCellClickBlock)(id);
 - (NSArray< id<OTItemProtocol> > *)itemsOfGroup;
 
 @optional
+
 - (CGFloat )heightOfGroupHeader;
 - (CGFloat )heightOfGroupFooter;
+
 - (NSString *)headerOfGroup;
 - (NSString *)footerOfGroup;
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section;
 
 @end
 
