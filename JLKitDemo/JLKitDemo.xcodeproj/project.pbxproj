@@ -298,6 +298,8 @@
 			children = (
 				F4C8B0C41F40468A00FDEDC7 /* OTTableViewController.h */,
 				F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */,
+				F44B49EB1F6540A2004BB4F1 /* OTTableViewCore.h */,
+				F44B49EC1F6540A2004BB4F1 /* OTTableViewCore.m */,
 				F4C8B0C61F40468A00FDEDC7 /* OTPotocol.h */,
 			);
 			path = OT;
@@ -405,6 +407,7 @@
 				349EB9B71E28E59D00351FC4 /* TestTableViewController.m in Sources */,
 				348D54041E27A5640005E96A /* main.m in Sources */,
 				349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */,
+				F44B49ED1F6540A2004BB4F1 /* OTTableViewCore.m in Sources */,
 				F4C8B0DC1F4046AC00FDEDC7 /* SettingItem.m in Sources */,
 				0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */,
 				0D5411AB1EEA3525007F6412 /* JLMenuView.m in Sources */,

@@ -7,11 +7,13 @@
 //
 
 #import "OTTableViewController.h"
+#import "OTTableViewCore.h"
 
 
-@interface OTTableViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface OTTableViewController ()
 
 @property(nonatomic,strong,readwrite)UITableView *tableView;
+@property(nonatomic,strong) OTTableViewCore *tableViewCore;
 
 @end
 
@@ -27,9 +29,12 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    _tableViewCore = [[OTTableViewCore alloc]init];
+    
     UITableView *tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    tableView.dataSource = self;
-    tableView.delegate = self;
+    tableView.dataSource = _tableViewCore;
+    tableView.delegate = _tableViewCore;
     _tableView = tableView;
     self.tableView.frame = self.view.bounds;
     [self.view addSubview:self.tableView];
@@ -41,77 +46,9 @@
     self.tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
 }
 
-- (NSArray *)data
+- (NSMutableArray *)data
 {
-    if (_data == nil) {
-        _data = [NSMutableArray array];
-    }
-    return _data;
+    return _tableViewCore.items;
 }
 
-#pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return self.data.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    id<OTGroupItemProtocol> group = self.data[section];
-    return [[group itemsOfGroup] count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    id<OTGroupItemProtocol> group = self.data[indexPath.section];
-    
-    id<OTItemProtocol> item = [group itemsOfGroup][indexPath.row];
-    item.indexPath = indexPath;
-    UITableViewCell<OTCellProtocol> *cell;
-    
-    NSString *identifer = [item reuseableIdentierOfCell];
-    cell = [tableView dequeueReusableCellWithIdentifier:identifer];
-    
-    [cell setUpItem:[group itemsOfGroup][indexPath.row]];
-    
-    return cell;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-     id<OTGroupItemProtocol> group = self.data[section];
-    return [group heightOfGroupHeader];
-}
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    id<OTGroupItemProtocol> group = self.data[section];
-    return [group heightOfGroupFooter];
-}
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // 1.取消选中这行
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    // 2.模型数据
-    id<OTGroupItemProtocol> group = self.data[indexPath.section];
-    id <OTItemProtocol> item = [group itemsOfGroup][indexPath.row];
-    
-    if ([item doSomeThingOfClickCell]) { // block有值(点击这个cell,.有特定的操作需要执行)
-        [item doSomeThingOfClickCell](indexPath);
-    } 
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    id<OTGroupItemProtocol> group = self.data[indexPath.section];
-    
-    id<OTItemProtocol> item = [group itemsOfGroup][indexPath.row];
-    return [item heightOfCell];
-}
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    id<OTGroupItemProtocol> group = self.data[section];
-    return [group headerOfGroup];
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
-{
-    id<OTGroupItemProtocol> group = self.data[section];
-    return [group footerOfGroup];
-}
 @end
