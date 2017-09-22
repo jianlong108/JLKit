@@ -57,7 +57,7 @@ MTScrollNavigationViewControllerDataSource
 - (NSString*)scrollNavigationViewController:(MTScrollContainerViewController*)scrollNavigationVC titleForIndex:(NSInteger)index{
     return [NSString stringWithFormat:@"测试%ld",index];
 }
-- (UIViewController<ChildViewControllerProtocol>*)scrollNavigationViewController:(MTScrollContainerViewController*)scrollNavigationVC childViewControllerForIndex:(NSInteger)index{
+- (UIViewController *)scrollNavigationViewController:(MTScrollContainerViewController*)scrollNavigationVC childViewControllerForIndex:(NSInteger)index{
     UIViewController *vc = [[UIViewController alloc]init];
     vc.view.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0];
     

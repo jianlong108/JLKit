@@ -77,28 +77,35 @@ typedef enum MTScrollTitleBarElementStyle{
 
 @property(nonatomic,weak)id<MTScrollTitleBarDelegate> delegate;
 
-@property(nonatomic,assign)NSInteger selectedIndex;
+@property(nonatomic,assign,readonly)NSUInteger selectedIndex;
 
 
-/**
- 默认为NO 类似于tabbar点击后会触发事件
- */
-@property(nonatomic,assign)BOOL selectedByTouchDown;
 
-@property(nonatomic,assign)BOOL autoScroller;
+////默认为NO 类似于tabbar点击后会触发事件
+@property(nonatomic,assign)   BOOL                          selectedByTouchDown;
 
+@property(nonatomic,assign)   BOOL                          autoScroller;
 
-@property(nonatomic,assign)MTScrollTitleBarElementStyle elementDisplayStyle;
+//// UI
+@property(nonatomic,assign)   MTScrollTitleBarElementStyle  elementDisplayStyle;
 
-//第一个按钮的X坐标 将以此坐标开始布局
+@property (nonatomic, strong) UIColor                       *selectedTitleColor;
+@property (nonatomic, strong) UIColor                       *lineViewColor;
+
+////第一个按钮的X坐标 将以此坐标开始布局
 @property (nonatomic, assign)CGFloat firstBtnX;
 
 - (instancetype)initWithFrame:(CGRect)frame canScroll:(BOOL)scroll;
 
-- (void)selecteIndex:(NSInteger)index;
+- (void)setUpSelecteIndex:(NSUInteger)index;
 
 - (void)reloadData;
 
-- (void)scrollingToNextElement:(BOOL)next scale:(CGFloat)scale;
+- (void)updateTitleFromDataSource;
+
+- (void)scrollingToNextElement:(BOOL)next scale:(CGFloat)scale index:(NSInteger)index;
+
+- (void)scrollingToNextElement:(NSUInteger)toIndex fromIndex:(NSUInteger)fromIndex scale:(CGFloat)scale;
+
 
 @end

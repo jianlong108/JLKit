@@ -7,19 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTScrollTitleBar.h"
 
 @class MTScrollContainerViewController;
-
-@protocol ChildViewControllerProtocol <NSObject>
-
-@optional
-
-- (void)childViewWillAppearInScrollNavigtionViewController:(MTScrollContainerViewController*)scrollNavigationViewController clientViewSize:(CGSize)size contentInset:(UIEdgeInsets)contentInset;
-
-
-- (void)childViewWillDisAppearInScrollNavigtionViewController:(MTScrollContainerViewController*)scrollNavigationViewController;
-
-@end
 
 
 @protocol MTScrollNavigationViewControllerDataSource <NSObject>
@@ -29,9 +19,9 @@
 - (NSInteger)numberOfTitleInScrollNavigationViewController:(MTScrollContainerViewController *)scrollNavigationVC;
 
 
-- (NSString*)scrollNavigationViewController:(MTScrollContainerViewController*)scrollNavigationVC titleForIndex:(NSInteger)index;
+- (NSString *)scrollNavigationViewController:(MTScrollContainerViewController*)scrollNavigationVC titleForIndex:(NSInteger)index;
 
-- (UIViewController<ChildViewControllerProtocol>*)scrollNavigationViewController:(MTScrollContainerViewController*)scrollNavigationVC childViewControllerForIndex:(NSInteger)index;
+- (UIViewController *)scrollNavigationViewController:(MTScrollContainerViewController*)scrollNavigationVC childViewControllerForIndex:(NSInteger)index;
 
 
 @optional
@@ -42,10 +32,8 @@
 
 - (UIView *)shadowViewForScrollNavigationViewController:(MTScrollContainerViewController *)scrollNavigationVC;
 
-//- (UIBACKBUTTON_TYPE)backButtonTypeInNavigationViewController:(UIScrollNavigationViewController *)scrollNavigationVC;
 
-
-- (UIView*)rightExtensionInNavigationViewController:(MTScrollContainerViewController *)scrollNavigationVC;
+- (UIView *)rightExtensionInNavigationViewController:(MTScrollContainerViewController *)scrollNavigationVC;
 
 - (BOOL)scrollTitleBarEnableAutoAdjust:(MTScrollContainerViewController *)viewPager;
 
@@ -59,9 +47,6 @@
 -(BOOL)canScrollWithGesture:(UIGestureRecognizer *)gestureRecoginzer  shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer;
 
 - (void)scrollNavigationViewController:(MTScrollContainerViewController*)scrollNavigationVC hasChangedSelected:(NSInteger)index;
-
-
-//- (void)backButtonPressInViewController:(MTScrollNavigationViewController*)scrollNavigationVC;
 
 
 -(void)scrollNavigationViewControllerDidScroll:(UIScrollView*)scrollView;
@@ -81,14 +66,24 @@
  @property
  @abstract 事件委托
  */
-@property (nonatomic, weak) id<MTScrollNavigationViewControllerDelegate> scrollNavigationDelegate;
+@property (nonatomic, weak) id<MTScrollNavigationViewControllerDelegate>  scrollNavigationDelegate;
+
+@property (nonatomic, strong,readonly) MTScrollTitleBar                   *scrollTitleBar;
+
+@property (nonatomic, strong,readonly) UIScrollView                       *scrollContentView;
+
+@property (nonatomic, assign,readonly) NSInteger                          currentPage;
 
 
-@property (nonatomic, strong,readonly) UIScrollView    *scrollContentView;
+/**
+ 调用时.会重新调用所有的数据源方法
+ */
+- (void)reloadData;
 
 
-@property(nonatomic,assign)NSInteger lastSelectIndex;
-
-@property(nonatomic,assign)NSInteger selectedIndex;
+/**
+ 调用时,会重新调用数据源的scrollNavigationViewController:titleForIndex:方法
+ */
+- (void)updateTitleBar;
 
 @end
