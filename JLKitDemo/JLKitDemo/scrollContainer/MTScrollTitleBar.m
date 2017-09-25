@@ -70,8 +70,8 @@ NSString const* BtnType = @"BtnType";
         [self setBackgroundColor:[UIColor clearColor]];
         self.selectedByTouchDown = NO;
         self.autoScroller = YES;
-//        _showLeftBorder = NO;
-//        _showRightBorder = NO;
+        //        _showLeftBorder = NO;
+        //        _showRightBorder = NO;
         
         self.firstBtnX = MTScrollTitileBarContentLeftOrRightSpace;
         [self initializeSubViews];
@@ -100,24 +100,24 @@ NSString const* BtnType = @"BtnType";
         [self addSubview:_contentScrollView];
     }
     
-//    if (!_leftBorderView) {
-//        _leftBorderView = [[UIImageView alloc] init];
-//        [_leftBorderView setBackgroundColor:[UIColor clearColor]];
-//        [_leftBorderView setUserInteractionEnabled:NO];
-//        [_leftBorderView setImage:[[AHSkinManager sharedManager] imageWithImageKey:[AHUIImageNameHandle handleImageName:@"mask48_left"]]];
-//        [_leftBorderView setHidden:YES];
-//        [self addSubview:_leftBorderView];
-//        
-//    }
-//    
-//    if (!_rightBorderView) {
-//        _rightBorderView = [[UIImageView alloc] init];
-//        [_rightBorderView setBackgroundColor:[UIColor clearColor]];
-//        [_rightBorderView setUserInteractionEnabled:NO];
-//        [_rightBorderView setImage:[[AHSkinManager sharedManager] imageWithImageKey:[AHUIImageNameHandle handleImageName:@"mask48"]]];
-//        [_rightBorderView setHidden:YES];
-//        [self addSubview:_rightBorderView];
-//    }
+    //    if (!_leftBorderView) {
+    //        _leftBorderView = [[UIImageView alloc] init];
+    //        [_leftBorderView setBackgroundColor:[UIColor clearColor]];
+    //        [_leftBorderView setUserInteractionEnabled:NO];
+    //        [_leftBorderView setImage:[[AHSkinManager sharedManager] imageWithImageKey:[AHUIImageNameHandle handleImageName:@"mask48_left"]]];
+    //        [_leftBorderView setHidden:YES];
+    //        [self addSubview:_leftBorderView];
+    //
+    //    }
+    //
+    //    if (!_rightBorderView) {
+    //        _rightBorderView = [[UIImageView alloc] init];
+    //        [_rightBorderView setBackgroundColor:[UIColor clearColor]];
+    //        [_rightBorderView setUserInteractionEnabled:NO];
+    //        [_rightBorderView setImage:[[AHSkinManager sharedManager] imageWithImageKey:[AHUIImageNameHandle handleImageName:@"mask48"]]];
+    //        [_rightBorderView setHidden:YES];
+    //        [self addSubview:_rightBorderView];
+    //    }
 }
 - (void)setDataSource:(id<MTScrollTitleBarDataSource>)dataSource{
     _dataSource = dataSource;
@@ -125,8 +125,8 @@ NSString const* BtnType = @"BtnType";
 }
 - (void)reloadData {
     
-//    _userSelectedChannelID = MTScrollTitileBar_title_tag;
-//    _scrollViewSelectedChannelID = MTScrollTitileBar_title_tag;
+    //    _userSelectedChannelID = MTScrollTitileBar_title_tag;
+    //    _scrollViewSelectedChannelID = MTScrollTitileBar_title_tag;
     _buttonOriginXArray = [[NSMutableArray alloc] init];
     _buttonWidthArray = [[NSMutableArray alloc] init];
     _buttonArray = [[NSMutableArray alloc] init];
@@ -163,21 +163,22 @@ NSString const* BtnType = @"BtnType";
 }
 - (CGFloat)calculateBtnWidthBtn:(UIButton *)btn isCustom:(BOOL)isCustom{
     
-    if (!_isAdjustTitleWidth) {
-        CGFloat perBtnWidth = CGRectGetWidth(self.contentScrollView.frame)/[self.dataSource numberOfTitleInScrollTitleBar:self];
+    if (_isAdjustTitleWidth) {
         
-        [self.buttonWidthArray addObject:@(perBtnWidth)];
-        return perBtnWidth;
-    }else{
         if (isCustom) {
             CGFloat width = CGRectGetWidth(btn.frame);
             [self.buttonWidthArray addObject:@(width)];
             return width;
         }else{
             CGFloat buttonWidth = [btn.titleLabel.text boundingRectWithSize:CGSizeMake(350, 50) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : btn.titleLabel.font} context:nil].size.width;
-            [self.buttonWidthArray addObject:@(buttonWidth)];
-            return buttonWidth;
+            [self.buttonWidthArray addObject:@(ceilf(buttonWidth))];
+            return ceilf(buttonWidth);
         }
+    }else{
+        CGFloat perBtnWidth = CGRectGetWidth(self.contentScrollView.frame)/[self.dataSource numberOfTitleInScrollTitleBar:self];
+        
+        [self.buttonWidthArray addObject:@(perBtnWidth)];
+        return perBtnWidth;
     }
     
 }
@@ -209,9 +210,9 @@ NSString const* BtnType = @"BtnType";
             UIFont *font = self.normalTitleFont;
             
             
-//            if (self.boldFont) {
-//                font = [[AHSkinManager sharedManager]boldfontForKey:AHtextsize02];
-//            }
+            //            if (self.boldFont) {
+            //                font = [[AHSkinManager sharedManager]boldfontForKey:AHtextsize02];
+            //            }
             if (font == nil) {
                 font = [UIFont systemFontOfSize:13];
             }
@@ -242,8 +243,8 @@ NSString const* BtnType = @"BtnType";
                 [button setTitleColor:[UIColor colorWithRed:255/255.0 green:153/255.0 blue:113/255.0 alpha:1.0] forState:UIControlStateSelected];
             }
             button.titleLabel.font = font;
-//            button.normalFont = self.normalTitleFont;
-//            button.selectedFont = self.selectedTitleFont;
+            //            button.normalFont = self.normalTitleFont;
+            //            button.selectedFont = self.selectedTitleFont;
             
             CGFloat buttonWidth = [self calculateBtnWidthBtn:button isCustom:NO];
             btnWidth += buttonWidth;
@@ -253,14 +254,14 @@ NSString const* BtnType = @"BtnType";
             CGFloat buttonWidth = [self calculateBtnWidthBtn:button isCustom:YES];
             btnWidth += buttonWidth;
             
-//            if (!_isAdjustTitleWidth) {
-//                btnWidth = button.frame.size.width;
-//                [self.buttonWidthArray addObject:@(button.frame.size.width)];
-//            } else {
-//                CGFloat perBtnWidth = CGRectGetWidth(self.contentScrollView.frame)/[self.dataSource numberOfTitleInScrollTitleBar:self];
-//                btnWidth = perBtnWidth;
-//                [self.buttonWidthArray addObject:@(perBtnWidth)];
-//            }
+            //            if (!_isAdjustTitleWidth) {
+            //                btnWidth = button.frame.size.width;
+            //                [self.buttonWidthArray addObject:@(button.frame.size.width)];
+            //            } else {
+            //                CGFloat perBtnWidth = CGRectGetWidth(self.contentScrollView.frame)/[self.dataSource numberOfTitleInScrollTitleBar:self];
+            //                btnWidth = perBtnWidth;
+            //                [self.buttonWidthArray addObject:@(perBtnWidth)];
+            //            }
             
             [dic setObject:button forKey:BtnObject];
             [dic setObject:CustomBtn forKey:BtnType];
@@ -276,10 +277,10 @@ NSString const* BtnType = @"BtnType";
         
         if (self.elementDisplayStyle == MTScrollTitleBarElementStyleDefault)
         {
-//            if (self.rightView)
-//            {
-//                _contentWidth += self.rightView.frame.size.width;
-//            }
+            //            if (self.rightView)
+            //            {
+            //                _contentWidth += self.rightView.frame.size.width;
+            //            }
         }
     }
 }
@@ -297,7 +298,7 @@ NSString const* BtnType = @"BtnType";
     [_buttonOriginXArray removeAllObjects];
     
     //是否已经更改了数据(增删,或者顺序改变)--暂时不做这个功能
-//    BOOL alreadyChangeDatas = YES;
+    //    BOOL alreadyChangeDatas = YES;
     NSInteger titleCount = [self.dataSource numberOfTitleInScrollTitleBar:self];
     
     CGFloat xPos = 0.0;
@@ -501,7 +502,7 @@ NSString const* BtnType = @"BtnType";
     rect.size.height = shadowHeight;
     rect.origin.y = shadowY;
     rect.origin.x = shadowX;
-//    self.shadowView.frame = rect;
+    //    self.shadowView.frame = rect;
     
     [self.lineView setFrame:CGRectMake((CGRectGetWidth(btn.frame) - 20)/2.0 + CGRectGetMinX(btn.frame), CGRectGetHeight(_contentScrollView.frame) - 1 - 1, 20, 1)];
 }
@@ -541,7 +542,7 @@ NSString const* BtnType = @"BtnType";
         return;
     }
     
-//    [self oneAdjustStyle:sender];
+    //    [self oneAdjustStyle:sender];
     
     CGFloat maxOffsetX = _contentScrollView.contentSize.width - CGRectGetWidth(_contentScrollView.frame);
     CGFloat minOffsetX = 0;
@@ -593,22 +594,18 @@ NSString const* BtnType = @"BtnType";
     
     if (self.selectedByTouchDown == NO) {
         
-        [self selectNameButton:sender userClick:YES];
+        self.selectedIndex = [self indexOfObject:sender];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(clickItem:atIndex:)]) {
+            [self.delegate clickItem:self atIndex:self.selectedIndex];
+        }
     }
     
 }
 
 - (void)selectNameButton:(UIButton *)sender userClick:(BOOL)userClick
 {
-    [self setButtonStatet:sender userClick:userClick completion:^(BOOL finish) {
-    }];
-    
-    if (userClick) {
-        self.selectedIndex = [self indexOfObject:sender];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(clickItem:atIndex:)]) {
-            [self.delegate clickItem:self atIndex:self.selectedIndex];
-        }
-    }
+    __weak typeof(self) weakself = self;
+    [self setButtonStatet:sender userClick:userClick completion:nil];
     
 }
 
@@ -668,13 +665,13 @@ NSString const* BtnType = @"BtnType";
     }
     
     CGRect finalRect = CGRectMake(finalX, finalY, finalW, finalH);
-//    NSLog(@"self.lineView.frame:%@",NSStringFromCGRect(finalRect));
+    //    NSLog(@"self.lineView.frame:%@",NSStringFromCGRect(finalRect));
     self.lineView.frame = finalRect;
 }
 
 - (void)scrollingToNextElement:(BOOL)isNext scale:(CGFloat)scale index:(NSInteger)index{
-
-//    NSLog(@"%d %ld %ld",isNext,index,_selectedIndex);
+    
+    //    NSLog(@"%d %ld %ld",isNext,index,_selectedIndex);
     NSUInteger count = [self.dataSource numberOfTitleInScrollTitleBar:self];
     
     CGRect fromRect = [self lineViewRectForView:[self selectedTitleBtn]];
@@ -701,26 +698,26 @@ NSString const* BtnType = @"BtnType";
         [self.selectedTitleBtn setSelected:YES];
         [self adjustScrollViewContentX:self.selectedTitleBtn];
     }
-//    NSUInteger nextIndex = 0;
-//    if (isNext) {
-//        if (currentIndex + 1 >= count) {
-//            return;
-//        }else{
-//            nextIndex = currentIndex + 1;
-//        }
-//    }else{
-//        if ((currentIndex - 1) < 0) {
-//            return;
-//        }else{
-//            nextIndex = currentIndex - 1;
-//            
-//        }
-//    }
+    //    NSUInteger nextIndex = 0;
+    //    if (isNext) {
+    //        if (currentIndex + 1 >= count) {
+    //            return;
+    //        }else{
+    //            nextIndex = currentIndex + 1;
+    //        }
+    //    }else{
+    //        if ((currentIndex - 1) < 0) {
+    //            return;
+    //        }else{
+    //            nextIndex = currentIndex - 1;
+    //
+    //        }
+    //    }
     
-//    nextView = [[self.buttonArray objectAtIndex:nextIndex]objectForKey:BtnObject];
-//    UIButton *selectBtn = [[self.buttonArray objectAtIndex:currentIndex]objectForKey:BtnObject];
-//    CGRect fromRect = [self lineViewRectForView:[self selectedTitleBtn]];
-//    CGRect toRect = [self lineViewRectForView:nextView];
+    //    nextView = [[self.buttonArray objectAtIndex:nextIndex]objectForKey:BtnObject];
+    //    UIButton *selectBtn = [[self.buttonArray objectAtIndex:currentIndex]objectForKey:BtnObject];
+    //    CGRect fromRect = [self lineViewRectForView:[self selectedTitleBtn]];
+    //    CGRect toRect = [self lineViewRectForView:nextView];
     CGFloat traction = fromRect.size.width * 0.3;
     CGFloat tractionThreshold = 0.2;
     
@@ -761,7 +758,7 @@ NSString const* BtnType = @"BtnType";
     }
     
     CGRect finalRect = CGRectMake(finalX, finalY, finalW, finalH);
-//    NSLog(@"self.lineView.frame:%@",NSStringFromCGRect(finalRect));
+    //    NSLog(@"self.lineView.frame:%@",NSStringFromCGRect(finalRect));
     self.lineView.frame = finalRect;
 }
 
@@ -777,7 +774,7 @@ NSString const* BtnType = @"BtnType";
     }
     
     if (button) {
-        [self selectNameButton:button userClick:NO];
+        [self selectNameButton:button userClick:YES];
     }
     
 }
@@ -801,6 +798,15 @@ NSString const* BtnType = @"BtnType";
     NSDictionary *dic = self.buttonArray[index];
     
     return [dic objectForKey:BtnObject];
+}
+
+- (BOOL)isCustomObjectAtIndex:(NSInteger)index{
+    if (index < 0 || index >= self.buttonArray.count) {
+        return NO;
+    }
+    NSDictionary *dic = self.buttonArray[index];
+    
+    return [(NSString *)[dic objectForKey:BtnType] isEqualToString:CustomBtn];
 }
 
 @end
