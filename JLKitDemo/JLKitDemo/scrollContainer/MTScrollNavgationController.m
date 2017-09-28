@@ -43,15 +43,18 @@ MTScrollTitleBarDataSource
 
 @property (nonatomic, assign) NSInteger             pageIndexBeforeRotation;
 
-/**将要拖拽时的偏移量*/
-@property (nonatomic, assign)  CGFloat beginOffserX;
+////第一个标题栏元素的x值
+@property (nonatomic,assign)  CGFloat beginOffserX;
 
-@property(nonatomic,assign)NSInteger lastSelectIndex;
+@property (nonatomic,assign)NSInteger lastSelectIndex;
 
-@property(nonatomic,assign)NSInteger selectedIndex;
+@property (nonatomic,assign)NSInteger selectedIndex;
 
 ////页面滚动是否由用户点击行为导致
 @property (nonatomic, assign)  BOOL pageChangedByClick;
+
+////是否正在旋转
+@property (nonatomic, assign)  BOOL rotating;
 
 @end
 
@@ -403,7 +406,7 @@ MTScrollTitleBarDataSource
     
     // Remember page index before rotation
     _pageIndexBeforeRotation = _selectedIndex;
-    
+    _rotating = YES;
     
 }
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -412,6 +415,9 @@ MTScrollTitleBarDataSource
     _selectedIndex = _pageIndexBeforeRotation;
     _currentPage = _selectedIndex;
     
+}
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    _rotating = NO;
 }
 
 #pragma mark - 转屏
@@ -435,6 +441,9 @@ MTScrollTitleBarDataSource
         
         UIScrollView *scrollView = (UIScrollView *)object;
         
+        if (_rotating) {
+            return;
+        }
         //标题栏 做滚动动画
         [self scrollTitleBarScrollingAnimation:scrollView];
         
