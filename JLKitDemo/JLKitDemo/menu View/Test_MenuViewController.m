@@ -39,6 +39,7 @@
     JLMenuView *menuView = [[JLMenuView alloc]initWithPoint:point inView:sender];
     menuView.delegate = self;
     menuView.dataSource = self;
+    menuView.cornerRadious = 1;
     [menuView show];
 }
 #pragma mark - JLMenuViewDelegate
@@ -57,7 +58,7 @@
     return [UIColor clearColor];
 }
 - (UIColor *)menuViewContentColor:(JLMenuView *)menuView{
-    return [[UIColor blackColor] colorWithAlphaComponent:0.4];
+    return [[UIColor blackColor] colorWithAlphaComponent:0.8];
 }
 - (PointDirection)menuViewDirection:(JLMenuView *)menuView{
     return PointDirectionMiddle;

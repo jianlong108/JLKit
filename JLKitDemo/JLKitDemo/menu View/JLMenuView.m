@@ -24,6 +24,10 @@
 @property (nonatomic, assign) PointDirection pointStyle;
 /**箭头出现的边*/
 @property (nonatomic, assign) PointAppearDirection pointAppearDirection;
+
+/**圆角*/
+@property (nonatomic, assign)  CGFloat cornerRadious;
+
 @end
 
 
@@ -48,7 +52,7 @@
         y = rect.origin.y + Margin;
     }
     
-    CGFloat radious = 10;
+    CGFloat radious = self.cornerRadious;
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     if (self.pointAppearDirection == PointAppearDirectionTop) {
@@ -284,6 +288,7 @@ UICollectionViewDelegateFlowLayout
     mainView.pointStyle = self.pointType;
     mainView.pointAppearDirection = self.pointAppearDirection;
     mainView.strokeColor = [self strokeColor];
+    mainView.cornerRadious = self.cornerRadious;
     
     if (self.viewType == MenuViewTypeTableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain];
@@ -295,7 +300,7 @@ UICollectionViewDelegateFlowLayout
         tableView.dataSource = self;
         tableView.delegate = self;
         [mainView addSubview:tableView];
-        tableView.layer.cornerRadius = 10;
+        tableView.layer.cornerRadius = self.cornerRadious;
         tableView.bounces = NO;
         [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"JLMenu"];
         self.tableView = tableView;
@@ -309,13 +314,12 @@ UICollectionViewDelegateFlowLayout
         collectionView.showsVerticalScrollIndicator = NO;
         collectionView.backgroundColor = [UIColor whiteColor];
         collectionView.dataSource = self;
-        collectionView.layer.cornerRadius = 10;
+        collectionView.layer.cornerRadius = self.cornerRadious;
         collectionView.bounces = NO;
         [mainView addSubview:collectionView];
         self.collectionView = collectionView;
     }else if (self.viewType == MenuViewTypeCustomView){
         UIView *contentView = [self.dataSource menuViewContentView:self];
-        contentView.layer.cornerRadius = 10;
         contentView.layer.masksToBounds = YES;
         contentView.backgroundColor = [UIColor clearColor];
         contentView.frame = frame;

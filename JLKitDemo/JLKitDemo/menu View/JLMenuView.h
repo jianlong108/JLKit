@@ -63,6 +63,7 @@ typedef void(^Dismiss)(void);
 
 @property (nonatomic, weak) id<JLMenuDelegate> delegate;
 @property (nonatomic, weak) id<JLMenuDataSource> dataSource;
+@property (nonatomic, assign)  CGFloat cornerRadious;
 - (instancetype)initWithPoint:(CGPoint)point inView:(UIView *)fromeView ;
 - (void)show;
 @end
