@@ -214,9 +214,7 @@ MTScrollTitleBarDataSource
         _scrollTitleBar.dataSource = self;
         _scrollTitleBar.elementDisplayStyle = MTScrollTitleBarElementStyleDefault;
         _scrollTitleBar.delegate = self;
-        //        _scrollTitleBar.showRightBorder = YES;
-        //        _scrollTitleBar.showLeftBorder = NO;//设置左侧阴影不显示
-        [_scrollTitleBar setBackgroundColor:[UIColor clearColor]];
+        [_scrollTitleBar setBackgroundColor:[UIColor whiteColor]];
         
         
     }

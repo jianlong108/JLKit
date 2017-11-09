@@ -15,6 +15,7 @@
 		0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCDB1F50124800614DC0 /* WaterFlowLayout.m */; };
 		0DCCCCDF1F5013A700614DC0 /* TestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCDE1F5013A700614DC0 /* TestCollectionViewController.m */; };
 		0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */; };
+		34091E721F7D16AB00537413 /* OTTableViewCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34091E711F7D16AB00537413 /* OTTableViewCore.m */; };
 		344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074CD1F627B59008B0162 /* MTScrollTitleBar.m */; };
 		344074D11F627B7C008B0162 /* MTScrollNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D01F627B7C008B0162 /* MTScrollNavgationController.m */; };
 		344074D41F627C05008B0162 /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D31F627C05008B0162 /* TestScrollViewController.m */; };
@@ -33,6 +34,7 @@
 		349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9BD1E2B7B9100351FC4 /* JLTabMoreView.m */; };
 		349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */; };
 		349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */; };
+		34F667681FB44CC10072F07A /* Test_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F667671FB44CC10072F07A /* Test_MenuViewController.m */; };
 		F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */; };
 		F4C8B0D81F4046AC00FDEDC7 /* SettingCustonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0C91F4046AC00FDEDC7 /* SettingCustonItem.m */; };
 		F4C8B0D91F4046AC00FDEDC7 /* SettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0CB1F4046AC00FDEDC7 /* SettingArrowItem.m */; };
@@ -62,6 +64,8 @@
 		0DCCCCDE1F5013A700614DC0 /* TestCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewController.m; sourceTree = "<group>"; };
 		0DCCCCE01F5014C700614DC0 /* OTCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTCollectionViewDataSource.h; sourceTree = "<group>"; };
 		0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTCollectionViewDataSource.m; sourceTree = "<group>"; };
+		34091E701F7D16AB00537413 /* OTTableViewCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewCore.h; sourceTree = "<group>"; };
+		34091E711F7D16AB00537413 /* OTTableViewCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewCore.m; sourceTree = "<group>"; };
 		344074CC1F627B59008B0162 /* MTScrollTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleBar.h; sourceTree = "<group>"; };
 		344074CD1F627B59008B0162 /* MTScrollTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollTitleBar.m; sourceTree = "<group>"; };
 		344074CF1F627B7C008B0162 /* MTScrollNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollNavgationController.h; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 		349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCellitem.m; sourceTree = "<group>"; };
 		349EB9C21E2B7EE100351FC4 /* TestDragCollecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDragCollecViewController.h; sourceTree = "<group>"; };
 		349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDragCollecViewController.m; sourceTree = "<group>"; };
+		34F667661FB44CC10072F07A /* Test_MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test_MenuViewController.h; sourceTree = "<group>"; };
+		34F667671FB44CC10072F07A /* Test_MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test_MenuViewController.m; sourceTree = "<group>"; };
 		F4C8B0C41F40468A00FDEDC7 /* OTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewController.h; sourceTree = "<group>"; };
 		F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewController.m; sourceTree = "<group>"; };
 		F4C8B0C61F40468A00FDEDC7 /* OTPotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPotocol.h; sourceTree = "<group>"; };
@@ -135,6 +141,8 @@
 			children = (
 				0D5411A91EEA3525007F6412 /* JLMenuView.h */,
 				0D5411AA1EEA3525007F6412 /* JLMenuView.m */,
+				34F667661FB44CC10072F07A /* Test_MenuViewController.h */,
+				34F667671FB44CC10072F07A /* Test_MenuViewController.m */,
 			);
 			path = "menu View";
 			sourceTree = "<group>";
@@ -296,10 +304,10 @@
 		F4C8B0C31F40468A00FDEDC7 /* OT */ = {
 			isa = PBXGroup;
 			children = (
+				34091E701F7D16AB00537413 /* OTTableViewCore.h */,
+				34091E711F7D16AB00537413 /* OTTableViewCore.m */,
 				F4C8B0C41F40468A00FDEDC7 /* OTTableViewController.h */,
 				F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */,
-				F44B49EB1F6540A2004BB4F1 /* OTTableViewCore.h */,
-				F44B49EC1F6540A2004BB4F1 /* OTTableViewCore.m */,
 				F4C8B0C61F40468A00FDEDC7 /* OTPotocol.h */,
 			);
 			path = OT;
@@ -386,6 +394,7 @@
 				349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */,
 				F4C8B0DB1F4046AC00FDEDC7 /* SettingGroupModel.m in Sources */,
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
+				34F667681FB44CC10072F07A /* Test_MenuViewController.m in Sources */,
 				F4C8B0DA1F4046AC00FDEDC7 /* SettingCell.m in Sources */,
 				344074D11F627B7C008B0162 /* MTScrollNavgationController.m in Sources */,
 				349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */,
@@ -396,6 +405,7 @@
 				F4C8B0E21F4046E700FDEDC7 /* SettingViewController.m in Sources */,
 				0DCCCCDF1F5013A700614DC0 /* TestCollectionViewController.m in Sources */,
 				0D002FFC1E8C9B7A000A633A /* UIImage+JL.m in Sources */,
+				34091E721F7D16AB00537413 /* OTTableViewCore.m in Sources */,
 				F4C8B0D91F4046AC00FDEDC7 /* SettingArrowItem.m in Sources */,
 				0D60826D1F597706005FE1C0 /* MultifunctionBtn.m in Sources */,
 				0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */,
@@ -407,7 +417,6 @@
 				349EB9B71E28E59D00351FC4 /* TestTableViewController.m in Sources */,
 				348D54041E27A5640005E96A /* main.m in Sources */,
 				349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */,
-				F44B49ED1F6540A2004BB4F1 /* OTTableViewCore.m in Sources */,
 				F4C8B0DC1F4046AC00FDEDC7 /* SettingItem.m in Sources */,
 				0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */,
 				0D5411AB1EEA3525007F6412 /* JLMenuView.m in Sources */,

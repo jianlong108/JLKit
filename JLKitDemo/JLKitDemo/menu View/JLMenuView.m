@@ -315,7 +315,9 @@ UICollectionViewDelegateFlowLayout
         self.collectionView = collectionView;
     }else if (self.viewType == MenuViewTypeCustomView){
         UIView *contentView = [self.dataSource menuViewContentView:self];
-        contentView.backgroundColor = self.contentColor;
+        contentView.layer.cornerRadius = 10;
+        contentView.layer.masksToBounds = YES;
+        contentView.backgroundColor = [UIColor clearColor];
         contentView.frame = frame;
         [mainView addSubview:contentView];
     }

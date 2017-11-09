@@ -25,7 +25,6 @@ MTScrollNavigationViewControllerDataSource
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navBarBgAlpha = 0.0f;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     

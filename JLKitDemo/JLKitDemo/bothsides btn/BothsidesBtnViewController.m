@@ -8,14 +8,10 @@
 
 #import "BothsidesBtnViewController.h"
 #import "JLBothSidesBtn.h"
-#import "JLMenuView.h"
 #import "MultifunctionBtn.h"
 
 @interface BothsidesBtnViewController ()
-<
-JLMenuDelegate,
-JLMenuDataSource
->
+
 /**双面button*/
 @property (nonatomic, strong)JLBothSidesBtn *bothSidesView;
 @end
@@ -77,11 +73,7 @@ JLMenuDataSource
 }
 -(void)dbtn1:(UIButton *)sender{
     NSLog(@"positiveBtn");
-    CGPoint point = CGPointMake(sender.center.x, CGRectGetMinY(sender.frame));
-    JLMenuView *menuView = [[JLMenuView alloc]initWithPoint:point inView:sender];
-    menuView.delegate = self;
-    menuView.dataSource = self;
-    [menuView show];
+    
 }
 -(void)dbtn2{
     NSLog(@"oppositeBtn");
@@ -90,30 +82,5 @@ JLMenuDataSource
     sender.selected = !sender.selected;
     [_bothSidesView transitionView];
 }
-#pragma mark - JLMenuViewDelegate
-- (NSUInteger)numberOfSubmenusInCustomMenu:(JLMenuView *)menuView{
-    return 6;
-}
-- (NSArray<NSString *> *)titleForSubmenuInCustomMenu:(JLMenuView *)menuView{
-    return @[@"1314 一生一世",@"520 我爱你",@"188 要抱抱",@"66 一切顺利",@"10 十全十美",@"1 一心一意"];
-}
 
-- (CGSize)contentViewSizeOfMenuView:(JLMenuView *)menuView{
-    return CGSizeMake(200, 256);
-}
-- (PointDirection)menuViewDirection:(JLMenuView *)menuView{
-    return PointDirectionMiddle;
-}
-- (PointAppearDirection)menuViewPointAppearanceDirection:(JLMenuView *)menuView{
-    return PointAppearDirectionTop;
-}
-- (MenuViewType)menuViewType:(JLMenuView *)menuView{
-    return MenuViewTypeTableView;
-}
-- (UIView *)menuViewContentView:(JLMenuView *)menuView{
-    UILabel *label = [[UILabel alloc]init];
-    label.textColor = [UIColor whiteColor];
-    label.text = @"消费时优先消耗银钻哦~";
-    return label;
-}
 @end
