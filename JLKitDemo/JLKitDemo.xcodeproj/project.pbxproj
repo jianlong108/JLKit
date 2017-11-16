@@ -35,6 +35,9 @@
 		349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */; };
 		349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */; };
 		34F667681FB44CC10072F07A /* Test_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F667671FB44CC10072F07A /* Test_MenuViewController.m */; };
+		34FB73531FBD311600A37ADC /* JLTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB73521FBD311600A37ADC /* JLTextFiled.m */; };
+		34FB73561FBD329200A37ADC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB73551FBD329200A37ADC /* LoginViewController.m */; };
+		34FB73591FBD876100A37ADC /* JLHotAreaBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB73581FBD876100A37ADC /* JLHotAreaBtn.m */; };
 		F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */; };
 		F4C8B0D81F4046AC00FDEDC7 /* SettingCustonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0C91F4046AC00FDEDC7 /* SettingCustonItem.m */; };
 		F4C8B0D91F4046AC00FDEDC7 /* SettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0CB1F4046AC00FDEDC7 /* SettingArrowItem.m */; };
@@ -102,6 +105,12 @@
 		349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDragCollecViewController.m; sourceTree = "<group>"; };
 		34F667661FB44CC10072F07A /* Test_MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test_MenuViewController.h; sourceTree = "<group>"; };
 		34F667671FB44CC10072F07A /* Test_MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test_MenuViewController.m; sourceTree = "<group>"; };
+		34FB73511FBD311600A37ADC /* JLTextFiled.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLTextFiled.h; sourceTree = "<group>"; };
+		34FB73521FBD311600A37ADC /* JLTextFiled.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLTextFiled.m; sourceTree = "<group>"; };
+		34FB73541FBD329200A37ADC /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		34FB73551FBD329200A37ADC /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		34FB73571FBD876100A37ADC /* JLHotAreaBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLHotAreaBtn.h; sourceTree = "<group>"; };
+		34FB73581FBD876100A37ADC /* JLHotAreaBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLHotAreaBtn.m; sourceTree = "<group>"; };
 		F4C8B0C41F40468A00FDEDC7 /* OTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewController.h; sourceTree = "<group>"; };
 		F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewController.m; sourceTree = "<group>"; };
 		F4C8B0C61F40468A00FDEDC7 /* OTPotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPotocol.h; sourceTree = "<group>"; };
@@ -203,6 +212,7 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				34FB73501FBD30FF00A37ADC /* textfiled */,
 				344074CB1F627B2A008B0162 /* scrollContainer */,
 				0DCCCCD91F50122500614DC0 /* waterflowlayout */,
 				F4C8B0C21F40462400FDEDC7 /* Operating TableView */,
@@ -213,6 +223,8 @@
 				0D65C0A11F56AC6D007F8EE7 /* navgationbar */,
 				348D54051E27A5640005E96A /* AppDelegate.h */,
 				348D54061E27A5640005E96A /* AppDelegate.m */,
+				34FB73541FBD329200A37ADC /* LoginViewController.h */,
+				34FB73551FBD329200A37ADC /* LoginViewController.m */,
 				0D002FFA1E8C9B7A000A633A /* UIImage+JL.h */,
 				0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */,
 				348D54081E27A5640005E96A /* ViewController.h */,
@@ -275,6 +287,17 @@
 				349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */,
 			);
 			path = "can drag Collectionview";
+			sourceTree = "<group>";
+		};
+		34FB73501FBD30FF00A37ADC /* textfiled */ = {
+			isa = PBXGroup;
+			children = (
+				34FB73511FBD311600A37ADC /* JLTextFiled.h */,
+				34FB73521FBD311600A37ADC /* JLTextFiled.m */,
+				34FB73571FBD876100A37ADC /* JLHotAreaBtn.h */,
+				34FB73581FBD876100A37ADC /* JLHotAreaBtn.m */,
+			);
+			path = textfiled;
 			sourceTree = "<group>";
 		};
 		F4C8B0C21F40462400FDEDC7 /* Operating TableView */ = {
@@ -385,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34FB73561FBD329200A37ADC /* LoginViewController.m in Sources */,
 				F4C8B0DD1F4046AC00FDEDC7 /* SettingLabelItem.m in Sources */,
 				344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */,
 				344074DA1F62920A008B0162 /* MTScrollView.m in Sources */,
@@ -392,6 +416,7 @@
 				344074D41F627C05008B0162 /* TestScrollViewController.m in Sources */,
 				348D540A1E27A5640005E96A /* ViewController.m in Sources */,
 				349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */,
+				34FB73531FBD311600A37ADC /* JLTextFiled.m in Sources */,
 				F4C8B0DB1F4046AC00FDEDC7 /* SettingGroupModel.m in Sources */,
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
 				34F667681FB44CC10072F07A /* Test_MenuViewController.m in Sources */,
@@ -420,6 +445,7 @@
 				F4C8B0DC1F4046AC00FDEDC7 /* SettingItem.m in Sources */,
 				0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */,
 				0D5411AB1EEA3525007F6412 /* JLMenuView.m in Sources */,
+				34FB73591FBD876100A37ADC /* JLHotAreaBtn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
