@@ -26,6 +26,8 @@
                   @{@"name":@"collectionview布局",@"vc":@"TestCollectionViewController"},
                   @{@"name":@"导航容器",@"vc":@"TestScrollViewController"},
                   @{@"name":@"登录页",@"vc":@"LoginViewController"},
+                  @{@"name":@"indexbar",@"vc":@"TestIndexBarViewController"},
+                  
                   nil];
     }
     return _datas;

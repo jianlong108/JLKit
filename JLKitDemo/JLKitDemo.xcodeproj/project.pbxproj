@@ -16,6 +16,9 @@
 		0DCCCCDF1F5013A700614DC0 /* TestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCDE1F5013A700614DC0 /* TestCollectionViewController.m */; };
 		0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */; };
 		34091E721F7D16AB00537413 /* OTTableViewCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34091E711F7D16AB00537413 /* OTTableViewCore.m */; };
+		343691091FD1579C00BAB79F /* UITableViewIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 343691081FD1579C00BAB79F /* UITableViewIndexBar.m */; };
+		3436910C1FD158FC00BAB79F /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436910B1FD158FC00BAB79F /* UITableView+IndexBar.m */; };
+		3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436910E1FD1598B00BAB79F /* TestIndexBarViewController.m */; };
 		344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074CD1F627B59008B0162 /* MTScrollTitleBar.m */; };
 		344074D11F627B7C008B0162 /* MTScrollNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D01F627B7C008B0162 /* MTScrollNavgationController.m */; };
 		344074D41F627C05008B0162 /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D31F627C05008B0162 /* TestScrollViewController.m */; };
@@ -69,6 +72,12 @@
 		0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTCollectionViewDataSource.m; sourceTree = "<group>"; };
 		34091E701F7D16AB00537413 /* OTTableViewCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewCore.h; sourceTree = "<group>"; };
 		34091E711F7D16AB00537413 /* OTTableViewCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewCore.m; sourceTree = "<group>"; };
+		343691071FD1579C00BAB79F /* UITableViewIndexBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITableViewIndexBar.h; sourceTree = "<group>"; };
+		343691081FD1579C00BAB79F /* UITableViewIndexBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITableViewIndexBar.m; sourceTree = "<group>"; };
+		3436910A1FD158FC00BAB79F /* UITableView+IndexBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+IndexBar.h"; sourceTree = "<group>"; };
+		3436910B1FD158FC00BAB79F /* UITableView+IndexBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+IndexBar.m"; sourceTree = "<group>"; };
+		3436910D1FD1598B00BAB79F /* TestIndexBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestIndexBarViewController.h; sourceTree = "<group>"; };
+		3436910E1FD1598B00BAB79F /* TestIndexBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestIndexBarViewController.m; sourceTree = "<group>"; };
 		344074CC1F627B59008B0162 /* MTScrollTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleBar.h; sourceTree = "<group>"; };
 		344074CD1F627B59008B0162 /* MTScrollTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollTitleBar.m; sourceTree = "<group>"; };
 		344074CF1F627B7C008B0162 /* MTScrollNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollNavgationController.h; sourceTree = "<group>"; };
@@ -178,6 +187,19 @@
 			path = waterflowlayout;
 			sourceTree = "<group>";
 		};
+		343691061FD1576300BAB79F /* TableViewIndexBar */ = {
+			isa = PBXGroup;
+			children = (
+				343691071FD1579C00BAB79F /* UITableViewIndexBar.h */,
+				343691081FD1579C00BAB79F /* UITableViewIndexBar.m */,
+				3436910A1FD158FC00BAB79F /* UITableView+IndexBar.h */,
+				3436910B1FD158FC00BAB79F /* UITableView+IndexBar.m */,
+				3436910D1FD1598B00BAB79F /* TestIndexBarViewController.h */,
+				3436910E1FD1598B00BAB79F /* TestIndexBarViewController.m */,
+			);
+			path = TableViewIndexBar;
+			sourceTree = "<group>";
+		};
 		344074CB1F627B2A008B0162 /* scrollContainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +234,7 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				343691061FD1576300BAB79F /* TableViewIndexBar */,
 				34FB73501FBD30FF00A37ADC /* textfiled */,
 				344074CB1F627B2A008B0162 /* scrollContainer */,
 				0DCCCCD91F50122500614DC0 /* waterflowlayout */,
@@ -410,6 +433,7 @@
 			files = (
 				34FB73561FBD329200A37ADC /* LoginViewController.m in Sources */,
 				F4C8B0DD1F4046AC00FDEDC7 /* SettingLabelItem.m in Sources */,
+				3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */,
 				344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */,
 				344074DA1F62920A008B0162 /* MTScrollView.m in Sources */,
 				0D65C0A71F56AC82007F8EE7 /* UIViewController+navBarAlpha.m in Sources */,
@@ -419,6 +443,7 @@
 				34FB73531FBD311600A37ADC /* JLTextFiled.m in Sources */,
 				F4C8B0DB1F4046AC00FDEDC7 /* SettingGroupModel.m in Sources */,
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
+				343691091FD1579C00BAB79F /* UITableViewIndexBar.m in Sources */,
 				34F667681FB44CC10072F07A /* Test_MenuViewController.m in Sources */,
 				F4C8B0DA1F4046AC00FDEDC7 /* SettingCell.m in Sources */,
 				344074D11F627B7C008B0162 /* MTScrollNavgationController.m in Sources */,
@@ -433,6 +458,7 @@
 				34091E721F7D16AB00537413 /* OTTableViewCore.m in Sources */,
 				F4C8B0D91F4046AC00FDEDC7 /* SettingArrowItem.m in Sources */,
 				0D60826D1F597706005FE1C0 /* MultifunctionBtn.m in Sources */,
+				3436910C1FD158FC00BAB79F /* UITableView+IndexBar.m in Sources */,
 				0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */,
 				F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */,
 				F4C8B0DF1F4046AC00FDEDC7 /* LoginCell.m in Sources */,
