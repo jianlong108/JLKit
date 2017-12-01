@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "SettingViewController.h"
-
+#import "UIViewController+navBarAlpha.h"
 
 @interface ViewController ()
 /**数据*/
@@ -33,6 +32,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navBarBgAlpha = 0.0f;
     // Do any additional setup after loading the view, typically from a nib.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;

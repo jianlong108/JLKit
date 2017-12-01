@@ -7,7 +7,7 @@
 //
 
 #import "UINavigationController+JL.h"
-#import "UIViewController+JL.h"
+#import "UIViewController+navBarAlpha.h"
 #import <objc/runtime.h>
 
 @implementation UINavigationController (JL)

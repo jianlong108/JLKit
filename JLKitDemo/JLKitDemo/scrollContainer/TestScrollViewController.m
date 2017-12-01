@@ -8,7 +8,7 @@
 
 #import "TestScrollViewController.h"
 #import "MTScrollNavgationController.h"
-#import "UIViewController+JL.h"
+#import "UIViewController+navBarAlpha.h"
 
 @interface TestScrollViewController ()<
 MTScrollNavigationViewControllerDelegate,

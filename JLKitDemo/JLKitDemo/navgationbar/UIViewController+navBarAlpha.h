@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (JL)
+@interface UIViewController (navBarAlpha)
 
 @property (assign, nonatomic) CGFloat navBarBgAlpha;
 
