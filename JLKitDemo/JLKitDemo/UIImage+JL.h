@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (JL)
+
 - (UIImage*)cropSquareImageBaseOfImageOrientation;
 - (UIImage*)cropSquareImageBaseOfDeviceOrientation;
 - (UIImage *)fixOrientation;
++ (UIImage *)imageWithUIColor:(UIColor *)color;
 @end

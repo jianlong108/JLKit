@@ -19,6 +19,7 @@
 		343691091FD1579C00BAB79F /* UITableViewIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 343691081FD1579C00BAB79F /* UITableViewIndexBar.m */; };
 		3436910C1FD158FC00BAB79F /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436910B1FD158FC00BAB79F /* UITableView+IndexBar.m */; };
 		3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436910E1FD1598B00BAB79F /* TestIndexBarViewController.m */; };
+		343691131FD1C68200BAB79F /* UIAvaterGenerater.m in Sources */ = {isa = PBXBuildFile; fileRef = 343691121FD1C68200BAB79F /* UIAvaterGenerater.m */; };
 		344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074CD1F627B59008B0162 /* MTScrollTitleBar.m */; };
 		344074D11F627B7C008B0162 /* MTScrollNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D01F627B7C008B0162 /* MTScrollNavgationController.m */; };
 		344074D41F627C05008B0162 /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D31F627C05008B0162 /* TestScrollViewController.m */; };
@@ -78,6 +79,9 @@
 		3436910B1FD158FC00BAB79F /* UITableView+IndexBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+IndexBar.m"; sourceTree = "<group>"; };
 		3436910D1FD1598B00BAB79F /* TestIndexBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestIndexBarViewController.h; sourceTree = "<group>"; };
 		3436910E1FD1598B00BAB79F /* TestIndexBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestIndexBarViewController.m; sourceTree = "<group>"; };
+		343691111FD1C68200BAB79F /* UIAvaterGenerater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAvaterGenerater.h; sourceTree = "<group>"; };
+		343691121FD1C68200BAB79F /* UIAvaterGenerater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAvaterGenerater.m; sourceTree = "<group>"; };
+		343691141FD1C83B00BAB79F /* GlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalConfig.h; sourceTree = "<group>"; };
 		344074CC1F627B59008B0162 /* MTScrollTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleBar.h; sourceTree = "<group>"; };
 		344074CD1F627B59008B0162 /* MTScrollTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollTitleBar.m; sourceTree = "<group>"; };
 		344074CF1F627B7C008B0162 /* MTScrollNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollNavgationController.h; sourceTree = "<group>"; };
@@ -200,6 +204,15 @@
 			path = TableViewIndexBar;
 			sourceTree = "<group>";
 		};
+		343691101FD1C63C00BAB79F /* groupIcon */ = {
+			isa = PBXGroup;
+			children = (
+				343691111FD1C68200BAB79F /* UIAvaterGenerater.h */,
+				343691121FD1C68200BAB79F /* UIAvaterGenerater.m */,
+			);
+			path = groupIcon;
+			sourceTree = "<group>";
+		};
 		344074CB1F627B2A008B0162 /* scrollContainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +247,7 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				343691101FD1C63C00BAB79F /* groupIcon */,
 				343691061FD1576300BAB79F /* TableViewIndexBar */,
 				34FB73501FBD30FF00A37ADC /* textfiled */,
 				344074CB1F627B2A008B0162 /* scrollContainer */,
@@ -252,6 +266,7 @@
 				0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */,
 				348D54081E27A5640005E96A /* ViewController.h */,
 				348D54091E27A5640005E96A /* ViewController.m */,
+				343691141FD1C83B00BAB79F /* GlobalConfig.h */,
 				F4C8B0E01F4046E700FDEDC7 /* SettingViewController.h */,
 				F4C8B0E11F4046E700FDEDC7 /* SettingViewController.m */,
 				0DCCCCDD1F5013A700614DC0 /* TestCollectionViewController.h */,
@@ -433,6 +448,7 @@
 			files = (
 				34FB73561FBD329200A37ADC /* LoginViewController.m in Sources */,
 				F4C8B0DD1F4046AC00FDEDC7 /* SettingLabelItem.m in Sources */,
+				343691131FD1C68200BAB79F /* UIAvaterGenerater.m in Sources */,
 				3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */,
 				344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */,
 				344074DA1F62920A008B0162 /* MTScrollView.m in Sources */,
