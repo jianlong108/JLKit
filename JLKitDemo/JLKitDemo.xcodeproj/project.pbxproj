@@ -27,7 +27,6 @@
 		348D54041E27A5640005E96A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54031E27A5640005E96A /* main.m */; };
 		348D54071E27A5640005E96A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54061E27A5640005E96A /* AppDelegate.m */; };
 		348D540A1E27A5640005E96A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D54091E27A5640005E96A /* ViewController.m */; };
-		348D540D1E27A5640005E96A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 348D540B1E27A5640005E96A /* Main.storyboard */; };
 		348D540F1E27A5640005E96A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348D540E1E27A5640005E96A /* Assets.xcassets */; };
 		348D54121E27A5640005E96A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 348D54101E27A5640005E96A /* LaunchScreen.storyboard */; };
 		349EB9AE1E28DDA000351FC4 /* JLBothSidesBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9AA1E28DDA000351FC4 /* JLBothSidesBtn.m */; };
@@ -38,6 +37,14 @@
 		349EB9BE1E2B7B9100351FC4 /* JLTabMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9BD1E2B7B9100351FC4 /* JLTabMoreView.m */; };
 		349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */; };
 		349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */; };
+		34C137AA1FD94A1B00CC4230 /* XMNavigationController+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C1379A1FD94A1900CC4230 /* XMNavigationController+Stack.m */; };
+		34C137AB1FD94A1B00CC4230 /* XMNavigationController+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C1379C1FD94A1A00CC4230 /* XMNavigationController+Animation.m */; };
+		34C137AC1FD94A1B00CC4230 /* UIViewController+XMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C1379F1FD94A1A00CC4230 /* UIViewController+XMNavigationController.m */; };
+		34C137AD1FD94A1B00CC4230 /* NSObject+AssociateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137A01FD94A1A00CC4230 /* NSObject+AssociateObj.m */; };
+		34C137AE1FD94A1B00CC4230 /* XMNavigationController+PanGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137A11FD94A1A00CC4230 /* XMNavigationController+PanGesture.m */; };
+		34C137AF1FD94A1B00CC4230 /* XMNavigationController+UIViewControllerInXMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137A51FD94A1B00CC4230 /* XMNavigationController+UIViewControllerInXMNavigationController.m */; };
+		34C137B01FD94A1B00CC4230 /* XMNavigationController+navigationBarUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137A61FD94A1B00CC4230 /* XMNavigationController+navigationBarUI.m */; };
+		34C137B11FD94A1B00CC4230 /* XMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137A81FD94A1B00CC4230 /* XMNavigationController.m */; };
 		34F667681FB44CC10072F07A /* Test_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F667671FB44CC10072F07A /* Test_MenuViewController.m */; };
 		34FB73531FBD311600A37ADC /* JLTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB73521FBD311600A37ADC /* JLTextFiled.m */; };
 		34FB73561FBD329200A37ADC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB73551FBD329200A37ADC /* LoginViewController.m */; };
@@ -96,7 +103,6 @@
 		348D54061E27A5640005E96A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		348D54081E27A5640005E96A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		348D54091E27A5640005E96A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		348D540C1E27A5640005E96A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		348D540E1E27A5640005E96A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		348D54111E27A5640005E96A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		348D54131E27A5640005E96A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,6 +122,23 @@
 		349EB9C01E2B7C6C00351FC4 /* JLCellitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLCellitem.m; sourceTree = "<group>"; };
 		349EB9C21E2B7EE100351FC4 /* TestDragCollecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestDragCollecViewController.h; sourceTree = "<group>"; };
 		349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestDragCollecViewController.m; sourceTree = "<group>"; };
+		34C137991FD94A1900CC4230 /* XMNavigationController+navigationBarUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMNavigationController+navigationBarUI.h"; sourceTree = "<group>"; };
+		34C1379A1FD94A1900CC4230 /* XMNavigationController+Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMNavigationController+Stack.m"; sourceTree = "<group>"; };
+		34C1379B1FD94A1900CC4230 /* XMNavigationGlobalDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNavigationGlobalDefines.h; sourceTree = "<group>"; };
+		34C1379C1FD94A1A00CC4230 /* XMNavigationController+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMNavigationController+Animation.m"; sourceTree = "<group>"; };
+		34C1379D1FD94A1A00CC4230 /* XMNavigationController+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMNavigationController+Animation.h"; sourceTree = "<group>"; };
+		34C1379E1FD94A1A00CC4230 /* XMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMNavigationController.h; sourceTree = "<group>"; };
+		34C1379F1FD94A1A00CC4230 /* UIViewController+XMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XMNavigationController.m"; sourceTree = "<group>"; };
+		34C137A01FD94A1A00CC4230 /* NSObject+AssociateObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AssociateObj.m"; sourceTree = "<group>"; };
+		34C137A11FD94A1A00CC4230 /* XMNavigationController+PanGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMNavigationController+PanGesture.m"; sourceTree = "<group>"; };
+		34C137A21FD94A1A00CC4230 /* UIViewController+XMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XMNavigationController.h"; sourceTree = "<group>"; };
+		34C137A31FD94A1A00CC4230 /* NSObject+AssociateObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AssociateObj.h"; sourceTree = "<group>"; };
+		34C137A41FD94A1B00CC4230 /* XMNavigationController+UIViewControllerInXMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMNavigationController+UIViewControllerInXMNavigationController.h"; sourceTree = "<group>"; };
+		34C137A51FD94A1B00CC4230 /* XMNavigationController+UIViewControllerInXMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMNavigationController+UIViewControllerInXMNavigationController.m"; sourceTree = "<group>"; };
+		34C137A61FD94A1B00CC4230 /* XMNavigationController+navigationBarUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XMNavigationController+navigationBarUI.m"; sourceTree = "<group>"; };
+		34C137A71FD94A1B00CC4230 /* XMNavigationController+PanGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMNavigationController+PanGesture.h"; sourceTree = "<group>"; };
+		34C137A81FD94A1B00CC4230 /* XMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMNavigationController.m; sourceTree = "<group>"; };
+		34C137A91FD94A1B00CC4230 /* XMNavigationController+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XMNavigationController+Stack.h"; sourceTree = "<group>"; };
 		34F667661FB44CC10072F07A /* Test_MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test_MenuViewController.h; sourceTree = "<group>"; };
 		34F667671FB44CC10072F07A /* Test_MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test_MenuViewController.m; sourceTree = "<group>"; };
 		34FB73511FBD311600A37ADC /* JLTextFiled.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLTextFiled.h; sourceTree = "<group>"; };
@@ -247,6 +270,7 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				34C137981FD949FA00CC4230 /* FullScreenPop */,
 				343691101FD1C63C00BAB79F /* groupIcon */,
 				343691061FD1576300BAB79F /* TableViewIndexBar */,
 				34FB73501FBD30FF00A37ADC /* textfiled */,
@@ -271,7 +295,6 @@
 				F4C8B0E11F4046E700FDEDC7 /* SettingViewController.m */,
 				0DCCCCDD1F5013A700614DC0 /* TestCollectionViewController.h */,
 				0DCCCCDE1F5013A700614DC0 /* TestCollectionViewController.m */,
-				348D540B1E27A5640005E96A /* Main.storyboard */,
 				348D540E1E27A5640005E96A /* Assets.xcassets */,
 				348D54101E27A5640005E96A /* LaunchScreen.storyboard */,
 				348D54131E27A5640005E96A /* Info.plist */,
@@ -325,6 +348,30 @@
 				349EB9C31E2B7EE100351FC4 /* TestDragCollecViewController.m */,
 			);
 			path = "can drag Collectionview";
+			sourceTree = "<group>";
+		};
+		34C137981FD949FA00CC4230 /* FullScreenPop */ = {
+			isa = PBXGroup;
+			children = (
+				34C137A31FD94A1A00CC4230 /* NSObject+AssociateObj.h */,
+				34C137A01FD94A1A00CC4230 /* NSObject+AssociateObj.m */,
+				34C137A21FD94A1A00CC4230 /* UIViewController+XMNavigationController.h */,
+				34C1379F1FD94A1A00CC4230 /* UIViewController+XMNavigationController.m */,
+				34C1379E1FD94A1A00CC4230 /* XMNavigationController.h */,
+				34C137A81FD94A1B00CC4230 /* XMNavigationController.m */,
+				34C1379D1FD94A1A00CC4230 /* XMNavigationController+Animation.h */,
+				34C1379C1FD94A1A00CC4230 /* XMNavigationController+Animation.m */,
+				34C137991FD94A1900CC4230 /* XMNavigationController+navigationBarUI.h */,
+				34C137A61FD94A1B00CC4230 /* XMNavigationController+navigationBarUI.m */,
+				34C137A71FD94A1B00CC4230 /* XMNavigationController+PanGesture.h */,
+				34C137A11FD94A1A00CC4230 /* XMNavigationController+PanGesture.m */,
+				34C137A91FD94A1B00CC4230 /* XMNavigationController+Stack.h */,
+				34C1379A1FD94A1900CC4230 /* XMNavigationController+Stack.m */,
+				34C137A41FD94A1B00CC4230 /* XMNavigationController+UIViewControllerInXMNavigationController.h */,
+				34C137A51FD94A1B00CC4230 /* XMNavigationController+UIViewControllerInXMNavigationController.m */,
+				34C1379B1FD94A1900CC4230 /* XMNavigationGlobalDefines.h */,
+			);
+			path = FullScreenPop;
 			sourceTree = "<group>";
 		};
 		34FB73501FBD30FF00A37ADC /* textfiled */ = {
@@ -435,7 +482,6 @@
 			files = (
 				348D54121E27A5640005E96A /* LaunchScreen.storyboard in Resources */,
 				348D540F1E27A5640005E96A /* Assets.xcassets in Resources */,
-				348D540D1E27A5640005E96A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,21 +496,27 @@
 				F4C8B0DD1F4046AC00FDEDC7 /* SettingLabelItem.m in Sources */,
 				343691131FD1C68200BAB79F /* UIAvaterGenerater.m in Sources */,
 				3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */,
+				34C137AC1FD94A1B00CC4230 /* UIViewController+XMNavigationController.m in Sources */,
 				344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */,
+				34C137B11FD94A1B00CC4230 /* XMNavigationController.m in Sources */,
 				344074DA1F62920A008B0162 /* MTScrollView.m in Sources */,
 				0D65C0A71F56AC82007F8EE7 /* UIViewController+navBarAlpha.m in Sources */,
 				344074D41F627C05008B0162 /* TestScrollViewController.m in Sources */,
 				348D540A1E27A5640005E96A /* ViewController.m in Sources */,
+				34C137AB1FD94A1B00CC4230 /* XMNavigationController+Animation.m in Sources */,
 				349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */,
 				34FB73531FBD311600A37ADC /* JLTextFiled.m in Sources */,
 				F4C8B0DB1F4046AC00FDEDC7 /* SettingGroupModel.m in Sources */,
+				34C137AD1FD94A1B00CC4230 /* NSObject+AssociateObj.m in Sources */,
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
 				343691091FD1579C00BAB79F /* UITableViewIndexBar.m in Sources */,
 				34F667681FB44CC10072F07A /* Test_MenuViewController.m in Sources */,
+				34C137B01FD94A1B00CC4230 /* XMNavigationController+navigationBarUI.m in Sources */,
 				F4C8B0DA1F4046AC00FDEDC7 /* SettingCell.m in Sources */,
 				344074D11F627B7C008B0162 /* MTScrollNavgationController.m in Sources */,
 				349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */,
 				F4C8B0D81F4046AC00FDEDC7 /* SettingCustonItem.m in Sources */,
+				34C137AE1FD94A1B00CC4230 /* XMNavigationController+PanGesture.m in Sources */,
 				0D65C0A61F56AC82007F8EE7 /* UINavigationController+JL.m in Sources */,
 				F4C8B0DE1F4046AC00FDEDC7 /* SettingSwitchItem.m in Sources */,
 				349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */,
@@ -477,9 +529,11 @@
 				3436910C1FD158FC00BAB79F /* UITableView+IndexBar.m in Sources */,
 				0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */,
 				F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */,
+				34C137AA1FD94A1B00CC4230 /* XMNavigationController+Stack.m in Sources */,
 				F4C8B0DF1F4046AC00FDEDC7 /* LoginCell.m in Sources */,
 				349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */,
 				348D54071E27A5640005E96A /* AppDelegate.m in Sources */,
+				34C137AF1FD94A1B00CC4230 /* XMNavigationController+UIViewControllerInXMNavigationController.m in Sources */,
 				349EB9AE1E28DDA000351FC4 /* JLBothSidesBtn.m in Sources */,
 				349EB9B71E28E59D00351FC4 /* TestTableViewController.m in Sources */,
 				348D54041E27A5640005E96A /* main.m in Sources */,
@@ -494,14 +548,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		348D540B1E27A5640005E96A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				348D540C1E27A5640005E96A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		348D54101E27A5640005E96A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
