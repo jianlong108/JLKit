@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "XMNavigationController.h"
 #import "ViewController.h"
+#import "MyViewController.h"
+#import "JLNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -23,11 +25,22 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     [self.window makeKeyAndVisible];
     
-    XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:[ViewController new]];
-    self.window.rootViewController = nav;
+    UITabBarController *tabarController = [[UITabBarController alloc]init];
+    
+    UINavigationController *UI_Nav = [[XMNavigationController alloc]initWithRootViewController:[ViewController new]];
+    [tabarController addChildViewController:UI_Nav];
+    UI_Nav.title = @"UI";
+    
+    UINavigationController *fullScrrenPop_Nav = [[JLNavigationController alloc]initWithRootViewController:[MyViewController new]];
+    [tabarController addChildViewController:fullScrrenPop_Nav];
+    fullScrrenPop_Nav.title = @"我的";
+    
+    
+    self.window.rootViewController = tabarController;
     
     return YES;
 }
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -22,7 +22,6 @@
                   @{@"name":@"可拖动tableview",@"vc":@"TestTableViewController"},
                   @{@"name":@"可拖动九宫格",@"vc":@"TestDragCollecViewController"},
                   @{@"name":@"菜单view",@"vc":@"Test_MenuViewController"},
-                  @{@"name":@"简易tableview使用--设置界面",@"vc":@"SettingViewController"},
                   @{@"name":@"collectionview布局",@"vc":@"TestCollectionViewController"},
                   @{@"name":@"导航容器",@"vc":@"TestScrollViewController"},
                   @{@"name":@"登录页",@"vc":@"LoginViewController"},

@@ -82,6 +82,7 @@
 {
     [super viewDidLoad];
     
+    self.hidesBottomBarWhenPushed = YES;
     [self.tableView registerClass:[LoginCell class] forCellReuseIdentifier:@"loginCell"];
     [self.tableView registerClass:[SettingCell class] forCellReuseIdentifier:@"settingCell"];
     // 2.添加数据
