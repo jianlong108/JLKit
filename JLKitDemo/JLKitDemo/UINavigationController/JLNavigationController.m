@@ -7,6 +7,7 @@
 //
 
 #import "JLNavigationController.h"
+#import "UINavigationController+DelegateManager.h"
 
 @interface JLNavigationController ()
 
@@ -23,6 +24,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
+{
+    if (self = [super initWithRootViewController:rootViewController]){
+        [self setDelegate:[[_UINavigationControllerDelegateManager alloc] init]];
+    }
+    return self;
+}
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.viewControllers.count >= 1) {
@@ -37,6 +45,15 @@
         vc.hidesBottomBarWhenPushed = NO;
     }
     return vc;
+}
+
+- (void)setDelegate:(id<UINavigationControllerDelegate>)delegate
+{
+    if ([delegate isKindOfClass:NSClassFromString(@"_UINavigationControllerDelegateManager")]) {
+        [self addDelegate:delegate queue:nil];
+        return;
+    }
+    [super setDelegate:delegate];
 }
 
 @end

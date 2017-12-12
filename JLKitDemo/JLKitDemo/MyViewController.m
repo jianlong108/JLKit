@@ -38,6 +38,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self transitionSetting];
+    self.title = @"我的";
 }
 
 - (void)didReceiveMemoryWarning {

@@ -19,7 +19,6 @@
 		343691091FD1579C00BAB79F /* UITableViewIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 343691081FD1579C00BAB79F /* UITableViewIndexBar.m */; };
 		3436910C1FD158FC00BAB79F /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436910B1FD158FC00BAB79F /* UITableView+IndexBar.m */; };
 		3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436910E1FD1598B00BAB79F /* TestIndexBarViewController.m */; };
-		343691131FD1C68200BAB79F /* UIAvaterGenerater.m in Sources */ = {isa = PBXBuildFile; fileRef = 343691121FD1C68200BAB79F /* UIAvaterGenerater.m */; };
 		344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074CD1F627B59008B0162 /* MTScrollTitleBar.m */; };
 		344074D11F627B7C008B0162 /* MTScrollNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D01F627B7C008B0162 /* MTScrollNavgationController.m */; };
 		344074D41F627C05008B0162 /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 344074D31F627C05008B0162 /* TestScrollViewController.m */; };
@@ -53,11 +52,13 @@
 		34C137D51FDDA24E00CC4230 /* UIViewController+XXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137CD1FDDA24E00CC4230 /* UIViewController+XXTransition.m */; };
 		34C137D61FDDA24E00CC4230 /* XXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137CF1FDDA24E00CC4230 /* XXTransition.m */; };
 		34C137D71FDDA24E00CC4230 /* XXTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137D01FDDA24E00CC4230 /* XXTransitionManager.m */; };
-		34C137DA1FDDA49D00CC4230 /* JLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137D91FDDA49D00CC4230 /* JLNavigationController.m */; };
 		34F667681FB44CC10072F07A /* Test_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F667671FB44CC10072F07A /* Test_MenuViewController.m */; };
 		34FB73531FBD311600A37ADC /* JLTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB73521FBD311600A37ADC /* JLTextFiled.m */; };
 		34FB73561FBD329200A37ADC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB73551FBD329200A37ADC /* LoginViewController.m */; };
 		34FB73591FBD876100A37ADC /* JLHotAreaBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB73581FBD876100A37ADC /* JLHotAreaBtn.m */; };
+		F46439F31FE036A600C92043 /* UIAvaterGenerater.m in Sources */ = {isa = PBXBuildFile; fileRef = F46439F21FE036A600C92043 /* UIAvaterGenerater.m */; };
+		F46439F71FE0371200C92043 /* UINavigationController+DelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F46439F61FE0371200C92043 /* UINavigationController+DelegateManager.m */; };
+		F46439FA1FE046CD00C92043 /* JLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F46439F91FE046CD00C92043 /* JLNavigationController.m */; };
 		F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */; };
 		F4C8B0D81F4046AC00FDEDC7 /* SettingCustonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0C91F4046AC00FDEDC7 /* SettingCustonItem.m */; };
 		F4C8B0D91F4046AC00FDEDC7 /* SettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4C8B0CB1F4046AC00FDEDC7 /* SettingArrowItem.m */; };
@@ -95,8 +96,6 @@
 		3436910B1FD158FC00BAB79F /* UITableView+IndexBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+IndexBar.m"; sourceTree = "<group>"; };
 		3436910D1FD1598B00BAB79F /* TestIndexBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestIndexBarViewController.h; sourceTree = "<group>"; };
 		3436910E1FD1598B00BAB79F /* TestIndexBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestIndexBarViewController.m; sourceTree = "<group>"; };
-		343691111FD1C68200BAB79F /* UIAvaterGenerater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAvaterGenerater.h; sourceTree = "<group>"; };
-		343691121FD1C68200BAB79F /* UIAvaterGenerater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAvaterGenerater.m; sourceTree = "<group>"; };
 		343691141FD1C83B00BAB79F /* GlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalConfig.h; sourceTree = "<group>"; };
 		344074CC1F627B59008B0162 /* MTScrollTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleBar.h; sourceTree = "<group>"; };
 		344074CD1F627B59008B0162 /* MTScrollTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollTitleBar.m; sourceTree = "<group>"; };
@@ -165,8 +164,6 @@
 		34C137CE1FDDA24E00CC4230 /* XXAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXAnimatedTransitioning.h; sourceTree = "<group>"; };
 		34C137CF1FDDA24E00CC4230 /* XXTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTransition.m; sourceTree = "<group>"; };
 		34C137D01FDDA24E00CC4230 /* XXTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTransitionManager.m; sourceTree = "<group>"; };
-		34C137D81FDDA49D00CC4230 /* JLNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLNavigationController.h; sourceTree = "<group>"; };
-		34C137D91FDDA49D00CC4230 /* JLNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLNavigationController.m; sourceTree = "<group>"; };
 		34F667661FB44CC10072F07A /* Test_MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test_MenuViewController.h; sourceTree = "<group>"; };
 		34F667671FB44CC10072F07A /* Test_MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test_MenuViewController.m; sourceTree = "<group>"; };
 		34FB73511FBD311600A37ADC /* JLTextFiled.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLTextFiled.h; sourceTree = "<group>"; };
@@ -175,6 +172,12 @@
 		34FB73551FBD329200A37ADC /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		34FB73571FBD876100A37ADC /* JLHotAreaBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLHotAreaBtn.h; sourceTree = "<group>"; };
 		34FB73581FBD876100A37ADC /* JLHotAreaBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLHotAreaBtn.m; sourceTree = "<group>"; };
+		F46439F11FE036A600C92043 /* UIAvaterGenerater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAvaterGenerater.h; sourceTree = "<group>"; };
+		F46439F21FE036A600C92043 /* UIAvaterGenerater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAvaterGenerater.m; sourceTree = "<group>"; };
+		F46439F51FE0371200C92043 /* UINavigationController+DelegateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+DelegateManager.h"; sourceTree = "<group>"; };
+		F46439F61FE0371200C92043 /* UINavigationController+DelegateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+DelegateManager.m"; sourceTree = "<group>"; };
+		F46439F81FE046CC00C92043 /* JLNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNavigationController.h; sourceTree = "<group>"; };
+		F46439F91FE046CD00C92043 /* JLNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNavigationController.m; sourceTree = "<group>"; };
 		F4C8B0C41F40468A00FDEDC7 /* OTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewController.h; sourceTree = "<group>"; };
 		F4C8B0C51F40468A00FDEDC7 /* OTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewController.m; sourceTree = "<group>"; };
 		F4C8B0C61F40468A00FDEDC7 /* OTPotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPotocol.h; sourceTree = "<group>"; };
@@ -255,15 +258,6 @@
 			path = TableViewIndexBar;
 			sourceTree = "<group>";
 		};
-		343691101FD1C63C00BAB79F /* groupIcon */ = {
-			isa = PBXGroup;
-			children = (
-				343691111FD1C68200BAB79F /* UIAvaterGenerater.h */,
-				343691121FD1C68200BAB79F /* UIAvaterGenerater.m */,
-			);
-			path = groupIcon;
-			sourceTree = "<group>";
-		};
 		344074CB1F627B2A008B0162 /* scrollContainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,9 +292,10 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F46439F41FE036E500C92043 /* UINavigationController */,
+				F46439F01FE036A600C92043 /* GroupIcon */,
 				34C137C11FDDA23F00CC4230 /* Transitton */,
 				34C137981FD949FA00CC4230 /* FullScreenPop */,
-				343691101FD1C63C00BAB79F /* groupIcon */,
 				343691061FD1576300BAB79F /* TableViewIndexBar */,
 				34FB73501FBD30FF00A37ADC /* textfiled */,
 				344074CB1F627B2A008B0162 /* scrollContainer */,
@@ -317,8 +312,6 @@
 				34FB73551FBD329200A37ADC /* LoginViewController.m */,
 				34C137BE1FDD9A1700CC4230 /* MyViewController.h */,
 				34C137BF1FDD9A1700CC4230 /* MyViewController.m */,
-				34C137D81FDDA49D00CC4230 /* JLNavigationController.h */,
-				34C137D91FDDA49D00CC4230 /* JLNavigationController.m */,
 				0D002FFA1E8C9B7A000A633A /* UIImage+JL.h */,
 				0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */,
 				348D54081E27A5640005E96A /* ViewController.h */,
@@ -440,6 +433,26 @@
 			path = textfiled;
 			sourceTree = "<group>";
 		};
+		F46439F01FE036A600C92043 /* GroupIcon */ = {
+			isa = PBXGroup;
+			children = (
+				F46439F11FE036A600C92043 /* UIAvaterGenerater.h */,
+				F46439F21FE036A600C92043 /* UIAvaterGenerater.m */,
+			);
+			path = GroupIcon;
+			sourceTree = "<group>";
+		};
+		F46439F41FE036E500C92043 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				F46439F81FE046CC00C92043 /* JLNavigationController.h */,
+				F46439F91FE046CD00C92043 /* JLNavigationController.m */,
+				F46439F51FE0371200C92043 /* UINavigationController+DelegateManager.h */,
+				F46439F61FE0371200C92043 /* UINavigationController+DelegateManager.m */,
+			);
+			path = UINavigationController;
+			sourceTree = "<group>";
+		};
 		F4C8B0C21F40462400FDEDC7 /* Operating TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,15 +560,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46439F71FE0371200C92043 /* UINavigationController+DelegateManager.m in Sources */,
 				34FB73561FBD329200A37ADC /* LoginViewController.m in Sources */,
 				F4C8B0DD1F4046AC00FDEDC7 /* SettingLabelItem.m in Sources */,
-				343691131FD1C68200BAB79F /* UIAvaterGenerater.m in Sources */,
 				3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */,
 				34C137AC1FD94A1B00CC4230 /* UIViewController+XMNavigationController.m in Sources */,
 				344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */,
 				34C137B11FD94A1B00CC4230 /* XMNavigationController.m in Sources */,
 				344074DA1F62920A008B0162 /* MTScrollView.m in Sources */,
 				0D65C0A71F56AC82007F8EE7 /* UIViewController+navBarAlpha.m in Sources */,
+				F46439FA1FE046CD00C92043 /* JLNavigationController.m in Sources */,
 				344074D41F627C05008B0162 /* TestScrollViewController.m in Sources */,
 				348D540A1E27A5640005E96A /* ViewController.m in Sources */,
 				34C137AB1FD94A1B00CC4230 /* XMNavigationController+Animation.m in Sources */,
@@ -575,7 +589,6 @@
 				349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */,
 				F4C8B0D81F4046AC00FDEDC7 /* SettingCustonItem.m in Sources */,
 				34C137AE1FD94A1B00CC4230 /* XMNavigationController+PanGesture.m in Sources */,
-				34C137DA1FDDA49D00CC4230 /* JLNavigationController.m in Sources */,
 				0D65C0A61F56AC82007F8EE7 /* UINavigationController+JL.m in Sources */,
 				F4C8B0DE1F4046AC00FDEDC7 /* SettingSwitchItem.m in Sources */,
 				349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */,
@@ -586,6 +599,7 @@
 				F4C8B0D91F4046AC00FDEDC7 /* SettingArrowItem.m in Sources */,
 				0D60826D1F597706005FE1C0 /* MultifunctionBtn.m in Sources */,
 				3436910C1FD158FC00BAB79F /* UITableView+IndexBar.m in Sources */,
+				F46439F31FE036A600C92043 /* UIAvaterGenerater.m in Sources */,
 				34C137D61FDDA24E00CC4230 /* XXTransition.m in Sources */,
 				0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */,
 				F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */,
