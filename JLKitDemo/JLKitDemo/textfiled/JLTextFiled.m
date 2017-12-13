@@ -9,6 +9,7 @@
 #import "JLTextFiled.h"
 
 @implementation JLTextFiled
+
 //- (CGRect)borderRectForBounds:(CGRect)bounds{
 //
 //    NSLog(@"%s",__func__);
@@ -17,6 +18,7 @@
 //
 //    return CGRectOffset(superFrame, 20, 0);
 //}
+
 - (CGRect)textRectForBounds:(CGRect)bounds{
 //    NSLog(@"%s",__func__);
     CGRect superFrame = [super textRectForBounds:bounds];
