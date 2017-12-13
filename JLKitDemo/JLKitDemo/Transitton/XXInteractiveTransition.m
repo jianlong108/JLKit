@@ -96,7 +96,7 @@
             break;
         case UIGestureRecognizerStateEnded:
             _popByGesture = NO;
-            if (percent > 0.5) {
+            if (percent > 0.3) {
                 [self finishInteractiveTransition];
             } else {
                 [self cancelInteractiveTransition];

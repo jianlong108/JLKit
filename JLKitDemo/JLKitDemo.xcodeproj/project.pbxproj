@@ -54,6 +54,8 @@
 		34C137D61FDDA24E00CC4230 /* XXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137CF1FDDA24E00CC4230 /* XXTransition.m */; };
 		34C137D71FDDA24E00CC4230 /* XXTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137D01FDDA24E00CC4230 /* XXTransitionManager.m */; };
 		34C137DA1FDDA49D00CC4230 /* JLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137D91FDDA49D00CC4230 /* JLNavigationController.m */; };
+		34C137DD1FDE345D00CC4230 /* JLPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137DC1FDE345D00CC4230 /* JLPresentationController.m */; };
+		34C137E01FDE347F00CC4230 /* PersentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C137DF1FDE347F00CC4230 /* PersentController.m */; };
 		34F667681FB44CC10072F07A /* Test_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F667671FB44CC10072F07A /* Test_MenuViewController.m */; };
 		34FB73531FBD311600A37ADC /* JLTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB73521FBD311600A37ADC /* JLTextFiled.m */; };
 		34FB73561FBD329200A37ADC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB73551FBD329200A37ADC /* LoginViewController.m */; };
@@ -167,6 +169,10 @@
 		34C137D01FDDA24E00CC4230 /* XXTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTransitionManager.m; sourceTree = "<group>"; };
 		34C137D81FDDA49D00CC4230 /* JLNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLNavigationController.h; sourceTree = "<group>"; };
 		34C137D91FDDA49D00CC4230 /* JLNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLNavigationController.m; sourceTree = "<group>"; };
+		34C137DB1FDE345C00CC4230 /* JLPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLPresentationController.h; sourceTree = "<group>"; };
+		34C137DC1FDE345D00CC4230 /* JLPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLPresentationController.m; sourceTree = "<group>"; };
+		34C137DE1FDE347F00CC4230 /* PersentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersentController.h; sourceTree = "<group>"; };
+		34C137DF1FDE347F00CC4230 /* PersentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersentController.m; sourceTree = "<group>"; };
 		34F667661FB44CC10072F07A /* Test_MenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test_MenuViewController.h; sourceTree = "<group>"; };
 		34F667671FB44CC10072F07A /* Test_MenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test_MenuViewController.m; sourceTree = "<group>"; };
 		34FB73511FBD311600A37ADC /* JLTextFiled.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLTextFiled.h; sourceTree = "<group>"; };
@@ -319,6 +325,8 @@
 				34C137BF1FDD9A1700CC4230 /* MyViewController.m */,
 				34C137D81FDDA49D00CC4230 /* JLNavigationController.h */,
 				34C137D91FDDA49D00CC4230 /* JLNavigationController.m */,
+				34C137DE1FDE347F00CC4230 /* PersentController.h */,
+				34C137DF1FDE347F00CC4230 /* PersentController.m */,
 				0D002FFA1E8C9B7A000A633A /* UIImage+JL.h */,
 				0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */,
 				348D54081E27A5640005E96A /* ViewController.h */,
@@ -332,6 +340,8 @@
 				348D54101E27A5640005E96A /* LaunchScreen.storyboard */,
 				348D54131E27A5640005E96A /* Info.plist */,
 				348D54021E27A5640005E96A /* Supporting Files */,
+				34C137DB1FDE345C00CC4230 /* JLPresentationController.h */,
+				34C137DC1FDE345D00CC4230 /* JLPresentationController.m */,
 			);
 			path = JLKitDemo;
 			sourceTree = "<group>";
@@ -548,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34FB73561FBD329200A37ADC /* LoginViewController.m in Sources */,
+				34C137E01FDE347F00CC4230 /* PersentController.m in Sources */,
 				F4C8B0DD1F4046AC00FDEDC7 /* SettingLabelItem.m in Sources */,
 				343691131FD1C68200BAB79F /* UIAvaterGenerater.m in Sources */,
 				3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */,
@@ -574,6 +585,7 @@
 				344074D11F627B7C008B0162 /* MTScrollNavgationController.m in Sources */,
 				349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */,
 				F4C8B0D81F4046AC00FDEDC7 /* SettingCustonItem.m in Sources */,
+				34C137DD1FDE345D00CC4230 /* JLPresentationController.m in Sources */,
 				34C137AE1FD94A1B00CC4230 /* XMNavigationController+PanGesture.m in Sources */,
 				34C137DA1FDDA49D00CC4230 /* JLNavigationController.m in Sources */,
 				0D65C0A61F56AC82007F8EE7 /* UINavigationController+JL.m in Sources */,
@@ -719,7 +731,7 @@
 				INFOPLIST_FILE = JLKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JLKit.JLKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JLKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -732,7 +744,7 @@
 				INFOPLIST_FILE = JLKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JLKit.JLKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JLKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

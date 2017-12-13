@@ -25,7 +25,9 @@
                   @{@"name":@"collectionview布局",@"vc":@"TestCollectionViewController"},
                   @{@"name":@"导航容器",@"vc":@"TestScrollViewController"},
                   @{@"name":@"登录页",@"vc":@"LoginViewController"},
-                  @{@"name":@"indexbar",@"vc":@"TestIndexBarViewController"},
+  @{@"name":@"indexbar",@"vc":@"TestIndexBarViewController"},
+                  @{@"name":@"presentController",@"vc":@"PersentController"},
+                  @{@"name":@"不要点",@"vc":@"dismiss"},
                   
                   nil];
     }
@@ -33,7 +35,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navBarBgAlpha = 0.0f;
     // Do any additional setup after loading the view, typically from a nib.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -59,8 +60,14 @@
     NSDictionary *dic = self.datas[indexPath.row];
     
     NSString * vcClassName = dic[@"vc"];
-    UIViewController *vc = [[NSClassFromString(vcClassName) alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    
+    if ([vcClassName isEqualToString:@"dismiss"]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }else{
+        UIViewController *vc = [[NSClassFromString(vcClassName) alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
 }
 
 @end
