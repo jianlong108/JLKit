@@ -6,15 +6,15 @@
 //  Copyright © 2017年 JL. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HomeViewController.h"
 #import "UIViewController+navBarAlpha.h"
 
-@interface ViewController ()
+@interface HomeViewController ()
 /**数据*/
 @property (nonatomic, strong)NSMutableArray *datas;
 @end
 
-@implementation ViewController
+@implementation HomeViewController
 - (NSMutableArray *)datas{
     if (_datas==nil) {
         _datas = [NSMutableArray arrayWithObjects:

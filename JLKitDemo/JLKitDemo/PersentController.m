@@ -8,7 +8,7 @@
 
 #import "PersentController.h"
 #import "JLPresentationController.h"
-#import "ViewController.h"
+#import "HomeViewController.h"
 
 @interface PersentController ()<UIViewControllerTransitioningDelegate>
 
@@ -27,7 +27,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    ViewController *presentVC = [[ViewController alloc] init];
+    HomeViewController *presentVC = [[HomeViewController alloc] init];
     // 设置 动画样式
 //    presentVC.modalPresentationStyle = UIModalPresentationCustom;
     //presentVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

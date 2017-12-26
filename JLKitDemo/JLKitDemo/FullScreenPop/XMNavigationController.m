@@ -545,6 +545,10 @@
 
 - (void)pushViewController:(UIViewController *)viewController animatiomType:(XMNavigationViewAnimationType)animationType animationCompletion:(XMNavigationAnimationCompletionBlock)completionBlock
 {
+    if (self.viewControllers.count >= 1) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
+    
     if (!viewController)
     {
         return;
@@ -764,7 +768,11 @@
 
 - (NSArray *)popToViewController:(UIViewController *)viewController withAnimationType:(XMNavigationViewAnimationType)animationType animationCompletion:(XMNavigationAnimationCompletionBlock)completionBlock
 {
-    
+    if ([self.viewControllers[0] isEqual:viewController]) {
+        viewController.hidesBottomBarWhenPushed = NO;
+    }else{
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
     
     __weak typeof(self) weakSelf = self;
     UIViewController *fromViewController = [self topViewController];
