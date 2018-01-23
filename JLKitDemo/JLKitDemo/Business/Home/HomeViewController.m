@@ -18,7 +18,7 @@
 - (NSMutableArray *)datas{
     if (_datas==nil) {
         _datas = [NSMutableArray arrayWithObjects:
-                  @{@"name":@"双面button",@"vc":@"BothsidesBtnViewController"},
+                  @{@"name":@"基础控件展示",@"vc":@"BothsidesBtnViewController"},
                   @{@"name":@"可拖动tableview",@"vc":@"TestTableViewController"},
                   @{@"name":@"可拖动九宫格",@"vc":@"TestDragCollecViewController"},
                   @{@"name":@"菜单view",@"vc":@"Test_MenuViewController"},
