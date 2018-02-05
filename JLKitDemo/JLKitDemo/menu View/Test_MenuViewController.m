@@ -8,6 +8,7 @@
 
 #import "Test_MenuViewController.h"
 #import "JLMenuView.h"
+#import "XMNavigationController.h"
 
 @interface Test_MenuViewController ()
 <
@@ -78,5 +79,6 @@
     label.text = @"消费时优先消耗银钻哦~";
     return label;
 }
-
+- (BOOL)navigationBackCanBeginWithDirection:(XMPanMoveDirection)panMoveDirection gestureRecognizer:(UIGestureRecognizer *)recoginzer
+{return YES;}
 @end

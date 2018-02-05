@@ -15,6 +15,10 @@
 		0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCDB1F50124800614DC0 /* WaterFlowLayout.m */; };
 		0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */; };
 		34091E721F7D16AB00537413 /* OTTableViewCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34091E711F7D16AB00537413 /* OTTableViewCore.m */; };
+		3432C48F20280482000DF65C /* NSObject+archive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3432C48E20280482000DF65C /* NSObject+archive.m */; };
+		3432C49220280526000DF65C /* NSString+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3432C49120280526000DF65C /* NSString+JL.m */; };
+		3432C495202805D0000DF65C /* NSData+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3432C494202805D0000DF65C /* NSData+JL.m */; };
+		3432C49820280710000DF65C /* NSNumber+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3432C49720280710000DF65C /* NSNumber+JL.m */; };
 		343691091FD1579C00BAB79F /* UITableViewIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 343691081FD1579C00BAB79F /* UITableViewIndexBar.m */; };
 		3436910C1FD158FC00BAB79F /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436910B1FD158FC00BAB79F /* UITableView+IndexBar.m */; };
 		3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436910E1FD1598B00BAB79F /* TestIndexBarViewController.m */; };
@@ -94,6 +98,14 @@
 		0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTCollectionViewDataSource.m; sourceTree = "<group>"; };
 		34091E701F7D16AB00537413 /* OTTableViewCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewCore.h; sourceTree = "<group>"; };
 		34091E711F7D16AB00537413 /* OTTableViewCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewCore.m; sourceTree = "<group>"; };
+		3432C48D20280482000DF65C /* NSObject+archive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+archive.h"; sourceTree = "<group>"; };
+		3432C48E20280482000DF65C /* NSObject+archive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+archive.m"; sourceTree = "<group>"; };
+		3432C49020280526000DF65C /* NSString+JL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JL.h"; sourceTree = "<group>"; };
+		3432C49120280526000DF65C /* NSString+JL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JL.m"; sourceTree = "<group>"; };
+		3432C493202805D0000DF65C /* NSData+JL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+JL.h"; sourceTree = "<group>"; };
+		3432C494202805D0000DF65C /* NSData+JL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+JL.m"; sourceTree = "<group>"; };
+		3432C49620280710000DF65C /* NSNumber+JL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNumber+JL.h"; sourceTree = "<group>"; };
+		3432C49720280710000DF65C /* NSNumber+JL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+JL.m"; sourceTree = "<group>"; };
 		343691071FD1579C00BAB79F /* UITableViewIndexBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITableViewIndexBar.h; sourceTree = "<group>"; };
 		343691081FD1579C00BAB79F /* UITableViewIndexBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITableViewIndexBar.m; sourceTree = "<group>"; };
 		3436910A1FD158FC00BAB79F /* UITableView+IndexBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+IndexBar.h"; sourceTree = "<group>"; };
@@ -296,6 +308,14 @@
 			children = (
 				0D002FFA1E8C9B7A000A633A /* UIImage+JL.h */,
 				0D002FFB1E8C9B7A000A633A /* UIImage+JL.m */,
+				3432C48D20280482000DF65C /* NSObject+archive.h */,
+				3432C48E20280482000DF65C /* NSObject+archive.m */,
+				3432C49020280526000DF65C /* NSString+JL.h */,
+				3432C49120280526000DF65C /* NSString+JL.m */,
+				3432C493202805D0000DF65C /* NSData+JL.h */,
+				3432C494202805D0000DF65C /* NSData+JL.m */,
+				3432C49620280710000DF65C /* NSNumber+JL.h */,
+				3432C49720280710000DF65C /* NSNumber+JL.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -644,11 +664,13 @@
 				34C137E01FDE347F00CC4230 /* PersentController.m in Sources */,
 				F4C8B0DD1F4046AC00FDEDC7 /* SettingLabelItem.m in Sources */,
 				3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */,
+				3432C49220280526000DF65C /* NSString+JL.m in Sources */,
 				34C137AC1FD94A1B00CC4230 /* UIViewController+XMNavigationController.m in Sources */,
 				347E50221FF1F1C100336A9F /* XXGlobalConst.m in Sources */,
 				344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */,
 				347E50311FF1F80400336A9F /* JLFoldAnimationer.m in Sources */,
 				34C137B11FD94A1B00CC4230 /* XMNavigationController.m in Sources */,
+				3432C48F20280482000DF65C /* NSObject+archive.m in Sources */,
 				344074DA1F62920A008B0162 /* MTScrollView.m in Sources */,
 				0D65C0A71F56AC82007F8EE7 /* UIViewController+navBarAlpha.m in Sources */,
 				F46439FA1FE046CD00C92043 /* JLNavigationController.m in Sources */,
@@ -680,6 +702,7 @@
 				349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */,
 				F4C8B0E21F4046E700FDEDC7 /* SettingViewController.m in Sources */,
 				0D002FFC1E8C9B7A000A633A /* UIImage+JL.m in Sources */,
+				3432C495202805D0000DF65C /* NSData+JL.m in Sources */,
 				34091E721F7D16AB00537413 /* OTTableViewCore.m in Sources */,
 				F4C8B0D91F4046AC00FDEDC7 /* SettingArrowItem.m in Sources */,
 				0D60826D1F597706005FE1C0 /* MultifunctionBtn.m in Sources */,
@@ -691,6 +714,7 @@
 				F4C8B0DF1F4046AC00FDEDC7 /* LoginCell.m in Sources */,
 				349EB9C11E2B7C6C00351FC4 /* JLCellitem.m in Sources */,
 				347E50201FF1F1C100336A9F /* XXTransitionManager.m in Sources */,
+				3432C49820280710000DF65C /* NSNumber+JL.m in Sources */,
 				348D54071E27A5640005E96A /* AppDelegate.m in Sources */,
 				34C137AF1FD94A1B00CC4230 /* XMNavigationController+UIViewControllerInXMNavigationController.m in Sources */,
 				349EB9AE1E28DDA000351FC4 /* JLBothSidesBtn.m in Sources */,

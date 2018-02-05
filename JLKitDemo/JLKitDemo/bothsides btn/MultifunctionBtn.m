@@ -98,8 +98,8 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    self.layer.cornerRadius = CGRectGetHeight(self.bounds) * self.cornerRadiusRatio;
-    self.layer.masksToBounds = YES;
+//    self.layer.cornerRadius = CGRectGetHeight(self.bounds) * self.cornerRadiusRatio;
+//    self.layer.masksToBounds = YES;
 }
 
 @end
