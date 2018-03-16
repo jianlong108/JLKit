@@ -15,6 +15,16 @@
 		0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCDB1F50124800614DC0 /* WaterFlowLayout.m */; };
 		0DCCCCE21F5014C700614DC0 /* OTCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */; };
 		34091E721F7D16AB00537413 /* OTTableViewCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 34091E711F7D16AB00537413 /* OTTableViewCore.m */; };
+		34284BBD205C06DF00CAD8F2 /* UINavigationController+FullScreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 34284BB5205C06DE00CAD8F2 /* UINavigationController+FullScreenPopGesture.m */; };
+		34284BBE205C06DF00CAD8F2 /* UIViewController+FullScreenPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 34284BB6205C06DE00CAD8F2 /* UIViewController+FullScreenPop.m */; };
+		34284BBF205C06DF00CAD8F2 /* UIPanGestureRecognizer+PanDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 34284BB7205C06DE00CAD8F2 /* UIPanGestureRecognizer+PanDirection.m */; };
+		34284BC0205C06DF00CAD8F2 /* NavigationTranstionEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 34284BB8205C06DE00CAD8F2 /* NavigationTranstionEngine.m */; };
+		34284BCE205C073B00CAD8F2 /* IOS11Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 34284BC2205C073900CAD8F2 /* IOS11Adapter.m */; };
+		34284BCF205C073B00CAD8F2 /* MTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34284BC3205C073A00CAD8F2 /* MTBaseViewController.m */; };
+		34284BD0205C073B00CAD8F2 /* UINavigationBar+BackGroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 34284BC9205C073A00CAD8F2 /* UINavigationBar+BackGroundImage.m */; };
+		34284BD1205C073B00CAD8F2 /* UIViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34284BCA205C073B00CAD8F2 /* UIViewController+NavigationBar.m */; };
+		34284BD2205C073B00CAD8F2 /* MTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34284BCB205C073B00CAD8F2 /* MTNavigationController.m */; };
+		34284BD3205C073B00CAD8F2 /* MTNavigationItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 34284BCD205C073B00CAD8F2 /* MTNavigationItemFactory.m */; };
 		3432C48F20280482000DF65C /* NSObject+archive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3432C48E20280482000DF65C /* NSObject+archive.m */; };
 		3432C49220280526000DF65C /* NSString+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3432C49120280526000DF65C /* NSString+JL.m */; };
 		3432C495202805D0000DF65C /* NSData+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3432C494202805D0000DF65C /* NSData+JL.m */; };
@@ -98,6 +108,27 @@
 		0DCCCCE11F5014C700614DC0 /* OTCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTCollectionViewDataSource.m; sourceTree = "<group>"; };
 		34091E701F7D16AB00537413 /* OTTableViewCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewCore.h; sourceTree = "<group>"; };
 		34091E711F7D16AB00537413 /* OTTableViewCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewCore.m; sourceTree = "<group>"; };
+		34284BB5205C06DE00CAD8F2 /* UINavigationController+FullScreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FullScreenPopGesture.m"; sourceTree = "<group>"; };
+		34284BB6205C06DE00CAD8F2 /* UIViewController+FullScreenPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FullScreenPop.m"; sourceTree = "<group>"; };
+		34284BB7205C06DE00CAD8F2 /* UIPanGestureRecognizer+PanDirection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPanGestureRecognizer+PanDirection.m"; sourceTree = "<group>"; };
+		34284BB8205C06DE00CAD8F2 /* NavigationTranstionEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationTranstionEngine.m; sourceTree = "<group>"; };
+		34284BB9205C06DE00CAD8F2 /* UINavigationController+FullScreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FullScreenPopGesture.h"; sourceTree = "<group>"; };
+		34284BBA205C06DE00CAD8F2 /* UIPanGestureRecognizer+PanDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPanGestureRecognizer+PanDirection.h"; sourceTree = "<group>"; };
+		34284BBB205C06DE00CAD8F2 /* UIViewController+FullScreenPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FullScreenPop.h"; sourceTree = "<group>"; };
+		34284BBC205C06DE00CAD8F2 /* NavigationTranstionEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationTranstionEngine.h; sourceTree = "<group>"; };
+		34284BC1205C073900CAD8F2 /* IOS11Adapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS11Adapter.h; sourceTree = "<group>"; };
+		34284BC2205C073900CAD8F2 /* IOS11Adapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOS11Adapter.m; sourceTree = "<group>"; };
+		34284BC3205C073A00CAD8F2 /* MTBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBaseViewController.m; sourceTree = "<group>"; };
+		34284BC4205C073A00CAD8F2 /* MTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationController.h; sourceTree = "<group>"; };
+		34284BC5205C073A00CAD8F2 /* MTNavigationItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationItemFactory.h; sourceTree = "<group>"; };
+		34284BC6205C073A00CAD8F2 /* UINavigationBar+BackGroundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+BackGroundImage.h"; sourceTree = "<group>"; };
+		34284BC7205C073A00CAD8F2 /* NavgiationBarOfViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavgiationBarOfViewControllerProtocol.h; sourceTree = "<group>"; };
+		34284BC8205C073A00CAD8F2 /* MTBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBaseViewController.h; sourceTree = "<group>"; };
+		34284BC9205C073A00CAD8F2 /* UINavigationBar+BackGroundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+BackGroundImage.m"; sourceTree = "<group>"; };
+		34284BCA205C073B00CAD8F2 /* UIViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBar.m"; sourceTree = "<group>"; };
+		34284BCB205C073B00CAD8F2 /* MTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationController.m; sourceTree = "<group>"; };
+		34284BCC205C073B00CAD8F2 /* UIViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NavigationBar.h"; sourceTree = "<group>"; };
+		34284BCD205C073B00CAD8F2 /* MTNavigationItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationItemFactory.m; sourceTree = "<group>"; };
 		3432C48D20280482000DF65C /* NSObject+archive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+archive.h"; sourceTree = "<group>"; };
 		3432C48E20280482000DF65C /* NSObject+archive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+archive.m"; sourceTree = "<group>"; };
 		3432C49020280526000DF65C /* NSString+JL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JL.h"; sourceTree = "<group>"; };
@@ -275,6 +306,21 @@
 			path = waterflowlayout;
 			sourceTree = "<group>";
 		};
+		34284BB4205C06DE00CAD8F2 /* FullScreenPanBack */ = {
+			isa = PBXGroup;
+			children = (
+				34284BB5205C06DE00CAD8F2 /* UINavigationController+FullScreenPopGesture.m */,
+				34284BB6205C06DE00CAD8F2 /* UIViewController+FullScreenPop.m */,
+				34284BB7205C06DE00CAD8F2 /* UIPanGestureRecognizer+PanDirection.m */,
+				34284BB8205C06DE00CAD8F2 /* NavigationTranstionEngine.m */,
+				34284BB9205C06DE00CAD8F2 /* UINavigationController+FullScreenPopGesture.h */,
+				34284BBA205C06DE00CAD8F2 /* UIPanGestureRecognizer+PanDirection.h */,
+				34284BBB205C06DE00CAD8F2 /* UIViewController+FullScreenPop.h */,
+				34284BBC205C06DE00CAD8F2 /* NavigationTranstionEngine.h */,
+			);
+			path = FullScreenPanBack;
+			sourceTree = "<group>";
+		};
 		343691061FD1576300BAB79F /* TableViewIndexBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +465,20 @@
 		348D54011E27A5640005E96A /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				34284BC1205C073900CAD8F2 /* IOS11Adapter.h */,
+				34284BC2205C073900CAD8F2 /* IOS11Adapter.m */,
+				34284BC8205C073A00CAD8F2 /* MTBaseViewController.h */,
+				34284BC3205C073A00CAD8F2 /* MTBaseViewController.m */,
+				34284BC4205C073A00CAD8F2 /* MTNavigationController.h */,
+				34284BCB205C073B00CAD8F2 /* MTNavigationController.m */,
+				34284BC5205C073A00CAD8F2 /* MTNavigationItemFactory.h */,
+				34284BCD205C073B00CAD8F2 /* MTNavigationItemFactory.m */,
+				34284BC7205C073A00CAD8F2 /* NavgiationBarOfViewControllerProtocol.h */,
+				34284BC6205C073A00CAD8F2 /* UINavigationBar+BackGroundImage.h */,
+				34284BC9205C073A00CAD8F2 /* UINavigationBar+BackGroundImage.m */,
+				34284BCC205C073B00CAD8F2 /* UIViewController+NavigationBar.h */,
+				34284BCA205C073B00CAD8F2 /* UIViewController+NavigationBar.m */,
+				34284BB4205C06DE00CAD8F2 /* FullScreenPanBack */,
 				347E50071FF1F0B600336A9F /* TextFiled */,
 				347E4FFC1FF1EE0000336A9F /* Category */,
 				F46439F41FE036E500C92043 /* UINavigationController */,
@@ -666,6 +726,7 @@
 				3436910F1FD1598B00BAB79F /* TestIndexBarViewController.m in Sources */,
 				3432C49220280526000DF65C /* NSString+JL.m in Sources */,
 				34C137AC1FD94A1B00CC4230 /* UIViewController+XMNavigationController.m in Sources */,
+				34284BBD205C06DF00CAD8F2 /* UINavigationController+FullScreenPopGesture.m in Sources */,
 				347E50221FF1F1C100336A9F /* XXGlobalConst.m in Sources */,
 				344074CE1F627B59008B0162 /* MTScrollTitleBar.m in Sources */,
 				347E50311FF1F80400336A9F /* JLFoldAnimationer.m in Sources */,
@@ -679,9 +740,12 @@
 				34C137AB1FD94A1B00CC4230 /* XMNavigationController+Animation.m in Sources */,
 				34C137C01FDD9A1700CC4230 /* MyViewController.m in Sources */,
 				349EB9B41E28DDDF00351FC4 /* JLTableView.m in Sources */,
+				34284BD2205C073B00CAD8F2 /* MTNavigationController.m in Sources */,
+				34284BD0205C073B00CAD8F2 /* UINavigationBar+BackGroundImage.m in Sources */,
 				347E50211FF1F1C100336A9F /* UINavigationController+XXTransition.m in Sources */,
 				F4C8B0DB1F4046AC00FDEDC7 /* SettingGroupModel.m in Sources */,
 				34C137AD1FD94A1B00CC4230 /* NSObject+AssociateObj.m in Sources */,
+				34284BBF205C06DF00CAD8F2 /* UIPanGestureRecognizer+PanDirection.m in Sources */,
 				349EB9AF1E28DDA000351FC4 /* BothsidesBtnViewController.m in Sources */,
 				347E501F1FF1F1C100336A9F /* XXAnimatedTransitioning.m in Sources */,
 				347E502B1FF1F4F300336A9F /* JLHorizontalPanInteraction.m in Sources */,
@@ -694,13 +758,18 @@
 				349EB9BB1E2B77C800351FC4 /* JLDragOrderCollectionViewLayout.m in Sources */,
 				347E502E1FF1F76E00336A9F /* JLBaseAnimationEngine.m in Sources */,
 				F4C8B0D81F4046AC00FDEDC7 /* SettingCustonItem.m in Sources */,
+				34284BD1205C073B00CAD8F2 /* UIViewController+NavigationBar.m in Sources */,
+				34284BCE205C073B00CAD8F2 /* IOS11Adapter.m in Sources */,
 				347E500D1FF1F0B600336A9F /* JLHotAreaBtn.m in Sources */,
 				34C137DD1FDE345D00CC4230 /* JLPresentationController.m in Sources */,
 				34C137AE1FD94A1B00CC4230 /* XMNavigationController+PanGesture.m in Sources */,
+				34284BD3205C073B00CAD8F2 /* MTNavigationItemFactory.m in Sources */,
 				0D65C0A61F56AC82007F8EE7 /* UINavigationController+JL.m in Sources */,
 				F4C8B0DE1F4046AC00FDEDC7 /* SettingSwitchItem.m in Sources */,
 				349EB9C41E2B7EE100351FC4 /* TestDragCollecViewController.m in Sources */,
+				34284BCF205C073B00CAD8F2 /* MTBaseViewController.m in Sources */,
 				F4C8B0E21F4046E700FDEDC7 /* SettingViewController.m in Sources */,
+				34284BC0205C06DF00CAD8F2 /* NavigationTranstionEngine.m in Sources */,
 				0D002FFC1E8C9B7A000A633A /* UIImage+JL.m in Sources */,
 				3432C495202805D0000DF65C /* NSData+JL.m in Sources */,
 				34091E721F7D16AB00537413 /* OTTableViewCore.m in Sources */,
@@ -708,6 +777,7 @@
 				0D60826D1F597706005FE1C0 /* MultifunctionBtn.m in Sources */,
 				3436910C1FD158FC00BAB79F /* UITableView+IndexBar.m in Sources */,
 				F46439F31FE036A600C92043 /* UIAvaterGenerater.m in Sources */,
+				34284BBE205C06DF00CAD8F2 /* UIViewController+FullScreenPop.m in Sources */,
 				0DCCCCDC1F50124800614DC0 /* WaterFlowLayout.m in Sources */,
 				F4C8B0C71F40468A00FDEDC7 /* OTTableViewController.m in Sources */,
 				34C137AA1FD94A1B00CC4230 /* XMNavigationController+Stack.m in Sources */,
