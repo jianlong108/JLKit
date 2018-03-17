@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OTTableViewController.h"
 
-@interface MyViewController : UITableViewController
+@interface MyViewController : OTTableViewController
 
 @end

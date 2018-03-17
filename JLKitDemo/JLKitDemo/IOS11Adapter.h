@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Xiaomi. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface IOS11Adapter : NSObject
 

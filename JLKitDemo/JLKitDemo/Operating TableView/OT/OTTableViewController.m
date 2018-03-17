@@ -20,35 +20,35 @@
 
 @implementation OTTableViewController
 
-- (instancetype)init{
-    if (self = [super init]) {
-        
-    }
-    return self;
-}
-
-- (void)viewDidLoad{
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     _tableViewCore = [[OTTableViewCore alloc]init];
     
-    UITableView *tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-    tableView.dataSource = _tableViewCore;
-    tableView.delegate = _tableViewCore;
-    _tableView = tableView;
-    self.tableView.frame = self.view.bounds;
     [self.view addSubview:self.tableView];
     
 }
 
-- (void)viewDidLayoutSubviews{
+- (void)viewDidLayoutSubviews
+{
     [super viewDidLayoutSubviews];
-    self.tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    _tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
 }
 
 - (NSMutableArray *)data
 {
     return _tableViewCore.items;
+}
+
+- (UITableView *)tableView
+{
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView.dataSource = _tableViewCore;
+        _tableView.delegate = _tableViewCore;
+    }
+    return _tableView;
 }
 
 @end

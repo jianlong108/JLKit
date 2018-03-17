@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MTNavigationController.h"
-#import "UIViewController+NavigationBar.h"
+#import "JLNavigationController.h"
 
 
 /**
@@ -17,9 +16,7 @@
  对电池条(statusbar) 和横竖屏的支持,提供了默认的定制
  
  */
-@interface MTBaseViewController : UIViewController
-
-- (void)showToast:(NSString *)toast;
+@interface JLBaseViewController : UIViewController
 
 /**
  以下方法子类可以实现自身对navigationBar的定制

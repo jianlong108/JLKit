@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Xiaomi. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NSString *MTNavigationItemAttributeKey;
 FOUNDATION_EXPORT MTNavigationItemAttributeKey const MTNavItemNormalTintColorKey;

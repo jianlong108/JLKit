@@ -32,15 +32,15 @@
     self.delegate = self;
     
     // create the interaction / animation controllers
-    _panInteractionGesture = [JLHorizontalPanInteraction new];
-    _animationController = [JLFoldAnimationer new];
-    _animationController.folders = 3;
+//    _panInteractionGesture = [JLHorizontalPanInteraction new];
+//    _animationController = [JLFoldAnimationer new];
+//    _animationController.folders = 3;
     
     // observe changes in the currently presented view controller
-    [self addObserver:self
-           forKeyPath:@"selectedViewController"
-              options:NSKeyValueObservingOptionNew
-              context:nil];
+//    [self addObserver:self
+//           forKeyPath:@"selectedViewController"
+//              options:NSKeyValueObservingOptionNew
+//              context:nil];
     
     
     UINavigationController *UI_Nav = [[XMNavigationController alloc]initWithRootViewController:[HomeViewController new]];

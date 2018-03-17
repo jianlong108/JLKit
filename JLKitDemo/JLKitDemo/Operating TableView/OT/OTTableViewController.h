@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLBaseViewController.h"
 #import "OTPotocol.h"
 
-@interface OTTableViewController : UIViewController
+@interface OTTableViewController : JLBaseViewController
 
 @property(nonatomic,strong) NSMutableArray<id <OTGroupItemProtocol>> *data;
 

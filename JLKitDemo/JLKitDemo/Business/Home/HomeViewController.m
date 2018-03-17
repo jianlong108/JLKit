@@ -7,7 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "UIViewController+navBarAlpha.h"
 
 @interface HomeViewController ()
 /**数据*/

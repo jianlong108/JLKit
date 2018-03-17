@@ -7,8 +7,6 @@
 //
 
 #import "UIViewController+NavigationBar.h"
-#import "UIImage+Colorful.h"
-#import "NSAttributedString+Truncate.h"
 #import "MTNavigationItemFactory.h"
 #import <objc/runtime.h>
 #import "UINavigationBar+BackGroundImage.h"
@@ -105,6 +103,8 @@
         [self setUpNavigationBarUI];
         self.needUpdateNavigationBarWhenFullScreenPopFailed = NO;
     }
+    [self.navigationController.navigationBar setNavigationbarAlpha:[self alphaOfNavigationBar]];
+    [self.navigationController.navigationBar setNavigationbarCustomBackgroundImage:[self navigationBarBackgroundImage]];
 }
 
 - (void)mt_viewWillDisappear:(BOOL)animated
@@ -141,7 +141,6 @@
         
         UIImage *backgroundImage = [self navigationBarBackgroundImage];
         if (backgroundImage) {
-//            [self.navigationController.navigationBar setBackgroundImage:backgroundImage forBarMetrics:UIBarMetricsDefault];
             [self.navigationController.navigationBar setNavigationbarCustomBackgroundImage:backgroundImage];
         }
         

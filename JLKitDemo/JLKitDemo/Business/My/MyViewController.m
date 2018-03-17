@@ -11,7 +11,6 @@
 #import "XXTransition.h"
 #import "SettingViewController.h"
 #import "LoginViewController.h"
-#import "UIViewController+navBarAlpha.h"
 
 @interface MyViewController ()
 
@@ -38,8 +37,7 @@
     // Do any additional setup after loading the view.
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.navBarBgAlpha = 0.0f;
-    [self transitionSetting];
+//    [self transitionSetting];
     self.title = @"我的";
 }
 
@@ -47,6 +45,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;

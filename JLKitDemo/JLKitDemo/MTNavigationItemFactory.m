@@ -7,7 +7,8 @@
 //
 
 #import "MTNavigationItemFactory.h"
-#import "UIImage+Tint.h"
+#import "GlobalConfig.h"
+//#import "UIImage+Tint.h"
 
 
 typedef NS_ENUM(NSInteger, MTNavigationItemType) {
@@ -99,16 +100,16 @@ MTNavigationItemStateTitleKey const MTNavItemStateDisableTitleKey = @"MTNavItemS
 {
     NSMutableDictionary *newDicTionary = [originalDic mutableCopy];
     if (![originalDic objectForKey:MTNavItemNormalTintColorKey]) {
-        [newDicTionary setObject:[CURRENT_SKIN navigationItemTintColorForNormal] forKey:MTNavItemNormalTintColorKey];
+        [newDicTionary setObject:[UIColor lightGrayColor] forKey:MTNavItemNormalTintColorKey];
     }
     if (![originalDic objectForKey:MTNavItemHighlightedTintColorKey]) {
-        [newDicTionary setObject:[CURRENT_SKIN navigationItemTintColorForHighlighted] forKey:MTNavItemHighlightedTintColorKey];
+        [newDicTionary setObject:[[UIColor lightGrayColor] colorWithAlphaComponent:0.5]  forKey:MTNavItemHighlightedTintColorKey];
     }
     if (![originalDic objectForKey:MTNavItemDisableTintColorKey]) {
-        [newDicTionary setObject:[CURRENT_SKIN navigationItemTintColorForDisabled] forKey:MTNavItemDisableTintColorKey];
+        [newDicTionary setObject:[[UIColor whiteColor] colorWithAlphaComponent:0.5] forKey:MTNavItemDisableTintColorKey];
     }
     if (![originalDic objectForKey:MTNavItemTitleFontKey]) {
-        [newDicTionary setObject:[CURRENT_SKIN navigationItemTitleFont] forKey:MTNavItemTitleFontKey];
+        [newDicTionary setObject:[UIFont systemFontOfSize:15] forKey:MTNavItemTitleFontKey];
     }
     
     return [newDicTionary copy];
@@ -131,19 +132,19 @@ MTNavigationItemStateTitleKey const MTNavItemStateDisableTitleKey = @"MTNavItemS
                                     attributesDictionary:(NSDictionary *)attributesDictionary
                                      touchUpInsideTarget:(id)target
                                                   action:(SEL)action {
-    if (XM_IS_STR_NIL(str)) {
+    if (String_is_invalide(str)) {
         return nil;
     }
-    
-    if (XM_IS_DICT_NIL(attributesDictionary)) {
+
+    if (Dictionary_is_invalide(attributesDictionary)) {
         NSAssert(0, @"attributesDictionary is NULL!!");
     }
-    
+
     if ((target != nil && action == nil) || (target == nil && action != nil)) {
         NSAssert(0, @"target and action SEL is NOT match!!");
     }
     attributesDictionary = [MTNavigationItemFactory autoRepairAttributeKeyDictionary:attributesDictionary];
-    
+
     UIColor *normalTintColor = attributesDictionary[MTNavItemNormalTintColorKey];
     UIColor *highlightedTintColor = attributesDictionary[MTNavItemHighlightedTintColorKey];
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -157,42 +158,47 @@ MTNavigationItemStateTitleKey const MTNavItemStateDisableTitleKey = @"MTNavItemS
         [btn setTitleColor:highlightedTintColor forState:UIControlStateHighlighted];
         [btn sizeToFit];
     }
-    
+
     if (type == MTNavigationItemTypeImage) {
-        UIImage *normalImage = [[UIImage imageNamed:str] tintedImageWithColor:normalTintColor];
-        UIImage *highlightedImage = [[UIImage imageNamed:str] tintedImageWithColor:highlightedTintColor];
+        UIImage *normalImage = [UIImage imageNamed:str];
+//                                tintedImageWithColor:normalTintColor];
+        UIImage *highlightedImage = normalImage;
+//        [[UIImage imageNamed:str] tintedImageWithColor:highlightedTintColor];
         [btn setImage:normalImage forState:UIControlStateNormal];
         [btn setImage:highlightedImage forState:UIControlStateHighlighted];
         [btn sizeToFit];
     }
-    
+
     if (type == MTNavigationItemTypeBack) {
-        UIImage *normalImage = [[UIImage imageNamed:@"icon_common_nav_back_button"] tintedImageWithColor:normalTintColor];
-        UIImage *highlightedImage = [[UIImage imageNamed:@"icon_common_nav_back_button"] tintedImageWithColor:highlightedTintColor];
+        UIImage *normalImage = [UIImage imageNamed:@"icon_common_nav_back_button"];
+//    tintedImageWithColor:normalTintColor];
+        UIImage *highlightedImage = normalImage;
+//        [[UIImage imageNamed:@"icon_common_nav_back_button"] tintedImageWithColor:highlightedTintColor];
         [btn setImage:normalImage forState:UIControlStateNormal];
         [btn setImage:highlightedImage forState:UIControlStateHighlighted];
-        
+
         CGFloat offset = 10;
         btn.titleEdgeInsets = UIEdgeInsetsMake(0, offset, 0, 0);
         btn.imageEdgeInsets = UIEdgeInsetsMake(0, -offset, 0, 0);
         [btn sizeToFit];
-        
+
         CGRect tmp = btn.bounds;
         btn.bounds = CGRectMake(0, 0, tmp.size.width + offset, tmp.size.height);
     }
-    
-    
+
+
     if (target != nil) {
         [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     }
     UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
-    
+
     UIBarButtonItem *spacer = [[UIBarButtonItem alloc]
                                initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
                                target:nil
                                action:nil];
     [spacer setWidth:-1];
     return @[spacer, buttonItem];
+    return nil;
 }
 
 @end

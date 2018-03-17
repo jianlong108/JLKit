@@ -8,8 +8,9 @@
 
 #import "JLNavigationController.h"
 #import "UINavigationController+DelegateManager.h"
+#import "UINavigationBar+BackGroundImage.h"
 
-@interface JLNavigationController ()
+@interface JLNavigationController ()<UINavigationBarDelegate>
 
 @end
 
@@ -32,28 +33,59 @@
     return self;
 }
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
-    if (self.viewControllers.count >= 1) {
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.viewControllers.count > 0) {
         viewController.hidesBottomBarWhenPushed = YES;
+    }
+    if ([self.topViewController isKindOfClass:[viewController class]]) {
+        return;
     }
     [super pushViewController:viewController animated:animated];
 }
 
-- (UIViewController *)popViewControllerAnimated:(BOOL)animated{
-    UIViewController *vc = [super popViewControllerAnimated:animated];
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated {
+    UIViewController *viewController = [super popViewControllerAnimated:animated];
     if (self.viewControllers.count == 1) {
-        vc.hidesBottomBarWhenPushed = NO;
+        viewController.hidesBottomBarWhenPushed = NO;
+    }else{
+        viewController.hidesBottomBarWhenPushed = YES;
     }
-    return vc;
+    return viewController;
 }
 
-- (void)setDelegate:(id<UINavigationControllerDelegate>)delegate
-{
-    if ([delegate isKindOfClass:NSClassFromString(@"_UINavigationControllerDelegateManager")]) {
-        [self addDelegate:delegate queue:nil];
-        return;
-    }
-    [super setDelegate:delegate];
+- (BOOL)shouldAutorotate {
+    return [self.topViewController shouldAutorotate];
 }
+
+-(UIInterfaceOrientationMask) supportedInterfaceOrientations {
+    return [self.topViewController supportedInterfaceOrientations];
+}
+
+- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation {
+    return [self.topViewController preferredInterfaceOrientationForPresentation];
+}
+
+- (UIViewController *)childViewControllerForStatusBarStyle {
+    return self.topViewController;
+}
+
+- (void)navigationBar:(UINavigationBar *)navigationBar didPushItem:(UINavigationItem *)item
+{
+    
+}
+
+- (void)navigationBar:(UINavigationBar *)navigationBar didPopItem:(UINavigationItem *)item
+{
+    
+}
+
+//- (void)setDelegate:(id<UINavigationControllerDelegate>)delegate
+//{
+//    if ([delegate isKindOfClass:NSClassFromString(@"_UINavigationControllerDelegateManager")]) {
+//        [self addDelegate:delegate queue:nil];
+//        return;
+//    }
+//    [super setDelegate:delegate];
+//}
 
 @end

@@ -10,6 +10,7 @@
 #import "SettingCustonItem.h"
 #import "SettingCell.h"
 #import "SettingGroupModel.h"
+#import "UIImage+JL.h"
 
 
 @implementation  SettingViewController
@@ -82,7 +83,6 @@
 {
     [super viewDidLoad];
     
-    self.hidesBottomBarWhenPushed = YES;
     [self.tableView registerClass:[LoginCell class] forCellReuseIdentifier:@"loginCell"];
     [self.tableView registerClass:[SettingCell class] forCellReuseIdentifier:@"settingCell"];
     // 2.添加数据
@@ -95,4 +95,15 @@
 - (void)entryLoginVc{
     
 }
+
+- (UIImage *)navigationBarBackgroundImage
+{
+    return [UIImage imageWithUIColor:[UIColor redColor]];
+}
+
+- (CGFloat)alphaOfNavigationBar
+{
+    return 0.0;
+}
+
 @end
