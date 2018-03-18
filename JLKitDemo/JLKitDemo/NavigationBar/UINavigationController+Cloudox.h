@@ -1,9 +1,9 @@
 //
-//  UINavigationController+Cloudox.h
-//  SmoothNavDemo
+//  NavigationTranstionEngine.h
+//  MiTalk
 //
-//  Created by Cloudox on 2017/3/19.
-//  Copyright © 2017年 Cloudox. All rights reserved.
+//  Created by wangjianlong on 2017/12/12.
+//  Copyright © 2017年 Xiaomi. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
