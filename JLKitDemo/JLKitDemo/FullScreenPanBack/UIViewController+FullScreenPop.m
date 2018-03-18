@@ -10,11 +10,6 @@
 
 @implementation UIViewController (FullScreenPop)
 
-- (BOOL)hideNavigationBar
-{
-    return NO;
-}
-
 - (BOOL)supportFullScreenPop
 {
     return YES;

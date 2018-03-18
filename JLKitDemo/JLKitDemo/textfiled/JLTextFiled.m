@@ -44,7 +44,7 @@
 //}
 - (CGRect)leftViewRectForBounds:(CGRect)bounds{
     NSLog(@"%s",__func__);
-    CGRect superFrame = [super leftViewRectForBounds:bounds];
+    
     return CGRectMake(0, 0, CGRectGetHeight(bounds)  , CGRectGetHeight(bounds));
     
 }

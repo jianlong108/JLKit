@@ -153,6 +153,7 @@ static NSString *const selecterSuffix = @"InteractiveTransition";
         _disAppearingViewController_HideBottomBar = _disAppearingViewController.hidesBottomBarWhenPushed;
 //        [self startNavigationTransiton];
         
+        NSLog(@"%@ %@",NSStringFromSelector(_cmd),_disAppearingViewController);
     }
     else if (recognizer.state == UIGestureRecognizerStateChanged) {
         

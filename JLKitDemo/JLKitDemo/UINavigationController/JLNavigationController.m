@@ -7,28 +7,30 @@
 //
 
 #import "JLNavigationController.h"
-#import "UINavigationController+DelegateManager.h"
+//#import "UINavigationController+DelegateManager.h"
 #import "UINavigationBar+BackGroundImage.h"
 
-@interface JLNavigationController ()<UINavigationBarDelegate>
+@interface JLNavigationController ()<UINavigationBarDelegate,UINavigationControllerDelegate>
 
 @end
 
 @implementation JLNavigationController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.navigationController.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController
 {
     if (self = [super initWithRootViewController:rootViewController]){
-        [self setDelegate:[[_UINavigationControllerDelegateManager alloc] init]];
+//        [self setDelegate:[[_UINavigationControllerDelegateManager alloc] init]];
     }
     return self;
 }

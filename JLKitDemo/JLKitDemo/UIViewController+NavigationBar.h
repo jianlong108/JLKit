@@ -14,4 +14,5 @@
 @property (nonatomic, assign) BOOL needUpdateNavigationBarWhenFullScreenPopFailed;
 
 
+
 @end

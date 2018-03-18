@@ -9,7 +9,9 @@
 #import "UIViewController+NavigationBar.h"
 #import "MTNavigationItemFactory.h"
 #import <objc/runtime.h>
-#import "UINavigationBar+BackGroundImage.h"
+
+#import "UINavigationController+Cloudox.h"
+#include "UINavigationBar+BackGroundImage.h"
 
 @implementation UIViewController (NavigationBar)
 
@@ -98,13 +100,18 @@
 
 - (void)mt_viewWillAppear:(BOOL)animated
 {
+    
+    NSLog(@"%@ %@",NSStringFromSelector(_cmd),self);
     [self mt_viewWillAppear:animated];
     if (self.needUpdateNavigationBarWhenFullScreenPopFailed) {
-        [self setUpNavigationBarUI];
+        [self updateNavigationBarIfNeed];
         self.needUpdateNavigationBarWhenFullScreenPopFailed = NO;
     }
-    [self.navigationController.navigationBar setNavigationbarAlpha:[self alphaOfNavigationBar]];
-    [self.navigationController.navigationBar setNavigationbarCustomBackgroundImage:[self navigationBarBackgroundImage]];
+    if ([self.navigationController.topViewController isEqual:self]) {
+        [self.navigationController.navigationBar setNavigationbarCustomBackgroundImage:[self navigationBarBackgroundImage]];
+        [self.navigationController setNeedsNavigationBackground:[self alphaOfNavigationBar]];
+    }
+    
 }
 
 - (void)mt_viewWillDisappear:(BOOL)animated
@@ -113,6 +120,12 @@
     if ([self needUpdateNavigationBarWhenAttributeChange]) {
         [self.navigationController.topViewController setUpNavigationBarUI];
     }
+}
+
+
+- (void)updateNavigationBarIfNeed
+{
+    [self setUpNavigationBarUI];
 }
 
 - (void)setUpNavigationBarUI

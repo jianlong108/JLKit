@@ -11,13 +11,6 @@
 @interface UIViewController (FullScreenPop)
 
 /**
- 是否隐藏导航栏
- @return 默认NO.显示导航栏
- */
-- (BOOL)hideNavigationBar;
-
-
-/**
  是否支持全屏返回
 
  @return 默认YES 支持

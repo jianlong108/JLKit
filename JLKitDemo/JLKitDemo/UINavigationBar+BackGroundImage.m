@@ -15,6 +15,7 @@
 {
      objc_setAssociatedObject(self, @selector(mt_backGroundImageView), mt_backGroundImageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+
 // NavigationBar背景图片
 - (UIImageView *)mt_backGroundImageView
 {
@@ -32,6 +33,8 @@
 }
 - (void)setNavigationbarAlpha:(CGFloat)alpha
 {
+    
+    NSLog(@"%@",NSStringFromSelector(_cmd));
     if (alpha > 1.0f) {
         alpha = 1.0f;
     }
@@ -45,14 +48,15 @@
 }
 - (void)setNavigationbarCustomBackgroundImage:(UIImage *)image
 {
+    
+    NSLog(@"%@",NSStringFromSelector(_cmd));
     if (!self.mt_backGroundImageView) {
         [self setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
         [self setShadowImage:[UIImage new]];
         
         if (@available(iOS 11.0, *)) {
             UIView *view = self.subviews.firstObject;
-            CGFloat y = fabs(view.frame.origin.y);
-            self.mt_backGroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CGRectGetHeight(self.bounds) + y)];
+            self.mt_backGroundImageView = [[UIImageView alloc] initWithFrame:view.bounds];
             self.mt_backGroundImageView.userInteractionEnabled = NO;
             self.mt_backGroundImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
             
