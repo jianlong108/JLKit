@@ -7,14 +7,27 @@
 //
 
 #import "JLPresentationController.h"
+#import "UIViewController+BottomPresent.h"
 
 @interface JLPresentationController()
 
 @property (nonatomic, strong) UIVisualEffectView * visualView;
 
+@property (nonatomic, assign) CGFloat controllerHeight;
+
 @end
 
 @implementation JLPresentationController
+
+- (instancetype)initWithPresentedViewController:(UIViewController<BottomPresentViewControllerProtocol> *)presentedViewController presentingViewController:(UIViewController *)presentingViewController
+{
+    _controllerHeight = [presentedViewController controllerViewHeight];
+    if (_controllerHeight == 0 ) {
+        _controllerHeight = CGRectGetHeight([UIScreen mainScreen].bounds);
+    }
+    return [super initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController];
+}
+
 //presentationTransitionWillBegin 是在呈现过渡即将开始的时候被调用的。我们在这个方法中把半透明黑色背景 View 加入到 containerView 中，并且做一个 alpha 从0到1的渐变过渡动画。
 - (void)presentationTransitionWillBegin{
     
@@ -56,16 +69,10 @@
 - (CGRect)frameOfPresentedViewInContainerView{
     
     
-    CGFloat windowH = [UIScreen mainScreen].bounds.size.height;
-    CGFloat windowW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat windowH = CGRectGetHeight([UIScreen mainScreen].bounds);
+    CGFloat windowW = CGRectGetWidth([UIScreen mainScreen].bounds);
     
-    CGRect rect = CGRectMake(0, (windowH - 300) /2, windowW, 300);
-    
-    self.presentedView.frame = rect;
-    
-    self.presentedViewController.view.frame = rect;
-    
-    return rect;
+    return CGRectMake(0,windowH - _controllerHeight,windowW, _controllerHeight);
 }
 
 

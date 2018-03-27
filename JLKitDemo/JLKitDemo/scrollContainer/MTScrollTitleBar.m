@@ -8,10 +8,10 @@
 
 #import "MTScrollTitleBar.h"
 
-NSString const* CustomBtn = @"CustomBtn";
-NSString const* DefaultBtn = @"DefaultBtn";
-NSString const* BtnObject = @"BtnObject";
-NSString const* BtnType = @"BtnType";
+NSString *const MTScrollTitleBar_CustomBtn = @"CustomBtn";
+NSString *const MTScrollTitleBar_DefaultBtn = @"DefaultBtn";
+NSString *const MTScrollTitleBar_BtnObject = @"BtnObject";
+NSString *const MTScrollTitleBar_BtnType = @"BtnType";
 
 #define MTScrollTitileBarContentLeftOrRightSpace 15
 
@@ -37,26 +37,22 @@ NSString const* BtnType = @"BtnType";
 
 @property (nonatomic, strong) UIFont                    *normalTitleFont;
 
-@property (nonatomic, strong) UIColor                   *titleColor;
 
-/*!
- @property
- @abstract 点击按钮选择名字ID
- */
-@property (nonatomic, assign) NSInteger                 userSelectedChannelID;
-
-//背景线.默认是粉红背景线
+//背景线.默认是主题背景线
 @property (nonatomic, strong) UIView                    *shadowView;
+
 /**底部背景线*/
 @property (nonatomic, strong) UIView                    *lineView;
 
 @property (nonatomic, weak)   UIButton                  *selectedTitleBtn;
 
-@property(nonatomic,assign,readwrite)NSUInteger selectedIndex;
+@property(nonatomic,assign)  NSUInteger                 selectedIndex;
 
 @end
 
 @implementation MTScrollTitleBar
+
+#pragma mark - system
 
 - (void)dealloc
 {
@@ -68,13 +64,11 @@ NSString const* BtnType = @"BtnType";
     self = [super initWithFrame:frame];
     if (self) {
         [self setBackgroundColor:[UIColor clearColor]];
-        self.selectedByTouchDown = NO;
-        self.autoScroller = YES;
-        //        _showLeftBorder = NO;
-        //        _showRightBorder = NO;
-        
-        self.firstBtnX = MTScrollTitileBarContentLeftOrRightSpace;
-        [self initializeSubViews];
+        _selectedByTouchDown = NO;
+        _autoScroller = YES;
+        _lineViewHeight = 1;
+        _firstBtnX = MTScrollTitileBarContentLeftOrRightSpace;
+        [self _initializeSubViews];
         
     }
     return self;
@@ -84,11 +78,224 @@ NSString const* BtnType = @"BtnType";
 {
     self = [self initWithFrame:frame];
     if (self) {
-        self.autoScroller = YES;
+        self.autoScroller = scroll;
     }
     return self;
 }
-- (void)initializeSubViews
+
+- (void)layoutSubviews
+{
+    self.contentScrollView.frame = self.bounds;
+    
+    [self _layoutTitlesForTopScrollerView:NO];
+    
+}
+
+#pragma mark - reloadData
+
+- (void)setDataSource:(id<MTScrollTitleBarDataSource>)dataSource
+{
+    _dataSource = dataSource;
+    [self reloadData];
+}
+
+- (BOOL)reloadData
+{
+    
+    _buttonOriginXArray = [[NSMutableArray alloc] init];
+    _buttonWidthArray = [[NSMutableArray alloc] init];
+    _buttonArray = [[NSMutableArray alloc] init];
+    
+    //如果没有，就返回
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfTitleInScrollTitleBar:)]) {
+        if ([self.dataSource numberOfTitleInScrollTitleBar:self] == 0) {
+            return NO;
+        }
+    }
+    
+    //询问代理 按钮间距
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gapForEachItem:)]) {
+        _buttonSpace = [self.dataSource gapForEachItem:self];
+    }else{
+        _buttonSpace = 25;
+    }
+    
+    //是否自动调整字体宽度
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(enableAutoAdjustWidth:)]) {
+        _isAdjustTitleWidth = [self.dataSource enableAutoAdjustWidth:self];
+    }else{
+        _isAdjustTitleWidth = YES;
+    }
+    
+    [self _calculateContentWidth];
+    [self _layoutTitlesForTopScrollerView:YES];
+    return YES;
+}
+
+
+#pragma mark - button Click
+
+//适用于类似于tabbar.的点击效果
+- (void)selectNameButtonByTouchDown:(UIButton*)sender
+{
+    
+    //如果是按下选中，则直接触发选中事件
+    if (self.selectedByTouchDown == YES) {
+        
+        [self _selectNameButton:sender userClick:YES];
+    }
+    
+}
+
+- (void)selectNameButtonByTouchUpInside:(UIButton*)sender
+{
+    
+    if (self.selectedByTouchDown == NO) {
+        
+        [self _selectNameButton:sender userClick:YES];
+        _selectedIndex = [self _indexOfObject:sender];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(clickItem:atIndex:)]) {
+            [self.delegate clickItem:self atIndex:self.selectedIndex];
+        }
+    }
+    
+}
+
+- (void)_selectNameButton:(UIButton *)sender userClick:(BOOL)userClick
+{
+    [self _setButtonStatet:sender userClick:userClick completion:nil];
+    
+}
+
+#pragma mark - interface
+
+- (void)updateTitleFromDataSource
+{
+    for (int i = 0 ; i<self.buttonArray.count; i++) {
+        UIButton *btn = [self _objectAtIndex:i];
+        NSString *title = [self.dataSource scrollTitleBar:self titleForIndex:i];
+        [btn setTitle:title forState:UIControlStateNormal];
+        [btn setTitle:title forState:UIControlStateSelected];
+        [self _calculateBtnWidthBtn:btn index:i isCustom:[self _isCustomObjectAtIndex:i] update:YES];
+    }
+    [self _layoutTitlesForTopScrollerView:NO];
+    
+}
+
+- (void)scrollingToNextElement:(NSUInteger)toIndex fromIndex:(NSUInteger)fromIndex scale:(CGFloat)scale
+{
+    CGRect fromRect = [self _lineViewRectForView:[self _objectAtIndex:fromIndex]];
+    CGRect toRect = [self _lineViewRectForView:[self _objectAtIndex:toIndex]];
+    
+    CGFloat traction = fromRect.size.width * 0.3;
+    CGFloat tractionThreshold = 0.2;
+    
+    CGPoint p1 = fromRect.origin;
+    CGPoint p2 = CGPointMake(fromRect.origin.x + fromRect.size.width, fromRect.origin.y);
+//    CGPoint p3 = toRect.origin;
+    CGPoint p4 = CGPointMake(toRect.origin.x + toRect.size.width, toRect.origin.y);
+    
+//    CGFloat p1p4Xdist = p4.x - p1.x;
+    CGFloat p2p4Xdist = p4.x - p2.x;
+    CGFloat maxStretch = (p2p4Xdist) - 2 * traction;
+    
+    CGFloat finalX = fromRect.origin.x;
+    CGFloat finalY = fromRect.origin.y;
+    CGFloat finalW = fromRect.size.width;
+    CGFloat finalH = fromRect.size.height;
+    
+    if (scale <= 0.5) {
+        CGFloat offset = maxStretch * (scale * 2);
+        CGFloat tractionOffset = traction;
+        if (scale < tractionThreshold) {
+            tractionOffset = traction * (scale / tractionThreshold);
+        }
+        
+        
+        finalW = fromRect.size.width + fabs(offset);
+        finalX = p1.x + tractionOffset;
+    }
+    else {
+        CGFloat offset =  maxStretch * ((1 - scale) * 2);
+        CGFloat tractionOffset = traction;
+        if (scale > 1 - tractionThreshold) {
+            tractionOffset = traction * ((1 - scale) / tractionThreshold);
+        }
+        
+        finalW = fromRect.size.width + offset;
+        finalX = p4.x - tractionOffset - finalW;
+    }
+    
+    CGRect finalRect = CGRectMake(finalX, finalY, finalW, finalH);
+    //    NSLog(@"self.lineView.frame:%@",NSStringFromCGRect(finalRect));
+    self.lineView.frame = finalRect;
+}
+
+
+- (void)setUpSelecteIndex:(NSUInteger)index
+{
+    
+    NSAssert(index < [self.dataSource numberOfTitleInScrollTitleBar:self], @"设置的索引值超过了合理范围,请检测代码");
+    _selectedIndex = index;
+    
+    UIButton *button;
+    if (index < self.buttonArray.count) {
+        
+        button = [self.buttonArray[index] objectForKey:MTScrollTitleBar_BtnObject];
+    }
+    
+    if (button) {
+        [self _selectNameButton:button userClick:YES];
+    }
+    
+}
+
+#pragma mark - setter UI
+
+- (void)setTitleFont:(UIFont *)titleFont
+{
+    _titleFont = titleFont;
+    for (NSDictionary *dic in self.buttonArray) {
+        UIButton *btn = dic[MTScrollTitleBar_BtnObject];
+        [btn.titleLabel setFont:_titleFont];
+    }
+}
+
+- (void)setTitleColor:(UIColor *)titleColor
+{
+    _titleColor = titleColor;
+    for (NSDictionary *dic in self.buttonArray) {
+        UIButton *btn = dic[MTScrollTitleBar_BtnObject];
+        [btn setTitleColor:_titleColor forState:UIControlStateNormal];
+    }
+}
+
+- (void)setSelectedTitleColor:(UIColor *)selectedTitleColor
+{
+    _selectedTitleColor = selectedTitleColor;
+    for (NSDictionary *dic in self.buttonArray) {
+        UIButton *btn = dic[MTScrollTitleBar_BtnObject];
+        [btn setTitleColor:_selectedTitleColor forState:UIControlStateSelected];
+    }
+}
+
+- (void)setLineViewColor:(UIColor *)lineViewColor
+{
+    _lineViewColor = lineViewColor;
+    [self.lineView setBackgroundColor:_lineViewColor];
+}
+
+- (void)setLineViewHeight:(CGFloat)lineViewHeight
+{
+    _lineViewHeight = lineViewHeight;
+    CGFloat height = CGRectGetHeight(self.lineView.frame);
+    CGFloat dy = (height - lineViewHeight)/2;
+    self.lineView.frame = CGRectInset(self.lineView.frame, 0, dy);
+}
+
+#pragma mark - private func
+
+- (void)_initializeSubViews
 {
     if (_contentScrollView == nil) {
         _contentScrollView = [[UIScrollView alloc]initWithFrame:self.bounds];
@@ -100,89 +307,80 @@ NSString const* BtnType = @"BtnType";
         [self addSubview:_contentScrollView];
     }
     
-    //    if (!_leftBorderView) {
-    //        _leftBorderView = [[UIImageView alloc] init];
-    //        [_leftBorderView setBackgroundColor:[UIColor clearColor]];
-    //        [_leftBorderView setUserInteractionEnabled:NO];
-    //        [_leftBorderView setImage:[[AHSkinManager sharedManager] imageWithImageKey:[AHUIImageNameHandle handleImageName:@"mask48_left"]]];
-    //        [_leftBorderView setHidden:YES];
-    //        [self addSubview:_leftBorderView];
-    //
-    //    }
-    //
-    //    if (!_rightBorderView) {
-    //        _rightBorderView = [[UIImageView alloc] init];
-    //        [_rightBorderView setBackgroundColor:[UIColor clearColor]];
-    //        [_rightBorderView setUserInteractionEnabled:NO];
-    //        [_rightBorderView setImage:[[AHSkinManager sharedManager] imageWithImageKey:[AHUIImageNameHandle handleImageName:@"mask48"]]];
-    //        [_rightBorderView setHidden:YES];
-    //        [self addSubview:_rightBorderView];
-    //    }
-}
-- (void)setDataSource:(id<MTScrollTitleBarDataSource>)dataSource{
-    _dataSource = dataSource;
-    [self reloadData];
-}
-- (void)reloadData {
-    
-    //    _userSelectedChannelID = MTScrollTitileBar_title_tag;
-    //    _scrollViewSelectedChannelID = MTScrollTitileBar_title_tag;
-    _buttonOriginXArray = [[NSMutableArray alloc] init];
-    _buttonWidthArray = [[NSMutableArray alloc] init];
-    _buttonArray = [[NSMutableArray alloc] init];
-    
-    //如果没有，就返回
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(numberOfTitleInScrollTitleBar:)]) {
-        if ([self.dataSource numberOfTitleInScrollTitleBar:self] == 0) {
-            return;
-        }
-    }
-    
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(gapForEachItem:)]) {
-        _buttonSpace = [self.dataSource gapForEachItem:self];
-    }else{
-        _buttonSpace = 25;
-    }
-    
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(enableAutoAdjustWidth:)]) {
-        _isAdjustTitleWidth = [self.dataSource enableAutoAdjustWidth:self];
-    }else{
-        _isAdjustTitleWidth = YES;
-    }
-    
-    [self calculateContentWidth];
-    [self layoutTitlesForTopScrollerView:YES];
 }
 
-- (void)layoutSubviews
+
+- (NSInteger)_indexOfObject:(UIButton *)sender
 {
-    self.contentScrollView.frame = self.bounds;
-    
-    [self layoutTitlesForTopScrollerView:NO];
-    
+    for (NSDictionary *dic  in self.buttonArray) {
+        UIButton *btn = [dic objectForKey:MTScrollTitleBar_BtnObject];
+        if ([btn isEqual:sender]) {
+            return [self.buttonArray indexOfObject:dic];
+        }
+    }
+    return -1;
 }
-- (CGFloat)calculateBtnWidthBtn:(UIButton *)btn isCustom:(BOOL)isCustom{
+
+- (UIButton *)_objectAtIndex:(NSInteger)index
+{
+    if (index < 0 || index >= self.buttonArray.count) {
+        return nil;
+    }
+    NSDictionary *dic = self.buttonArray[index];
+    
+    return [dic objectForKey:MTScrollTitleBar_BtnObject];
+}
+
+- (BOOL)_isCustomObjectAtIndex:(NSInteger)index
+{
+    if (index < 0 || index >= self.buttonArray.count) {
+        return NO;
+    }
+    NSDictionary *dic = self.buttonArray[index];
+    
+    return [(NSString *)[dic objectForKey:MTScrollTitleBar_BtnType] isEqualToString:MTScrollTitleBar_CustomBtn];
+}
+//计算 更新 单个btn 的宽度.
+- (CGFloat)_calculateBtnWidthBtn:(UIButton *)btn index:(NSUInteger)index isCustom:(BOOL)isCustom update:(BOOL)isUpdate
+{
     
     if (_isAdjustTitleWidth) {
         
         if (isCustom) {
             CGFloat width = CGRectGetWidth(btn.frame);
-            [self.buttonWidthArray addObject:@(width)];
+            if (isUpdate) {
+                [self.buttonWidthArray replaceObjectAtIndex:index withObject:@(ceilf(width))];
+            }else{
+                [self.buttonWidthArray addObject:@(ceilf(width))];
+            }
             return width;
         }else{
             CGFloat buttonWidth = [btn.titleLabel.text boundingRectWithSize:CGSizeMake(350, 50) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : btn.titleLabel.font} context:nil].size.width;
-            [self.buttonWidthArray addObject:@(ceilf(buttonWidth))];
+            buttonWidth += 1;
+            if (isUpdate) {
+                [self.buttonWidthArray replaceObjectAtIndex:index withObject:@(ceilf(buttonWidth))];
+            }else{
+                [self.buttonWidthArray addObject:@(ceilf(buttonWidth))];
+            }
+            
             return ceilf(buttonWidth);
         }
     }else{
         CGFloat perBtnWidth = CGRectGetWidth(self.contentScrollView.frame)/[self.dataSource numberOfTitleInScrollTitleBar:self];
         
-        [self.buttonWidthArray addObject:@(perBtnWidth)];
+        if (isUpdate) {
+            [self.buttonWidthArray replaceObjectAtIndex:index withObject:@(ceilf(perBtnWidth))];
+        }else{
+            [self.buttonWidthArray addObject:@(ceilf(perBtnWidth))];
+        }
         return perBtnWidth;
     }
     
 }
-- (void)calculateContentWidth{
+
+//计算内容总宽度(包含间距,按钮自身宽度)
+- (void)_calculateContentWidth
+{
     
     [self.buttonArray removeAllObjects];
     [self.buttonWidthArray removeAllObjects];
@@ -195,6 +393,7 @@ NSString const* BtnType = @"BtnType";
         CGFloat btnWidth = 0.0f;
         
         NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:2];
+        //询问代理是否,自己自定义按钮.如果自定义按钮,将不会对按钮宽度做处理
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(scrollTitleBar:titleButtonForIndex:)])
         {
             button = [self.dataSource scrollTitleBar:self titleButtonForIndex:i];
@@ -204,17 +403,17 @@ NSString const* BtnType = @"BtnType";
             
             button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.clipsToBounds = NO;
-            [dic setObject:button forKey:BtnObject];
-            [dic setObject:DefaultBtn forKey:BtnType];
+            [dic setObject:button forKey:MTScrollTitleBar_BtnObject];
+            [dic setObject:MTScrollTitleBar_DefaultBtn forKey:MTScrollTitleBar_BtnType];
             
             UIFont *font = self.normalTitleFont;
             
             
-            //            if (self.boldFont) {
-            //                font = [[AHSkinManager sharedManager]boldfontForKey:AHtextsize02];
-            //            }
+            if (self.boldFont) {
+                font = [UIFont boldSystemFontOfSize:15];
+            }
             if (font == nil) {
-                font = [UIFont systemFontOfSize:13];
+                font = [UIFont systemFontOfSize:15];
             }
             
             NSString *titile = nil;
@@ -240,31 +439,21 @@ NSString const* BtnType = @"BtnType";
             }
             else
             {
-                [button setTitleColor:[UIColor colorWithRed:255/255.0 green:153/255.0 blue:113/255.0 alpha:1.0] forState:UIControlStateSelected];
+                [button setTitleColor:[UIColor colorWithRed:0xff/255.0 green:0x29/255.0 blue:0x66/255.0 alpha:1.0] forState:UIControlStateSelected];
             }
             button.titleLabel.font = font;
-            //            button.normalFont = self.normalTitleFont;
-            //            button.selectedFont = self.selectedTitleFont;
             
-            CGFloat buttonWidth = [self calculateBtnWidthBtn:button isCustom:NO];
+            CGFloat buttonWidth = [self _calculateBtnWidthBtn:button index:i isCustom:NO update:NO];
             btnWidth += buttonWidth;
             
         }
         else {
-            CGFloat buttonWidth = [self calculateBtnWidthBtn:button isCustom:YES];
+            CGFloat buttonWidth = [self _calculateBtnWidthBtn:button index:i isCustom:YES update:NO];
             btnWidth += buttonWidth;
             
-            //            if (!_isAdjustTitleWidth) {
-            //                btnWidth = button.frame.size.width;
-            //                [self.buttonWidthArray addObject:@(button.frame.size.width)];
-            //            } else {
-            //                CGFloat perBtnWidth = CGRectGetWidth(self.contentScrollView.frame)/[self.dataSource numberOfTitleInScrollTitleBar:self];
-            //                btnWidth = perBtnWidth;
-            //                [self.buttonWidthArray addObject:@(perBtnWidth)];
-            //            }
             
-            [dic setObject:button forKey:BtnObject];
-            [dic setObject:CustomBtn forKey:BtnType];
+            [dic setObject:button forKey:MTScrollTitleBar_BtnObject];
+            [dic setObject:MTScrollTitleBar_CustomBtn forKey:MTScrollTitleBar_BtnType];
         }
         
         
@@ -275,6 +464,7 @@ NSString const* BtnType = @"BtnType";
         }
         [_buttonArray addObject:dic];
         
+        // 暂时屏蔽右侧补充视图
         if (self.elementDisplayStyle == MTScrollTitleBarElementStyleDefault)
         {
             //            if (self.rightView)
@@ -284,12 +474,14 @@ NSString const* BtnType = @"BtnType";
         }
     }
 }
+
 //绘制button在容器视图中上
-- (void)layoutTitlesForTopScrollerView:(BOOL)reloadData{
+- (void)_layoutTitlesForTopScrollerView:(BOOL)reloadData
+{
     
     if (reloadData) {
         self.selectedIndex = 0;
-        self.selectedTitleBtn = [self objectAtIndex:0];
+        self.selectedTitleBtn = [self _objectAtIndex:0];
         [self.selectedTitleBtn setSelected:YES];
     }
     for (UIView *view in self.contentScrollView.subviews) {
@@ -324,7 +516,7 @@ NSString const* BtnType = @"BtnType";
     for (int i = 0; i < titleCount; i++)
     {
         NSDictionary *dic = self.buttonArray[i];
-        UIButton *button = [dic objectForKey:BtnObject];
+        UIButton *button = [dic objectForKey:MTScrollTitleBar_BtnObject];
         CGFloat btnW = [self.buttonWidthArray[i] floatValue];
         if (self.elementDisplayStyle == MTScrollTitleBarElementStyleAvarge)
         {
@@ -335,7 +527,7 @@ NSString const* BtnType = @"BtnType";
         }
         else
         {
-            if ([(NSString *)[dic objectForKey:BtnType] isEqualToString:CustomBtn])
+            if ([(NSString *)[dic objectForKey:MTScrollTitleBar_BtnType] isEqualToString:MTScrollTitleBar_CustomBtn])
             {
                 //自定义的按钮
                 
@@ -415,14 +607,14 @@ NSString const* BtnType = @"BtnType";
             else {
                 self.selectedIndex = 0;
             }
-            UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake((CGRectGetWidth(_selectedTitleBtn.frame) - 20)/2.0 + CGRectGetMinX(_selectedTitleBtn.frame), CGRectGetHeight(_contentScrollView.frame) - 1 - 1, 20, 1)];
+            UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake((CGRectGetWidth(_selectedTitleBtn.frame) - 20)/2.0 + CGRectGetMinX(_selectedTitleBtn.frame), CGRectGetHeight(_contentScrollView.frame) - 2*_lineViewHeight , 20, _lineViewHeight)];
             
             [lineView setUserInteractionEnabled:NO];
             if (self.lineViewColor) {
                 [lineView setBackgroundColor:self.lineViewColor];
                 
             }else {
-                [lineView setBackgroundColor:[UIColor purpleColor]];
+                [lineView setBackgroundColor:[UIColor colorWithRed:0xff/255.0 green:0x29/255.0 blue:0x66/255.0 alpha:1.0]];
             }
             
             lineView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
@@ -431,10 +623,12 @@ NSString const* BtnType = @"BtnType";
         }
     }
     //更新选中背景视图
-    [self updateShadowWithSelectedButton:self.selectedTitleBtn];
+    [self _updateShadowWithSelectedButton:self.selectedTitleBtn];
     
 }
-- (void)setButtonStatet:(UIButton *)sender userClick:(BOOL)userClick completion:(void (^)(BOOL finish))setCompletion{
+
+- (void)_setButtonStatet:(UIButton *)sender userClick:(BOOL)userClick completion:(void (^)(BOOL finish))setCompletion
+{
     
     if ([self.selectedTitleBtn isEqual:sender]) {
         //避免重复点击.
@@ -447,34 +641,39 @@ NSString const* BtnType = @"BtnType";
     
     [self adjustScrollViewContentX:sender];
     
-    if (userClick) {
-        [UIView animateWithDuration:0.4
-                              delay:0
-             usingSpringWithDamping:0.5
-              initialSpringVelocity:0
-                            options:UIViewAnimationOptionCurveLinear
-                         animations:^{
-                             
-                             [self updateShadowWithSelectedButton:sender];
-                             
-                         }
-                         completion:^(BOOL finished) {
-                             
-                             if (setCompletion) {
-                                 setCompletion(YES);
-                             }
-                         }];
-    }else{
-        [self updateShadowWithSelectedButton:sender];
-        if (setCompletion) {
-            setCompletion(YES);
-        }
+    //暂时 屏蔽一种动画效果
+    //    if (!userClick) {
+    //        [UIView animateWithDuration:0.4
+    //                              delay:0
+    //             usingSpringWithDamping:0.5
+    //              initialSpringVelocity:0
+    //                            options:UIViewAnimationOptionCurveLinear
+    //                         animations:^{
+    //
+    //                             [self updateShadowWithSelectedButton:sender];
+    //
+    //                         }
+    //                         completion:^(BOOL finished) {
+    //
+    //                             if (setCompletion) {
+    //                                 setCompletion(YES);
+    //                             }
+    //                         }];
+    //    }else{
+    //        [self updateShadowWithSelectedButton:sender];
+    //        if (setCompletion) {
+    //            setCompletion(YES);
+    //        }
+    //    }
+    [self _updateShadowWithSelectedButton:sender];
+    if (setCompletion) {
+        setCompletion(YES);
     }
-    
 }
 
 //更新选中背景视图
-- (void)updateShadowWithSelectedButton:(UIButton*)btn{
+- (void)_updateShadowWithSelectedButton:(UIButton*)btn
+{
     
     float shadowHeight = 0;
     float shadowY = 0;
@@ -504,10 +703,11 @@ NSString const* BtnType = @"BtnType";
     rect.origin.x = shadowX;
     //    self.shadowView.frame = rect;
     
-    [self.lineView setFrame:CGRectMake((CGRectGetWidth(btn.frame) - 20)/2.0 + CGRectGetMinX(btn.frame), CGRectGetHeight(_contentScrollView.frame) - 1 - 1, 20, 1)];
+    [self.lineView setFrame:CGRectMake((CGRectGetWidth(btn.frame) - 20)/2.0 + CGRectGetMinX(btn.frame), CGRectGetHeight(_contentScrollView.frame) -2*_lineViewHeight, 20, _lineViewHeight)];
 }
 
-- (CGRect)lineViewRectForView:(UIView *)view{
+- (CGRect)_lineViewRectForView:(UIView *)view
+{
     float shadowHeight = 0;
     float shadowY = 0;
     float shadowX = 0;
@@ -527,14 +727,12 @@ NSString const* BtnType = @"BtnType";
         shadowWidth = CGRectGetWidth(view.frame);
         shadowX = view.frame.origin.x;
     }
-    //shadowView rect
-    CGRect rect = CGRectMake(shadowX, shadowY, shadowWidth, shadowHeight);
     
-    return CGRectMake((CGRectGetWidth(view.frame) - 20)/2.0 + CGRectGetMinX(view.frame), CGRectGetHeight(_contentScrollView.frame) - 1 - 1, 20, 1);
+    return CGRectMake((CGRectGetWidth(view.frame) - 20)/2.0 + CGRectGetMinX(view.frame), CGRectGetHeight(_contentScrollView.frame) - 2*_lineViewHeight, 20, _lineViewHeight);
 }
 
 
-//点击按钮后scrollerview自适应
+//点击按钮后scrollerview自适应 contentOffset
 - (void)adjustScrollViewContentX:(UIButton *)sender
 {
     //判断是否支持自动滚动
@@ -547,22 +745,22 @@ NSString const* BtnType = @"BtnType";
     CGFloat maxOffsetX = _contentScrollView.contentSize.width - CGRectGetWidth(_contentScrollView.frame);
     CGFloat minOffsetX = 0;
     CGFloat offsetX = sender.center.x - CGRectGetWidth(_contentScrollView.frame)/2;
-    if (offsetX < 0) {
-        offsetX = 0;
+    if (offsetX < minOffsetX) {
+        offsetX = minOffsetX;
     }
     if (offsetX > maxOffsetX){
         offsetX = maxOffsetX;
     }
     [_contentScrollView setContentOffset:CGPointMake(offsetX, _contentScrollView.contentOffset.y) animated:YES];
     
-    
-    
 }
-- (void)oneAdjustStyle:(UIView *)sender{
+
+- (void)oneAdjustStyle:(UIView *)sender
+{
     CGFloat originX = CGRectGetMinX(sender.frame);
     CGFloat width = CGRectGetWidth(sender.frame);
     
-    UIView *firstView = [[_buttonArray objectAtIndex:0] objectForKey:BtnObject];
+    UIView *firstView = [[_buttonArray objectAtIndex:0] objectForKey:MTScrollTitleBar_BtnObject];
     //    float firsrBtnx = [_buttonOriginXArray.firstObject floatValue];
     CGFloat firstBtnx = CGRectGetMinX(firstView.frame);
     // 如果点击到右边超出边界的的按钮时
@@ -578,235 +776,5 @@ NSString const* BtnType = @"BtnType";
     }
 }
 
-
-
-- (void)selectNameButtonByTouchDown:(UIButton*)sender{
-    
-    //如果是按下选中，则直接出发选中事件
-    if (self.selectedByTouchDown == YES) {
-        
-        [self selectNameButton:sender userClick:YES];
-    }
-    
-}
-
-- (void)selectNameButtonByTouchUpInside:(UIButton*)sender{
-    
-    if (self.selectedByTouchDown == NO) {
-        
-        self.selectedIndex = [self indexOfObject:sender];
-        if (self.delegate && [self.delegate respondsToSelector:@selector(clickItem:atIndex:)]) {
-            [self.delegate clickItem:self atIndex:self.selectedIndex];
-        }
-    }
-    
-}
-
-- (void)selectNameButton:(UIButton *)sender userClick:(BOOL)userClick
-{
-    __weak typeof(self) weakself = self;
-    [self setButtonStatet:sender userClick:userClick completion:nil];
-    
-}
-
-#pragma mark - interface
-- (void)updateTitleFromDataSource{
-    for (int i = 0 ; i<self.buttonArray.count; i++) {
-        UIButton *btn = [self objectAtIndex:i];
-        NSString *title = [self.dataSource scrollTitleBar:self titleForIndex:i];
-        [btn setTitle:title forState:UIControlStateNormal];
-        [btn setTitle:title forState:UIControlStateSelected];
-        [self calculateBtnWidthBtn:btn isCustom:NO];
-    }
-    [self layoutTitlesForTopScrollerView:NO];
-    
-}
-- (void)scrollingToNextElement:(NSUInteger)toIndex fromIndex:(NSUInteger)fromIndex scale:(CGFloat)scale{
-    CGRect fromRect = [self lineViewRectForView:[self objectAtIndex:fromIndex]];
-    CGRect toRect = [self lineViewRectForView:[self objectAtIndex:toIndex]];
-    
-    CGFloat traction = fromRect.size.width * 0.3;
-    CGFloat tractionThreshold = 0.2;
-    
-    CGPoint p1 = fromRect.origin;
-    CGPoint p2 = CGPointMake(fromRect.origin.x + fromRect.size.width, fromRect.origin.y);
-    CGPoint p3 = toRect.origin;
-    CGPoint p4 = CGPointMake(toRect.origin.x + toRect.size.width, toRect.origin.y);
-    
-    CGFloat p1p4Xdist = p4.x - p1.x;
-    CGFloat p2p4Xdist = p4.x - p2.x;
-    CGFloat maxStretch = (p2p4Xdist) - 2 * traction;
-    
-    CGFloat finalX = fromRect.origin.x;
-    CGFloat finalY = fromRect.origin.y;
-    CGFloat finalW = fromRect.size.width;
-    CGFloat finalH = fromRect.size.height;
-    
-    if (scale <= 0.5) {
-        CGFloat offset = maxStretch * (scale * 2);
-        CGFloat tractionOffset = traction;
-        if (scale < tractionThreshold) {
-            tractionOffset = traction * (scale / tractionThreshold);
-        }
-        
-        
-        finalW = fromRect.size.width + fabs(offset);
-        finalX = p1.x + tractionOffset;
-    }
-    else {
-        CGFloat offset =  maxStretch * ((1 - scale) * 2);
-        CGFloat tractionOffset = traction;
-        if (scale > 1 - tractionThreshold) {
-            tractionOffset = traction * ((1 - scale) / tractionThreshold);
-        }
-        
-        finalW = fromRect.size.width + offset;
-        finalX = p4.x - tractionOffset - finalW;
-    }
-    
-    CGRect finalRect = CGRectMake(finalX, finalY, finalW, finalH);
-    //    NSLog(@"self.lineView.frame:%@",NSStringFromCGRect(finalRect));
-    self.lineView.frame = finalRect;
-}
-
-- (void)scrollingToNextElement:(BOOL)isNext scale:(CGFloat)scale index:(NSInteger)index{
-    
-    //    NSLog(@"%d %ld %ld",isNext,index,_selectedIndex);
-    NSUInteger count = [self.dataSource numberOfTitleInScrollTitleBar:self];
-    
-    CGRect fromRect = [self lineViewRectForView:[self selectedTitleBtn]];
-    CGRect toRect;
-    if (isNext) {
-        NSUInteger nextIndex = self.selectedIndex + 1;
-        if (nextIndex >= count) {
-            return;
-        }
-        toRect = [self objectAtIndex:nextIndex].frame;
-    }else{
-        if (self.selectedIndex == 0) {
-            return;
-        }
-        NSUInteger nextIndex = self.selectedIndex - 1;
-        toRect = [self lineViewRectForView:[self objectAtIndex:nextIndex]];
-    }
-    
-    NSInteger currentIndex = self.selectedIndex;
-    if (self.selectedIndex != index) {
-        self.selectedIndex = index;
-        [self.selectedTitleBtn setSelected:NO];
-        self.selectedTitleBtn = [self objectAtIndex:self.selectedIndex];
-        [self.selectedTitleBtn setSelected:YES];
-        [self adjustScrollViewContentX:self.selectedTitleBtn];
-    }
-    //    NSUInteger nextIndex = 0;
-    //    if (isNext) {
-    //        if (currentIndex + 1 >= count) {
-    //            return;
-    //        }else{
-    //            nextIndex = currentIndex + 1;
-    //        }
-    //    }else{
-    //        if ((currentIndex - 1) < 0) {
-    //            return;
-    //        }else{
-    //            nextIndex = currentIndex - 1;
-    //
-    //        }
-    //    }
-    
-    //    nextView = [[self.buttonArray objectAtIndex:nextIndex]objectForKey:BtnObject];
-    //    UIButton *selectBtn = [[self.buttonArray objectAtIndex:currentIndex]objectForKey:BtnObject];
-    //    CGRect fromRect = [self lineViewRectForView:[self selectedTitleBtn]];
-    //    CGRect toRect = [self lineViewRectForView:nextView];
-    CGFloat traction = fromRect.size.width * 0.3;
-    CGFloat tractionThreshold = 0.2;
-    
-    CGPoint p1 = fromRect.origin;
-    CGPoint p2 = CGPointMake(fromRect.origin.x + fromRect.size.width, fromRect.origin.y);
-    CGPoint p3 = toRect.origin;
-    CGPoint p4 = CGPointMake(toRect.origin.x + toRect.size.width, toRect.origin.y);
-    
-    CGFloat p1p4Xdist = p4.x - p1.x;
-    CGFloat p2p4Xdist = p4.x - p2.x;
-    CGFloat maxStretch = (p2p4Xdist) - 2 * traction;
-    
-    CGFloat finalX = fromRect.origin.x;
-    CGFloat finalY = fromRect.origin.y;
-    CGFloat finalW = fromRect.size.width;
-    CGFloat finalH = fromRect.size.height;
-    
-    if (scale <= 0.5) {
-        CGFloat offset = maxStretch * (scale * 2);
-        CGFloat tractionOffset = traction;
-        if (scale < tractionThreshold) {
-            tractionOffset = traction * (scale / tractionThreshold);
-        }
-        
-        
-        finalW = fromRect.size.width + fabs(offset);
-        finalX = p1.x + tractionOffset;
-    }
-    else {
-        CGFloat offset =  maxStretch * ((1 - scale) * 2);
-        CGFloat tractionOffset = traction;
-        if (scale > 1 - tractionThreshold) {
-            tractionOffset = traction * ((1 - scale) / tractionThreshold);
-        }
-        
-        finalW = fromRect.size.width + offset;
-        finalX = p4.x - tractionOffset - finalW;
-    }
-    
-    CGRect finalRect = CGRectMake(finalX, finalY, finalW, finalH);
-    //    NSLog(@"self.lineView.frame:%@",NSStringFromCGRect(finalRect));
-    self.lineView.frame = finalRect;
-}
-
-- (void)setUpSelecteIndex:(NSUInteger)index{
-    
-    NSAssert(index < [self.dataSource numberOfTitleInScrollTitleBar:self], @"设置的索引值超过了合理范围,请检测代码");
-    _selectedIndex = index;
-    
-    UIButton *button;
-    if (index < self.buttonArray.count) {
-        
-        button = [self.buttonArray[index] objectForKey:BtnObject];
-    }
-    
-    if (button) {
-        [self selectNameButton:button userClick:YES];
-    }
-    
-}
-
-#pragma mark - tool func
-
-- (NSInteger)indexOfObject:(UIButton *)sender{
-    for (NSDictionary *dic  in self.buttonArray) {
-        UIButton *btn = [dic objectForKey:BtnObject];
-        if ([btn isEqual:sender]) {
-            return [self.buttonArray indexOfObject:dic];
-        }
-    }
-    return -1;
-}
-
-- (UIButton *)objectAtIndex:(NSInteger)index{
-    if (index < 0 || index >= self.buttonArray.count) {
-        return nil;
-    }
-    NSDictionary *dic = self.buttonArray[index];
-    
-    return [dic objectForKey:BtnObject];
-}
-
-- (BOOL)isCustomObjectAtIndex:(NSInteger)index{
-    if (index < 0 || index >= self.buttonArray.count) {
-        return NO;
-    }
-    NSDictionary *dic = self.buttonArray[index];
-    
-    return [(NSString *)[dic objectForKey:BtnType] isEqualToString:CustomBtn];
-}
-
 @end
+

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		346A5507206A4CDB002DD49A /* UIViewController+BottomPresent.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5506206A4CDA002DD49A /* UIViewController+BottomPresent.m */; };
 		F4AECAA8205E5314000F6D37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEC9E7205E5314000F6D37 /* AppDelegate.m */; };
 		F4AECAA9205E5314000F6D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AEC9E8205E5314000F6D37 /* Assets.xcassets */; };
 		F4AECAAA205E5314000F6D37 /* JLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEC9EB205E5314000F6D37 /* JLBaseViewController.m */; };
@@ -66,7 +67,6 @@
 		F4AECAE0205E5314000F6D37 /* SettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA69205E5314000F6D37 /* SettingItem.m */; };
 		F4AECAE1205E5314000F6D37 /* SettingLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA6B205E5314000F6D37 /* SettingLabelItem.m */; };
 		F4AECAE2205E5314000F6D37 /* SettingSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA6D205E5314000F6D37 /* SettingSwitchItem.m */; };
-		F4AECAE3205E5314000F6D37 /* PersentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA6F205E5314000F6D37 /* PersentController.m */; };
 		F4AECAE4205E5314000F6D37 /* MTScrollNavgationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA72205E5314000F6D37 /* MTScrollNavgationController.m */; };
 		F4AECAE5205E5315000F6D37 /* MTScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA74205E5314000F6D37 /* MTScrollTitleBar.m */; };
 		F4AECAE6205E5315000F6D37 /* MTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA76205E5314000F6D37 /* MTScrollView.m */; };
@@ -94,6 +94,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		346A5505206A4CDA002DD49A /* UIViewController+BottomPresent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BottomPresent.h"; sourceTree = "<group>"; };
+		346A5506206A4CDA002DD49A /* UIViewController+BottomPresent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BottomPresent.m"; sourceTree = "<group>"; };
 		348D53FF1E27A5640005E96A /* JLKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AEC9E6205E5314000F6D37 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4AEC9E7205E5314000F6D37 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -213,8 +215,6 @@
 		F4AECA6B205E5314000F6D37 /* SettingLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingLabelItem.m; sourceTree = "<group>"; };
 		F4AECA6C205E5314000F6D37 /* SettingSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingSwitchItem.h; sourceTree = "<group>"; };
 		F4AECA6D205E5314000F6D37 /* SettingSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingSwitchItem.m; sourceTree = "<group>"; };
-		F4AECA6E205E5314000F6D37 /* PersentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersentController.h; sourceTree = "<group>"; };
-		F4AECA6F205E5314000F6D37 /* PersentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersentController.m; sourceTree = "<group>"; };
 		F4AECA71205E5314000F6D37 /* MTScrollNavgationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollNavgationController.h; sourceTree = "<group>"; };
 		F4AECA72205E5314000F6D37 /* MTScrollNavgationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollNavgationController.m; sourceTree = "<group>"; };
 		F4AECA73205E5314000F6D37 /* MTScrollTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleBar.h; sourceTree = "<group>"; };
@@ -322,8 +322,6 @@
 				F4AECA4F205E5314000F6D37 /* NavgiationBarOfViewControllerProtocol.h */,
 				F4AECA50205E5314000F6D37 /* NavigationBar */,
 				F4AECA57205E5314000F6D37 /* Operating TableView */,
-				F4AECA6E205E5314000F6D37 /* PersentController.h */,
-				F4AECA6F205E5314000F6D37 /* PersentController.m */,
 				F4AECA70205E5314000F6D37 /* scrollContainer */,
 				F4AECA79205E5314000F6D37 /* TabBarViewController.h */,
 				F4AECA7A205E5314000F6D37 /* TabBarViewController.m */,
@@ -333,6 +331,8 @@
 				F4AECA84205E5314000F6D37 /* textfiled */,
 				F4AECA89205E5314000F6D37 /* Transitton */,
 				F4AECAA3205E5314000F6D37 /* waterflowlayout */,
+				346A5505206A4CDA002DD49A /* UIViewController+BottomPresent.h */,
+				346A5506206A4CDA002DD49A /* UIViewController+BottomPresent.m */,
 			);
 			path = JLKitDemo;
 			sourceTree = "<group>";
@@ -749,7 +749,6 @@
 				F4AECAF3205E5315000F6D37 /* UINavigationController+XXTransition.m in Sources */,
 				F4AECAF8205E5315000F6D37 /* XXTransition.m in Sources */,
 				F4AECAC9205E5314000F6D37 /* UINavigationController+FullScreenPopGesture.m in Sources */,
-				F4AECAE3205E5314000F6D37 /* PersentController.m in Sources */,
 				F4AECAE1205E5314000F6D37 /* SettingLabelItem.m in Sources */,
 				F4AECAAF205E5314000F6D37 /* JLBothSidesBtn.m in Sources */,
 				F4AECAE2205E5314000F6D37 /* SettingSwitchItem.m in Sources */,
@@ -803,6 +802,7 @@
 				F4AECAB4205E5314000F6D37 /* SettingViewController.m in Sources */,
 				F4AECAB8205E5314000F6D37 /* TestDragCollecViewController.m in Sources */,
 				F4AECABB205E5314000F6D37 /* NSData+JL.m in Sources */,
+				346A5507206A4CDB002DD49A /* UIViewController+BottomPresent.m in Sources */,
 				F4AECABD205E5314000F6D37 /* NSObject+archive.m in Sources */,
 				F4AECAE4205E5314000F6D37 /* MTScrollNavgationController.m in Sources */,
 				F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */,

@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "UIViewController+BottomPresent.h"
+
 
 @interface HomeViewController ()
 /**数据*/
@@ -24,9 +26,12 @@
                   @{@"name":@"collectionview布局",@"vc":@"TestCollectionViewController"},
                   @{@"name":@"导航容器",@"vc":@"TestScrollViewController"},
                   @{@"name":@"登录页",@"vc":@"LoginViewController"},
-  @{@"name":@"indexbar",@"vc":@"TestIndexBarViewController"},
-                  @{@"name":@"presentController",@"vc":@"PersentController"},
-                  @{@"name":@"不要点",@"vc":@"dismiss"},
+                  @{@"name":@"indexbar",@"vc":@"TestIndexBarViewController"},
+                  @{@"name":@"presentController",@"block":^void(){
+            HomeViewController *home = [[HomeViewController alloc]init];
+            [self customPresentViewController:home animated:YES completion:nil];
+        }},
+                  @{@"name":@"dismiss",@"vc":@"dismiss"},
                   
                   nil];
     }
@@ -60,6 +65,12 @@
     
     NSString * vcClassName = dic[@"vc"];
     
+    void(^functionBlcok)() = dic[@"block"];
+    if (functionBlcok) {
+        functionBlcok();
+        return;
+    }
+    
     if ([vcClassName isEqualToString:@"dismiss"]) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }else{
@@ -67,6 +78,11 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     
+}
+
+- (CGFloat)controllerViewHeight
+{
+    return 300;
 }
 
 @end
