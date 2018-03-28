@@ -7,7 +7,8 @@
 //
 
 #import "HomeViewController.h"
-#import "UIViewController+BottomPresent.h"
+#import "UIViewController+PresentController.h"
+#import "LoginViewController.h"
 
 
 @interface HomeViewController ()
@@ -27,11 +28,14 @@
                   @{@"name":@"导航容器",@"vc":@"TestScrollViewController"},
                   @{@"name":@"登录页",@"vc":@"LoginViewController"},
                   @{@"name":@"indexbar",@"vc":@"TestIndexBarViewController"},
-                  @{@"name":@"presentController",@"block":^void(){
+                  @{@"name":@"presentController_底部",@"block":^void(){
             HomeViewController *home = [[HomeViewController alloc]init];
             [self customPresentViewController:home animated:YES completion:nil];
         }},
-                  @{@"name":@"dismiss",@"vc":@"dismiss"},
+                  @{@"name":@"presentController_中部",@"block":^void(){
+            LoginViewController *home = [[LoginViewController alloc]init];
+            [self customPresentViewController:home animated:YES completion:nil];
+        }},
                   
                   nil];
     }
@@ -70,17 +74,14 @@
         functionBlcok();
         return;
     }
-    
-    if ([vcClassName isEqualToString:@"dismiss"]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }else{
+    {
         UIViewController *vc = [[NSClassFromString(vcClassName) alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
     
 }
 
-- (CGFloat)controllerViewHeight
+- (CGFloat)contentViewHeight
 {
     return 300;
 }

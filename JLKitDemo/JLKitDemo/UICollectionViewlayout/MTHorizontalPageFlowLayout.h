@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-
 /**
  适用于单组(section == 1) 的横向分页流水布局
  */

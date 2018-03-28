@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomPresentViewControllerProtocol.h"
 
-@interface HomeViewController : UITableViewController
+@interface HomeViewController : UITableViewController<CustomPresentViewControllerProtocol>
 
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomPresentViewControllerProtocol.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<CustomPresentViewControllerProtocol>
 
 @end

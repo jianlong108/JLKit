@@ -43,5 +43,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (CGRect)contentViewFrame
+{
+    return CGRectMake((CGRectGetWidth([UIScreen mainScreen].bounds) - 300)/2, (CGRectGetHeight([UIScreen mainScreen].bounds) - 300)/2, 300, 300);
+}
 
 @end

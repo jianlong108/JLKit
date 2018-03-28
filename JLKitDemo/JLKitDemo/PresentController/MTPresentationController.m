@@ -1,15 +1,15 @@
 //
-//  JLPresentationController.m
-//  JLKitDemo
+//  MTPresentationController.m
+//  MiTalk
 //
-//  Created by wangjianlong on 2017/12/11.
-//  Copyright © 2017年 JL. All rights reserved.
+//  Created by wangjianlong on 2018/3/28.
+//  Copyright © 2018年 Xiaomi. All rights reserved.
 //
 
-#import "JLPresentationController.h"
-#import "UIViewController+BottomPresent.h"
+#import "MTPresentationController.h"
+#import "CustomPresentViewControllerProtocol.h"
 
-@interface JLPresentationController()
+@interface MTPresentationController()
 
 @property (nonatomic, strong) UIVisualEffectView * visualView;
 
@@ -17,13 +17,12 @@
 
 @end
 
-@implementation JLPresentationController
+@implementation MTPresentationController
 
-- (instancetype)initWithPresentedViewController:(UIViewController<BottomPresentViewControllerProtocol> *)presentedViewController presentingViewController:(UIViewController *)presentingViewController
+- (instancetype)initWithPresentedViewController:(UIViewController<CustomPresentViewControllerProtocol> *)presentedViewController presentingViewController:(UIViewController *)presentingViewController
 {
-    _controllerHeight = [presentedViewController controllerViewHeight];
-    if (_controllerHeight == 0 ) {
-        _controllerHeight = CGRectGetHeight([UIScreen mainScreen].bounds);
+    if ([presentedViewController respondsToSelector:@selector(contentViewHeight)]) {
+        _controllerHeight = [presentedViewController contentViewHeight];
     }
     return [super initWithPresentedViewController:presentedViewController presentingViewController:presentingViewController];
 }
@@ -66,9 +65,10 @@
 
 - (CGRect)frameOfPresentedViewInContainerView{
     
-    if ([self.presentedViewController respondsToSelector:@selector(contentViewFrame)]) {
-        CGRect frame = [[self.presentedViewController performSelector:@selector(contentViewFrame)] CGRectValue];
-        return frame;
+    UIViewController <CustomPresentViewControllerProtocol>*presentedController = (UIViewController <CustomPresentViewControllerProtocol>*)self.presentedViewController;
+    
+    if ([presentedController respondsToSelector:@selector(contentViewFrame)]) {
+       return [presentedController contentViewFrame];
     }
     
     CGFloat windowH = CGRectGetHeight([UIScreen mainScreen].bounds);
@@ -84,4 +84,3 @@
 }
 
 @end
-
