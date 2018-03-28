@@ -28,7 +28,7 @@
 {
     [super prepareLayout];
     
-    // 水平滚动
+    // 竖直滚动
     self.scrollDirection = UICollectionViewScrollDirectionVertical;
     // 设置内边距
     CGFloat inset = (self.collectionView.frame.size.width - self.itemSize.width) * 0.5;

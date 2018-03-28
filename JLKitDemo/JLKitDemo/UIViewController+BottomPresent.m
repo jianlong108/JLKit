@@ -19,10 +19,5 @@
     
 }
 
-- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source
-{
-    JLPresentationController *presentController =[[JLPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
-    return presentController;
-}
 
 @end

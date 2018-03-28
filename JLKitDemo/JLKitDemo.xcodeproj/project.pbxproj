@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		346A5507206A4CDB002DD49A /* UIViewController+BottomPresent.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5506206A4CDA002DD49A /* UIViewController+BottomPresent.m */; };
+		346A5520206B8165002DD49A /* OTCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A551C206B8164002DD49A /* OTCollectionViewDataSource.m */; };
+		346A5521206B8165002DD49A /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A551F206B8164002DD49A /* WaterFlowLayout.m */; };
+		346A5524206B81B4002DD49A /* MTHorizontalPageFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */; };
 		F4AECAA8205E5314000F6D37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEC9E7205E5314000F6D37 /* AppDelegate.m */; };
 		F4AECAA9205E5314000F6D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AEC9E8205E5314000F6D37 /* Assets.xcassets */; };
 		F4AECAAA205E5314000F6D37 /* JLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEC9EB205E5314000F6D37 /* JLBaseViewController.m */; };
@@ -89,13 +92,17 @@
 		F4AECAF7205E5315000F6D37 /* XXInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA9D205E5314000F6D37 /* XXInteractiveTransition.m */; };
 		F4AECAF8205E5315000F6D37 /* XXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECAA0205E5314000F6D37 /* XXTransition.m */; };
 		F4AECAF9205E5315000F6D37 /* XXTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECAA2205E5314000F6D37 /* XXTransitionManager.m */; };
-		F4AECAFA205E5315000F6D37 /* OTCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECAA5205E5314000F6D37 /* OTCollectionViewDataSource.m */; };
-		F4AECAFB205E5315000F6D37 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECAA7205E5314000F6D37 /* WaterFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		346A5505206A4CDA002DD49A /* UIViewController+BottomPresent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BottomPresent.h"; sourceTree = "<group>"; };
 		346A5506206A4CDA002DD49A /* UIViewController+BottomPresent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BottomPresent.m"; sourceTree = "<group>"; };
+		346A551C206B8164002DD49A /* OTCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTCollectionViewDataSource.m; sourceTree = "<group>"; };
+		346A551D206B8164002DD49A /* WaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFlowLayout.h; sourceTree = "<group>"; };
+		346A551E206B8164002DD49A /* OTCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTCollectionViewDataSource.h; sourceTree = "<group>"; };
+		346A551F206B8164002DD49A /* WaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFlowLayout.m; sourceTree = "<group>"; };
+		346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHorizontalPageFlowLayout.m; sourceTree = "<group>"; };
+		346A5523206B81B4002DD49A /* MTHorizontalPageFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHorizontalPageFlowLayout.h; sourceTree = "<group>"; };
 		348D53FF1E27A5640005E96A /* JLKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4AEC9E6205E5314000F6D37 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F4AEC9E7205E5314000F6D37 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -260,10 +267,6 @@
 		F4AECAA0205E5314000F6D37 /* XXTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTransition.m; sourceTree = "<group>"; };
 		F4AECAA1205E5314000F6D37 /* XXTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXTransitionManager.h; sourceTree = "<group>"; };
 		F4AECAA2205E5314000F6D37 /* XXTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTransitionManager.m; sourceTree = "<group>"; };
-		F4AECAA4205E5314000F6D37 /* OTCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTCollectionViewDataSource.h; sourceTree = "<group>"; };
-		F4AECAA5205E5314000F6D37 /* OTCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTCollectionViewDataSource.m; sourceTree = "<group>"; };
-		F4AECAA6205E5314000F6D37 /* WaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFlowLayout.h; sourceTree = "<group>"; };
-		F4AECAA7205E5314000F6D37 /* WaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +280,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		346A551B206B8164002DD49A /* UICollectionViewlayout */ = {
+			isa = PBXGroup;
+			children = (
+				346A5523206B81B4002DD49A /* MTHorizontalPageFlowLayout.h */,
+				346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */,
+				346A551E206B8164002DD49A /* OTCollectionViewDataSource.h */,
+				346A551C206B8164002DD49A /* OTCollectionViewDataSource.m */,
+				346A551D206B8164002DD49A /* WaterFlowLayout.h */,
+				346A551F206B8164002DD49A /* WaterFlowLayout.m */,
+			);
+			path = UICollectionViewlayout;
+			sourceTree = "<group>";
+		};
 		348D53F61E27A5640005E96A = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +312,7 @@
 		F4AEC9E5205E5314000F6D37 /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				346A551B206B8164002DD49A /* UICollectionViewlayout */,
 				F4AEC9E6205E5314000F6D37 /* AppDelegate.h */,
 				F4AEC9E7205E5314000F6D37 /* AppDelegate.m */,
 				F4AEC9E8205E5314000F6D37 /* Assets.xcassets */,
@@ -330,7 +347,6 @@
 				F4AECA83205E5314000F6D37 /* TempViewController.m */,
 				F4AECA84205E5314000F6D37 /* textfiled */,
 				F4AECA89205E5314000F6D37 /* Transitton */,
-				F4AECAA3205E5314000F6D37 /* waterflowlayout */,
 				346A5505206A4CDA002DD49A /* UIViewController+BottomPresent.h */,
 				346A5506206A4CDA002DD49A /* UIViewController+BottomPresent.m */,
 			);
@@ -650,17 +666,6 @@
 			path = xxTransition;
 			sourceTree = "<group>";
 		};
-		F4AECAA3205E5314000F6D37 /* waterflowlayout */ = {
-			isa = PBXGroup;
-			children = (
-				F4AECAA4205E5314000F6D37 /* OTCollectionViewDataSource.h */,
-				F4AECAA5205E5314000F6D37 /* OTCollectionViewDataSource.m */,
-				F4AECAA6205E5314000F6D37 /* WaterFlowLayout.h */,
-				F4AECAA7205E5314000F6D37 /* WaterFlowLayout.m */,
-			);
-			path = waterflowlayout;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -766,6 +771,7 @@
 				F4AECAB7205E5314000F6D37 /* JLTabMoreView.m in Sources */,
 				F4AECAF1205E5315000F6D37 /* JLFoldAnimationer.m in Sources */,
 				F4AECAE8205E5315000F6D37 /* TabBarViewController.m in Sources */,
+				346A5524206B81B4002DD49A /* MTHorizontalPageFlowLayout.m in Sources */,
 				F4AECAAB205E5314000F6D37 /* JLNavigationController.m in Sources */,
 				F4AECAED205E5315000F6D37 /* JLHotAreaBtn.m in Sources */,
 				F4AECAB0205E5314000F6D37 /* MultifunctionBtn.m in Sources */,
@@ -806,11 +812,11 @@
 				F4AECABD205E5314000F6D37 /* NSObject+archive.m in Sources */,
 				F4AECAE4205E5314000F6D37 /* MTScrollNavgationController.m in Sources */,
 				F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */,
-				F4AECAFB205E5315000F6D37 /* WaterFlowLayout.m in Sources */,
+				346A5521206B8165002DD49A /* WaterFlowLayout.m in Sources */,
 				F4AECADA205E5314000F6D37 /* OTTableViewController.m in Sources */,
 				F4AECAB1205E5314000F6D37 /* HomeViewController.m in Sources */,
 				F4AECADF205E5314000F6D37 /* SettingGroupModel.m in Sources */,
-				F4AECAFA205E5315000F6D37 /* OTCollectionViewDataSource.m in Sources */,
+				346A5520206B8165002DD49A /* OTCollectionViewDataSource.m in Sources */,
 				F4AECAEF205E5315000F6D37 /* JLBaseAnimationEngine.m in Sources */,
 				F4AECAC4205E5314000F6D37 /* XMNavigationController+PanGesture.m in Sources */,
 				F4AECAD6205E5314000F6D37 /* UINavigationBar+BackGroundImage.m in Sources */,
