@@ -13,6 +13,7 @@
 #import "JLNavigationController.h"
 #import "JLFoldAnimationer.h"
 #import "JLHorizontalPanInteraction.h"
+#import "HomeContainerController.h"
 
 @interface TabBarViewController ()<
     UITabBarControllerDelegate
@@ -43,19 +44,14 @@
 //              context:nil];
     
     
-    UINavigationController *UI_Nav = [[XMNavigationController alloc]initWithRootViewController:[HomeViewController new]];
-    [self addChildViewController:UI_Nav];
-    UI_Nav.title = @"UI";
+    UINavigationController *homeNav = [[JLNavigationController alloc]initWithRootViewController:[HomeContainerController new]];
+    [self addChildViewController:homeNav];
+    homeNav.title = @"主页";
     
     UINavigationController *fullScrrenPop_Nav = [[JLNavigationController alloc]initWithRootViewController:[MyViewController new]];
     [self addChildViewController:fullScrrenPop_Nav];
     fullScrrenPop_Nav.title = @"我的";
     
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

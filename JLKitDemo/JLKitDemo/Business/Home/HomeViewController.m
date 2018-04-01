@@ -25,7 +25,6 @@
                   @{@"name":@"可拖动九宫格",@"vc":@"TestDragCollecViewController"},
                   @{@"name":@"菜单view",@"vc":@"Test_MenuViewController"},
                   @{@"name":@"collectionview布局",@"vc":@"TestCollectionViewController"},
-                  @{@"name":@"导航容器",@"vc":@"TestScrollViewController"},
                   @{@"name":@"登录页",@"vc":@"LoginViewController"},
                   @{@"name":@"indexbar",@"vc":@"TestIndexBarViewController"},
                   @{@"name":@"presentController_底部",@"block":^void(){

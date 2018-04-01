@@ -96,6 +96,8 @@
     [self mt_viewDidLoad];
     
     [self setUpNavigationBarUI];
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)mt_viewWillAppear:(BOOL)animated

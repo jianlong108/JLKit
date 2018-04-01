@@ -1,12 +1,12 @@
 //
-//  UIScrollNavgationController.m
+//  MTScrollContainerViewController.m
 //  MiTalk
 //
 //  Created by 王建龙 on 2017/9/6.
 //  Copyright © 2017年 Xiaomi. All rights reserved.
 //
 
-#import "MTScrollNavgationController.h"
+#import "MTScrollContainerViewController.h"
 #import "MTScrollView.h"
 #import "MTScrollTitleBar.h"
 

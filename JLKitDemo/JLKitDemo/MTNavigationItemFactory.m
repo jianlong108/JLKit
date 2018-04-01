@@ -7,7 +7,7 @@
 //
 
 #import "MTNavigationItemFactory.h"
-#import "GlobalConfig.h"
+#import "GlobalFunction.h"
 //#import "UIImage+Tint.h"
 
 
@@ -100,7 +100,7 @@ MTNavigationItemStateTitleKey const MTNavItemStateDisableTitleKey = @"MTNavItemS
 {
     NSMutableDictionary *newDicTionary = [originalDic mutableCopy];
     if (![originalDic objectForKey:MTNavItemNormalTintColorKey]) {
-        [newDicTionary setObject:[UIColor lightGrayColor] forKey:MTNavItemNormalTintColorKey];
+        [newDicTionary setObject:[UIColor whiteColor] forKey:MTNavItemNormalTintColorKey];
     }
     if (![originalDic objectForKey:MTNavItemHighlightedTintColorKey]) {
         [newDicTionary setObject:[[UIColor lightGrayColor] colorWithAlphaComponent:0.5]  forKey:MTNavItemHighlightedTintColorKey];

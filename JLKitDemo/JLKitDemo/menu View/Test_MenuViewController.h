@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLBaseViewController.h"
 
-@interface Test_MenuViewController : UIViewController
+@interface Test_MenuViewController : JLBaseViewController
 
 @end

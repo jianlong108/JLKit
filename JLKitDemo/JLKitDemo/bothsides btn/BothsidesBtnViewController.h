@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLBaseViewController.h"
 
-@interface BothsidesBtnViewController : UIViewController
+@interface BothsidesBtnViewController : JLBaseViewController
 
 @end

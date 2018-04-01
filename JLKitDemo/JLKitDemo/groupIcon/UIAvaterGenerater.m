@@ -7,7 +7,7 @@
 //
 
 #import "UIAvaterGenerater.h"
-#import "GlobalConfig.h"
+#import "GlobalFunction.h"
 #import "UIImage+JL.h"
 
 

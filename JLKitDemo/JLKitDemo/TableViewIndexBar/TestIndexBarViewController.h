@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLBaseViewController.h"
 
-@interface TestIndexBarViewController : UITableViewController
+@interface TestIndexBarViewController : JLBaseViewController
 
 @end

@@ -9,8 +9,13 @@
 #import "TestIndexBarViewController.h"
 #import "UITableView+IndexBar.h"
 
-@interface TestIndexBarViewController ()
+@interface TestIndexBarViewController ()<
+    UITableViewDelegate,
+    UITableViewDataSource
+>
 @property(nonatomic,strong) NSArray *datas;
+@property(nonatomic,strong) UITableView *tableView;
+
 @end
 
 @implementation TestIndexBarViewController
@@ -29,6 +34,16 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
    
+}
+
+- (UITableView *)tableView
+{
+    if (_tableView == nil) {
+        _tableView = [[UITableView alloc]init];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+    }
+    return _tableView;
 }
 
 - (void)viewDidAppear:(BOOL)animated{

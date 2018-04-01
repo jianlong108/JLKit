@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLBaseViewController.h"
 
-@interface TestDragCollecViewController : UIViewController
+@interface TestDragCollecViewController : JLBaseViewController
 
 @end

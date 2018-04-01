@@ -16,6 +16,14 @@ static inline UIColor * UIColorFromRGB(int rgbValue)
                            alpha:1.0];
 }
 
+static inline UIColor * UIColorFromIntValue_rgba(int r,int g,int b,CGFloat a)
+{
+    return [UIColor colorWithRed:r/255.0
+                           green:g/255.0
+                            blue:b/255.0
+                           alpha:1.0];
+}
+
 static inline BOOL String_is_invalide(NSString *str)
 {
     if (str == nil || [str isEqualToString:@""]) {
