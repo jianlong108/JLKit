@@ -8,7 +8,7 @@
 
 #import "HomeViewController.h"
 #import "UIViewController+PresentController.h"
-#import "LoginViewController.h"
+#import "HomeFunctionViewController.h"
 
 
 @interface HomeViewController ()
@@ -32,7 +32,7 @@
             [self customPresentViewController:home animated:YES completion:nil];
         }},
                   @{@"name":@"presentController_中部",@"block":^void(){
-            LoginViewController *home = [[LoginViewController alloc]init];
+            HomeFunctionViewController *home = [[HomeFunctionViewController alloc]init];
             [self customPresentViewController:home animated:YES completion:nil];
         }},
                   

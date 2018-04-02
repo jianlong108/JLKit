@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomPresentViewControllerProtocol.h"
+#import "OTTableViewController.h"
 
-@interface HomeViewController : UITableViewController<CustomPresentViewControllerProtocol>
+@interface HomeViewController : OTTableViewController<CustomPresentViewControllerProtocol>
 
 
 @end

@@ -11,6 +11,7 @@
 #import "HomeViewController.h"
 #import "UIImage+JL.h"
 #import "GlobalFunction.h"
+#import "HomeFunctionViewController.h"
 
 @interface HomeContainerController ()<
     MTScrollNavigationViewControllerDataSource,
@@ -64,7 +65,7 @@
     if (index == 0) {
         return [[HomeViewController alloc]init];
     } else {
-        return [[UIViewController alloc]init];
+        return [[HomeFunctionViewController alloc]init];
     }
 }
 
