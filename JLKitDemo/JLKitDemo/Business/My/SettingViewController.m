@@ -11,6 +11,8 @@
 #import "SettingCell.h"
 #import "SettingGroupModel.h"
 #import "UIImage+JL.h"
+#import "TagItem.h"
+#import "TagCellTableViewCell.h"
 
 
 @implementation  SettingViewController
@@ -31,11 +33,14 @@
 - (void)setupGroup1
 {
     SettingItem *pushNotice = [SettingArrowItem itemWithIcon:@"MorePush" title:@"设置" destVcClass:[UIViewController class]];
+    TagItem *item = [[TagItem alloc]init];
+    
+    
     
     SettingGroupModel *group = [[SettingGroupModel alloc] init];
     
     group.headerHeight = 20;
-    group.items = @[pushNotice];
+    group.items = @[pushNotice,item];
     [self.data addObject:group];
 }
 - (void)setupGroup2
@@ -85,6 +90,7 @@
     
     [self.tableView registerClass:[LoginCell class] forCellReuseIdentifier:@"loginCell"];
     [self.tableView registerClass:[SettingCell class] forCellReuseIdentifier:@"settingCell"];
+    [self.tableView registerClass:[TagCellTableViewCell class] forCellReuseIdentifier:TagCellTableViewCell_ReuseIdentifer];
     // 2.添加数据
     [self setupGroup0];
     [self setupGroup1];

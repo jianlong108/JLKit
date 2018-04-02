@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3401375720726BF5002D46D2 /* HomeFunctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375520726BF5002D46D2 /* HomeFunctionViewController.m */; };
 		3401375A20726BFF002D46D2 /* MTHorizontalWaterFullLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375820726BFF002D46D2 /* MTHorizontalWaterFullLayout.m */; };
+		3401375D20726CC4002D46D2 /* TagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375C20726CC4002D46D2 /* TagItem.m */; };
+		3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */; };
 		346A5520206B8165002DD49A /* OTCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A551C206B8164002DD49A /* OTCollectionViewDataSource.m */; };
 		346A5521206B8165002DD49A /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A551F206B8164002DD49A /* WaterFlowLayout.m */; };
 		346A5524206B81B4002DD49A /* MTHorizontalPageFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */; };
@@ -101,6 +103,10 @@
 		3401375620726BF5002D46D2 /* HomeFunctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFunctionViewController.h; sourceTree = "<group>"; };
 		3401375820726BFF002D46D2 /* MTHorizontalWaterFullLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHorizontalWaterFullLayout.m; sourceTree = "<group>"; };
 		3401375920726BFF002D46D2 /* MTHorizontalWaterFullLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHorizontalWaterFullLayout.h; sourceTree = "<group>"; };
+		3401375B20726CC4002D46D2 /* TagItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagItem.h; sourceTree = "<group>"; };
+		3401375C20726CC4002D46D2 /* TagItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagItem.m; sourceTree = "<group>"; };
+		3401375E20726E8A002D46D2 /* TagCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellTableViewCell.h; sourceTree = "<group>"; };
+		3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellTableViewCell.m; sourceTree = "<group>"; };
 		346A551C206B8164002DD49A /* OTCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTCollectionViewDataSource.m; sourceTree = "<group>"; };
 		346A551D206B8164002DD49A /* WaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFlowLayout.h; sourceTree = "<group>"; };
 		346A551E206B8164002DD49A /* OTCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTCollectionViewDataSource.h; sourceTree = "<group>"; };
@@ -305,10 +311,10 @@
 		346A5530206B9629002DD49A /* PresentController */ = {
 			isa = PBXGroup;
 			children = (
-				346A5531206B9629002DD49A /* MTPresentationController.h */,
-				346A5532206B9629002DD49A /* UIViewController+PresentController.h */,
-				346A5533206B9629002DD49A /* MTPresentationController.m */,
 				346A5534206B9629002DD49A /* CustomPresentViewControllerProtocol.h */,
+				346A5531206B9629002DD49A /* MTPresentationController.h */,
+				346A5533206B9629002DD49A /* MTPresentationController.m */,
+				346A5532206B9629002DD49A /* UIViewController+PresentController.h */,
 				346A5535206B9629002DD49A /* UIViewController+PresentController.m */,
 			);
 			path = PresentController;
@@ -577,12 +583,16 @@
 				F4AECA61205E5314000F6D37 /* SettingArrowItem.m */,
 				F4AECA62205E5314000F6D37 /* SettingCell.h */,
 				F4AECA63205E5314000F6D37 /* SettingCell.m */,
+				3401375E20726E8A002D46D2 /* TagCellTableViewCell.h */,
+				3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */,
 				F4AECA64205E5314000F6D37 /* SettingCustonItem.h */,
 				F4AECA65205E5314000F6D37 /* SettingCustonItem.m */,
 				F4AECA66205E5314000F6D37 /* SettingGroupModel.h */,
 				F4AECA67205E5314000F6D37 /* SettingGroupModel.m */,
 				F4AECA68205E5314000F6D37 /* SettingItem.h */,
 				F4AECA69205E5314000F6D37 /* SettingItem.m */,
+				3401375B20726CC4002D46D2 /* TagItem.h */,
+				3401375C20726CC4002D46D2 /* TagItem.m */,
 				F4AECA6A205E5314000F6D37 /* SettingLabelItem.h */,
 				F4AECA6B205E5314000F6D37 /* SettingLabelItem.m */,
 				F4AECA6C205E5314000F6D37 /* SettingSwitchItem.h */,
@@ -774,6 +784,7 @@
 				F4AECAF8205E5315000F6D37 /* XXTransition.m in Sources */,
 				F4AECAC9205E5314000F6D37 /* UINavigationController+FullScreenPopGesture.m in Sources */,
 				F4AECAE1205E5314000F6D37 /* SettingLabelItem.m in Sources */,
+				3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */,
 				F4AECAAF205E5314000F6D37 /* JLBothSidesBtn.m in Sources */,
 				F4AECAE2205E5314000F6D37 /* SettingSwitchItem.m in Sources */,
 				F4AECADC205E5314000F6D37 /* SettingArrowItem.m in Sources */,
@@ -812,6 +823,7 @@
 				F49DDE192070B9F200793B40 /* JLBaseViewController.m in Sources */,
 				F4AECACE205E5314000F6D37 /* infinitLoopViewController.m in Sources */,
 				F4AECAC1205E5314000F6D37 /* UIViewController+XMNavigationController.m in Sources */,
+				3401375D20726CC4002D46D2 /* TagItem.m in Sources */,
 				F4AECADB205E5314000F6D37 /* OTTableViewCore.m in Sources */,
 				F4AECAE0205E5314000F6D37 /* SettingItem.m in Sources */,
 				F4AECAC0205E5314000F6D37 /* NSObject+AssociateObj.m in Sources */,

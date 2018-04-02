@@ -21,6 +21,8 @@ typedef NS_ENUM(NSInteger, HorizontalWaterFullLayoutStyle) {
 
 @interface MTHorizontalWaterFullLayout : UICollectionViewLayout
 
+@property (nonatomic, readonly) CGFloat maxWidth;
+
 @property (nonatomic, readonly) NSMutableArray<id<HorizontalWaterFullModelProtocol>> *dataes;
 
 - (instancetype)initWithDataes:(NSArray <id<HorizontalWaterFullModelProtocol>>*)dates maxWidth:(CGFloat)maxWidth itemHeight:(CGFloat)itemHeight style:(HorizontalWaterFullLayoutStyle)style;
