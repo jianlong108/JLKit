@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "JLBaseViewController.h"
-#import "OTPotocol.h"
+#import "OTProtocol.h"
 
 @interface OTTableViewController : JLBaseViewController
 
-@property(nonatomic,strong) NSMutableArray<id <OTGroupItemProtocol>> *data;
+@property(nonatomic,strong) NSMutableArray<id <OTSectionItemProtocol>> *data;
 
 @property(nonatomic,strong,readonly)UITableView *tableView;
 

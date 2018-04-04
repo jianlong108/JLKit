@@ -11,7 +11,7 @@
 #import "SettingSwitchItem.h"
 #import "SettingArrowItem.h"
 #import "SettingItem.h"
-#import "OTPotocol.h"
+#import "OTProtocol.h"
 
 extern NSString * const settingCell_ReuseIdentifer;
 

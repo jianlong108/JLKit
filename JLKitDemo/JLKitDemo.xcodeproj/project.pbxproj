@@ -11,11 +11,16 @@
 		3401375A20726BFF002D46D2 /* MTHorizontalWaterFullLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375820726BFF002D46D2 /* MTHorizontalWaterFullLayout.m */; };
 		3401375D20726CC4002D46D2 /* TagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375C20726CC4002D46D2 /* TagItem.m */; };
 		3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */; };
-		346A5520206B8165002DD49A /* OTCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A551C206B8164002DD49A /* OTCollectionViewDataSource.m */; };
-		346A5521206B8165002DD49A /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A551F206B8164002DD49A /* WaterFlowLayout.m */; };
 		346A5524206B81B4002DD49A /* MTHorizontalPageFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */; };
 		346A5536206B9629002DD49A /* MTPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5533206B9629002DD49A /* MTPresentationController.m */; };
 		346A5537206B9629002DD49A /* UIViewController+PresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5535206B9629002DD49A /* UIViewController+PresentController.m */; };
+		F40A188D207529C2008D7798 /* SimpleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A188C207529C2008D7798 /* SimpleModel.m */; };
+		F40A189D20752B5B008D7798 /* OTSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A189520752B5B008D7798 /* OTSectionModel.m */; };
+		F40A189E20752B5B008D7798 /* OTRowItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A189620752B5B008D7798 /* OTRowItemModel.m */; };
+		F40A18A220752CBE008D7798 /* OTTableViewPivot.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A020752CBE008D7798 /* OTTableViewPivot.m */; };
+		F40A18A520752E4E008D7798 /* SimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A420752E4E008D7798 /* SimpleCell.m */; };
+		F40A18A8207530F8008D7798 /* UIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A7207530F8008D7798 /* UIWebViewController.m */; };
+		F40A18AA207536A2008D7798 /* one.html in Resources */ = {isa = PBXBuildFile; fileRef = F40A18A9207536A2008D7798 /* one.html */; };
 		F49DDE112070AC0D00793B40 /* HomeContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F49DDE102070AC0D00793B40 /* HomeContainerController.m */; };
 		F49DDE192070B9F200793B40 /* JLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F49DDE142070B9F200793B40 /* JLBaseViewController.m */; };
 		F49DDE1A2070B9F200793B40 /* JLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F49DDE162070B9F200793B40 /* JLNavigationController.m */; };
@@ -67,7 +72,6 @@
 		F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA56205E5314000F6D37 /* UIViewController+NavigationBar.m */; };
 		F4AECAD9205E5314000F6D37 /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA59205E5314000F6D37 /* LoginCell.m */; };
 		F4AECADA205E5314000F6D37 /* OTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA5D205E5314000F6D37 /* OTTableViewController.m */; };
-		F4AECADB205E5314000F6D37 /* OTTableViewCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA5F205E5314000F6D37 /* OTTableViewCore.m */; };
 		F4AECADC205E5314000F6D37 /* SettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA61205E5314000F6D37 /* SettingArrowItem.m */; };
 		F4AECADD205E5314000F6D37 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA63205E5314000F6D37 /* SettingCell.m */; };
 		F4AECADE205E5314000F6D37 /* SettingCustonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA65205E5314000F6D37 /* SettingCustonItem.m */; };
@@ -107,10 +111,6 @@
 		3401375C20726CC4002D46D2 /* TagItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagItem.m; sourceTree = "<group>"; };
 		3401375E20726E8A002D46D2 /* TagCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellTableViewCell.h; sourceTree = "<group>"; };
 		3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellTableViewCell.m; sourceTree = "<group>"; };
-		346A551C206B8164002DD49A /* OTCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTCollectionViewDataSource.m; sourceTree = "<group>"; };
-		346A551D206B8164002DD49A /* WaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFlowLayout.h; sourceTree = "<group>"; };
-		346A551E206B8164002DD49A /* OTCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTCollectionViewDataSource.h; sourceTree = "<group>"; };
-		346A551F206B8164002DD49A /* WaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFlowLayout.m; sourceTree = "<group>"; };
 		346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHorizontalPageFlowLayout.m; sourceTree = "<group>"; };
 		346A5523206B81B4002DD49A /* MTHorizontalPageFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHorizontalPageFlowLayout.h; sourceTree = "<group>"; };
 		346A5531206B9629002DD49A /* MTPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPresentationController.h; sourceTree = "<group>"; };
@@ -119,6 +119,22 @@
 		346A5534206B9629002DD49A /* CustomPresentViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentViewControllerProtocol.h; sourceTree = "<group>"; };
 		346A5535206B9629002DD49A /* UIViewController+PresentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PresentController.m"; sourceTree = "<group>"; };
 		348D53FF1E27A5640005E96A /* JLKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F40A188B207529C2008D7798 /* SimpleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleModel.h; sourceTree = "<group>"; };
+		F40A188C207529C2008D7798 /* SimpleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleModel.m; sourceTree = "<group>"; };
+		F40A189120752B5B008D7798 /* SettingCellDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCellDataProtocol.h; sourceTree = "<group>"; };
+		F40A189320752B5B008D7798 /* OTHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTHeader.h; sourceTree = "<group>"; };
+		F40A189420752B5B008D7798 /* OTRowItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRowItemModel.h; sourceTree = "<group>"; };
+		F40A189520752B5B008D7798 /* OTSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTSectionModel.m; sourceTree = "<group>"; };
+		F40A189620752B5B008D7798 /* OTRowItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRowItemModel.m; sourceTree = "<group>"; };
+		F40A189720752B5B008D7798 /* OTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTProtocol.h; sourceTree = "<group>"; };
+		F40A189820752B5B008D7798 /* OTSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTSectionModel.h; sourceTree = "<group>"; };
+		F40A18A020752CBE008D7798 /* OTTableViewPivot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewPivot.m; sourceTree = "<group>"; };
+		F40A18A120752CBE008D7798 /* OTTableViewPivot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewPivot.h; sourceTree = "<group>"; };
+		F40A18A320752E4E008D7798 /* SimpleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleCell.h; sourceTree = "<group>"; };
+		F40A18A420752E4E008D7798 /* SimpleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleCell.m; sourceTree = "<group>"; };
+		F40A18A6207530F8008D7798 /* UIWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIWebViewController.h; sourceTree = "<group>"; };
+		F40A18A7207530F8008D7798 /* UIWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIWebViewController.m; sourceTree = "<group>"; };
+		F40A18A9207536A2008D7798 /* one.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = one.html; sourceTree = "<group>"; };
 		F49DDE0F2070AC0D00793B40 /* HomeContainerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeContainerController.h; sourceTree = "<group>"; };
 		F49DDE102070AC0D00793B40 /* HomeContainerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeContainerController.m; sourceTree = "<group>"; };
 		F49DDE132070B9F200793B40 /* JLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLBaseViewController.h; sourceTree = "<group>"; };
@@ -218,11 +234,8 @@
 		F4AECA56205E5314000F6D37 /* UIViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NavigationBar.m"; sourceTree = "<group>"; };
 		F4AECA58205E5314000F6D37 /* LoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCell.h; sourceTree = "<group>"; };
 		F4AECA59205E5314000F6D37 /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
-		F4AECA5B205E5314000F6D37 /* OTPotocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPotocol.h; sourceTree = "<group>"; };
 		F4AECA5C205E5314000F6D37 /* OTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewController.h; sourceTree = "<group>"; };
 		F4AECA5D205E5314000F6D37 /* OTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewController.m; sourceTree = "<group>"; };
-		F4AECA5E205E5314000F6D37 /* OTTableViewCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewCore.h; sourceTree = "<group>"; };
-		F4AECA5F205E5314000F6D37 /* OTTableViewCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewCore.m; sourceTree = "<group>"; };
 		F4AECA60205E5314000F6D37 /* SettingArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingArrowItem.h; sourceTree = "<group>"; };
 		F4AECA61205E5314000F6D37 /* SettingArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingArrowItem.m; sourceTree = "<group>"; };
 		F4AECA62205E5314000F6D37 /* SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
@@ -300,10 +313,6 @@
 				3401375820726BFF002D46D2 /* MTHorizontalWaterFullLayout.m */,
 				346A5523206B81B4002DD49A /* MTHorizontalPageFlowLayout.h */,
 				346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */,
-				346A551E206B8164002DD49A /* OTCollectionViewDataSource.h */,
-				346A551C206B8164002DD49A /* OTCollectionViewDataSource.m */,
-				346A551D206B8164002DD49A /* WaterFlowLayout.h */,
-				346A551F206B8164002DD49A /* WaterFlowLayout.m */,
 			);
 			path = UICollectionViewlayout;
 			sourceTree = "<group>";
@@ -345,6 +354,8 @@
 				F49DDE162070B9F200793B40 /* JLNavigationController.m */,
 				F49DDE172070B9F200793B40 /* UINavigationController+DelegateManager.h */,
 				F49DDE182070B9F200793B40 /* UINavigationController+DelegateManager.m */,
+				F40A18A6207530F8008D7798 /* UIWebViewController.h */,
+				F40A18A7207530F8008D7798 /* UIWebViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -352,6 +363,7 @@
 		F4AEC9E5205E5314000F6D37 /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F40A18A9207536A2008D7798 /* one.html */,
 				346A5530206B9629002DD49A /* PresentController */,
 				346A551B206B8164002DD49A /* UICollectionViewlayout */,
 				F4AEC9E8205E5314000F6D37 /* Assets.xcassets */,
@@ -408,6 +420,10 @@
 				F4AECA7A205E5314000F6D37 /* TabBarViewController.m */,
 				F4AEC9FA205E5314000F6D37 /* Home */,
 				F4AEC9FD205E5314000F6D37 /* My */,
+				F40A188B207529C2008D7798 /* SimpleModel.h */,
+				F40A188C207529C2008D7798 /* SimpleModel.m */,
+				F40A18A320752E4E008D7798 /* SimpleCell.h */,
+				F40A18A420752E4E008D7798 /* SimpleCell.m */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -604,11 +620,17 @@
 		F4AECA5A205E5314000F6D37 /* OT */ = {
 			isa = PBXGroup;
 			children = (
-				F4AECA5B205E5314000F6D37 /* OTPotocol.h */,
+				F40A189320752B5B008D7798 /* OTHeader.h */,
+				F40A189720752B5B008D7798 /* OTProtocol.h */,
+				F40A189420752B5B008D7798 /* OTRowItemModel.h */,
+				F40A189620752B5B008D7798 /* OTRowItemModel.m */,
+				F40A189820752B5B008D7798 /* OTSectionModel.h */,
+				F40A189520752B5B008D7798 /* OTSectionModel.m */,
 				F4AECA5C205E5314000F6D37 /* OTTableViewController.h */,
 				F4AECA5D205E5314000F6D37 /* OTTableViewController.m */,
-				F4AECA5E205E5314000F6D37 /* OTTableViewCore.h */,
-				F4AECA5F205E5314000F6D37 /* OTTableViewCore.m */,
+				F40A18A120752CBE008D7798 /* OTTableViewPivot.h */,
+				F40A18A020752CBE008D7798 /* OTTableViewPivot.m */,
+				F40A189120752B5B008D7798 /* SettingCellDataProtocol.h */,
 			);
 			path = OT;
 			sourceTree = "<group>";
@@ -756,6 +778,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4AECAA9205E5314000F6D37 /* Assets.xcassets in Resources */,
+				F40A18AA207536A2008D7798 /* one.html in Resources */,
 				F4AECAAD205E5314000F6D37 /* LaunchScreen.storyboard in Resources */,
 				F4AECACF205E5314000F6D37 /* Info.plist in Resources */,
 			);
@@ -780,6 +803,7 @@
 				F4AECAEA205E5315000F6D37 /* UITableView+IndexBar.m in Sources */,
 				F4AECABF205E5314000F6D37 /* UIImage+JL.m in Sources */,
 				F4AECAE9205E5315000F6D37 /* TestIndexBarViewController.m in Sources */,
+				F40A189E20752B5B008D7798 /* OTRowItemModel.m in Sources */,
 				F4AECAF3205E5315000F6D37 /* UINavigationController+XXTransition.m in Sources */,
 				F4AECAF8205E5315000F6D37 /* XXTransition.m in Sources */,
 				F4AECAC9205E5314000F6D37 /* UINavigationController+FullScreenPopGesture.m in Sources */,
@@ -792,6 +816,7 @@
 				F4AECAD4205E5314000F6D37 /* Test_MenuViewController.m in Sources */,
 				F4AECACC205E5314000F6D37 /* UIAvaterGenerater.m in Sources */,
 				346A5536206B9629002DD49A /* MTPresentationController.m in Sources */,
+				F40A18A520752E4E008D7798 /* SimpleCell.m in Sources */,
 				F4AECABE205E5314000F6D37 /* NSString+JL.m in Sources */,
 				F4AECAD0205E5314000F6D37 /* IOS11Adapter.m in Sources */,
 				F4AECAF9205E5315000F6D37 /* XXTransitionManager.m in Sources */,
@@ -810,6 +835,7 @@
 				F4AECAC6205E5314000F6D37 /* XMNavigationController+UIViewControllerInXMNavigationController.m in Sources */,
 				F4AECAE5205E5315000F6D37 /* MTScrollTitleBar.m in Sources */,
 				F4AECAA8205E5314000F6D37 /* AppDelegate.m in Sources */,
+				F40A189D20752B5B008D7798 /* OTSectionModel.m in Sources */,
 				F4AECAF7205E5315000F6D37 /* XXInteractiveTransition.m in Sources */,
 				F4AECAC8205E5314000F6D37 /* NavigationTranstionEngine.m in Sources */,
 				F4AECABC205E5314000F6D37 /* NSNumber+JL.m in Sources */,
@@ -824,9 +850,9 @@
 				F4AECACE205E5314000F6D37 /* infinitLoopViewController.m in Sources */,
 				F4AECAC1205E5314000F6D37 /* UIViewController+XMNavigationController.m in Sources */,
 				3401375D20726CC4002D46D2 /* TagItem.m in Sources */,
-				F4AECADB205E5314000F6D37 /* OTTableViewCore.m in Sources */,
 				F4AECAE0205E5314000F6D37 /* SettingItem.m in Sources */,
 				F4AECAC0205E5314000F6D37 /* NSObject+AssociateObj.m in Sources */,
+				F40A18A220752CBE008D7798 /* OTTableViewPivot.m in Sources */,
 				F4AECAB2205E5314000F6D37 /* LoginViewController.m in Sources */,
 				F4AECAF6205E5315000F6D37 /* XXGlobalConst.m in Sources */,
 				F4AECAC5205E5314000F6D37 /* XMNavigationController+Stack.m in Sources */,
@@ -840,17 +866,17 @@
 				F4AECAAE205E5314000F6D37 /* BothsidesBtnViewController.m in Sources */,
 				F4AECAB4205E5314000F6D37 /* SettingViewController.m in Sources */,
 				F4AECAB8205E5314000F6D37 /* TestDragCollecViewController.m in Sources */,
+				F40A18A8207530F8008D7798 /* UIWebViewController.m in Sources */,
 				3401375720726BF5002D46D2 /* HomeFunctionViewController.m in Sources */,
 				F4AECABB205E5314000F6D37 /* NSData+JL.m in Sources */,
 				346A5537206B9629002DD49A /* UIViewController+PresentController.m in Sources */,
 				F4AECABD205E5314000F6D37 /* NSObject+archive.m in Sources */,
 				F4AECAE4205E5314000F6D37 /* MTScrollContainerViewController.m in Sources */,
+				F40A188D207529C2008D7798 /* SimpleModel.m in Sources */,
 				F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */,
-				346A5521206B8165002DD49A /* WaterFlowLayout.m in Sources */,
 				F4AECADA205E5314000F6D37 /* OTTableViewController.m in Sources */,
 				F4AECAB1205E5314000F6D37 /* HomeViewController.m in Sources */,
 				F4AECADF205E5314000F6D37 /* SettingGroupModel.m in Sources */,
-				346A5520206B8165002DD49A /* OTCollectionViewDataSource.m in Sources */,
 				F4AECAEF205E5315000F6D37 /* JLBaseAnimationEngine.m in Sources */,
 				F4AECAC4205E5314000F6D37 /* XMNavigationController+PanGesture.m in Sources */,
 				F4AECAD6205E5314000F6D37 /* UINavigationBar+BackGroundImage.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OTPotocol.h"
+#import "OTProtocol.h"
 #import "MTHorizontalWaterFullLayout.h"
 
 @interface TagItemModel :NSObject<HorizontalWaterFullModelProtocol>

@@ -37,9 +37,7 @@
 - (CGFloat)heightOfCell{
     return 44;
 }
-- (SettingCellClickBlock)doSomeThingOfClickCell{
-    return self.option;
-}
+
 - (NSString *)reuseableIdentierOfCell{
     return @"settingCell";
 }

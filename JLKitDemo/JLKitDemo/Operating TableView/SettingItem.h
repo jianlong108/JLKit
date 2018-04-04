@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OTPotocol.h"
+#import "OTProtocol.h"
 
 typedef void (^SettingItemOption)(id);
 

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OTPotocol.h"
+#import "OTProtocol.h"
 
 @interface LoginCell : UITableViewCell<OTCellProtocol>
 

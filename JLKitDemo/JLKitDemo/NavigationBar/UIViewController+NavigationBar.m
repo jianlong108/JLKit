@@ -9,6 +9,7 @@
 #import "UIViewController+NavigationBar.h"
 #import "MTNavigationItemFactory.h"
 #import <objc/runtime.h>
+#import "NavgiationBarOfViewControllerProtocol.h"
 
 #import "UINavigationController+Cloudox.h"
 #include "UINavigationBar+BackGroundImage.h"
@@ -171,6 +172,7 @@
     }
 }
 
+#pragma mark - NavgiationBarOfViewControllerProtocol
 
 - (NSArray<UIBarButtonItem *> *)navigationBarRightBarButtonItems
 {
@@ -204,6 +206,21 @@
 - (BOOL)needUpdateNavigationBarWhenAttributeChange
 {
     return NO;
+}
+
+- (NSString *)backTitle
+{
+    return nil;
+}
+
+- (NSString *)backTitleForPeakViewController
+{
+    return nil;
+}
+
+- (BOOL)hidesBackButtonOfNavigationBar
+{
+    return YES;
 }
 
 #pragma mark - AssociateObject

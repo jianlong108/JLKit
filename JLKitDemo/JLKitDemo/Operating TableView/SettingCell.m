@@ -24,11 +24,12 @@ NSString  * const settingCell_ReuseIdentifer = @"SettingCell_ReuseIdentifer";
  */
 @property (nonatomic, strong) UILabel *labelView;
 
-@property(nonatomic,strong) SettingItem *item;
 
 @end
 
 @implementation SettingCell
+@synthesize item = _item;
+
 - (UIImageView *)arrowView
 {
     if (_arrowView == nil) {
@@ -89,17 +90,17 @@ NSString  * const settingCell_ReuseIdentifer = @"SettingCell_ReuseIdentifer";
  */
 - (void)setupData
 {
-    if (self.item.icon) {
-        self.imageView.image = [UIImage imageNamed:self.item.icon];
-    }
-    self.textLabel.text = self.item.title;
+//    if (self.item.icon) {
+//        self.imageView.image = [UIImage imageNamed:self.item.icon];
+//    }
+//    self.textLabel.text = self.item.title;
 }
 
 - (void)clickSwitch:(UISwitch *)sender{
     NSNumber *state = [NSNumber numberWithBool:[sender isOn]];
-    if (self.item.option) {
-        self.item.option(state);
-    }
+//    if (self.item.option) {
+//        self.item.option(state);
+//    }
 }
 
 @end

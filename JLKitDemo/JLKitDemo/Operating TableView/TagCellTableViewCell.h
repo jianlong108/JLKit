@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OTPotocol.h"
+#import "OTProtocol.h"
 #import "TagItem.h"
 extern NSString * const TagCellTableViewCell_ReuseIdentifer;
 

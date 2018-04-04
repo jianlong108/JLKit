@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "OTPotocol.h"
+#import "OTProtocol.h"
 #import "SettingItem.h"
 
-@interface SettingGroupModel : NSObject<OTGroupItemProtocol>
+@interface SettingGroupModel : NSObject<OTSectionItemProtocol>
 /**
  *  头部标题
  */

@@ -7,13 +7,13 @@
 //
 
 #import "OTTableViewController.h"
-#import "OTTableViewCore.h"
+#import "OTTableViewPivot.h"
 
 
 @interface OTTableViewController ()
 
 @property(nonatomic,strong,readwrite)UITableView *tableView;
-@property(nonatomic,strong) OTTableViewCore *tableViewCore;
+@property(nonatomic,strong) OTTableViewPivot *tableViewCore;
 
 @end
 
@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
     
-    _tableViewCore = [[OTTableViewCore alloc]init];
+    _tableViewCore = [[OTTableViewPivot alloc]init];
     
     [self.view addSubview:self.tableView];
     
@@ -38,7 +38,7 @@
 
 - (NSMutableArray *)data
 {
-    return _tableViewCore.items;
+    return _tableViewCore.sectionItems;
 }
 
 - (UITableView *)tableView

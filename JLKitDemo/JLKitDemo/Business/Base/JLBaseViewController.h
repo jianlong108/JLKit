@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JLNavigationController.h"
+#import "NavgiationBarOfViewControllerProtocol.h"
 
 
 /**
@@ -16,7 +17,7 @@
  对电池条(statusbar) 和横竖屏的支持,提供了默认的定制
  
  */
-@interface JLBaseViewController : UIViewController
+@interface JLBaseViewController : UIViewController<NavgiationBarOfViewControllerProtocol>
 
 /**
  以下方法子类可以实现自身对navigationBar的定制
