@@ -100,8 +100,8 @@
         NSString *docDir = [paths objectAtIndex:0];
         NSMutableString *str_m = [NSMutableString stringWithString:docDir];
         
-//        NSURL *url = [NSURL fileURLWithPath:[str_m stringByAppendingPathComponent:@"one.html"]];
-        NSURL *url = [NSURL fileURLWithPath:@"/Users/dalong/Desktop/one.html"];
+        NSURL *url = [NSURL fileURLWithPath:[str_m stringByAppendingPathComponent:@"one.html"]];
+//        NSURL *url = [NSURL fileURLWithPath:@"/Users/dalong/Desktop/one.html"];
         UIWebViewController *webVc = [[UIWebViewController alloc]initWithURL:url];
         [self.navigationController pushViewController:webVc animated:YES];
     };

@@ -7,12 +7,9 @@
 //
 
 #import "JLBaseViewController.h"
-//#import "SkinUtil.h"
-//#import "UIStackManager.h"
 #import "UIImage+JL.h"
-//#import "NSAttributedString+Truncate.h"
-//#import "MBProgressHUD.h"
 #import "MTNavigationItemFactory.h"
+#import "GlobalFunction.h"
 
 @interface JLBaseViewController ()
 
@@ -79,7 +76,7 @@
 }
 
 - (UIImage *)navigationBarBackgroundImageForHomepage {
-    return [UIImage imageWithUIColor:[UIColor blueColor]];
+    return [UIImage imageWithUIColor:UIColorFromIntValue_rgba(55, 149, 250, 1.0)];
 }
 
 - (NSDictionary *)navigationBarTitleTextAttributes {
