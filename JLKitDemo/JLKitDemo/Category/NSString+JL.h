@@ -6,10 +6,14 @@
 //  Copyright © 2018年 JL. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface NSString (JL)
 
 - (BOOL)isEmpty;
+
+- (NSString *)stringByAppendingNameScale:(CGFloat)scale;
+
+- (NSString *)stringByAppendingPathScale:(CGFloat)scale;
 
 @end

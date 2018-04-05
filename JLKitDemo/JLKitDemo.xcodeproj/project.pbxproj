@@ -21,6 +21,7 @@
 		F40A18A520752E4E008D7798 /* SimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A420752E4E008D7798 /* SimpleCell.m */; };
 		F40A18A8207530F8008D7798 /* UIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A7207530F8008D7798 /* UIWebViewController.m */; };
 		F40A18AE2075EDA5008D7798 /* one.html in Resources */ = {isa = PBXBuildFile; fileRef = F40A18AD2075EDA5008D7798 /* one.html */; };
+		F40A18B12075F535008D7798 /* NSBundle+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18B02075F535008D7798 /* NSBundle+JL.m */; };
 		F49DDE112070AC0D00793B40 /* HomeContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F49DDE102070AC0D00793B40 /* HomeContainerController.m */; };
 		F49DDE192070B9F200793B40 /* JLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F49DDE142070B9F200793B40 /* JLBaseViewController.m */; };
 		F49DDE1A2070B9F200793B40 /* JLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F49DDE162070B9F200793B40 /* JLNavigationController.m */; };
@@ -65,7 +66,7 @@
 		F4AECAD0205E5314000F6D37 /* IOS11Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA44205E5314000F6D37 /* IOS11Adapter.m */; };
 		F4AECAD2205E5314000F6D37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA47205E5314000F6D37 /* main.m */; };
 		F4AECAD3205E5314000F6D37 /* JLMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA4A205E5314000F6D37 /* JLMenuView.m */; };
-		F4AECAD4205E5314000F6D37 /* Test_MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA4C205E5314000F6D37 /* Test_MenuViewController.m */; };
+		F4AECAD4205E5314000F6D37 /* TestMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA4C205E5314000F6D37 /* TestMenuViewController.m */; };
 		F4AECAD5205E5314000F6D37 /* MTNavigationItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA4E205E5314000F6D37 /* MTNavigationItemFactory.m */; };
 		F4AECAD6205E5314000F6D37 /* UINavigationBar+BackGroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA52205E5314000F6D37 /* UINavigationBar+BackGroundImage.m */; };
 		F4AECAD7205E5314000F6D37 /* UINavigationController+Cloudox.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA54205E5314000F6D37 /* UINavigationController+Cloudox.m */; };
@@ -135,6 +136,8 @@
 		F40A18A6207530F8008D7798 /* UIWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIWebViewController.h; sourceTree = "<group>"; };
 		F40A18A7207530F8008D7798 /* UIWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIWebViewController.m; sourceTree = "<group>"; };
 		F40A18AD2075EDA5008D7798 /* one.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = one.html; sourceTree = "<group>"; };
+		F40A18AF2075F535008D7798 /* NSBundle+JL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+JL.h"; sourceTree = "<group>"; };
+		F40A18B02075F535008D7798 /* NSBundle+JL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+JL.m"; sourceTree = "<group>"; };
 		F49DDE0F2070AC0D00793B40 /* HomeContainerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeContainerController.h; sourceTree = "<group>"; };
 		F49DDE102070AC0D00793B40 /* HomeContainerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeContainerController.m; sourceTree = "<group>"; };
 		F49DDE132070B9F200793B40 /* JLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLBaseViewController.h; sourceTree = "<group>"; };
@@ -221,8 +224,8 @@
 		F4AECA47205E5314000F6D37 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4AECA49205E5314000F6D37 /* JLMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLMenuView.h; sourceTree = "<group>"; };
 		F4AECA4A205E5314000F6D37 /* JLMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLMenuView.m; sourceTree = "<group>"; };
-		F4AECA4B205E5314000F6D37 /* Test_MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test_MenuViewController.h; sourceTree = "<group>"; };
-		F4AECA4C205E5314000F6D37 /* Test_MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test_MenuViewController.m; sourceTree = "<group>"; };
+		F4AECA4B205E5314000F6D37 /* TestMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestMenuViewController.h; sourceTree = "<group>"; };
+		F4AECA4C205E5314000F6D37 /* TestMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestMenuViewController.m; sourceTree = "<group>"; };
 		F4AECA4D205E5314000F6D37 /* MTNavigationItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationItemFactory.h; sourceTree = "<group>"; };
 		F4AECA4E205E5314000F6D37 /* MTNavigationItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationItemFactory.m; sourceTree = "<group>"; };
 		F4AECA4F205E5314000F6D37 /* NavgiationBarOfViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavgiationBarOfViewControllerProtocol.h; sourceTree = "<group>"; };
@@ -493,6 +496,8 @@
 				F4AECA1A205E5314000F6D37 /* NSString+JL.m */,
 				F4AECA1B205E5314000F6D37 /* UIImage+JL.h */,
 				F4AECA1C205E5314000F6D37 /* UIImage+JL.m */,
+				F40A18AF2075F535008D7798 /* NSBundle+JL.h */,
+				F40A18B02075F535008D7798 /* NSBundle+JL.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -570,8 +575,8 @@
 			children = (
 				F4AECA49205E5314000F6D37 /* JLMenuView.h */,
 				F4AECA4A205E5314000F6D37 /* JLMenuView.m */,
-				F4AECA4B205E5314000F6D37 /* Test_MenuViewController.h */,
-				F4AECA4C205E5314000F6D37 /* Test_MenuViewController.m */,
+				F4AECA4B205E5314000F6D37 /* TestMenuViewController.h */,
+				F4AECA4C205E5314000F6D37 /* TestMenuViewController.m */,
 			);
 			path = "menu View";
 			sourceTree = "<group>";
@@ -813,7 +818,7 @@
 				F4AECAE2205E5314000F6D37 /* SettingSwitchItem.m in Sources */,
 				F4AECADC205E5314000F6D37 /* SettingArrowItem.m in Sources */,
 				F4AECAEE205E5315000F6D37 /* JLTextFiled.m in Sources */,
-				F4AECAD4205E5314000F6D37 /* Test_MenuViewController.m in Sources */,
+				F4AECAD4205E5314000F6D37 /* TestMenuViewController.m in Sources */,
 				F4AECACC205E5314000F6D37 /* UIAvaterGenerater.m in Sources */,
 				346A5536206B9629002DD49A /* MTPresentationController.m in Sources */,
 				F40A18A520752E4E008D7798 /* SimpleCell.m in Sources */,
@@ -851,6 +856,7 @@
 				F4AECAC1205E5314000F6D37 /* UIViewController+XMNavigationController.m in Sources */,
 				3401375D20726CC4002D46D2 /* TagItem.m in Sources */,
 				F4AECAE0205E5314000F6D37 /* SettingItem.m in Sources */,
+				F40A18B12075F535008D7798 /* NSBundle+JL.m in Sources */,
 				F4AECAC0205E5314000F6D37 /* NSObject+AssociateObj.m in Sources */,
 				F40A18A220752CBE008D7798 /* OTTableViewPivot.m in Sources */,
 				F4AECAB2205E5314000F6D37 /* LoginViewController.m in Sources */,

@@ -95,7 +95,7 @@
 - (void)mt_viewDidLoad
 {
     [self mt_viewDidLoad];
-    
+    NSLog(@"%@ %@",NSStringFromSelector(_cmd),self);
     [self setUpNavigationBarUI];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -135,9 +135,8 @@
 {
     if ([self conformsToProtocol:@protocol(NavgiationBarOfViewControllerProtocol)]) {
         
-        if ([self respondsToSelector:@selector(hidesBackButtonOfNavigationBar)]) {
-            self.navigationItem.hidesBackButton = [self hidesBackButtonOfNavigationBar];
-        }
+        BOOL hidenBackBtn = [self hidesBackButtonOfNavigationBar];
+        self.navigationItem.hidesBackButton = hidenBackBtn;
         
         NSArray *leftItems = [self navigationBarLeftBarButtonItems];
         if (leftItems) {
@@ -182,7 +181,6 @@
 - (UIImage *)navigationBarBackgroundImage {
     return nil;
 }
-
 
 - (UIImage *)shadowImage
 {

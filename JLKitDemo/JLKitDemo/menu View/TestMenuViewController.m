@@ -6,10 +6,10 @@
 //  Copyright © 2017年 JL. All rights reserved.
 //
 
-#import "Test_MenuViewController.h"
+#import "TestMenuViewController.h"
 #import "JLMenuView.h"
 
-@interface Test_MenuViewController ()
+@interface TestMenuViewController ()
 <
     JLMenuDelegate,
     JLMenuDataSource
@@ -17,11 +17,11 @@
 
 @end
 
-@implementation Test_MenuViewController
+@implementation TestMenuViewController
 
 - (void)viewDidLoad
 {
-    
+    [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];

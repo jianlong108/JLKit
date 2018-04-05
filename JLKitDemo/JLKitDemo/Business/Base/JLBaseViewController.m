@@ -88,6 +88,12 @@
 {
     return 1.0;
 }
+
+- (NSString *)title
+{
+    return @" ";
+}
+
 - (void)setTitle:(NSString *)title {
     if (title) {
         NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:title attributes:[self navigationBarTitleTextAttributes]];
@@ -106,7 +112,7 @@
     }
     
     if (!backTitle) {
-        if (lastVC.title) {
+        if (![lastVC.title isEqualToString:@" "] && lastVC.title) {
             backTitle = lastVC.title;
             if (backTitle) {
                 NSAttributedString *attributedTitle = [[NSAttributedString alloc] initWithString:backTitle attributes:@{NSFontAttributeName : [[UIColor blackColor] colorWithAlphaComponent:0.6f]}];
