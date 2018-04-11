@@ -18,8 +18,10 @@
 		34BC8296207E3203009D5ED5 /* SimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8295207E3203009D5ED5 /* SimpleCell.m */; };
 		34BC829B207E324E009D5ED5 /* SettingCheckItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8297207E324E009D5ED5 /* SettingCheckItem.m */; };
 		34BC829C207E324E009D5ED5 /* SimpleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8298207E324E009D5ED5 /* SimpleItem.m */; };
+		34BC82A4207E3C22009D5ED5 /* MTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC829F207E3C21009D5ED5 /* MTScrollView.m */; };
+		34BC82A5207E3C22009D5ED5 /* MTScrollNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC82A1207E3C21009D5ED5 /* MTScrollNavigationController.m */; };
+		34BC82A6207E3C22009D5ED5 /* MTScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC82A3207E3C21009D5ED5 /* MTScrollTitleBar.m */; };
 		F40A189D20752B5B008D7798 /* OTSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A189520752B5B008D7798 /* OTSectionModel.m */; };
-		F40A189E20752B5B008D7798 /* OTRowItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A189620752B5B008D7798 /* OTRowItemModel.m */; };
 		F40A18A220752CBE008D7798 /* OTTableViewPivot.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A020752CBE008D7798 /* OTTableViewPivot.m */; };
 		F40A18A8207530F8008D7798 /* UIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A7207530F8008D7798 /* UIWebViewController.m */; };
 		F40A18AE2075EDA5008D7798 /* one.html in Resources */ = {isa = PBXBuildFile; fileRef = F40A18AD2075EDA5008D7798 /* one.html */; };
@@ -75,9 +77,6 @@
 		F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA56205E5314000F6D37 /* UIViewController+NavigationBar.m */; };
 		F4AECAD9205E5314000F6D37 /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA59205E5314000F6D37 /* LoginCell.m */; };
 		F4AECADA205E5314000F6D37 /* OTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA5D205E5314000F6D37 /* OTTableViewController.m */; };
-		F4AECAE4205E5314000F6D37 /* MTScrollContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA72205E5314000F6D37 /* MTScrollContainerViewController.m */; };
-		F4AECAE5205E5315000F6D37 /* MTScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA74205E5314000F6D37 /* MTScrollTitleBar.m */; };
-		F4AECAE6205E5315000F6D37 /* MTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA76205E5314000F6D37 /* MTScrollView.m */; };
 		F4AECAE8205E5315000F6D37 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA7A205E5314000F6D37 /* TabBarViewController.m */; };
 		F4AECAE9205E5315000F6D37 /* TestIndexBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA7D205E5314000F6D37 /* TestIndexBarViewController.m */; };
 		F4AECAEA205E5315000F6D37 /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA7F205E5314000F6D37 /* UITableView+IndexBar.m */; };
@@ -123,11 +122,16 @@
 		34BC8298207E324E009D5ED5 /* SimpleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleItem.m; sourceTree = "<group>"; };
 		34BC8299207E324E009D5ED5 /* SimpleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleItem.h; sourceTree = "<group>"; };
 		34BC829A207E324E009D5ED5 /* SettingCheckItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCheckItem.h; sourceTree = "<group>"; };
+		34BC829D207E3C21009D5ED5 /* MTScrollNavigationChildControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollNavigationChildControllerProtocol.h; sourceTree = "<group>"; };
+		34BC829E207E3C21009D5ED5 /* MTScrollTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleBar.h; sourceTree = "<group>"; };
+		34BC829F207E3C21009D5ED5 /* MTScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollView.m; sourceTree = "<group>"; };
+		34BC82A0207E3C21009D5ED5 /* MTScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollView.h; sourceTree = "<group>"; };
+		34BC82A1207E3C21009D5ED5 /* MTScrollNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollNavigationController.m; sourceTree = "<group>"; };
+		34BC82A2207E3C21009D5ED5 /* MTScrollNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollNavigationController.h; sourceTree = "<group>"; };
+		34BC82A3207E3C21009D5ED5 /* MTScrollTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollTitleBar.m; sourceTree = "<group>"; };
 		F40A189120752B5B008D7798 /* SettingCellDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCellDataProtocol.h; sourceTree = "<group>"; };
 		F40A189320752B5B008D7798 /* OTHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTHeader.h; sourceTree = "<group>"; };
-		F40A189420752B5B008D7798 /* OTRowItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRowItemModel.h; sourceTree = "<group>"; };
 		F40A189520752B5B008D7798 /* OTSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTSectionModel.m; sourceTree = "<group>"; };
-		F40A189620752B5B008D7798 /* OTRowItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRowItemModel.m; sourceTree = "<group>"; };
 		F40A189720752B5B008D7798 /* OTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTProtocol.h; sourceTree = "<group>"; };
 		F40A189820752B5B008D7798 /* OTSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTSectionModel.h; sourceTree = "<group>"; };
 		F40A18A020752CBE008D7798 /* OTTableViewPivot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewPivot.m; sourceTree = "<group>"; };
@@ -238,12 +242,6 @@
 		F4AECA59205E5314000F6D37 /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
 		F4AECA5C205E5314000F6D37 /* OTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewController.h; sourceTree = "<group>"; };
 		F4AECA5D205E5314000F6D37 /* OTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewController.m; sourceTree = "<group>"; };
-		F4AECA71205E5314000F6D37 /* MTScrollContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollContainerViewController.h; sourceTree = "<group>"; };
-		F4AECA72205E5314000F6D37 /* MTScrollContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollContainerViewController.m; sourceTree = "<group>"; };
-		F4AECA73205E5314000F6D37 /* MTScrollTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleBar.h; sourceTree = "<group>"; };
-		F4AECA74205E5314000F6D37 /* MTScrollTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollTitleBar.m; sourceTree = "<group>"; };
-		F4AECA75205E5314000F6D37 /* MTScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollView.h; sourceTree = "<group>"; };
-		F4AECA76205E5314000F6D37 /* MTScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollView.m; sourceTree = "<group>"; };
 		F4AECA79205E5314000F6D37 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		F4AECA7A205E5314000F6D37 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		F4AECA7C205E5314000F6D37 /* TestIndexBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestIndexBarViewController.h; sourceTree = "<group>"; };
@@ -390,7 +388,6 @@
 				F4AECA47205E5314000F6D37 /* main.m */,
 				F4AECA4D205E5314000F6D37 /* MTNavigationItemFactory.h */,
 				F4AECA4E205E5314000F6D37 /* MTNavigationItemFactory.m */,
-				F4AECA4F205E5314000F6D37 /* NavgiationBarOfViewControllerProtocol.h */,
 				F4AECA50205E5314000F6D37 /* NavigationBar */,
 				F4AECA57205E5314000F6D37 /* Operating TableView */,
 				F4AECA70205E5314000F6D37 /* scrollContainer */,
@@ -583,6 +580,7 @@
 		F4AECA50205E5314000F6D37 /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
+				F4AECA4F205E5314000F6D37 /* NavgiationBarOfViewControllerProtocol.h */,
 				F4AECA51205E5314000F6D37 /* UINavigationBar+BackGroundImage.h */,
 				F4AECA52205E5314000F6D37 /* UINavigationBar+BackGroundImage.m */,
 				F4AECA53205E5314000F6D37 /* UINavigationController+Cloudox.h */,
@@ -618,8 +616,6 @@
 			children = (
 				F40A189320752B5B008D7798 /* OTHeader.h */,
 				F40A189720752B5B008D7798 /* OTProtocol.h */,
-				F40A189420752B5B008D7798 /* OTRowItemModel.h */,
-				F40A189620752B5B008D7798 /* OTRowItemModel.m */,
 				F40A189820752B5B008D7798 /* OTSectionModel.h */,
 				F40A189520752B5B008D7798 /* OTSectionModel.m */,
 				F4AECA5C205E5314000F6D37 /* OTTableViewController.h */,
@@ -634,12 +630,13 @@
 		F4AECA70205E5314000F6D37 /* scrollContainer */ = {
 			isa = PBXGroup;
 			children = (
-				F4AECA71205E5314000F6D37 /* MTScrollContainerViewController.h */,
-				F4AECA72205E5314000F6D37 /* MTScrollContainerViewController.m */,
-				F4AECA73205E5314000F6D37 /* MTScrollTitleBar.h */,
-				F4AECA74205E5314000F6D37 /* MTScrollTitleBar.m */,
-				F4AECA75205E5314000F6D37 /* MTScrollView.h */,
-				F4AECA76205E5314000F6D37 /* MTScrollView.m */,
+				34BC829D207E3C21009D5ED5 /* MTScrollNavigationChildControllerProtocol.h */,
+				34BC82A2207E3C21009D5ED5 /* MTScrollNavigationController.h */,
+				34BC82A1207E3C21009D5ED5 /* MTScrollNavigationController.m */,
+				34BC829E207E3C21009D5ED5 /* MTScrollTitleBar.h */,
+				34BC82A3207E3C21009D5ED5 /* MTScrollTitleBar.m */,
+				34BC82A0207E3C21009D5ED5 /* MTScrollView.h */,
+				34BC829F207E3C21009D5ED5 /* MTScrollView.m */,
 			);
 			path = scrollContainer;
 			sourceTree = "<group>";
@@ -798,7 +795,6 @@
 				F4AECAEA205E5315000F6D37 /* UITableView+IndexBar.m in Sources */,
 				F4AECABF205E5314000F6D37 /* UIImage+JL.m in Sources */,
 				F4AECAE9205E5315000F6D37 /* TestIndexBarViewController.m in Sources */,
-				F40A189E20752B5B008D7798 /* OTRowItemModel.m in Sources */,
 				34BC8274207DB61D009D5ED5 /* CWStatusBarNotification.m in Sources */,
 				F4AECAF3205E5315000F6D37 /* UINavigationController+XXTransition.m in Sources */,
 				F4AECAF8205E5315000F6D37 /* XXTransition.m in Sources */,
@@ -826,13 +822,14 @@
 				F4AECAED205E5315000F6D37 /* JLHotAreaBtn.m in Sources */,
 				F4AECAB0205E5314000F6D37 /* MultifunctionBtn.m in Sources */,
 				F4AECAC6205E5314000F6D37 /* XMNavigationController+UIViewControllerInXMNavigationController.m in Sources */,
-				F4AECAE5205E5315000F6D37 /* MTScrollTitleBar.m in Sources */,
 				F4AECAA8205E5314000F6D37 /* AppDelegate.m in Sources */,
 				F40A189D20752B5B008D7798 /* OTSectionModel.m in Sources */,
+				34BC82A6207E3C22009D5ED5 /* MTScrollTitleBar.m in Sources */,
 				F4AECAF7205E5315000F6D37 /* XXInteractiveTransition.m in Sources */,
 				F4AECAC8205E5314000F6D37 /* NavigationTranstionEngine.m in Sources */,
 				F4AECABC205E5314000F6D37 /* NSNumber+JL.m in Sources */,
 				F4AECAB3205E5314000F6D37 /* MyViewController.m in Sources */,
+				34BC82A4207E3C22009D5ED5 /* MTScrollView.m in Sources */,
 				F4AECAD3205E5314000F6D37 /* JLMenuView.m in Sources */,
 				F4AECAEB205E5315000F6D37 /* UITableViewIndexBar.m in Sources */,
 				F4AECAEC205E5315000F6D37 /* TempViewController.m in Sources */,
@@ -850,7 +847,6 @@
 				F4AECAC5205E5314000F6D37 /* XMNavigationController+Stack.m in Sources */,
 				F49DDE112070AC0D00793B40 /* HomeContainerController.m in Sources */,
 				F4AECAF2205E5315000F6D37 /* JLHorizontalPanInteraction.m in Sources */,
-				F4AECAE6205E5315000F6D37 /* MTScrollView.m in Sources */,
 				F4AECAD2205E5314000F6D37 /* main.m in Sources */,
 				F4AECACD205E5314000F6D37 /* InfiniteLoopView.m in Sources */,
 				F49DDE1B2070B9F200793B40 /* UINavigationController+DelegateManager.m in Sources */,
@@ -864,7 +860,6 @@
 				F4AECABB205E5314000F6D37 /* NSData+JL.m in Sources */,
 				346A5537206B9629002DD49A /* UIViewController+PresentController.m in Sources */,
 				F4AECABD205E5314000F6D37 /* NSObject+archive.m in Sources */,
-				F4AECAE4205E5314000F6D37 /* MTScrollContainerViewController.m in Sources */,
 				F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */,
 				F4AECADA205E5314000F6D37 /* OTTableViewController.m in Sources */,
 				F4AECAB1205E5314000F6D37 /* HomeViewController.m in Sources */,
@@ -872,6 +867,7 @@
 				34BC829C207E324E009D5ED5 /* SimpleItem.m in Sources */,
 				F4AECAC4205E5314000F6D37 /* XMNavigationController+PanGesture.m in Sources */,
 				F4AECAD6205E5314000F6D37 /* UINavigationBar+BackGroundImage.m in Sources */,
+				34BC82A5207E3C22009D5ED5 /* MTScrollNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

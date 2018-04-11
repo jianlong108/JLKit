@@ -13,8 +13,6 @@ extern NSString * const TagCellTableViewCell_ReuseIdentifer;
 
 @interface TagCellTableViewCell : UITableViewCell<OTCellProtocol>
 
-
-/**<#message#>*/
 @property (nonatomic, strong) TagItem *item;
 
 @end

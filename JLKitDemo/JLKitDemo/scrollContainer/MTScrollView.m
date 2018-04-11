@@ -22,6 +22,20 @@
     return  YES;
 }
 
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)gestureRecognizer;
+        CGPoint speedXY = [pan velocityInView:gestureRecognizer.view];
+        if (fabs(speedXY.x) > fabs(speedXY.y)) {
+            return YES;
+        } else {
+            return NO;
+        }
+    }
+    return YES;
+}
+
 //解决 scrollNavigation中Tableview 滑动删除
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
     
@@ -31,5 +45,7 @@
     }
     return NO;
 }
+
+
 
 @end

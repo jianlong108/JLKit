@@ -8,6 +8,7 @@
 
 #import "HomeFunctionViewController.h"
 #import "MTHorizontalWaterFullLayout.h"
+#import "IOS11Adapter.h"
 
 @interface StringItemModel :NSObject<HorizontalWaterFullModelProtocol>
 
@@ -60,12 +61,17 @@
 
 @property (nonatomic, strong) NSMutableArray *dates;
 
+/**<#message#>*/
+@property (nonatomic, strong) UICollectionView *collectionView;
+
 @end
 
 @implementation HomeFunctionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     // Do any additional setup after loading the view.
     MTHorizontalWaterFullLayout *layout = [[MTHorizontalWaterFullLayout alloc]initWithDataes:self.dates maxWidth:300 itemHeight:[UIFont systemFontOfSize:14].lineHeight];
     UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, 300, 300) collectionViewLayout:layout];
@@ -74,6 +80,8 @@
     collectionView.delegate = self;
     [collectionView registerClass:[StringCollectionViewCell class] forCellWithReuseIdentifier:@"flowlayout"];
     [self.view addSubview:collectionView];
+    _collectionView = collectionView;
+    [IOS11Adapter scrollViewContentInsetAmendment:collectionView];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -105,6 +113,17 @@
 - (CGRect)contentViewFrame
 {
     return CGRectMake((CGRectGetWidth([UIScreen mainScreen].bounds) - 300)/2, (CGRectGetHeight([UIScreen mainScreen].bounds) - 300)/2, 300, 300);
+}
+
+- (UIScrollView *)contentScrollView
+{
+    return self.collectionView;
+}
+
+- (void)setScrollViewContentInset:(UIEdgeInsets)inset
+{
+    self.collectionView.contentInset = inset;
+    
 }
 
 @end

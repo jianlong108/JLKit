@@ -71,28 +71,30 @@ typedef enum MTScrollTitleBarElementStyle{
 
 @interface MTScrollTitleBar : UIView
 
-@property (nonatomic, strong,readonly) UIScrollView *contentScrollView;
+@property (nonatomic, strong,readonly)UIScrollView *contentScrollView;
 
-@property (nonatomic,weak) id<MTScrollTitleBarDataSource> dataSource;
+@property(nonatomic,weak)id<MTScrollTitleBarDataSource> dataSource;
 
-@property (nonatomic,weak) id<MTScrollTitleBarDelegate> delegate;
+@property(nonatomic,weak)id<MTScrollTitleBarDelegate> delegate;
 
-@property (nonatomic,assign,readonly) NSUInteger selectedIndex;
+@property(nonatomic,assign,readonly)NSUInteger selectedIndex;
 
 
 ////默认为NO 类似于tabbar点击后会触发事件
-@property (nonatomic,assign) BOOL selectedByTouchDown;
+@property(nonatomic,assign) BOOL selectedByTouchDown;
 
-@property (nonatomic,assign) BOOL autoScroller;
+@property(nonatomic,assign) BOOL autoScroller;
 
 //// UI
-@property (nonatomic,assign) MTScrollTitleBarElementStyle  elementDisplayStyle;
-@property (nonatomic,assign) BOOL boldFont;
-@property (nonatomic,strong) UIFont *titleFont; //默认15号
-@property (nonatomic,strong) UIColor *titleColor;
-@property (nonatomic,strong) UIColor *selectedTitleColor;
-@property (nonatomic,strong) UIColor *lineViewColor;
-@property (nonatomic,assign) CGFloat lineViewHeight;//默认为1, 范围[1,5]
+@property(nonatomic,assign) MTScrollTitleBarElementStyle  elementDisplayStyle;
+
+
+@property (nonatomic,assign)  BOOL boldFont;
+@property (nonatomic, strong) UIFont *titleFont; //默认15号
+@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIColor *selectedTitleColor;
+@property (nonatomic, strong) UIColor *lineViewColor;
+@property (nonatomic, assign) CGFloat lineViewHeight;//默认为1, 范围[1,5]
 
 ////第一个按钮的X坐标 将以此坐标开始布局
 @property (nonatomic, assign)CGFloat firstBtnX;

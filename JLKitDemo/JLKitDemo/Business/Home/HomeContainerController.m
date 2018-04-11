@@ -7,27 +7,39 @@
 //
 
 #import "HomeContainerController.h"
-#import "MTScrollContainerViewController.h"
+#import "MTScrollNavigationController.h"
 #import "HomeViewController.h"
 #import "UIImage+JL.h"
 #import "GlobalFunction.h"
 #import "HomeFunctionViewController.h"
+#import "NavgiationBarOfViewControllerProtocol.h"
 
 @interface HomeContainerController ()<
-    MTScrollNavigationViewControllerDataSource,
-    MTScrollNavigationViewControllerDelegate
+    MTScrollNavigationControllerDataSource,
+    MTScrollNavigationControllerDelegate
 >
-@property(nonatomic,strong) MTScrollContainerViewController *scrollNavigationController;
+@property(nonatomic,strong) MTScrollNavigationController *scrollNavigationController;
 @end
 
 @implementation HomeContainerController
 
-- (MTScrollContainerViewController *)scrollNavigationController
+- (MTScrollNavigationController *)scrollNavigationController
 {
     if (_scrollNavigationController == nil) {
-        _scrollNavigationController = [[MTScrollContainerViewController alloc]init];
+        _scrollNavigationController = [[MTScrollNavigationController alloc]init];
         _scrollNavigationController.scrollNavigationDelegate = self;
         _scrollNavigationController.scrollNavigationDataSource = self;
+        _scrollNavigationController.topTitleStyle = MTScrollTitleBarElementStyleAvarge;
+        _scrollNavigationController.scrollTitleBar.backgroundColor = [UIColor whiteColor];
+        _scrollNavigationController.hidesTitleBarWhenScrollToTop = NO;
+        _scrollNavigationController.headScrollEnable = NO;
+        
+        _scrollNavigationController.scrollTitleBarItemColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+        _scrollNavigationController.scrollTitleBarItemSelectColor = UIColorFromRGB(0x14b9c7);
+        _scrollNavigationController.scrollTitleBarLineViewSelectColor = UIColorFromRGB(0x14b9c7);
+        _scrollNavigationController.topTitleBar_BoldFont = YES;
+        _scrollNavigationController.scrollTitleBarItemFont = [UIFont systemFontOfSize:15];
+        _scrollNavigationController.scrollTitleBarLineViewHeight = 3;
     }
     return _scrollNavigationController;
 }
@@ -36,6 +48,7 @@
 {
     [super viewDidLoad];
     
+    self.edgesForExtendedLayout = UIRectEdgeAll;
     //防止内存占用严重时,view会被释放,会重新调用viewdidload方法.
     [self.scrollNavigationController.view removeFromSuperview];
     [self.view addSubview:self.scrollNavigationController.view];
@@ -45,29 +58,12 @@
     [_scrollNavigationController didMoveToParentViewController:self];
 }
 
-- (NSInteger)numberOfTitleInScrollNavigationViewController:(MTScrollContainerViewController *)scrollNavigationVC
+- (void)viewDidLayoutSubviews
 {
-    return 2;
+    [super viewDidLayoutSubviews];
+    self.scrollNavigationController.view.frame = self.view.bounds;
 }
 
-
-- (NSString *)scrollNavigationViewController:(MTScrollContainerViewController*)scrollNavigationVC titleForIndex:(NSInteger)index
-{
-    if (index == 0) {
-        return @"控件";
-    } else {
-        return @"功能";
-    }
-}
-
-- (UIViewController *)scrollNavigationViewController:(MTScrollContainerViewController*)scrollNavigationVC childViewControllerForIndex:(NSInteger)index
-{
-    if (index == 0) {
-        return [[HomeViewController alloc]init];
-    } else {
-        return [[HomeFunctionViewController alloc]init];
-    }
-}
 
 #pragma mark - navigationBar
 
@@ -79,6 +75,33 @@
 - (NSArray<UIBarButtonItem *> *)navigationBarLeftBarButtonItems
 {
     return nil;
+}
+
+
+
+- (NSInteger)numberOfTitleInScrollNavigationController:(MTScrollNavigationController *)scrollNavigationController {
+    return 2;
+}
+
+- (UIViewController<MTScrollNavigationChildControllerProtocol> *)scrollNavigationController:(MTScrollNavigationController *)scrollNavigationController childViewControllerForIndex:(NSInteger)index {
+    if (index == 0) {
+        return [[HomeViewController alloc]init];
+    } else {
+        return [[HomeFunctionViewController alloc]init];
+    }
+}
+
+- (NSString *)scrollNavigationController:(MTScrollNavigationController *)scrollNavigationController titleForIndex:(NSInteger)index {
+    if (index == 0) {
+        return @"控件";
+    } else {
+        return @"功能";
+    }
+}
+
+- (CGFloat)alphaOfNavigationBar
+{
+    return 0.0f;
 }
 
 @end

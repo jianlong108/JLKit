@@ -23,6 +23,7 @@
 #import "NSBundle+JL.h"
 
 #import "CWStatusBarNotification.h"
+#import "IOS11Adapter.h"
 
 @interface HomeViewController ()
 
@@ -35,13 +36,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // initialize CWNotification
     self.notification = [CWStatusBarNotification new];
     
     // set default blue color (since iOS 7.1, default window tintColor is black)
     self.notification.notificationLabelBackgroundColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
-    
+    [IOS11Adapter scrollViewContentInsetAmendment:self.tableView];
     [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
     [self setUpModel];
 }
@@ -183,6 +183,16 @@
 - (CGFloat)contentViewHeight
 {
     return 300;
+}
+
+- (UIScrollView *)contentScrollView
+{
+    return self.tableView;
+}
+
+- (void)setScrollViewContentInset:(UIEdgeInsets)inset
+{
+    self.tableView.contentInset = inset;
 }
 
 @end
