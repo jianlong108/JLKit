@@ -8,7 +8,7 @@
 
 #import "MyViewController.h"
 #import "SimpleCell.h"
-#import "SettingItem.h"
+#import "SimpleItem.h"
 #import "OTSectionModel.h"
 #import "UIViewController+XXTransition.h"
 #import "XXTransition.h"
@@ -41,7 +41,7 @@
     sectionOne.footerHeight = 7;
     sectionOne.headerHeight = 7;
     
-    SettingItem *model = [[SettingItem alloc]init];
+    SimpleItem *model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         LoginViewController *vc = [[LoginViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -50,7 +50,7 @@
     model.title = @"登录页";
     [sectionOne.items addObject:model];
     
-    model = [[SettingItem alloc]init];
+    model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         SettingViewController *vc = [[SettingViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];

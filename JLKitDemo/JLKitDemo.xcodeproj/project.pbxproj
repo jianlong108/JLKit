@@ -17,7 +17,7 @@
 		34BC8274207DB61D009D5ED5 /* CWStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8272207DB61D009D5ED5 /* CWStatusBarNotification.m */; };
 		34BC8296207E3203009D5ED5 /* SimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8295207E3203009D5ED5 /* SimpleCell.m */; };
 		34BC829B207E324E009D5ED5 /* SettingCheckItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8297207E324E009D5ED5 /* SettingCheckItem.m */; };
-		34BC829C207E324E009D5ED5 /* SettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8298207E324E009D5ED5 /* SettingItem.m */; };
+		34BC829C207E324E009D5ED5 /* SimpleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8298207E324E009D5ED5 /* SimpleItem.m */; };
 		F40A189D20752B5B008D7798 /* OTSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A189520752B5B008D7798 /* OTSectionModel.m */; };
 		F40A189E20752B5B008D7798 /* OTRowItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A189620752B5B008D7798 /* OTRowItemModel.m */; };
 		F40A18A220752CBE008D7798 /* OTTableViewPivot.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A020752CBE008D7798 /* OTTableViewPivot.m */; };
@@ -120,8 +120,8 @@
 		34BC8294207E3202009D5ED5 /* SimpleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCell.h; sourceTree = "<group>"; };
 		34BC8295207E3203009D5ED5 /* SimpleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCell.m; sourceTree = "<group>"; };
 		34BC8297207E324E009D5ED5 /* SettingCheckItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCheckItem.m; sourceTree = "<group>"; };
-		34BC8298207E324E009D5ED5 /* SettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingItem.m; sourceTree = "<group>"; };
-		34BC8299207E324E009D5ED5 /* SettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingItem.h; sourceTree = "<group>"; };
+		34BC8298207E324E009D5ED5 /* SimpleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleItem.m; sourceTree = "<group>"; };
+		34BC8299207E324E009D5ED5 /* SimpleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleItem.h; sourceTree = "<group>"; };
 		34BC829A207E324E009D5ED5 /* SettingCheckItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCheckItem.h; sourceTree = "<group>"; };
 		F40A189120752B5B008D7798 /* SettingCellDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCellDataProtocol.h; sourceTree = "<group>"; };
 		F40A189320752B5B008D7798 /* OTHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTHeader.h; sourceTree = "<group>"; };
@@ -607,8 +607,8 @@
 				34BC8295207E3203009D5ED5 /* SimpleCell.m */,
 				34BC829A207E324E009D5ED5 /* SettingCheckItem.h */,
 				34BC8297207E324E009D5ED5 /* SettingCheckItem.m */,
-				34BC8299207E324E009D5ED5 /* SettingItem.h */,
-				34BC8298207E324E009D5ED5 /* SettingItem.m */,
+				34BC8299207E324E009D5ED5 /* SimpleItem.h */,
+				34BC8298207E324E009D5ED5 /* SimpleItem.m */,
 			);
 			path = "Operating TableView";
 			sourceTree = "<group>";
@@ -869,7 +869,7 @@
 				F4AECADA205E5314000F6D37 /* OTTableViewController.m in Sources */,
 				F4AECAB1205E5314000F6D37 /* HomeViewController.m in Sources */,
 				F4AECAEF205E5315000F6D37 /* JLBaseAnimationEngine.m in Sources */,
-				34BC829C207E324E009D5ED5 /* SettingItem.m in Sources */,
+				34BC829C207E324E009D5ED5 /* SimpleItem.m in Sources */,
 				F4AECAC4205E5314000F6D37 /* XMNavigationController+PanGesture.m in Sources */,
 				F4AECAD6205E5314000F6D37 /* UINavigationBar+BackGroundImage.m in Sources */,
 			);

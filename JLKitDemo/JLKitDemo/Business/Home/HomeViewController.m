@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "UIViewController+PresentController.h"
 #import "HomeFunctionViewController.h"
-#import "SettingItem.h"
+#import "SimpleItem.h"
 #import "OTSectionModel.h"
 
 #import "SimpleCell.h"
@@ -53,7 +53,7 @@
     sectionOne.footerHeight = 7;
     sectionOne.headerHeight = 7;
     
-    SettingItem *model = [[SettingItem alloc]init];
+    SimpleItem *model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         BothsidesBtnViewController *vc = [[BothsidesBtnViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -62,7 +62,7 @@
     model.title = @"基础控件展示";
     [sectionOne.items addObject:model];
     
-    model = [[SettingItem alloc]init];
+    model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestTableViewController *vc = [[TestTableViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -71,7 +71,7 @@
     model.title = @"可拖动tableview";
     [sectionOne.items addObject:model];
     
-    model = [[SettingItem alloc]init];
+    model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestMenuViewController *vc = [[TestMenuViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -80,7 +80,7 @@
     model.title = @"菜单view";
     [sectionOne.items addObject:model];
     
-    model = [[SettingItem alloc]init];
+    model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestDragCollecViewController *vc = [[TestDragCollecViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -89,7 +89,7 @@
     model.title = @"可拖动九宫格";
     [sectionOne.items addObject:model];
     
-    model = [[SettingItem alloc]init];
+    model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestIndexBarViewController *vc = [[TestIndexBarViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -98,7 +98,7 @@
     model.title = @"indexbar";
     [sectionOne.items addObject:model];
     
-    model = [[SettingItem alloc]init];
+    model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         HomeFunctionViewController *home = [[HomeFunctionViewController alloc]init];
         [weakSelf customPresentViewController:home animated:YES completion:nil];
@@ -107,7 +107,7 @@
     model.title = @"presentController_中部";
     [sectionOne.items addObject:model];
     
-    model = [[SettingItem alloc]init];
+    model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
         NSString *pathResource = [[NSBundle mainBundle] pathForResource:@"one" ofType:@"html"];
@@ -119,7 +119,7 @@
     model.title = @"UIWebViewController";
     [sectionOne.items addObject:model];
     
-    model = [[SettingItem alloc]init];
+    model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
         [self displayShare];
@@ -137,7 +137,7 @@
     model.title = @"UIActivityViewController";
     [sectionOne.items addObject:model];
     
-    model = [[SettingItem alloc]init];
+    model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         [self dismissViewControllerAnimated:YES completion:nil];
     };

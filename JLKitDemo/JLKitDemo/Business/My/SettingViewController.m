@@ -7,7 +7,7 @@
 //
 #import "SettingViewController.h"
 #import "LoginCell.h"
-#import "SettingItem.h"
+#import "SimpleItem.h"
 #import "SimpleCell.h"
 #import "OTSectionModel.h"
 #import "UIImage+JL.h"
@@ -20,7 +20,7 @@
 
 - (void)setupGroup1
 {
-    SettingItem *pushNotice = [SettingArrowItem itemWithIcon:@"MorePush" title:@"设置" destVcClass:[UIViewController class]];
+    SimpleItem *pushNotice = [SettingArrowItem itemWithIcon:@"MorePush" title:@"设置" destVcClass:[UIViewController class]];
     TagItem *item = [[TagItem alloc]init];
     
     

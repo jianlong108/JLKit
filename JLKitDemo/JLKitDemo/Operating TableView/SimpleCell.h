@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SettingItem.h"
+#import "SimpleItem.h"
 #import "OTProtocol.h"
 
 extern NSString * const SimpleCell_ReuseIdentifer;

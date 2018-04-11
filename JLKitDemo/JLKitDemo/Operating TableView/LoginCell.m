@@ -7,7 +7,7 @@
 //
 
 #import "LoginCell.h"
-#import "SettingItem.h"
+#import "SimpleItem.h"
 
 @implementation LoginCell
 
@@ -29,7 +29,7 @@
 
     // Configure the view for the selected state
 }
-- (void)setUpItem:(SettingItem *)item{
+- (void)setUpItem:(SimpleItem *)item{
     
 }
 @end

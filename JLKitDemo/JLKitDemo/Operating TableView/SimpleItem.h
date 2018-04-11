@@ -20,7 +20,7 @@ typedef NS_OPTIONS(NSUInteger, CellItemElementType) {
     CellItemElementTypeSimple = (CellItemElementTypeAccessoryTitleLabel | CellItemElementTypeArrow)
 };
 
-@interface SettingItem : NSObject<
+@interface SimpleItem : NSObject<
     OTItemProtocol,
     SettingCellDataProtocol
 >
@@ -47,7 +47,7 @@ typedef NS_OPTIONS(NSUInteger, CellItemElementType) {
 
 @end
 
-@interface SettingSwitchItem : SettingItem
+@interface SettingSwitchItem : SimpleItem
 
 /**开关是否开启*/
 @property (nonatomic, assign)  BOOL on;
@@ -56,31 +56,31 @@ typedef NS_OPTIONS(NSUInteger, CellItemElementType) {
 
 @end
 
-@interface SettingImgViewArrowItem : SettingItem
+@interface SettingImgViewArrowItem : SimpleItem
 
 @property (nonatomic, strong) NSString *accessoryImg;
 
 @end
 
-@interface SettingMainImgViewItem : SettingItem
+@interface SettingMainImgViewItem : SimpleItem
 
 @property (nonatomic, strong) UIImage *mainImg;
 
 @end
 
-@interface SettingLabelArrowItem : SettingItem
+@interface SettingLabelArrowItem : SimpleItem
 
 /**辅助标题*/
 @property (nonatomic, copy) NSString *acceoryTitle;
 @end
 
-@interface SettingLabelItem : SettingItem
+@interface SettingLabelItem : SimpleItem
 
 /**辅助标题*/
 @property (nonatomic, copy) NSString *acceoryTitle;
 @end
 
-@interface SettingArrowItem : SettingItem
+@interface SettingArrowItem : SimpleItem
 /**
  *  点击这行cell需要跳转的控制器
  */
@@ -91,7 +91,7 @@ typedef NS_OPTIONS(NSUInteger, CellItemElementType) {
 
 @end
 
-@interface SettingCustomAccessoryViewItem : SettingItem
+@interface SettingCustomAccessoryViewItem : SimpleItem
 
 @property (nonatomic, strong) UIView *customAccessoryView;
 

@@ -6,19 +6,19 @@
 //  Copyright © 2016年 autohome. All rights reserved.
 //
 
-#import "SettingItem.h"
+#import "SimpleItem.h"
 
-@interface SettingItem ()
+@interface SimpleItem ()
 
 @end
 
-@implementation SettingItem
+@implementation SimpleItem
 
 @synthesize indexPath,cellClickBlock,reuseableIdentierOfCell;
 
 + (instancetype)itemWithIcon:(NSString *)icon title:(NSString *)title
 {
-    SettingItem *item = [[self alloc] init];
+    SimpleItem *item = [[self alloc] init];
     item.icon = icon;
     item.title = title;
     return item;
