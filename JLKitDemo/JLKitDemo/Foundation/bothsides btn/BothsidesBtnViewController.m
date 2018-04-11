@@ -7,13 +7,13 @@
 //
 
 #import "BothsidesBtnViewController.h"
-#import "JLBothSidesBtn.h"
+#import "TwoFaceButton.h"
 #import "MultifunctionBtn.h"
 
 @interface BothsidesBtnViewController ()
 
 /**双面button*/
-@property (nonatomic, strong)JLBothSidesBtn *bothSidesView;
+@property (nonatomic, strong)TwoFaceButton *bothSidesView;
 @end
 
 @implementation BothsidesBtnViewController
@@ -64,7 +64,7 @@
     
     [btn addTarget:self action:@selector(switchBtn:) forControlEvents:UIControlEventTouchUpInside];
     
-    _bothSidesView  =[[JLBothSidesBtn alloc]initWithFrame:CGRectMake(0, 400, 66, 66)];
+    _bothSidesView  =[[TwoFaceButton alloc]initWithFrame:CGRectMake(0, 400, 66, 66)];
     _bothSidesView.center = self.view.center;
 //    [self.view addSubview:_bothSidesView];
     _bothSidesView.autoTransition = NO;

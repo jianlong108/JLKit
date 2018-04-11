@@ -14,6 +14,7 @@
 		346A5524206B81B4002DD49A /* MTHorizontalPageFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */; };
 		346A5536206B9629002DD49A /* MTPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5533206B9629002DD49A /* MTPresentationController.m */; };
 		346A5537206B9629002DD49A /* UIViewController+PresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5535206B9629002DD49A /* UIViewController+PresentController.m */; };
+		34BC8274207DB61D009D5ED5 /* CWStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8272207DB61D009D5ED5 /* CWStatusBarNotification.m */; };
 		F40A188D207529C2008D7798 /* SimpleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A188C207529C2008D7798 /* SimpleModel.m */; };
 		F40A189D20752B5B008D7798 /* OTSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A189520752B5B008D7798 /* OTSectionModel.m */; };
 		F40A189E20752B5B008D7798 /* OTRowItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A189620752B5B008D7798 /* OTRowItemModel.m */; };
@@ -30,7 +31,7 @@
 		F4AECAA9205E5314000F6D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4AEC9E8205E5314000F6D37 /* Assets.xcassets */; };
 		F4AECAAD205E5314000F6D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4AEC9F0205E5314000F6D37 /* LaunchScreen.storyboard */; };
 		F4AECAAE205E5314000F6D37 /* BothsidesBtnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEC9F4205E5314000F6D37 /* BothsidesBtnViewController.m */; };
-		F4AECAAF205E5314000F6D37 /* JLBothSidesBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEC9F6205E5314000F6D37 /* JLBothSidesBtn.m */; };
+		F4AECAAF205E5314000F6D37 /* TwoFaceButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEC9F6205E5314000F6D37 /* TwoFaceButton.m */; };
 		F4AECAB0205E5314000F6D37 /* MultifunctionBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEC9F8205E5314000F6D37 /* MultifunctionBtn.m */; };
 		F4AECAB1205E5314000F6D37 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEC9FC205E5314000F6D37 /* HomeViewController.m */; };
 		F4AECAB2205E5314000F6D37 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AEC9FF205E5314000F6D37 /* LoginViewController.m */; };
@@ -120,6 +121,8 @@
 		346A5534206B9629002DD49A /* CustomPresentViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentViewControllerProtocol.h; sourceTree = "<group>"; };
 		346A5535206B9629002DD49A /* UIViewController+PresentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+PresentController.m"; sourceTree = "<group>"; };
 		348D53FF1E27A5640005E96A /* JLKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34BC8272207DB61D009D5ED5 /* CWStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWStatusBarNotification.m; sourceTree = "<group>"; };
+		34BC8273207DB61D009D5ED5 /* CWStatusBarNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWStatusBarNotification.h; sourceTree = "<group>"; };
 		F40A188B207529C2008D7798 /* SimpleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleModel.h; sourceTree = "<group>"; };
 		F40A188C207529C2008D7798 /* SimpleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleModel.m; sourceTree = "<group>"; };
 		F40A189120752B5B008D7798 /* SettingCellDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCellDataProtocol.h; sourceTree = "<group>"; };
@@ -152,8 +155,8 @@
 		F4AEC9F1205E5314000F6D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4AEC9F3205E5314000F6D37 /* BothsidesBtnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BothsidesBtnViewController.h; sourceTree = "<group>"; };
 		F4AEC9F4205E5314000F6D37 /* BothsidesBtnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BothsidesBtnViewController.m; sourceTree = "<group>"; };
-		F4AEC9F5205E5314000F6D37 /* JLBothSidesBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLBothSidesBtn.h; sourceTree = "<group>"; };
-		F4AEC9F6205E5314000F6D37 /* JLBothSidesBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLBothSidesBtn.m; sourceTree = "<group>"; };
+		F4AEC9F5205E5314000F6D37 /* TwoFaceButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoFaceButton.h; sourceTree = "<group>"; };
+		F4AEC9F6205E5314000F6D37 /* TwoFaceButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoFaceButton.m; sourceTree = "<group>"; };
 		F4AEC9F7205E5314000F6D37 /* MultifunctionBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultifunctionBtn.h; sourceTree = "<group>"; };
 		F4AEC9F8205E5314000F6D37 /* MultifunctionBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultifunctionBtn.m; sourceTree = "<group>"; };
 		F4AEC9FB205E5314000F6D37 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -348,6 +351,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		34BC8271207DB60A009D5ED5 /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				34BC8273207DB61D009D5ED5 /* CWStatusBarNotification.h */,
+				34BC8272207DB61D009D5ED5 /* CWStatusBarNotification.m */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		34BC8293207E26F8009D5ED5 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				F4AEC9F2205E5314000F6D37 /* bothsides btn */,
+				346A551B206B8164002DD49A /* UICollectionViewlayout */,
+				346A5530206B9629002DD49A /* PresentController */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		F49DDE122070B9F200793B40 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,12 +388,11 @@
 		F4AEC9E5205E5314000F6D37 /* JLKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				34BC8293207E26F8009D5ED5 /* Foundation */,
+				34BC8271207DB60A009D5ED5 /* Third */,
 				F40A18AD2075EDA5008D7798 /* one.html */,
-				346A5530206B9629002DD49A /* PresentController */,
-				346A551B206B8164002DD49A /* UICollectionViewlayout */,
 				F4AEC9E8205E5314000F6D37 /* Assets.xcassets */,
 				F4AEC9F0205E5314000F6D37 /* LaunchScreen.storyboard */,
-				F4AEC9F2205E5314000F6D37 /* bothsides btn */,
 				F4AEC9F9205E5314000F6D37 /* Business */,
 				F4AECA04205E5314000F6D37 /* can drag Collectionview */,
 				F4AECA0D205E5314000F6D37 /* can drag tableview */,
@@ -405,8 +426,8 @@
 			children = (
 				F4AEC9F3205E5314000F6D37 /* BothsidesBtnViewController.h */,
 				F4AEC9F4205E5314000F6D37 /* BothsidesBtnViewController.m */,
-				F4AEC9F5205E5314000F6D37 /* JLBothSidesBtn.h */,
-				F4AEC9F6205E5314000F6D37 /* JLBothSidesBtn.m */,
+				F4AEC9F5205E5314000F6D37 /* TwoFaceButton.h */,
+				F4AEC9F6205E5314000F6D37 /* TwoFaceButton.m */,
 				F4AEC9F7205E5314000F6D37 /* MultifunctionBtn.h */,
 				F4AEC9F8205E5314000F6D37 /* MultifunctionBtn.m */,
 			);
@@ -754,7 +775,7 @@
 				TargetAttributes = {
 					348D53FE1E27A5640005E96A = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 8DZNQGC828;
+						DevelopmentTeam = 36J93Y9Q95;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -809,12 +830,13 @@
 				F4AECABF205E5314000F6D37 /* UIImage+JL.m in Sources */,
 				F4AECAE9205E5315000F6D37 /* TestIndexBarViewController.m in Sources */,
 				F40A189E20752B5B008D7798 /* OTRowItemModel.m in Sources */,
+				34BC8274207DB61D009D5ED5 /* CWStatusBarNotification.m in Sources */,
 				F4AECAF3205E5315000F6D37 /* UINavigationController+XXTransition.m in Sources */,
 				F4AECAF8205E5315000F6D37 /* XXTransition.m in Sources */,
 				F4AECAC9205E5314000F6D37 /* UINavigationController+FullScreenPopGesture.m in Sources */,
 				F4AECAE1205E5314000F6D37 /* SettingLabelItem.m in Sources */,
 				3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */,
-				F4AECAAF205E5314000F6D37 /* JLBothSidesBtn.m in Sources */,
+				F4AECAAF205E5314000F6D37 /* TwoFaceButton.m in Sources */,
 				F4AECAE2205E5314000F6D37 /* SettingSwitchItem.m in Sources */,
 				F4AECADC205E5314000F6D37 /* SettingArrowItem.m in Sources */,
 				F4AECAEE205E5315000F6D37 /* JLTextFiled.m in Sources */,
@@ -995,11 +1017,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8DZNQGC828;
+				DEVELOPMENT_TEAM = 36J93Y9Q95;
 				INFOPLIST_FILE = JLKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JLKit.cn;
+				PRODUCT_BUNDLE_IDENTIFIER = JLKit.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1008,11 +1030,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8DZNQGC828;
+				DEVELOPMENT_TEAM = 36J93Y9Q95;
 				INFOPLIST_FILE = JLKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JLKit.cn;
+				PRODUCT_BUNDLE_IDENTIFIER = JLKit.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

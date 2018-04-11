@@ -1,26 +1,27 @@
 //
-//  JLBothSidesView.m
+//  TwoFaceButton.m
 //  wkwebviewDemo
 //
 //  Created by Wangjianlong on 2017/1/12.
 //  Copyright © 2017年 JL. All rights reserved.
 //
 
-#import "JLBothSidesBtn.h"
+#import "TwoFaceButton.h"
 
-@interface JLBothSidesBtn ()
+@interface TwoFaceButton ()
 
 /**正面button*/
-@property (nonatomic, strong,readwrite)UIButton *positiveBtn;
+@property (nonatomic, strong) UIButton *positiveBtn;
 
 /**反面button*/
-@property (nonatomic, strong,readwrite)UIButton *oppositeBtn;
+@property (nonatomic, strong) UIButton *oppositeBtn;
 
 @end
 
-@implementation JLBothSidesBtn
+@implementation TwoFaceButton
 
-- (instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame
+{
     if (self = [super initWithFrame:frame]) {
         
         self.backgroundColor = [UIColor clearColor];
@@ -43,11 +44,14 @@
     }
     return self;
 }
-- (void)setBackgroundColor:(UIColor *)backgroundColor{
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
     backgroundColor = [UIColor clearColor];
-    
 }
-- (void)btnClick:(UIButton *)sender{
+
+- (void)btnClick:(UIButton *)sender
+{
     if (_autoTransition == NO)
         return;
 
@@ -55,7 +59,9 @@
         NSLog(@"%@--->%@",_oppositeBtn.superview,_positiveBtn.superview);
     }];
 }
-- (void)transitionView{
+
+- (void)transitionView
+{
     if (_oppositeBtn.superview == nil) {
         [UIView transitionFromView:_positiveBtn toView:_oppositeBtn duration:_animationDuration options:_animationOptions completion:^(BOOL finished) {
             NSLog(@"%@--->%@",_oppositeBtn.superview,_positiveBtn.superview);
@@ -66,10 +72,12 @@
         }];
     }
 }
+
 /**
  翻转view 从正面翻转到反面
  */
-- (void)transitionFromPositiveViewToOppositeView{
+- (void)transitionFromPositiveViewToOppositeView
+{
     [UIView transitionFromView:_positiveBtn toView:_oppositeBtn duration:_animationDuration options:_animationOptions completion:^(BOOL finished) {
         NSLog(@"%@--->%@",_oppositeBtn.superview,_positiveBtn.superview);
     }];
@@ -79,9 +87,11 @@
 /**
  翻转view 从反面翻转到正面
  */
-- (void)transitionFromOppositeViewToPositiveView{
+- (void)transitionFromOppositeViewToPositiveView
+{
     [UIView transitionFromView:_oppositeBtn toView:_positiveBtn duration:_animationDuration options:_animationOptions completion:^(BOOL finished) {
         NSLog(@"%@--->%@",_oppositeBtn.superview,_positiveBtn.superview);
     }];
 }
+
 @end

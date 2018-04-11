@@ -22,7 +22,12 @@
 
 #import "NSBundle+JL.h"
 
+#import "CWStatusBarNotification.h"
+
 @interface HomeViewController ()
+
+@property (nonatomic, strong) CWStatusBarNotification *notification;
+@property (nonatomic, strong) UIActivityViewController *activityVC;
 
 @end
 
@@ -30,6 +35,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // initialize CWNotification
+    self.notification = [CWStatusBarNotification new];
+    
+    // set default blue color (since iOS 7.1, default window tintColor is black)
+    self.notification.notificationLabelBackgroundColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    
     [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:NSStringFromClass([self class])];
     [self setUpModel];
 }
@@ -97,13 +109,6 @@
     model = [[SimpleModel alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        
-        NSString *docDir = [paths objectAtIndex:0];
-        NSMutableString *str_m = [NSMutableString stringWithString:docDir];
-        
-//        NSURL *url = [NSURL fileURLWithPath:[str_m stringByAppendingPathComponent:@"one.html"]];
-//        NSURL *url = [NSURL fileURLWithPath:@"/Users/dalong/Desktop/one.html"];
         NSString *pathResource = [[NSBundle mainBundle] pathForResource:@"one" ofType:@"html"];
         NSURL *url = [NSURL fileURLWithPath:pathResource];
         UIWebViewController *webVc = [[UIWebViewController alloc]initWithURL:url];
@@ -113,9 +118,65 @@
     model.title = @"UIWebViewController";
     [sectionOne.items addObject:model];
     
+    model = [[SimpleModel alloc]init];
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        
+        [self displayShare];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            HomeViewController *home = [[HomeViewController alloc]init];
+            [_activityVC presentViewController:home animated:YES completion:nil];
+//            UIButton *customView = [UIButton buttonWithType:UIButtonTypeCustom];
+//            customView.backgroundColor = [UIColor orangeColor];
+//            [customView addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
+//            [self.notification displayNotificationWithView:customView forDuration:3];
+        });
+    };
+    model.reuseableIdentierOfCell = NSStringFromClass([self class]);
+    model.title = @"UIActivityViewController";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleModel alloc]init];
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+    model.reuseableIdentierOfCell = NSStringFromClass([self class]);
+    model.title = @"HomeViewController 被present";
+    [sectionOne.items addObject:model];
+    
     [self.data addObject:sectionOne];
 }
-
+- (void)tap
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        HomeViewController *home = [[HomeViewController alloc]init];
+        [self presentViewController:home animated:YES completion:nil];
+    });
+    
+}
+- (void)displayShare
+{
+    NSString *textToShare = @"请大家登录《iOS云端与网络通讯》服务网站";
+    
+    UIImage *imageToShare = [UIImage imageNamed:@"1"];
+    
+    NSURL *urlToShare = [NSURL URLWithString:@"http://www.iosbook3.com"];
+    
+    NSArray *activityItems = @[textToShare, imageToShare, urlToShare];
+    
+    _activityVC = [[UIActivityViewController alloc]initWithActivityItems:activityItems
+                                            
+                                                                            applicationActivities:nil];
+    
+    //不出现在活动项目
+    
+    _activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard,
+                                         
+                                         UIActivityTypeAssignToContact,UIActivityTypeSaveToCameraRoll];
+    _activityVC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    [self presentViewController:_activityVC animated:TRUE completion:nil];
+    
+}
 
 
 - (CGFloat)contentViewHeight
