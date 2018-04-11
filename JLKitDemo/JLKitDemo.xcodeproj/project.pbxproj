@@ -15,11 +15,12 @@
 		346A5536206B9629002DD49A /* MTPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5533206B9629002DD49A /* MTPresentationController.m */; };
 		346A5537206B9629002DD49A /* UIViewController+PresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5535206B9629002DD49A /* UIViewController+PresentController.m */; };
 		34BC8274207DB61D009D5ED5 /* CWStatusBarNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8272207DB61D009D5ED5 /* CWStatusBarNotification.m */; };
-		F40A188D207529C2008D7798 /* SimpleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A188C207529C2008D7798 /* SimpleModel.m */; };
+		34BC8296207E3203009D5ED5 /* SimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8295207E3203009D5ED5 /* SimpleCell.m */; };
+		34BC829B207E324E009D5ED5 /* SettingCheckItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8297207E324E009D5ED5 /* SettingCheckItem.m */; };
+		34BC829C207E324E009D5ED5 /* SettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8298207E324E009D5ED5 /* SettingItem.m */; };
 		F40A189D20752B5B008D7798 /* OTSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A189520752B5B008D7798 /* OTSectionModel.m */; };
 		F40A189E20752B5B008D7798 /* OTRowItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A189620752B5B008D7798 /* OTRowItemModel.m */; };
 		F40A18A220752CBE008D7798 /* OTTableViewPivot.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A020752CBE008D7798 /* OTTableViewPivot.m */; };
-		F40A18A520752E4E008D7798 /* SimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A420752E4E008D7798 /* SimpleCell.m */; };
 		F40A18A8207530F8008D7798 /* UIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A7207530F8008D7798 /* UIWebViewController.m */; };
 		F40A18AE2075EDA5008D7798 /* one.html in Resources */ = {isa = PBXBuildFile; fileRef = F40A18AD2075EDA5008D7798 /* one.html */; };
 		F40A18B12075F535008D7798 /* NSBundle+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18B02075F535008D7798 /* NSBundle+JL.m */; };
@@ -74,13 +75,6 @@
 		F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA56205E5314000F6D37 /* UIViewController+NavigationBar.m */; };
 		F4AECAD9205E5314000F6D37 /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA59205E5314000F6D37 /* LoginCell.m */; };
 		F4AECADA205E5314000F6D37 /* OTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA5D205E5314000F6D37 /* OTTableViewController.m */; };
-		F4AECADC205E5314000F6D37 /* SettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA61205E5314000F6D37 /* SettingArrowItem.m */; };
-		F4AECADD205E5314000F6D37 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA63205E5314000F6D37 /* SettingCell.m */; };
-		F4AECADE205E5314000F6D37 /* SettingCustonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA65205E5314000F6D37 /* SettingCustonItem.m */; };
-		F4AECADF205E5314000F6D37 /* SettingGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA67205E5314000F6D37 /* SettingGroupModel.m */; };
-		F4AECAE0205E5314000F6D37 /* SettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA69205E5314000F6D37 /* SettingItem.m */; };
-		F4AECAE1205E5314000F6D37 /* SettingLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA6B205E5314000F6D37 /* SettingLabelItem.m */; };
-		F4AECAE2205E5314000F6D37 /* SettingSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA6D205E5314000F6D37 /* SettingSwitchItem.m */; };
 		F4AECAE4205E5314000F6D37 /* MTScrollContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA72205E5314000F6D37 /* MTScrollContainerViewController.m */; };
 		F4AECAE5205E5315000F6D37 /* MTScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA74205E5314000F6D37 /* MTScrollTitleBar.m */; };
 		F4AECAE6205E5315000F6D37 /* MTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA76205E5314000F6D37 /* MTScrollView.m */; };
@@ -123,8 +117,12 @@
 		348D53FF1E27A5640005E96A /* JLKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BC8272207DB61D009D5ED5 /* CWStatusBarNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWStatusBarNotification.m; sourceTree = "<group>"; };
 		34BC8273207DB61D009D5ED5 /* CWStatusBarNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWStatusBarNotification.h; sourceTree = "<group>"; };
-		F40A188B207529C2008D7798 /* SimpleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleModel.h; sourceTree = "<group>"; };
-		F40A188C207529C2008D7798 /* SimpleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleModel.m; sourceTree = "<group>"; };
+		34BC8294207E3202009D5ED5 /* SimpleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCell.h; sourceTree = "<group>"; };
+		34BC8295207E3203009D5ED5 /* SimpleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCell.m; sourceTree = "<group>"; };
+		34BC8297207E324E009D5ED5 /* SettingCheckItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCheckItem.m; sourceTree = "<group>"; };
+		34BC8298207E324E009D5ED5 /* SettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingItem.m; sourceTree = "<group>"; };
+		34BC8299207E324E009D5ED5 /* SettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingItem.h; sourceTree = "<group>"; };
+		34BC829A207E324E009D5ED5 /* SettingCheckItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCheckItem.h; sourceTree = "<group>"; };
 		F40A189120752B5B008D7798 /* SettingCellDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCellDataProtocol.h; sourceTree = "<group>"; };
 		F40A189320752B5B008D7798 /* OTHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTHeader.h; sourceTree = "<group>"; };
 		F40A189420752B5B008D7798 /* OTRowItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTRowItemModel.h; sourceTree = "<group>"; };
@@ -134,8 +132,6 @@
 		F40A189820752B5B008D7798 /* OTSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTSectionModel.h; sourceTree = "<group>"; };
 		F40A18A020752CBE008D7798 /* OTTableViewPivot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewPivot.m; sourceTree = "<group>"; };
 		F40A18A120752CBE008D7798 /* OTTableViewPivot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewPivot.h; sourceTree = "<group>"; };
-		F40A18A320752E4E008D7798 /* SimpleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleCell.h; sourceTree = "<group>"; };
-		F40A18A420752E4E008D7798 /* SimpleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleCell.m; sourceTree = "<group>"; };
 		F40A18A6207530F8008D7798 /* UIWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIWebViewController.h; sourceTree = "<group>"; };
 		F40A18A7207530F8008D7798 /* UIWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIWebViewController.m; sourceTree = "<group>"; };
 		F40A18AD2075EDA5008D7798 /* one.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = one.html; sourceTree = "<group>"; };
@@ -242,20 +238,6 @@
 		F4AECA59205E5314000F6D37 /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
 		F4AECA5C205E5314000F6D37 /* OTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewController.h; sourceTree = "<group>"; };
 		F4AECA5D205E5314000F6D37 /* OTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewController.m; sourceTree = "<group>"; };
-		F4AECA60205E5314000F6D37 /* SettingArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingArrowItem.h; sourceTree = "<group>"; };
-		F4AECA61205E5314000F6D37 /* SettingArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingArrowItem.m; sourceTree = "<group>"; };
-		F4AECA62205E5314000F6D37 /* SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
-		F4AECA63205E5314000F6D37 /* SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
-		F4AECA64205E5314000F6D37 /* SettingCustonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCustonItem.h; sourceTree = "<group>"; };
-		F4AECA65205E5314000F6D37 /* SettingCustonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCustonItem.m; sourceTree = "<group>"; };
-		F4AECA66205E5314000F6D37 /* SettingGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingGroupModel.h; sourceTree = "<group>"; };
-		F4AECA67205E5314000F6D37 /* SettingGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingGroupModel.m; sourceTree = "<group>"; };
-		F4AECA68205E5314000F6D37 /* SettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingItem.h; sourceTree = "<group>"; };
-		F4AECA69205E5314000F6D37 /* SettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingItem.m; sourceTree = "<group>"; };
-		F4AECA6A205E5314000F6D37 /* SettingLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingLabelItem.h; sourceTree = "<group>"; };
-		F4AECA6B205E5314000F6D37 /* SettingLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingLabelItem.m; sourceTree = "<group>"; };
-		F4AECA6C205E5314000F6D37 /* SettingSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingSwitchItem.h; sourceTree = "<group>"; };
-		F4AECA6D205E5314000F6D37 /* SettingSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingSwitchItem.m; sourceTree = "<group>"; };
 		F4AECA71205E5314000F6D37 /* MTScrollContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollContainerViewController.h; sourceTree = "<group>"; };
 		F4AECA72205E5314000F6D37 /* MTScrollContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollContainerViewController.m; sourceTree = "<group>"; };
 		F4AECA73205E5314000F6D37 /* MTScrollTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleBar.h; sourceTree = "<group>"; };
@@ -363,9 +345,15 @@
 		34BC8293207E26F8009D5ED5 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				F4AECA48205E5314000F6D37 /* menu View */,
+				F4AECA3D205E5314000F6D37 /* infiniteLoop */,
+				F4AECA0D205E5314000F6D37 /* can drag tableview */,
+				F4AECA04205E5314000F6D37 /* can drag Collectionview */,
+				F4AECA3A205E5314000F6D37 /* groupIcon */,
 				F4AEC9F2205E5314000F6D37 /* bothsides btn */,
 				346A551B206B8164002DD49A /* UICollectionViewlayout */,
 				346A5530206B9629002DD49A /* PresentController */,
+				F4AECA1D205E5314000F6D37 /* FullScreenPop */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -394,18 +382,12 @@
 				F4AEC9E8205E5314000F6D37 /* Assets.xcassets */,
 				F4AEC9F0205E5314000F6D37 /* LaunchScreen.storyboard */,
 				F4AEC9F9205E5314000F6D37 /* Business */,
-				F4AECA04205E5314000F6D37 /* can drag Collectionview */,
-				F4AECA0D205E5314000F6D37 /* can drag tableview */,
 				F4AECA12205E5314000F6D37 /* Category */,
-				F4AECA1D205E5314000F6D37 /* FullScreenPop */,
 				F4AECA39205E5314000F6D37 /* GlobalFunction.h */,
-				F4AECA3A205E5314000F6D37 /* groupIcon */,
-				F4AECA3D205E5314000F6D37 /* infiniteLoop */,
 				F4AECA42205E5314000F6D37 /* Info.plist */,
 				F4AECA43205E5314000F6D37 /* IOS11Adapter.h */,
 				F4AECA44205E5314000F6D37 /* IOS11Adapter.m */,
 				F4AECA47205E5314000F6D37 /* main.m */,
-				F4AECA48205E5314000F6D37 /* menu View */,
 				F4AECA4D205E5314000F6D37 /* MTNavigationItemFactory.h */,
 				F4AECA4E205E5314000F6D37 /* MTNavigationItemFactory.m */,
 				F4AECA4F205E5314000F6D37 /* NavgiationBarOfViewControllerProtocol.h */,
@@ -444,10 +426,6 @@
 				F4AECA7A205E5314000F6D37 /* TabBarViewController.m */,
 				F4AEC9FA205E5314000F6D37 /* Home */,
 				F4AEC9FD205E5314000F6D37 /* My */,
-				F40A188B207529C2008D7798 /* SimpleModel.h */,
-				F40A188C207529C2008D7798 /* SimpleModel.m */,
-				F40A18A320752E4E008D7798 /* SimpleCell.h */,
-				F40A18A420752E4E008D7798 /* SimpleCell.m */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -621,24 +599,16 @@
 				F4AECA58205E5314000F6D37 /* LoginCell.h */,
 				F4AECA59205E5314000F6D37 /* LoginCell.m */,
 				F4AECA5A205E5314000F6D37 /* OT */,
-				F4AECA60205E5314000F6D37 /* SettingArrowItem.h */,
-				F4AECA61205E5314000F6D37 /* SettingArrowItem.m */,
-				F4AECA62205E5314000F6D37 /* SettingCell.h */,
-				F4AECA63205E5314000F6D37 /* SettingCell.m */,
 				3401375E20726E8A002D46D2 /* TagCellTableViewCell.h */,
 				3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */,
-				F4AECA64205E5314000F6D37 /* SettingCustonItem.h */,
-				F4AECA65205E5314000F6D37 /* SettingCustonItem.m */,
-				F4AECA66205E5314000F6D37 /* SettingGroupModel.h */,
-				F4AECA67205E5314000F6D37 /* SettingGroupModel.m */,
-				F4AECA68205E5314000F6D37 /* SettingItem.h */,
-				F4AECA69205E5314000F6D37 /* SettingItem.m */,
 				3401375B20726CC4002D46D2 /* TagItem.h */,
 				3401375C20726CC4002D46D2 /* TagItem.m */,
-				F4AECA6A205E5314000F6D37 /* SettingLabelItem.h */,
-				F4AECA6B205E5314000F6D37 /* SettingLabelItem.m */,
-				F4AECA6C205E5314000F6D37 /* SettingSwitchItem.h */,
-				F4AECA6D205E5314000F6D37 /* SettingSwitchItem.m */,
+				34BC8294207E3202009D5ED5 /* SimpleCell.h */,
+				34BC8295207E3203009D5ED5 /* SimpleCell.m */,
+				34BC829A207E324E009D5ED5 /* SettingCheckItem.h */,
+				34BC8297207E324E009D5ED5 /* SettingCheckItem.m */,
+				34BC8299207E324E009D5ED5 /* SettingItem.h */,
+				34BC8298207E324E009D5ED5 /* SettingItem.m */,
 			);
 			path = "Operating TableView";
 			sourceTree = "<group>";
@@ -825,7 +795,6 @@
 				F4AECAD7205E5314000F6D37 /* UINavigationController+Cloudox.m in Sources */,
 				F4AECAC3205E5314000F6D37 /* XMNavigationController+navigationBarUI.m in Sources */,
 				F4AECAD5205E5314000F6D37 /* MTNavigationItemFactory.m in Sources */,
-				F4AECADD205E5314000F6D37 /* SettingCell.m in Sources */,
 				F4AECAEA205E5315000F6D37 /* UITableView+IndexBar.m in Sources */,
 				F4AECABF205E5314000F6D37 /* UIImage+JL.m in Sources */,
 				F4AECAE9205E5315000F6D37 /* TestIndexBarViewController.m in Sources */,
@@ -834,22 +803,19 @@
 				F4AECAF3205E5315000F6D37 /* UINavigationController+XXTransition.m in Sources */,
 				F4AECAF8205E5315000F6D37 /* XXTransition.m in Sources */,
 				F4AECAC9205E5314000F6D37 /* UINavigationController+FullScreenPopGesture.m in Sources */,
-				F4AECAE1205E5314000F6D37 /* SettingLabelItem.m in Sources */,
 				3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */,
 				F4AECAAF205E5314000F6D37 /* TwoFaceButton.m in Sources */,
-				F4AECAE2205E5314000F6D37 /* SettingSwitchItem.m in Sources */,
-				F4AECADC205E5314000F6D37 /* SettingArrowItem.m in Sources */,
 				F4AECAEE205E5315000F6D37 /* JLTextFiled.m in Sources */,
 				F4AECAD4205E5314000F6D37 /* TestMenuViewController.m in Sources */,
 				F4AECACC205E5314000F6D37 /* UIAvaterGenerater.m in Sources */,
 				346A5536206B9629002DD49A /* MTPresentationController.m in Sources */,
-				F40A18A520752E4E008D7798 /* SimpleCell.m in Sources */,
 				F4AECABE205E5314000F6D37 /* NSString+JL.m in Sources */,
 				F4AECAD0205E5314000F6D37 /* IOS11Adapter.m in Sources */,
 				F4AECAF9205E5315000F6D37 /* XXTransitionManager.m in Sources */,
 				F4AECAF4205E5315000F6D37 /* UIViewController+XXTransition.m in Sources */,
 				F4AECAF0205E5315000F6D37 /* JLBaseInteractiveTransition.m in Sources */,
 				F4AECACB205E5314000F6D37 /* UIViewController+FullScreenPop.m in Sources */,
+				34BC8296207E3203009D5ED5 /* SimpleCell.m in Sources */,
 				F4AECABA205E5314000F6D37 /* TestTableViewController.m in Sources */,
 				F4AECAB7205E5314000F6D37 /* JLTabMoreView.m in Sources */,
 				F4AECAF1205E5315000F6D37 /* JLFoldAnimationer.m in Sources */,
@@ -867,7 +833,6 @@
 				F4AECAC8205E5314000F6D37 /* NavigationTranstionEngine.m in Sources */,
 				F4AECABC205E5314000F6D37 /* NSNumber+JL.m in Sources */,
 				F4AECAB3205E5314000F6D37 /* MyViewController.m in Sources */,
-				F4AECADE205E5314000F6D37 /* SettingCustonItem.m in Sources */,
 				F4AECAD3205E5314000F6D37 /* JLMenuView.m in Sources */,
 				F4AECAEB205E5315000F6D37 /* UITableViewIndexBar.m in Sources */,
 				F4AECAEC205E5315000F6D37 /* TempViewController.m in Sources */,
@@ -877,7 +842,6 @@
 				F4AECACE205E5314000F6D37 /* infinitLoopViewController.m in Sources */,
 				F4AECAC1205E5314000F6D37 /* UIViewController+XMNavigationController.m in Sources */,
 				3401375D20726CC4002D46D2 /* TagItem.m in Sources */,
-				F4AECAE0205E5314000F6D37 /* SettingItem.m in Sources */,
 				F40A18B12075F535008D7798 /* NSBundle+JL.m in Sources */,
 				F4AECAC0205E5314000F6D37 /* NSObject+AssociateObj.m in Sources */,
 				F40A18A220752CBE008D7798 /* OTTableViewPivot.m in Sources */,
@@ -895,17 +859,17 @@
 				F4AECAB4205E5314000F6D37 /* SettingViewController.m in Sources */,
 				F4AECAB8205E5314000F6D37 /* TestDragCollecViewController.m in Sources */,
 				F40A18A8207530F8008D7798 /* UIWebViewController.m in Sources */,
+				34BC829B207E324E009D5ED5 /* SettingCheckItem.m in Sources */,
 				3401375720726BF5002D46D2 /* HomeFunctionViewController.m in Sources */,
 				F4AECABB205E5314000F6D37 /* NSData+JL.m in Sources */,
 				346A5537206B9629002DD49A /* UIViewController+PresentController.m in Sources */,
 				F4AECABD205E5314000F6D37 /* NSObject+archive.m in Sources */,
 				F4AECAE4205E5314000F6D37 /* MTScrollContainerViewController.m in Sources */,
-				F40A188D207529C2008D7798 /* SimpleModel.m in Sources */,
 				F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */,
 				F4AECADA205E5314000F6D37 /* OTTableViewController.m in Sources */,
 				F4AECAB1205E5314000F6D37 /* HomeViewController.m in Sources */,
-				F4AECADF205E5314000F6D37 /* SettingGroupModel.m in Sources */,
 				F4AECAEF205E5315000F6D37 /* JLBaseAnimationEngine.m in Sources */,
+				34BC829C207E324E009D5ED5 /* SettingItem.m in Sources */,
 				F4AECAC4205E5314000F6D37 /* XMNavigationController+PanGesture.m in Sources */,
 				F4AECAD6205E5314000F6D37 /* UINavigationBar+BackGroundImage.m in Sources */,
 			);

@@ -10,11 +10,14 @@
 #import "JLBaseViewController.h"
 #import "OTProtocol.h"
 
-@interface OTTableViewController : JLBaseViewController
+@interface OTTableViewController : JLBaseViewController<
+    UITableViewDelegate,
+    UITableViewDataSource
+>
 
-@property(nonatomic,strong) NSMutableArray<id <OTSectionItemProtocol>> *data;
+@property(nonatomic, strong) NSMutableArray *sectionItems;
 
-@property(nonatomic,strong,readonly)UITableView *tableView;
+@property(nonatomic, readonly) UITableView *tableView;
 
 
 @end

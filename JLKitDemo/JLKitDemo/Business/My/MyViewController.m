@@ -7,6 +7,9 @@
 //
 
 #import "MyViewController.h"
+#import "SimpleCell.h"
+#import "SettingItem.h"
+#import "OTSectionModel.h"
 #import "UIViewController+XXTransition.h"
 #import "XXTransition.h"
 #import "SettingViewController.h"
@@ -14,64 +17,52 @@
 
 @interface MyViewController ()
 
-/**数据*/
-@property (nonatomic, strong)NSMutableArray *datas;
 
 @end
 
 @implementation MyViewController
 
-- (NSMutableArray *)datas{
-    if (_datas==nil) {
-        _datas = [NSMutableArray arrayWithObjects:
-                  @{@"name":@"登录页",@"vc":@"LoginViewController"},
-                  @{@"name":@"简易tableview使用--设置界面",@"vc":@"SettingViewController"},
-                  
-                  nil];
-    }
-    return _datas;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
+   
 //    [self transitionSetting];
     self.title = @"我的";
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.datas.count;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"jlkit"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"jlkit"];
-    }
-    NSDictionary *dic = self.datas[indexPath.row];
-    cell.textLabel.text =dic[@"name"];
-    return cell;
+    [self setUpModel];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSDictionary *dic = self.datas[indexPath.row];
+- (void)setUpModel
+{
+    __weak typeof(self)weakSelf = self;
+    OTSectionModel *sectionOne = [[OTSectionModel alloc]init];
+    sectionOne.footerHeight = 7;
+    sectionOne.headerHeight = 7;
     
-    NSString * vcClassName = dic[@"vc"];
-    UIViewController *vc = [[NSClassFromString(vcClassName) alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
+    SettingItem *model = [[SettingItem alloc]init];
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        LoginViewController *vc = [[LoginViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.title = @"登录页";
+    [sectionOne.items addObject:model];
+    
+    model = [[SettingItem alloc]init];
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        SettingViewController *vc = [[SettingViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.title = @"设置";
+    [sectionOne.items addObject:model];
+    
+    
+    [self.sectionItems addObject:sectionOne];
 }
+
 
 - (void)transitionSetting {
     

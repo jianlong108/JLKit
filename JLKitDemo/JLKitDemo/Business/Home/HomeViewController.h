@@ -10,7 +10,9 @@
 #import "CustomPresentViewControllerProtocol.h"
 #import "OTTableViewController.h"
 
-@interface HomeViewController : OTTableViewController<CustomPresentViewControllerProtocol>
+@interface HomeViewController : OTTableViewController<
+    CustomPresentViewControllerProtocol
+>
 
 
 @end
