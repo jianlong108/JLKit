@@ -70,10 +70,15 @@ NS_INLINE NSString *formatTransitonKey(NSString *transitionKey, NSString *transi
 }
 
 - (XXAnimationBlock)pushTransitionForViewController:(Class)vcClass {
+    if (![[XXTransitionManager sharedManager] navTransitionEnable]) {
+        return nil;
+    }
+    
     NSString *animationKey = self.animationKey;;
     if ([self.registedAnimationDic.allKeys containsObject:NSStringFromClass(vcClass)]) {
         animationKey = self.registedAnimationDic[NSStringFromClass(vcClass)];
     }
+    
     NSAssert(animationKey, @"XXTransition error: AnimationKey is nil");
     XXAnimationBlock block = self.transitionDic[formatTransitonKey(animationKey, TransitionTypePush)];
     NSAssert(block, @"XXTransition error: can't find a push transition");
@@ -81,6 +86,9 @@ NS_INLINE NSString *formatTransitonKey(NSString *transitionKey, NSString *transi
 }
 
 - (XXAnimationBlock)popTransitionForViewController:(Class)vcClass {
+    if (![[XXTransitionManager sharedManager] navTransitionEnable]) {
+        return nil;
+    }
     NSString *animationKey = self.animationKey;;
     if ([self.registedAnimationDic.allKeys containsObject:NSStringFromClass(vcClass)]) {
         animationKey = self.registedAnimationDic[NSStringFromClass(vcClass)];
@@ -98,12 +106,18 @@ NS_INLINE NSString *formatTransitonKey(NSString *transitionKey, NSString *transi
 
 
 - (XXAnimationBlock)presentTransitionForAnimationKey:(NSString *)animationKey {
+    if (![[XXTransitionManager sharedManager] navTransitionEnable]) {
+        return nil;
+    }
     XXAnimationBlock block = self.transitionDic[formatTransitonKey(animationKey, TransitionTypePresent)];
     NSAssert(block, @"XXTransition error: can't find a present transition");
     return block;
 }
 
 - (XXAnimationBlock)dismissTransitionForAnimationKey:(NSString *)animationKey {
+    if (![[XXTransitionManager sharedManager] navTransitionEnable]) {
+        return nil;
+    }
     XXAnimationBlock block = self.transitionDic[formatTransitonKey(animationKey, TransitionTypeDismiss)];
     NSAssert(block, @"XXTransition error: can't find a dismiss transition");
     return block;

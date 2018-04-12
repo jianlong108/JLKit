@@ -12,14 +12,14 @@
 #import "XXMacro.h"
 @implementation UINavigationController (XXTransition)
 
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Method sysPush = class_getInstanceMethod(self.class, @selector(pushViewController:animated:));
-        Method xxPush = class_getInstanceMethod(self.class, @selector(xx_pushViewController:animated:));
-        method_exchangeImplementations(sysPush, xxPush);
-    });
-}
+//+ (void)load {
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        Method sysPush = class_getInstanceMethod(self.class, @selector(pushViewController:animated:));
+//        Method xxPush = class_getInstanceMethod(self.class, @selector(xx_pushViewController:animated:));
+//        method_exchangeImplementations(sysPush, xxPush);
+//    });
+//}
 
 - (void)xx_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if ([XXTransitionManager sharedManager].navTransitionEnable) {

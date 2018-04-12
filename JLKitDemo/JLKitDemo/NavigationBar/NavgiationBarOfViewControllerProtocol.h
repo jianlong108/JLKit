@@ -33,6 +33,7 @@
 - (void)updateNavigationBarIfNeed;
 
 - (CGFloat)alphaOfNavigationBar;
+- (BOOL)hiddenNavigationBar;
 
 /**
  返回中心标题栏的字体属性.主要为以下两个特性:

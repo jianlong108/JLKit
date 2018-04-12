@@ -63,7 +63,9 @@
 
 - (void)pushAnimation:(id<UIViewControllerContextTransitioning>)transitionContext {
     void (^pushAnimationBlock)(id<UIViewControllerContextTransitioning>, NSTimeInterval) =  [[XXTransitionManager sharedManager] pushTransitionForViewController:_ownerClass];
-    pushAnimationBlock(transitionContext, self.duration);
+    if (pushAnimationBlock) {
+        pushAnimationBlock(transitionContext, self.duration);
+    }
 }
 
 

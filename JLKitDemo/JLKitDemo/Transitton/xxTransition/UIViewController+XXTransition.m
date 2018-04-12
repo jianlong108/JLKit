@@ -18,14 +18,14 @@
 @implementation UIViewController (XXTransition)
 
 
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Method sysMethod = class_getInstanceMethod(self.class, @selector(viewDidAppear:));
-        Method xxMethod = class_getInstanceMethod(self.class, @selector(xx_viewDidAppear:));
-        method_exchangeImplementations(sysMethod, xxMethod);
-    });
-}
+//+ (void)load {
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        Method sysMethod = class_getInstanceMethod(self.class, @selector(viewDidAppear:));
+//        Method xxMethod = class_getInstanceMethod(self.class, @selector(xx_viewDidAppear:));
+//        method_exchangeImplementations(sysMethod, xxMethod);
+//    });
+//}
 
 - (void)xx_viewDidAppear:(BOOL)animated {
     if ([XXTransitionManager sharedManager].navTransitionEnable && self.navigationController && self.navigationController.delegate != self) {

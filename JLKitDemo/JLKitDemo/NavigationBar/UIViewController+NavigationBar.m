@@ -201,6 +201,11 @@
     return 1.0;
 }
 
+- (BOOL)hiddenNavigationBar
+{
+    return NO;
+}
+
 - (BOOL)needUpdateNavigationBarWhenAttributeChange
 {
     return NO;

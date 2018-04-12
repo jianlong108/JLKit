@@ -407,9 +407,9 @@ MTScrollTitleBarDataSource
             scrollView.contentInset = inset;
             scrollView.scrollIndicatorInsets = inset;
             
-            if ([controller respondsToSelector:@selector(setScrollViewContentInset:)]) {
-                [(id<MTScrollNavigationChildControllerProtocol>)controller setScrollViewContentInset:inset];
-            }
+//            if ([controller respondsToSelector:@selector(setScrollViewContentInset:)]) {
+//                [(id<MTScrollNavigationChildControllerProtocol>)controller setScrollViewContentInset:inset];
+//            }
             
             if (scrollView.contentOffset.y <= 0) {
                 [scrollView setContentOffset:CGPointMake(0, -self.headerView.frame.size.height-self.headerView.frame.origin.y) animated:NO] ;

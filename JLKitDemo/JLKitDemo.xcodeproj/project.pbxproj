@@ -88,13 +88,6 @@
 		F4AECAF0205E5315000F6D37 /* JLBaseInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA8E205E5314000F6D37 /* JLBaseInteractiveTransition.m */; };
 		F4AECAF1205E5315000F6D37 /* JLFoldAnimationer.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA90205E5314000F6D37 /* JLFoldAnimationer.m */; };
 		F4AECAF2205E5315000F6D37 /* JLHorizontalPanInteraction.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA92205E5314000F6D37 /* JLHorizontalPanInteraction.m */; };
-		F4AECAF3205E5315000F6D37 /* UINavigationController+XXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA95205E5314000F6D37 /* UINavigationController+XXTransition.m */; };
-		F4AECAF4205E5315000F6D37 /* UIViewController+XXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA97205E5314000F6D37 /* UIViewController+XXTransition.m */; };
-		F4AECAF5205E5315000F6D37 /* XXAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA99205E5314000F6D37 /* XXAnimatedTransitioning.m */; };
-		F4AECAF6205E5315000F6D37 /* XXGlobalConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA9B205E5314000F6D37 /* XXGlobalConst.m */; };
-		F4AECAF7205E5315000F6D37 /* XXInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA9D205E5314000F6D37 /* XXInteractiveTransition.m */; };
-		F4AECAF8205E5315000F6D37 /* XXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECAA0205E5314000F6D37 /* XXTransition.m */; };
-		F4AECAF9205E5315000F6D37 /* XXTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECAA2205E5314000F6D37 /* XXTransitionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -264,21 +257,6 @@
 		F4AECA90205E5314000F6D37 /* JLFoldAnimationer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLFoldAnimationer.m; sourceTree = "<group>"; };
 		F4AECA91205E5314000F6D37 /* JLHorizontalPanInteraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLHorizontalPanInteraction.h; sourceTree = "<group>"; };
 		F4AECA92205E5314000F6D37 /* JLHorizontalPanInteraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLHorizontalPanInteraction.m; sourceTree = "<group>"; };
-		F4AECA94205E5314000F6D37 /* UINavigationController+XXTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+XXTransition.h"; sourceTree = "<group>"; };
-		F4AECA95205E5314000F6D37 /* UINavigationController+XXTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+XXTransition.m"; sourceTree = "<group>"; };
-		F4AECA96205E5314000F6D37 /* UIViewController+XXTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+XXTransition.h"; sourceTree = "<group>"; };
-		F4AECA97205E5314000F6D37 /* UIViewController+XXTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XXTransition.m"; sourceTree = "<group>"; };
-		F4AECA98205E5314000F6D37 /* XXAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXAnimatedTransitioning.h; sourceTree = "<group>"; };
-		F4AECA99205E5314000F6D37 /* XXAnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXAnimatedTransitioning.m; sourceTree = "<group>"; };
-		F4AECA9A205E5314000F6D37 /* XXGlobalConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXGlobalConst.h; sourceTree = "<group>"; };
-		F4AECA9B205E5314000F6D37 /* XXGlobalConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXGlobalConst.m; sourceTree = "<group>"; };
-		F4AECA9C205E5314000F6D37 /* XXInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXInteractiveTransition.h; sourceTree = "<group>"; };
-		F4AECA9D205E5314000F6D37 /* XXInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXInteractiveTransition.m; sourceTree = "<group>"; };
-		F4AECA9E205E5314000F6D37 /* XXMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXMacro.h; sourceTree = "<group>"; };
-		F4AECA9F205E5314000F6D37 /* XXTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXTransition.h; sourceTree = "<group>"; };
-		F4AECAA0205E5314000F6D37 /* XXTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTransition.m; sourceTree = "<group>"; };
-		F4AECAA1205E5314000F6D37 /* XXTransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXTransitionManager.h; sourceTree = "<group>"; };
-		F4AECAA2205E5314000F6D37 /* XXTransitionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XXTransitionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +321,7 @@
 		34BC8293207E26F8009D5ED5 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				F4AECA70205E5314000F6D37 /* scrollContainer */,
 				F4AECA48205E5314000F6D37 /* menu View */,
 				F4AECA3D205E5314000F6D37 /* infiniteLoop */,
 				F4AECA0D205E5314000F6D37 /* can drag tableview */,
@@ -390,7 +369,6 @@
 				F4AECA4E205E5314000F6D37 /* MTNavigationItemFactory.m */,
 				F4AECA50205E5314000F6D37 /* NavigationBar */,
 				F4AECA57205E5314000F6D37 /* Operating TableView */,
-				F4AECA70205E5314000F6D37 /* scrollContainer */,
 				F4AECA7B205E5314000F6D37 /* TableViewIndexBar */,
 				F4AECA82205E5314000F6D37 /* TempViewController.h */,
 				F4AECA83205E5314000F6D37 /* TempViewController.m */,
@@ -669,7 +647,6 @@
 			isa = PBXGroup;
 			children = (
 				F4AECA8A205E5314000F6D37 /* VcTransition */,
-				F4AECA93205E5314000F6D37 /* xxTransition */,
 			);
 			path = Transitton;
 			sourceTree = "<group>";
@@ -687,28 +664,6 @@
 				F4AECA92205E5314000F6D37 /* JLHorizontalPanInteraction.m */,
 			);
 			path = VcTransition;
-			sourceTree = "<group>";
-		};
-		F4AECA93205E5314000F6D37 /* xxTransition */ = {
-			isa = PBXGroup;
-			children = (
-				F4AECA94205E5314000F6D37 /* UINavigationController+XXTransition.h */,
-				F4AECA95205E5314000F6D37 /* UINavigationController+XXTransition.m */,
-				F4AECA96205E5314000F6D37 /* UIViewController+XXTransition.h */,
-				F4AECA97205E5314000F6D37 /* UIViewController+XXTransition.m */,
-				F4AECA98205E5314000F6D37 /* XXAnimatedTransitioning.h */,
-				F4AECA99205E5314000F6D37 /* XXAnimatedTransitioning.m */,
-				F4AECA9A205E5314000F6D37 /* XXGlobalConst.h */,
-				F4AECA9B205E5314000F6D37 /* XXGlobalConst.m */,
-				F4AECA9C205E5314000F6D37 /* XXInteractiveTransition.h */,
-				F4AECA9D205E5314000F6D37 /* XXInteractiveTransition.m */,
-				F4AECA9E205E5314000F6D37 /* XXMacro.h */,
-				F4AECA9F205E5314000F6D37 /* XXTransition.h */,
-				F4AECAA0205E5314000F6D37 /* XXTransition.m */,
-				F4AECAA1205E5314000F6D37 /* XXTransitionManager.h */,
-				F4AECAA2205E5314000F6D37 /* XXTransitionManager.m */,
-			);
-			path = xxTransition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -796,8 +751,6 @@
 				F4AECABF205E5314000F6D37 /* UIImage+JL.m in Sources */,
 				F4AECAE9205E5315000F6D37 /* TestIndexBarViewController.m in Sources */,
 				34BC8274207DB61D009D5ED5 /* CWStatusBarNotification.m in Sources */,
-				F4AECAF3205E5315000F6D37 /* UINavigationController+XXTransition.m in Sources */,
-				F4AECAF8205E5315000F6D37 /* XXTransition.m in Sources */,
 				F4AECAC9205E5314000F6D37 /* UINavigationController+FullScreenPopGesture.m in Sources */,
 				3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */,
 				F4AECAAF205E5314000F6D37 /* TwoFaceButton.m in Sources */,
@@ -807,8 +760,6 @@
 				346A5536206B9629002DD49A /* MTPresentationController.m in Sources */,
 				F4AECABE205E5314000F6D37 /* NSString+JL.m in Sources */,
 				F4AECAD0205E5314000F6D37 /* IOS11Adapter.m in Sources */,
-				F4AECAF9205E5315000F6D37 /* XXTransitionManager.m in Sources */,
-				F4AECAF4205E5315000F6D37 /* UIViewController+XXTransition.m in Sources */,
 				F4AECAF0205E5315000F6D37 /* JLBaseInteractiveTransition.m in Sources */,
 				F4AECACB205E5314000F6D37 /* UIViewController+FullScreenPop.m in Sources */,
 				34BC8296207E3203009D5ED5 /* SimpleCell.m in Sources */,
@@ -825,7 +776,6 @@
 				F4AECAA8205E5314000F6D37 /* AppDelegate.m in Sources */,
 				F40A189D20752B5B008D7798 /* OTSectionModel.m in Sources */,
 				34BC82A6207E3C22009D5ED5 /* MTScrollTitleBar.m in Sources */,
-				F4AECAF7205E5315000F6D37 /* XXInteractiveTransition.m in Sources */,
 				F4AECAC8205E5314000F6D37 /* NavigationTranstionEngine.m in Sources */,
 				F4AECABC205E5314000F6D37 /* NSNumber+JL.m in Sources */,
 				F4AECAB3205E5314000F6D37 /* MyViewController.m in Sources */,
@@ -843,14 +793,12 @@
 				F4AECAC0205E5314000F6D37 /* NSObject+AssociateObj.m in Sources */,
 				F40A18A220752CBE008D7798 /* OTTableViewPivot.m in Sources */,
 				F4AECAB2205E5314000F6D37 /* LoginViewController.m in Sources */,
-				F4AECAF6205E5315000F6D37 /* XXGlobalConst.m in Sources */,
 				F4AECAC5205E5314000F6D37 /* XMNavigationController+Stack.m in Sources */,
 				F49DDE112070AC0D00793B40 /* HomeContainerController.m in Sources */,
 				F4AECAF2205E5315000F6D37 /* JLHorizontalPanInteraction.m in Sources */,
 				F4AECAD2205E5314000F6D37 /* main.m in Sources */,
 				F4AECACD205E5314000F6D37 /* InfiniteLoopView.m in Sources */,
 				F49DDE1B2070B9F200793B40 /* UINavigationController+DelegateManager.m in Sources */,
-				F4AECAF5205E5315000F6D37 /* XXAnimatedTransitioning.m in Sources */,
 				F4AECAAE205E5314000F6D37 /* BothsidesBtnViewController.m in Sources */,
 				F4AECAB4205E5314000F6D37 /* SettingViewController.m in Sources */,
 				F4AECAB8205E5314000F6D37 /* TestDragCollecViewController.m in Sources */,

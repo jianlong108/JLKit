@@ -8,7 +8,6 @@
 
 #import "HomeFunctionViewController.h"
 #import "MTHorizontalWaterFullLayout.h"
-#import "IOS11Adapter.h"
 
 @interface StringItemModel :NSObject<HorizontalWaterFullModelProtocol>
 
@@ -81,7 +80,6 @@
     [collectionView registerClass:[StringCollectionViewCell class] forCellWithReuseIdentifier:@"flowlayout"];
     [self.view addSubview:collectionView];
     _collectionView = collectionView;
-    [IOS11Adapter scrollViewContentInsetAmendment:collectionView];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
