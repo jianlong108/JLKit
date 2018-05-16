@@ -48,6 +48,9 @@
     [super viewDidLoad];
     
     self.edgesForExtendedLayout = UIRectEdgeAll;
+    
+    self.view.backgroundColor = [UIColor orangeColor];
+    
     //防止内存占用严重时,view会被释放,会重新调用viewdidload方法.
     [self.scrollNavigationController.view removeFromSuperview];
     [self.view addSubview:self.scrollNavigationController.view];
@@ -98,9 +101,9 @@
     }
 }
 
-- (CGFloat)alphaOfNavigationBar
+- (BOOL)hiddenNavigationBar
 {
-    return 0.0f;
+    return YES;
 }
 
 @end

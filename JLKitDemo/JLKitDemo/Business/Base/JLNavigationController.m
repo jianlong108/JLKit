@@ -9,8 +9,12 @@
 #import "JLNavigationController.h"
 //#import "UINavigationController+DelegateManager.h"
 #import "UINavigationBar+BackGroundImage.h"
+#import "NavgiationBarOfViewControllerProtocol.h"
 
-@interface JLNavigationController ()<UINavigationBarDelegate,UINavigationControllerDelegate>
+@interface JLNavigationController ()<
+    UINavigationBarDelegate,
+    UINavigationControllerDelegate
+>
 
 @end
 
@@ -31,6 +35,7 @@
 {
     if (self = [super initWithRootViewController:rootViewController]){
 //        [self setDelegate:[[_UINavigationControllerDelegateManager alloc] init]];
+        self.delegate = self;
     }
     return self;
 }
@@ -71,13 +76,11 @@
     return self.topViewController;
 }
 
-- (void)navigationBar:(UINavigationBar *)navigationBar didPushItem:(UINavigationItem *)item
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController <NavgiationBarOfViewControllerProtocol>*)viewController animated:(BOOL)animated
 {
-    
-}
-
-- (void)navigationBar:(UINavigationBar *)navigationBar didPopItem:(UINavigationItem *)item
-{
+    if ([viewController respondsToSelector:@selector(hiddenNavigationBar)]) {
+        [navigationController setNavigationBarHidden:[viewController hiddenNavigationBar] animated:YES];
+    }
     
 }
 
