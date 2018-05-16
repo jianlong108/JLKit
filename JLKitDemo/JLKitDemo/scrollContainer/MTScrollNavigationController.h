@@ -26,17 +26,6 @@
 
 /*!
  @method
- @abstract   指定下标的标题名称
- @discussion 指定下标的标题名称
- @param      scrollNavigationController 视图控制器
- @param      index 指定下标
- @return     返回标题名称
- */
-- (NSString*)scrollNavigationController:(MTScrollNavigationController*)scrollNavigationController
-                          titleForIndex:(NSInteger)index;
-
-/*!
- @method
  @abstract   某个下标的子视图控制器
  @discussion 某个下标的子视图控制器
  @param      scrollNavigationController 滚动导航视图控制器，子控制器需要实现ChildViewControllerDelegate委托，用于监听子视图显示前的事件回调
@@ -44,7 +33,7 @@
  @return     某个子视图控制器
  */
 - (UIViewController<MTScrollNavigationChildControllerProtocol> *)scrollNavigationController:(MTScrollNavigationController *)scrollNavigationController
-                                                                   childViewControllerForIndex:(NSInteger)index;
+                                                                childViewControllerForIndex:(NSInteger)index;
 
 
 @optional
@@ -75,7 +64,7 @@
  @param      scrollNavigationController AHScrollNavigationController
  @result     无
  */
-- (UIView*)rightExtensionInNavigationViewController:(MTScrollNavigationController *)scrollNavigationController;
+- (UIView*)rightExtensionInNavigationViewController:(MTScrollNavigationController *)scrollNavigationController forIndex:(NSUInteger)index;
 
 
 /*!
@@ -109,7 +98,7 @@
 @optional
 
 //解决 scrollNavigation中Tableview 滑动删除
--(BOOL)canScrollWithGesture:(UIGestureRecognizer *)pan;
+-(BOOL)scrollNavigationController:(MTScrollNavigationController*)scrollNavigationController canScrollWithGesture:(UIGestureRecognizer *)pan shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGesture;
 
 /*!
  @method
@@ -142,14 +131,27 @@
 
 @interface MTScrollNavigationController : UIViewController
 
+/**顶部标题栏*/
+@property (nonatomic, readonly) MTScrollTitleBar *scrollTitleBar;
+
+/**可滑动试图区域*/
+@property (nonatomic, readonly) UIScrollView    *scrollContentView;
+
+/**选中下标 */
+@property (nonatomic, readonly) NSInteger selectedIndex;
+
+/**abstract 上一次选中的索引位置 */
+@property (nonatomic, readonly) NSInteger lastPage;
+
 /**headView是否支持滚动，默认YES支持滚动*/
 @property (nonatomic, assign) BOOL headScrollEnable;
 
 /**当底部视图区域可以滑动并且headView是否支持滚动，当滚动时TitleBar是否停留在顶部*/
 @property (nonatomic, assign) BOOL hidesTitleBarWhenScrollToTop;
 
-/**顶部标题栏*/
-@property (nonatomic, strong,readonly) MTScrollTitleBar *scrollTitleBar;
+
+/**顶部标题显示样式*/
+@property (nonatomic, assign) MTScrollTitleBarElementStyle topTitleStyle;
 
 /**标题正常颜色*/
 @property (nonatomic, strong) UIColor *scrollTitleBarItemColor;
@@ -166,46 +168,20 @@
 /**横条高度 默认为1 最大值为5,最小1*/
 @property (nonatomic, assign) CGFloat scrollTitleBarLineViewHeight;
 
-/*!
- @property
- @abstract 可滑动试图区域
- */
-@property (nonatomic, strong,readonly) UIScrollView    *scrollContentView;
-/*!
- @property
- @abstract 数据源
- */
+/** 数据源 */
 @property (nonatomic, weak) id<MTScrollNavigationControllerDataSource> scrollNavigationDataSource;
 
-/*!
- @property
- @abstract 事件委托
- */
+/** 事件委托 */
 @property (nonatomic, weak) id<MTScrollNavigationControllerDelegate> scrollNavigationDelegate;
 
-/*!
- @property
- @abstract 选中下标
- */
-@property(nonatomic,assign,readonly)NSInteger selectedIndex;
 
-/*!
- @abstract 上一次选中的索引位置
- */
-@property(nonatomic,assign)NSInteger lastPage;
-
-/**顶部标题显示样式*/
-@property (nonatomic, assign)MTScrollTitleBarElementStyle topTitleStyle;
-
-/**是否设置 顶部标题为粗体 默认NO*/
-@property (nonatomic, assign)BOOL topTitleBar_BoldFont;
 
 /*!
  @property
  @abstract 根据索引位置获取对应的viewcontroller,防止外层代码出现频繁的索引越界
  @result   UIViewController,如果，没有找到，则返回nil
  */
-- (UIViewController*)getViewControllerWithIndex:(NSUInteger)aIndex;
+- (UIViewController <MTScrollNavigationChildControllerProtocol>*)getViewControllerWithIndex:(NSUInteger)aIndex;
 
 /*!
  @method
@@ -221,12 +197,11 @@
 
 /*!
  @method
- @abstract   设置标题上方的badge显示控制
  @discussion 设置标题上方的badge显示控制
  @param      show  是否显示
  @param      index 所在title下标
  */
-- (void)showBadge:(BOOL)show AtIndex:(NSInteger)index;
+- (void)showBadge:(BOOL)show atIndex:(NSInteger)index;
 
 /**
  右上角显示数字提示
@@ -235,7 +210,8 @@
  @param index 在tab 的显示位置
  @param show  是否显示
  */
-- (void)showNumAlert:(BOOL)show Content:(NSString *)text AtIndex:(NSInteger)index;
+- (void)showNumAlert:(BOOL)show content:(NSString *)text atIndex:(NSInteger)index;
+
 /*!
  @method 状态栏高度
  @abstract   启动时设置状态栏高度
@@ -244,3 +220,4 @@
 +(void)setStatusHeight:(float) sHeight;
 
 @end
+

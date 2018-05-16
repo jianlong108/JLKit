@@ -55,7 +55,7 @@ typedef enum MTScrollTitleBarElementStyle{
  @param      scrollTitleBar AHScrollTitleBar
  @return     返回值为 UIView的子类 会显示在滑动导航后面
  */
-//- (UIView *)rightViewForScrollTitleBar:(MTScrollTitleBar *)scrollTitleBar;
+- (UIView *)rightViewForScrollTitleBar:(MTScrollTitleBar *)scrollTitleBar index:(NSUInteger)index;
 
 
 @end
@@ -71,43 +71,40 @@ typedef enum MTScrollTitleBarElementStyle{
 
 @interface MTScrollTitleBar : UIView
 
-@property (nonatomic, strong,readonly)UIScrollView *contentScrollView;
+@property (nonatomic, readonly) UIScrollView *contentScrollView;
+@property (nonatomic, readonly) UIView *rightView;
 
-@property(nonatomic,weak)id<MTScrollTitleBarDataSource> dataSource;
+@property (nonatomic, weak) id<MTScrollTitleBarDataSource> dataSource;
 
-@property(nonatomic,weak)id<MTScrollTitleBarDelegate> delegate;
+@property (nonatomic, weak) id<MTScrollTitleBarDelegate> delegate;
 
-@property(nonatomic,assign,readonly)NSUInteger selectedIndex;
+@property (nonatomic, readonly) NSUInteger selectedIndex;
 
 
 ////默认为NO 类似于tabbar点击后会触发事件
-@property(nonatomic,assign) BOOL selectedByTouchDown;
+@property (nonatomic, assign) BOOL selectedByTouchDown;
 
-@property(nonatomic,assign) BOOL autoScroller;
+@property (nonatomic, assign) BOOL autoScroller;
 
 //// UI
-@property(nonatomic,assign) MTScrollTitleBarElementStyle  elementDisplayStyle;
+@property (nonatomic, assign) MTScrollTitleBarElementStyle  elementDisplayStyle;
 
-
-@property (nonatomic,assign)  BOOL boldFont;
 @property (nonatomic, strong) UIFont *titleFont; //默认15号
+@property (nonatomic, strong) UIFont *selectTitleFont; //默认15号
 @property (nonatomic, strong) UIColor *titleColor;
 @property (nonatomic, strong) UIColor *selectedTitleColor;
 @property (nonatomic, strong) UIColor *lineViewColor;
 @property (nonatomic, assign) CGFloat lineViewHeight;//默认为1, 范围[1,5]
 
 ////第一个按钮的X坐标 将以此坐标开始布局
-@property (nonatomic, assign)CGFloat firstBtnX;
-
-
-
+@property (nonatomic, assign) CGFloat firstBtnX;
 
 - (instancetype)initWithFrame:(CGRect)frame canScroll:(BOOL)scroll;
 
 
 /**
  设置默认选中索引
-
+ 
  @param index 索引
  */
 - (void)setUpSelecteIndex:(NSUInteger)index;
@@ -115,7 +112,7 @@ typedef enum MTScrollTitleBarElementStyle{
 
 /**
  如果数据源没有提供数据,返回NO,不做任何操作
-
+ 
  @return 能否刷新UI
  */
 - (BOOL)reloadData;
@@ -130,13 +127,17 @@ typedef enum MTScrollTitleBarElementStyle{
 
 /**
  外部驱动--向另一个索引过渡
-
+ 
  @param toIndex 目标索引
  @param fromIndex 当前索引
  @param scale 比例
  */
 - (void)scrollingToNextElement:(NSUInteger)toIndex fromIndex:(NSUInteger)fromIndex scale:(CGFloat)scale;
 
+- (void)showBadge:(BOOL)show atIndex:(NSInteger)index;
+
+- (void)showNumAlert:(BOOL)show content:(NSString *)content atIndex:(NSInteger)index;
 
 @end
+
 

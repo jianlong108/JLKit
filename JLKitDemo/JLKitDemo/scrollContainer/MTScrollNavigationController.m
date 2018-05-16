@@ -8,6 +8,7 @@
 
 #import "MTScrollNavigationController.h"
 #import <objc/runtime.h>
+#import "MTScrollView.h"
 
 
 static int statusHeight; //状态栏高度  必须在启动是记录
@@ -63,7 +64,7 @@ MTScrollTitleBarDataSource
 {
     
     NSInteger             _pageCount;           //总页数
-    NSInteger             _currentPage;         //当前页数
+    //    NSInteger             _currentPage;         //当前页数
     NSInteger             _pageIndexBeforeRotation;
     
     NSMutableDictionary   *_childViewControllerDic;//子控件视图
@@ -71,9 +72,12 @@ MTScrollTitleBarDataSource
     
 }
 /**顶部标题栏*/
-@property (nonatomic, strong,readwrite) MTScrollTitleBar *scrollTitleBar;
-@property (nonatomic, strong,readwrite) UIScrollView    *scrollContentView;
+@property (nonatomic, strong) MTScrollTitleBar *scrollTitleBar;
+@property (nonatomic, strong) MTScrollView    *scrollContentView;
 
+@property (nonatomic, assign) NSInteger lastPage;
+@property (nonatomic, assign) NSInteger defaultPage;
+@property (nonatomic, assign) NSInteger selectedIndex;
 
 //用于区分是点击翻页还是活动翻页
 @property (nonatomic, assign) BOOL pageChangedByClick;
@@ -97,8 +101,6 @@ MTScrollTitleBarDataSource
 //当前显示的UIScrollView
 @property (nonatomic, assign) UIScrollView *currentShowScrollView;
 
-@property(nonatomic,assign,readwrite)NSInteger selectedIndex;
-
 @end
 
 
@@ -108,6 +110,11 @@ MTScrollTitleBarDataSource
 #pragma mark - viewController lifecycle
 - (void)dealloc
 {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [_currentShowScrollView removeObserver:self forKeyPath:@"contentOffset"];
+    [_scrollContentView removeObserver:self forKeyPath:@"contentOffset"];
+    
     _currentShowScrollView = nil;
     _scrollNavigationDataSource = nil;
     _scrollNavigationDelegate = nil;
@@ -136,8 +143,6 @@ MTScrollTitleBarDataSource
                 scrollView.contentInset = inset;
                 scrollView.scrollIndicatorInsets = inset;
                 scrollView.offsetOrginYForHeader = 0.0;
-                
-                
             }
             
         }
@@ -177,9 +182,6 @@ MTScrollTitleBarDataSource
     [super viewWillAppear:animated];
     
     UIViewController *currentViewController = [self viewControllerAtIndex:_selectedIndex];
-    //    if (!currentViewController.view.superview) {
-    //        [self layoutSubViewController:currentViewController WithIndex:_selectedIndex];
-    //    }
     [currentViewController beginAppearanceTransition:YES animated:animated];
     
 }
@@ -187,7 +189,6 @@ MTScrollTitleBarDataSource
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    //    NSLog(@"%@,%@",self,NSStringFromSelector(_cmd));
     UIViewController *currentViewController = [self viewControllerAtIndex: self.selectedIndex];
     
     UIScrollView *scrollView = nil;
@@ -206,8 +207,6 @@ MTScrollTitleBarDataSource
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    //    NSLog(@"%@,%@",self,NSStringFromSelector(_cmd));
-    
     UIViewController *currentViewController = [self viewControllerAtIndex: self.selectedIndex];
     [currentViewController endAppearanceTransition];
 }
@@ -216,7 +215,6 @@ MTScrollTitleBarDataSource
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    //    NSLog(@"%@,%@",self,NSStringFromSelector(_cmd));
     UIViewController *currentViewController = [self viewControllerAtIndex: self.selectedIndex];
     [currentViewController beginAppearanceTransition:NO animated:animated];
     
@@ -227,7 +225,6 @@ MTScrollTitleBarDataSource
 {
     
     [super viewDidLoad];
-    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeStatus:) name:UIApplicationDidChangeStatusBarFrameNotification object:nil];
     
@@ -244,6 +241,7 @@ MTScrollTitleBarDataSource
 {
     [super viewWillLayoutSubviews];
 }
+
 - (void)viewDidLayoutSubviews
 {
     
@@ -253,7 +251,6 @@ MTScrollTitleBarDataSource
     self.pageChangedByClick = NO;
     
 }
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -272,7 +269,7 @@ MTScrollTitleBarDataSource
     self.containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.containerView];
     
-    self.scrollContentView = [[UIScrollView alloc] initWithFrame:self.containerView.bounds];
+    self.scrollContentView = [[MTScrollView alloc] initWithFrame:self.containerView.bounds];
     self.scrollContentView.showsVerticalScrollIndicator = NO;
     self.scrollContentView.showsHorizontalScrollIndicator = NO;
     self.scrollContentView.directionalLockEnabled = YES;
@@ -305,7 +302,7 @@ MTScrollTitleBarDataSource
     if(!self.scrollTitleBar)
         return;
     
-    self.scrollTitleBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.containerView.bounds), MTScrollTitleBarDefaultHeight);
+    self.scrollTitleBar.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, MTScrollTitleBarDefaultHeight);
     
     if ([self.scrollTitleBar reloadData]) {
         [self.scrollTitleBar setUpSelecteIndex:_selectedIndex];
@@ -441,11 +438,10 @@ MTScrollTitleBarDataSource
 
 - (void)reloadData
 {
-    UIViewController *currentShowViewConntroller = [self viewControllerAtIndex:_currentPage];
+    UIViewController *currentShowViewConntroller = [self viewControllerAtIndex:_selectedIndex];
     
     _pageCount = 0;
-    _currentPage = 0;
-    _selectedIndex = 0;
+    _selectedIndex = _defaultPage;
     _lastPage = -1;
     
     self.currentShowScrollView = nil;
@@ -454,43 +450,41 @@ MTScrollTitleBarDataSource
         [currentShowViewConntroller beginAppearanceTransition:NO animated:NO];
     }
     //移除掉所有的控制器视图
-    [_childViewControllerDic enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
-     {
-         UIViewController *vc = (UIViewController*)obj;
-         if(vc.isViewLoaded)
-         {
-             [vc.view removeFromSuperview];
-         }
-         
-         if ([vc respondsToSelector:@selector(contentScrollView)])
-         {
-             UIScrollView* scrollView = [(id<MTScrollNavigationChildControllerProtocol>)vc contentScrollView];
-             
-             if (scrollView.adjuestContentInsetByMTScrollNavigationController)
-             {
-                 scrollView.adjuestContentInsetByMTScrollNavigationController = NO;
-                 
-                 UIEdgeInsets inset = scrollView.contentInset;
-                 inset.top -= self.headerView.frame.size.height;
-                 scrollView.contentInset = inset;
-                 scrollView.scrollIndicatorInsets = inset;
-                 scrollView.offsetOrginYForHeader = 0.0;
-                 //                 [scrollView setContentOffset:CGPointMake(0, -inset.top) animated:NO];
-                 
-                 
-             }
-             
-         }
-         [vc willMoveToParentViewController:nil];
-         [vc removeFromParentViewController];
-     }];
+    [_childViewControllerDic enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        UIViewController *vc = (UIViewController*)obj;
+        if(vc.isViewLoaded)
+        {
+            [vc.view removeFromSuperview];
+        }
+        
+        if ([vc respondsToSelector:@selector(contentScrollView)])
+        {
+            UIScrollView* scrollView = [(id<MTScrollNavigationChildControllerProtocol>)vc contentScrollView];
+            
+            if (scrollView.adjuestContentInsetByMTScrollNavigationController)
+            {
+                scrollView.adjuestContentInsetByMTScrollNavigationController = NO;
+                
+                UIEdgeInsets inset = scrollView.contentInset;
+                inset.top -= self.headerView.frame.size.height;
+                scrollView.contentInset = inset;
+                scrollView.scrollIndicatorInsets = inset;
+                scrollView.offsetOrginYForHeader = 0.0;
+                //                 [scrollView setContentOffset:CGPointMake(0, -inset.top) animated:NO];
+                
+                
+            }
+            
+        }
+        [vc willMoveToParentViewController:nil];
+        [vc removeFromParentViewController];
+    }];
     
     [_childViewControllerDic removeAllObjects];
     if (currentShowViewConntroller)
     {
         [currentShowViewConntroller endAppearanceTransition];
     }
-    //    [self loadContentView];
     [self.scrollTitleBar reloadData];
     [self layoutControllerView];
 }
@@ -543,8 +537,7 @@ MTScrollTitleBarDataSource
 {
     if (_scrollTitleBar == nil)
     {
-        _scrollTitleBar = [[MTScrollTitleBar alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.containerView.bounds), MTScrollTitleBarDefaultHeight) canScroll:YES];
-        _scrollTitleBar.boldFont = NO;
+        _scrollTitleBar = [[MTScrollTitleBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, MTScrollTitleBarDefaultHeight) canScroll:YES];
         _scrollTitleBar.selectedTitleColor = self.scrollTitleBarItemSelectColor;
         _scrollTitleBar.titleColor = self.scrollTitleBarItemColor;
         _scrollTitleBar.lineViewColor = self.scrollTitleBarLineViewSelectColor;
@@ -558,11 +551,6 @@ MTScrollTitleBarDataSource
     return _scrollTitleBar;
 }
 
-- (void)setTopTitleBar_BoldFont:(BOOL)topTitleBar_BoldFont
-{
-    _topTitleBar_BoldFont = topTitleBar_BoldFont;
-    self.scrollTitleBar.boldFont = _topTitleBar_BoldFont;
-}
 
 - (void)setTopTitleStyle:(MTScrollTitleBarElementStyle)topTitleStyle
 {
@@ -612,6 +600,7 @@ MTScrollTitleBarDataSource
     if (index >= [self.scrollNavigationDataSource numberOfTitleInScrollNavigationController:self]) {
         _selectedIndex = [self.scrollNavigationDataSource numberOfTitleInScrollNavigationController:self] - 1;
     }
+    _defaultPage = _selectedIndex;
     [self.scrollTitleBar setUpSelecteIndex:_selectedIndex];
 }
 
@@ -638,27 +627,26 @@ MTScrollTitleBarDataSource
 
 #pragma mark - MTScrollTitleBar
 
-- (void)showBadge:(BOOL)show AtIndex:(NSInteger)index
+- (void)showBadge:(BOOL)show atIndex:(NSInteger)index
 {
-    //    [self.scrollTitleBar showBadge:show AtIndex:index];
+    [self.scrollTitleBar showBadge:show atIndex:index];
 }
 
-- (void)showNumAlert:(BOOL)show Content:(NSString *)text AtIndex:(NSInteger)index
+- (void)showNumAlert:(BOOL)show content:(NSString *)text atIndex:(NSInteger)index
 {
-    //    [self.scrollTitleBar showNumAlert:show Content:text AtIndex:index];
+    [self.scrollTitleBar showNumAlert:show content:text atIndex:index];
 }
 
-- (UIView *)rightViewForScrollTitleBar:(MTScrollTitleBar *)scrollTitleBar
+- (UIView *)rightViewForScrollTitleBar:(MTScrollTitleBar *)scrollTitleBar index:(NSUInteger)index
 {
-    if (_scrollNavigationDataSource && [_scrollNavigationDataSource respondsToSelector:@selector(rightExtensionInNavigationViewController:)]) {
+    if (_scrollNavigationDataSource && [_scrollNavigationDataSource respondsToSelector:@selector(rightExtensionInNavigationViewController:forIndex:)]) {
         
-        UIView * tempView =  [_scrollNavigationDataSource rightExtensionInNavigationViewController:self];
+        UIView * tempView =  [_scrollNavigationDataSource rightExtensionInNavigationViewController:self forIndex:index];
         if (tempView != nil) {
-            //            self.scrollTitleBar.showRightBorder = YES;
+            //            self.scrollTitleBar.showRightBorder = YES; //rightview 与 contentscrollview之间的一个 分割视图
         }
         return tempView;
     }
-    //    UIView *placeHolderView = [[UIView alloc] initWithFrame:CGRectZero];
     return nil;
 }
 
@@ -688,10 +676,10 @@ MTScrollTitleBarDataSource
  */
 - (NSString*)scrollTitleBar:(MTScrollTitleBar*)scrollTitleBar titleForIndex:(NSInteger)index
 {
-    if (_scrollNavigationDataSource &&
-        [_scrollNavigationDataSource respondsToSelector:@selector(scrollNavigationController:titleForIndex:)])
+    UIViewController <MTScrollNavigationChildControllerProtocol>*controller = [self getViewControllerWithIndex:index];
+    if ([controller respondsToSelector:@selector(titleForScrollTitleBar)])
     {
-        return [_scrollNavigationDataSource scrollNavigationController:self titleForIndex:index];
+        return [controller titleForScrollTitleBar];
     }
     return @"";
 }
@@ -700,7 +688,6 @@ MTScrollTitleBarDataSource
  @method
  @abstract   是否根据行宽自动适配按钮
  @discussion 是否根据行宽自动适配按钮,如果没有实现委托方法，默认为YES
- @param      scrollTitleBar AHTopScrollerView
  @return     状态
  */
 - (BOOL)enableAutoAdjust:(MTScrollTitleBar *)viewPager
@@ -775,11 +762,10 @@ MTScrollTitleBarDataSource
     if (self.scrollNavigationDelegate && [self.scrollNavigationDelegate respondsToSelector:@selector(scrollNavigationController:willShowIndex:toIndex:)])
     {
         [self.scrollNavigationDelegate scrollNavigationController:self
-                                                    willShowIndex:_currentPage
+                                                    willShowIndex:_selectedIndex
                                                           toIndex:aIndex];
     }
     
-    _currentPage = aIndex;
     _selectedIndex = aIndex;
     
     self.pageChangedByClick = YES;
@@ -787,15 +773,15 @@ MTScrollTitleBarDataSource
     
     
 }
-
--(BOOL)canScrollWithGesture:(UIGestureRecognizer *)pan
+-(BOOL)canScrollWithGesture:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     if (self.scrollNavigationDelegate &&
-        [self.scrollNavigationDelegate respondsToSelector:@selector(canScrollWithGesture:)]) {
-        return [self.scrollNavigationDelegate canScrollWithGesture:pan];
+        [self.scrollNavigationDelegate respondsToSelector:@selector(scrollNavigationController:canScrollWithGesture:shouldRecognizeSimultaneouslyWithGestureRecognizer:)]) {
+        return [self.scrollNavigationDelegate scrollNavigationController:self canScrollWithGesture:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
     }
     return NO;
 }
+
 
 #pragma mark - 转屏
 
@@ -811,7 +797,6 @@ MTScrollTitleBarDataSource
     
     // Perform layout
     _selectedIndex = _pageIndexBeforeRotation;
-    _currentPage = _selectedIndex;
     
 }
 
@@ -842,9 +827,8 @@ MTScrollTitleBarDataSource
 #pragma mark- UIScrollViewDelegete
 - (void)scrollViewDidScroll:(UIScrollView *)sender
 {
-    
     CGFloat pageWidth = sender.frame.size.width;
-    _currentPage = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
+    _selectedIndex = floor((sender.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     
     if (self.scrollNavigationDelegate && [self.scrollNavigationDelegate respondsToSelector:@selector(scrollNavigationController:contentScrollViewDidScroll:)])
     {
@@ -868,7 +852,7 @@ MTScrollTitleBarDataSource
     if (sender.contentOffset.x <= 0 || sender.contentOffset.x >= sender.contentSize.width - sender.frame.size.width )
     {
         
-        UIViewController *controller = [self viewControllerAtIndex: _currentPage];
+        UIViewController *controller = [self viewControllerAtIndex: _selectedIndex];
         
         
         UIScrollView *scrollView = nil;
@@ -885,10 +869,8 @@ MTScrollTitleBarDataSource
     {
         NSUInteger jumpPageCount = ceil((sender.contentOffset.x - self.currentShowIndex * pageWidth)/pageWidth);
         
-        //        NSLog(@"%d",jumpPageCount);qa
         if (self.currentWillShowIndex != self.currentShowIndex + jumpPageCount)
         {
-            //            NSLog(@"显示下一页");
             self.currentWillShowIndex = self.currentShowIndex + jumpPageCount;
             
             
@@ -901,8 +883,6 @@ MTScrollTitleBarDataSource
             self.willShowViewController = [self viewControllerAtIndex:self.currentWillShowIndex];
             
             [self layoutSubViewController:self.willShowViewController WithIndex:self.currentWillShowIndex];
-            
-            
             
             self.currentViewController = [self viewControllerAtIndex:self.currentWillShowIndex-1];
             [self.currentViewController beginAppearanceTransition:NO animated:YES];
@@ -917,8 +897,6 @@ MTScrollTitleBarDataSource
         
         if (self.currentWillShowIndex != self.currentShowIndex - jumpPageCount)
         {
-            //            NSLog(@"显示上一页");
-            
             self.currentWillShowIndex = self.currentShowIndex - jumpPageCount;
             
             [self.willShowViewController endAppearanceTransition];
@@ -952,7 +930,7 @@ MTScrollTitleBarDataSource
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     [self endPaging];
-    [self.scrollTitleBar setUpSelecteIndex:_currentPage];
+    [self.scrollTitleBar setUpSelecteIndex:_selectedIndex];
     
     self.pageChangedByClick = NO;
 }
@@ -961,16 +939,13 @@ MTScrollTitleBarDataSource
 {
     CGFloat pageWidth = self.scrollContentView.frame.size.width;
     
-    _currentPage = floor((self.scrollContentView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    
-    _selectedIndex = _currentPage;
-    
+    _selectedIndex = floor((self.scrollContentView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     
     //记录下上一次的页码，如果上一次的页码与这次的相同，就不做任何操作
-    if (_lastPage == _currentPage) {
+    if (_lastPage == _selectedIndex) {
         if (!self.pageChangedByClick)
         {
-            if (self.currentViewController == [self viewControllerAtIndex:_currentPage])
+            if (self.currentViewController == [self viewControllerAtIndex:_selectedIndex])
             {
                 [self.willShowViewController beginAppearanceTransition:NO animated:YES];
                 [self.currentViewController beginAppearanceTransition:YES animated:YES];
@@ -988,11 +963,11 @@ MTScrollTitleBarDataSource
         }
         
         
-        [self layoutSubViewController:self.currentViewController WithIndex:_currentPage];
+        [self layoutSubViewController:self.currentViewController WithIndex:_selectedIndex];
         
         
         self.pageChangedByClick = NO;
-        self.currentShowIndex = _currentPage;
+        self.currentShowIndex = _selectedIndex;
         self.currentWillShowIndex = MAXFLOAT;
         
         self.currentViewController = nil;
@@ -1004,7 +979,7 @@ MTScrollTitleBarDataSource
     
     if (!self.pageChangedByClick)
     {
-        if (_currentPage != self.currentWillShowIndex)
+        if (_selectedIndex != self.currentWillShowIndex)
         {
             [self.willShowViewController beginAppearanceTransition:NO animated:YES];
             [self.currentViewController beginAppearanceTransition:YES animated:YES];
@@ -1026,7 +1001,7 @@ MTScrollTitleBarDataSource
     
     
     //尝试从字典中读取
-    UIViewController *subViewController = _childViewControllerDic[@(_currentPage)];
+    UIViewController *subViewController = _childViewControllerDic[@(_selectedIndex)];
     
     UIViewController *lastViewController = _childViewControllerDic[@(_lastPage)];
     
@@ -1036,8 +1011,8 @@ MTScrollTitleBarDataSource
         if (_scrollNavigationDataSource && [_scrollNavigationDataSource respondsToSelector:@selector(scrollNavigationController:childViewControllerForIndex:)])
         {
             subViewController = [_scrollNavigationDataSource scrollNavigationController:self
-                                                            childViewControllerForIndex:_currentPage];
-            _childViewControllerDic[@(_currentPage)] = subViewController;
+                                                            childViewControllerForIndex:_selectedIndex];
+            _childViewControllerDic[@(_selectedIndex)] = subViewController;
             
             
         }
@@ -1045,22 +1020,22 @@ MTScrollTitleBarDataSource
     
     
     //向子控制器回调即将消失的回调
-    if (lastViewController && [lastViewController respondsToSelector:@selector(childViewWillDisAppearInScrollNavigtionViewController:)]) {
-        
-        [(id)lastViewController childViewWillDisAppearInScrollNavigtionViewController:self];
-    }
+    //    if (lastViewController && [lastViewController respondsToSelector:@selector(childViewWillDisAppearInScrollNavigtionViewController:)]) {
+    //
+    //        [(id)lastViewController childViewWillDisAppearInScrollNavigtionViewController:self];
+    //    }
     
-    [self layoutSubViewController:subViewController WithIndex:_currentPage];
+    [self layoutSubViewController:subViewController WithIndex:_selectedIndex];
     
     //向子控制器回调即将显示的回调
-    if (subViewController && [subViewController respondsToSelector:@selector(childViewWillAppearInScrollNavigtionViewController:)]) {
-        
-        [(id)subViewController childViewWillAppearInScrollNavigtionViewController:self];
-    }
+    //    if (subViewController && [subViewController respondsToSelector:@selector(childViewWillAppearInScrollNavigtionViewController:)]) {
+    //
+    //        [(id)subViewController childViewWillAppearInScrollNavigtionViewController:self];
+    //    }
     
     //回调选中项改变的回调
     if (_scrollNavigationDelegate && [_scrollNavigationDelegate respondsToSelector:@selector(scrollNavigationController:hasChangedSelected:)]) {
-        [_scrollNavigationDelegate scrollNavigationController:self hasChangedSelected:_currentPage];
+        [_scrollNavigationDelegate scrollNavigationController:self hasChangedSelected:_selectedIndex];
     }
     
     if (self.pageChangedByClick)
@@ -1076,10 +1051,10 @@ MTScrollTitleBarDataSource
     
     
     //移动到执行代理函数完成后记录
-    _lastPage = _currentPage;
+    _lastPage = _selectedIndex;
     
     self.pageChangedByClick = NO;
-    self.currentShowIndex = _currentPage;
+    self.currentShowIndex = _selectedIndex;
     self.currentWillShowIndex = MAXFLOAT;
     
     self.currentViewController = nil;
@@ -1112,16 +1087,18 @@ MTScrollTitleBarDataSource
     return nil;
 }
 
-- (UIViewController*)getViewControllerWithIndex:(NSUInteger)aIndex
+- (UIViewController <MTScrollNavigationChildControllerProtocol>*)getViewControllerWithIndex:(NSUInteger)aIndex
 {
+    UIViewController <MTScrollNavigationChildControllerProtocol>* controller;
     if (aIndex<_childViewControllerDic.count)
     {
-        return _childViewControllerDic[@(aIndex)];
+        controller = _childViewControllerDic[@(aIndex)];
     }
-    else
-    {
-        return nil;
+    
+    if (!controller) {
+        controller = [self.scrollNavigationDataSource scrollNavigationController:self childViewControllerForIndex:aIndex];
     }
+    return controller;
 }
 
 
@@ -1130,12 +1107,12 @@ MTScrollTitleBarDataSource
 
 - (UIViewController *)childViewControllerForStatusBarStyle
 {
-    return [_scrollNavigationDataSource scrollNavigationController:self childViewControllerForIndex:_currentPage];
+    return [_scrollNavigationDataSource scrollNavigationController:self childViewControllerForIndex:_selectedIndex];
 }
 
 - (UIViewController *)childViewControllerForStatusBarHidden
 {
-    return [_scrollNavigationDataSource scrollNavigationController:self childViewControllerForIndex:_currentPage];
+    return [_scrollNavigationDataSource scrollNavigationController:self childViewControllerForIndex:_selectedIndex];
 }
 
 
@@ -1231,4 +1208,5 @@ MTScrollTitleBarDataSource
 }
 
 @end
+
 

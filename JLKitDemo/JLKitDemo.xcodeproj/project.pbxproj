@@ -11,6 +11,7 @@
 		3401375A20726BFF002D46D2 /* MTHorizontalWaterFullLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375820726BFF002D46D2 /* MTHorizontalWaterFullLayout.m */; };
 		3401375D20726CC4002D46D2 /* TagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375C20726CC4002D46D2 /* TagItem.m */; };
 		3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */; };
+		343117AC20AC393F00AD891C /* MTScrollTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 343117AB20AC393E00AD891C /* MTScrollTitleButton.m */; };
 		346A5524206B81B4002DD49A /* MTHorizontalPageFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */; };
 		346A5536206B9629002DD49A /* MTPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5533206B9629002DD49A /* MTPresentationController.m */; };
 		346A5537206B9629002DD49A /* UIViewController+PresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5535206B9629002DD49A /* UIViewController+PresentController.m */; };
@@ -106,6 +107,8 @@
 		3401375C20726CC4002D46D2 /* TagItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagItem.m; sourceTree = "<group>"; };
 		3401375E20726E8A002D46D2 /* TagCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellTableViewCell.h; sourceTree = "<group>"; };
 		3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellTableViewCell.m; sourceTree = "<group>"; };
+		343117AA20AC393E00AD891C /* MTScrollTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleButton.h; sourceTree = "<group>"; };
+		343117AB20AC393E00AD891C /* MTScrollTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollTitleButton.m; sourceTree = "<group>"; };
 		346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHorizontalPageFlowLayout.m; sourceTree = "<group>"; };
 		346A5523206B81B4002DD49A /* MTHorizontalPageFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHorizontalPageFlowLayout.h; sourceTree = "<group>"; };
 		346A5531206B9629002DD49A /* MTPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPresentationController.h; sourceTree = "<group>"; };
@@ -635,6 +638,8 @@
 				34BC82A1207E3C21009D5ED5 /* MTScrollNavigationController.m */,
 				34BC829E207E3C21009D5ED5 /* MTScrollTitleBar.h */,
 				34BC82A3207E3C21009D5ED5 /* MTScrollTitleBar.m */,
+				343117AA20AC393E00AD891C /* MTScrollTitleButton.h */,
+				343117AB20AC393E00AD891C /* MTScrollTitleButton.m */,
 				34BC82A0207E3C21009D5ED5 /* MTScrollView.h */,
 				34BC829F207E3C21009D5ED5 /* MTScrollView.m */,
 			);
@@ -742,7 +747,7 @@
 				TargetAttributes = {
 					348D53FE1E27A5640005E96A = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 36J93Y9Q95;
+						DevelopmentTeam = YDTV5X7P95;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -862,6 +867,7 @@
 				F4AECABD205E5314000F6D37 /* NSObject+archive.m in Sources */,
 				F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */,
 				F4AECADA205E5314000F6D37 /* OTTableViewController.m in Sources */,
+				343117AC20AC393F00AD891C /* MTScrollTitleButton.m in Sources */,
 				F4AECAB1205E5314000F6D37 /* HomeViewController.m in Sources */,
 				F4AECAEF205E5315000F6D37 /* JLBaseAnimationEngine.m in Sources */,
 				34BC829C207E324E009D5ED5 /* SimpleItem.m in Sources */,
@@ -977,11 +983,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 36J93Y9Q95;
+				DEVELOPMENT_TEAM = YDTV5X7P95;
 				INFOPLIST_FILE = JLKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JLKit.com;
+				PRODUCT_BUNDLE_IDENTIFIER = JLKit.com.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -990,11 +996,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 36J93Y9Q95;
+				DEVELOPMENT_TEAM = YDTV5X7P95;
 				INFOPLIST_FILE = JLKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JLKit.com;
+				PRODUCT_BUNDLE_IDENTIFIER = JLKit.com.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -37,7 +37,6 @@
         _scrollNavigationController.scrollTitleBarItemColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
         _scrollNavigationController.scrollTitleBarItemSelectColor = UIColorFromRGB(0x14b9c7);
         _scrollNavigationController.scrollTitleBarLineViewSelectColor = UIColorFromRGB(0x14b9c7);
-        _scrollNavigationController.topTitleBar_BoldFont = YES;
         _scrollNavigationController.scrollTitleBarItemFont = [UIFont systemFontOfSize:15];
         _scrollNavigationController.scrollTitleBarLineViewHeight = 3;
     }
@@ -61,7 +60,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    self.scrollNavigationController.view.frame = self.view.bounds;
+    self.scrollNavigationController.view.frame = CGRectMake(0, 20, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 20);
 }
 
 

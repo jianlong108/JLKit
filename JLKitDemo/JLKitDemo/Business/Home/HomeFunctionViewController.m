@@ -9,8 +9,9 @@
 #import "HomeFunctionViewController.h"
 #import "MTHorizontalWaterFullLayout.h"
 #import "IOS11Adapter.h"
+#import "MTScrollNavigationChildControllerProtocol.h"
 
-@interface StringItemModel :NSObject<HorizontalWaterFullModelProtocol>
+@interface StringItemModel :NSObject<HorizontalWaterFullModelProtocol,MTScrollNavigationChildControllerProtocol>
 
 @property (nonatomic, copy) NSString *str;
 
@@ -124,6 +125,10 @@
 {
     self.collectionView.contentInset = inset;
     
+}
+- (NSString *)titleForScrollTitleBar
+{
+    return @"功能";
 }
 
 @end

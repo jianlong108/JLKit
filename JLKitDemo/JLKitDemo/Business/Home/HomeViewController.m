@@ -24,8 +24,9 @@
 
 #import "CWStatusBarNotification.h"
 #import "IOS11Adapter.h"
+#import "MTScrollNavigationChildControllerProtocol.h"
 
-@interface HomeViewController ()
+@interface HomeViewController ()<MTScrollNavigationChildControllerProtocol>
 
 @property (nonatomic, strong) CWStatusBarNotification *notification;
 @property (nonatomic, strong) UIActivityViewController *activityVC;
@@ -193,6 +194,11 @@
 - (void)setScrollViewContentInset:(UIEdgeInsets)inset
 {
     self.tableView.contentInset = inset;
+}
+
+- (NSString *)titleForScrollTitleBar
+{
+    return @"控件";
 }
 
 @end

@@ -10,25 +10,15 @@
 @class MTScrollNavigationController;
 
 @protocol MTScrollNavigationChildControllerProtocol <NSObject>
+@optional
 
 - (UIScrollView *)contentScrollView;
 
-@optional
-
 - (void)setScrollViewContentInset:(UIEdgeInsets)inset;
 
-/*!
- @method
- @abstract   子视图控制器即将显示
- @discussion 子视图控制器即将显示
- */
-- (void)childViewWillAppearInScrollNavigtionViewController:(MTScrollNavigationController *)scrollNavigationViewController;
+//右侧的展示视图,被展示在MTScrollNavigationController 上 scrollTitleBar上.
+- (UIView *)rightExtensionView;
 
-/*!
- @method
- @abstract   子视图控制器即将消失
- @discussion 子视图控制器即将消失
- */
-- (void)childViewWillDisAppearInScrollNavigtionViewController:(MTScrollNavigationController *)scrollNavigationViewController;
+- (NSString *)titleForScrollTitleBar;
 
 @end
