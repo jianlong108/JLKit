@@ -48,7 +48,7 @@
     [self addChildViewController:homeNav];
     homeNav.title = @"主页";
     
-    UINavigationController *fullScrrenPop_Nav = [[JLNavigationController alloc]initWithRootViewController:[MyViewController new]];
+    XMNavigationController *fullScrrenPop_Nav = [[XMNavigationController alloc]initWithRootViewController:[MyViewController new]];
     [self addChildViewController:fullScrrenPop_Nav];
     fullScrrenPop_Nav.title = @"我的";
     

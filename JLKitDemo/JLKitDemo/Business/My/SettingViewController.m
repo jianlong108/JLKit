@@ -21,14 +21,13 @@
 - (void)setupGroup1
 {
     SimpleItem *pushNotice = [SettingArrowItem itemWithIcon:@"MorePush" title:@"设置" destVcClass:[UIViewController class]];
-    TagItem *item = [[TagItem alloc]init];
-    
+    pushNotice.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
     
     
     OTSectionModel *group = [[OTSectionModel alloc] init];
     
     group.headerHeight = 20;
-    group.items = @[pushNotice,item].mutableCopy;
+    group.items = @[pushNotice].mutableCopy;
     [self.sectionItems addObject:group];
 }
 
@@ -36,7 +35,6 @@
 {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[LoginCell class] forCellReuseIdentifier:@"loginCell"];
     [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
     [self.tableView registerClass:[TagCellTableViewCell class] forCellReuseIdentifier:TagCellTableViewCell_ReuseIdentifer];
     // 2.添加数据
