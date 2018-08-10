@@ -33,7 +33,7 @@
  @return     某个子视图控制器
  */
 - (UIViewController<MTScrollNavigationChildControllerProtocol> *)scrollNavigationController:(MTScrollNavigationController *)scrollNavigationController
-                                                                childViewControllerForIndex:(NSInteger)index;
+                                                                   childViewControllerForIndex:(NSInteger)index;
 
 
 @optional
@@ -65,6 +65,9 @@
  @result     无
  */
 - (UIView*)rightExtensionInNavigationViewController:(MTScrollNavigationController *)scrollNavigationController forIndex:(NSUInteger)index;
+
+
+- (UIView*)leftExtensionInNavigationViewController:(MTScrollNavigationController *)scrollNavigationController forIndex:(NSUInteger)index;
 
 
 /*!
@@ -101,16 +104,6 @@
 -(BOOL)scrollNavigationController:(MTScrollNavigationController*)scrollNavigationController canScrollWithGesture:(UIGestureRecognizer *)pan shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGesture;
 
 /*!
- @method
- @abstract   选中项改变事件
- @discussion 选中项改变事件
- @param      scrollNavigationController 滚动导航视图控制器
- @param      index 选中下标
- */
-- (void)scrollNavigationController:(MTScrollNavigationController*)scrollNavigationController
-                hasChangedSelected:(NSInteger)index;
-
-/*!
  * @brief  控件滑动
  * @param scrollNavigationController  滚动导航视图控制器
  */
@@ -119,12 +112,17 @@
 
 
 /**
- 点击索引事件
+ 点击索引事件 只有点击时才会触发...
  
  @param scrollNavigationController 滚动导航视图控制器
  */
 - (void)scrollNavigationController:(MTScrollNavigationController*)scrollNavigationController
                      willShowIndex:(NSInteger)fromIndex
+                           toIndex:(NSInteger)toIndex;
+
+
+- (void)scrollNavigationController:(MTScrollNavigationController*)scrollNavigationController
+                     didShowIndex:(NSInteger)fromIndex
                            toIndex:(NSInteger)toIndex;
 
 @end
@@ -167,6 +165,7 @@
 
 /**横条高度 默认为1 最大值为5,最小1*/
 @property (nonatomic, assign) CGFloat scrollTitleBarLineViewHeight;
+@property (nonatomic, assign) CGFloat scrollTitleBarLineViewWidth;
 
 /** 数据源 */
 @property (nonatomic, weak) id<MTScrollNavigationControllerDataSource> scrollNavigationDataSource;
@@ -220,4 +219,3 @@
 +(void)setStatusHeight:(float) sHeight;
 
 @end
-

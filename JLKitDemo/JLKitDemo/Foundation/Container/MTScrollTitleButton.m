@@ -16,7 +16,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        
         _redDot_Radius = 6 / 2;
         _alertLabel_Radius = 14;
         

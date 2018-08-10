@@ -10,6 +10,7 @@
 @class MTScrollNavigationController;
 
 @protocol MTScrollNavigationChildControllerProtocol <NSObject>
+
 @optional
 
 - (UIScrollView *)contentScrollView;
@@ -18,7 +19,9 @@
 
 //右侧的展示视图,被展示在MTScrollNavigationController 上 scrollTitleBar上.
 - (UIView *)rightExtensionView;
+- (UIView *)leftExtensionView;
 
 - (NSString *)titleForScrollTitleBar;
 
 @end
+

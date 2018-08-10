@@ -30,7 +30,7 @@
     return self.footerTitle;
 }
 
-- (NSArray<id<OTItemProtocol>> *)itemsOfGroup
+- (NSArray<id<OTItemProtocol>> *)itemsOfSection
 {
     return self.items;
 }

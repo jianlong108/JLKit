@@ -9,11 +9,10 @@
 #ifndef OTTableView_h
 #define OTTableView_h
 
-#import "OTTableViewController.h"
+#import "OTRowItemModel.h"
 #import "OTSectionModel.h"
-#import "OTTableViewPivot.h"
 #import "OTProtocol.h"
-#import "OTTableViewCell.h"
+#import "OTTableView.h"
 
 
 #endif /* OTTableView_h */

@@ -57,6 +57,15 @@ typedef enum MTScrollTitleBarElementStyle{
  */
 - (UIView *)rightViewForScrollTitleBar:(MTScrollTitleBar *)scrollTitleBar index:(NSUInteger)index;
 
+/*!
+ @method
+ @abstract   左部视图
+ @discussion
+ @param      注意:此时的elementDisplayStyle 一定不要为MTScrollTitleBarElementStyleDefault
+ @return     返回值为 UIView的子类 会显示在滑动导航后面
+ */
+- (UIView *)leftViewForScrollTitleBar:(MTScrollTitleBar *)scrollTitleBar index:(NSUInteger)index;
+
 
 @end
 
@@ -73,6 +82,7 @@ typedef enum MTScrollTitleBarElementStyle{
 
 @property (nonatomic, readonly) UIScrollView *contentScrollView;
 @property (nonatomic, readonly) UIView *rightView;
+@property (nonatomic, readonly) UIView *leftView;
 
 @property (nonatomic, weak) id<MTScrollTitleBarDataSource> dataSource;
 
@@ -95,8 +105,10 @@ typedef enum MTScrollTitleBarElementStyle{
 @property (nonatomic, strong) UIColor *selectedTitleColor;
 @property (nonatomic, strong) UIColor *lineViewColor;
 @property (nonatomic, assign) CGFloat lineViewHeight;//默认为1, 范围[1,5]
+@property (nonatomic, assign) CGFloat lineViewWidth;
+@property (nonatomic, assign) CGFloat lineViewBottomMargin;
 
-////第一个按钮的X坐标 将以此坐标开始布局
+////第一个按钮的X坐标 将以此坐标开始布局 MTScrollTitleBarElementStyleDefault布局时生效
 @property (nonatomic, assign) CGFloat firstBtnX;
 
 - (instancetype)initWithFrame:(CGRect)frame canScroll:(BOOL)scroll;
@@ -104,7 +116,7 @@ typedef enum MTScrollTitleBarElementStyle{
 
 /**
  设置默认选中索引
- 
+
  @param index 索引
  */
 - (void)setUpSelecteIndex:(NSUInteger)index;
@@ -112,7 +124,7 @@ typedef enum MTScrollTitleBarElementStyle{
 
 /**
  如果数据源没有提供数据,返回NO,不做任何操作
- 
+
  @return 能否刷新UI
  */
 - (BOOL)reloadData;
@@ -127,7 +139,7 @@ typedef enum MTScrollTitleBarElementStyle{
 
 /**
  外部驱动--向另一个索引过渡
- 
+
  @param toIndex 目标索引
  @param fromIndex 当前索引
  @param scale 比例
@@ -139,5 +151,4 @@ typedef enum MTScrollTitleBarElementStyle{
 - (void)showNumAlert:(BOOL)show content:(NSString *)content atIndex:(NSInteger)index;
 
 @end
-
 

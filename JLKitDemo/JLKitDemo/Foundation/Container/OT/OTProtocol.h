@@ -26,10 +26,12 @@ typedef void (^OTCellClickBlock)(id obj,NSIndexPath *indexPath);
 
 @optional
 
-@property (nonatomic, assign) BOOL laseRow;
+@property (nonatomic, assign) BOOL lastRow;
 @property (nonatomic, copy) OTCellClickBlock cellClickBlock;
+@property (nonatomic, copy) OTCellClickBlock switchClickBlock;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 
+- (void)configCellWhenCellIsCreated:(UITableViewCell *)cell;
 
 @end
 
@@ -54,7 +56,7 @@ typedef void (^OTCellClickBlock)(id obj,NSIndexPath *indexPath);
 @protocol OTSectionItemProtocol <NSObject>
 
 @required
-- (NSArray< id<OTLayoutItemProtocol> > *)itemsOfGroup;
+- (NSArray< id<OTLayoutItemProtocol> > *)itemsOfSection;
 
 @optional
 - (CGFloat )heightOfGroupHeader;
