@@ -24,9 +24,9 @@
 
 #import "CWStatusBarNotification.h"
 #import "IOS11Adapter.h"
-#import "MTScrollNavigationChildControllerProtocol.h"
+#import "JLScrollNavigationChildControllerProtocol.h"
 
-@interface HomeViewController ()<MTScrollNavigationChildControllerProtocol>
+@interface HomeViewController ()<JLScrollNavigationChildControllerProtocol>
 
 @property (nonatomic, strong) CWStatusBarNotification *notification;
 @property (nonatomic, strong) UIActivityViewController *activityVC;
@@ -40,7 +40,10 @@
     // initialize CWNotification
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    if (@available(iOS 11.0,*)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    
     
     self.notification = [CWStatusBarNotification new];
     

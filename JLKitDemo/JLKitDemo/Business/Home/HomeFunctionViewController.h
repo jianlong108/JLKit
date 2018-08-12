@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomPresentViewControllerProtocol.h"
-#import "MTScrollNavigationChildControllerProtocol.h"
+#import "JLScrollNavigationChildControllerProtocol.h"
 
 @interface HomeFunctionViewController : UIViewController<
     CustomPresentViewControllerProtocol,
-    MTScrollNavigationChildControllerProtocol
+    JLScrollNavigationChildControllerProtocol
 >
 
 @end

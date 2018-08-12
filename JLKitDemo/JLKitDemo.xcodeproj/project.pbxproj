@@ -11,17 +11,12 @@
 		3401375A20726BFF002D46D2 /* MTHorizontalWaterFullLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375820726BFF002D46D2 /* MTHorizontalWaterFullLayout.m */; };
 		3401375D20726CC4002D46D2 /* TagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375C20726CC4002D46D2 /* TagItem.m */; };
 		3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */; };
-		3469F96B211DC58F006124DF /* MTScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F950211DC58D006124DF /* MTScrollTitleBar.m */; };
-		3469F96C211DC58F006124DF /* MTScrollNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F953211DC58E006124DF /* MTScrollNavigationController.m */; };
 		3469F96D211DC58F006124DF /* MTTableViewSectionIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95A211DC58E006124DF /* MTTableViewSectionIndexBar.m */; };
 		3469F96E211DC58F006124DF /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95B211DC58E006124DF /* UITableView+IndexBar.m */; };
-		3469F96F211DC58F006124DF /* MTScrollNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95C211DC58E006124DF /* MTScrollNavigationItem.m */; };
-		3469F970211DC58F006124DF /* MTScrollTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95D211DC58E006124DF /* MTScrollTitleButton.m */; };
 		3469F971211DC58F006124DF /* OTRowItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95F211DC58F006124DF /* OTRowItemModel.m */; };
 		3469F972211DC58F006124DF /* OTTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F961211DC58F006124DF /* OTTableViewController.m */; };
 		3469F973211DC58F006124DF /* OTSectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F967211DC58F006124DF /* OTSectionModel.m */; };
 		3469F974211DC58F006124DF /* OTTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F968211DC58F006124DF /* OTTableView.m */; };
-		3469F975211DC58F006124DF /* MTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F96A211DC58F006124DF /* MTScrollView.m */; };
 		346A5524206B81B4002DD49A /* MTHorizontalPageFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */; };
 		346A5536206B9629002DD49A /* MTPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5533206B9629002DD49A /* MTPresentationController.m */; };
 		346A5537206B9629002DD49A /* UIViewController+PresentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346A5535206B9629002DD49A /* UIViewController+PresentController.m */; };
@@ -29,6 +24,7 @@
 		34BC8296207E3203009D5ED5 /* SimpleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8295207E3203009D5ED5 /* SimpleCell.m */; };
 		34BC829B207E324E009D5ED5 /* SettingCheckItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8297207E324E009D5ED5 /* SettingCheckItem.m */; };
 		34BC829C207E324E009D5ED5 /* SimpleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BC8298207E324E009D5ED5 /* SimpleItem.m */; };
+		ECA7B9B560818B04F3AD757E /* libPods-JLKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8931AF7EB3E49BEE85A0087C /* libPods-JLKitDemo.a */; };
 		F40A18A8207530F8008D7798 /* UIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A7207530F8008D7798 /* UIWebViewController.m */; };
 		F40A18AE2075EDA5008D7798 /* one.html in Resources */ = {isa = PBXBuildFile; fileRef = F40A18AD2075EDA5008D7798 /* one.html */; };
 		F40A18B12075F535008D7798 /* NSBundle+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18B02075F535008D7798 /* NSBundle+JL.m */; };
@@ -70,8 +66,7 @@
 		F4AECACA205E5314000F6D37 /* UIPanGestureRecognizer+PanDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA36205E5314000F6D37 /* UIPanGestureRecognizer+PanDirection.m */; };
 		F4AECACB205E5314000F6D37 /* UIViewController+FullScreenPop.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA38205E5314000F6D37 /* UIViewController+FullScreenPop.m */; };
 		F4AECACC205E5314000F6D37 /* UIAvaterGenerater.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA3C205E5314000F6D37 /* UIAvaterGenerater.m */; };
-		F4AECACD205E5314000F6D37 /* InfiniteLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA3F205E5314000F6D37 /* InfiniteLoopView.m */; };
-		F4AECACE205E5314000F6D37 /* infinitLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA41205E5314000F6D37 /* infinitLoopViewController.m */; };
+		F4AECACD205E5314000F6D37 /* InfinitePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA3F205E5314000F6D37 /* InfinitePageView.m */; };
 		F4AECACF205E5314000F6D37 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4AECA42205E5314000F6D37 /* Info.plist */; };
 		F4AECAD0205E5314000F6D37 /* IOS11Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA44205E5314000F6D37 /* IOS11Adapter.m */; };
 		F4AECAD2205E5314000F6D37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA47205E5314000F6D37 /* main.m */; };
@@ -104,19 +99,10 @@
 		3401375C20726CC4002D46D2 /* TagItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagItem.m; sourceTree = "<group>"; };
 		3401375E20726E8A002D46D2 /* TagCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellTableViewCell.h; sourceTree = "<group>"; };
 		3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellTableViewCell.m; sourceTree = "<group>"; };
-		3469F950211DC58D006124DF /* MTScrollTitleBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollTitleBar.m; sourceTree = "<group>"; };
-		3469F951211DC58E006124DF /* MTScrollNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollNavigationItem.h; sourceTree = "<group>"; };
-		3469F952211DC58E006124DF /* MTScrollNavigationChildControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollNavigationChildControllerProtocol.h; sourceTree = "<group>"; };
-		3469F953211DC58E006124DF /* MTScrollNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollNavigationController.m; sourceTree = "<group>"; };
-		3469F954211DC58E006124DF /* MTScrollTitleBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleBar.h; sourceTree = "<group>"; };
-		3469F955211DC58E006124DF /* MTScrollTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollTitleButton.h; sourceTree = "<group>"; };
-		3469F956211DC58E006124DF /* MTScrollNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollNavigationController.h; sourceTree = "<group>"; };
 		3469F958211DC58E006124DF /* MTTableViewSectionIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTableViewSectionIndexBar.h; sourceTree = "<group>"; };
 		3469F959211DC58E006124DF /* UITableView+IndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+IndexBar.h"; sourceTree = "<group>"; };
 		3469F95A211DC58E006124DF /* MTTableViewSectionIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTableViewSectionIndexBar.m; sourceTree = "<group>"; };
 		3469F95B211DC58E006124DF /* UITableView+IndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+IndexBar.m"; sourceTree = "<group>"; };
-		3469F95C211DC58E006124DF /* MTScrollNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollNavigationItem.m; sourceTree = "<group>"; };
-		3469F95D211DC58E006124DF /* MTScrollTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollTitleButton.m; sourceTree = "<group>"; };
 		3469F95F211DC58F006124DF /* OTRowItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTRowItemModel.m; sourceTree = "<group>"; };
 		3469F960211DC58F006124DF /* OTSectionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTSectionModel.h; sourceTree = "<group>"; };
 		3469F961211DC58F006124DF /* OTTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableViewController.m; sourceTree = "<group>"; };
@@ -127,8 +113,6 @@
 		3469F966211DC58F006124DF /* OTTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTTableViewController.h; sourceTree = "<group>"; };
 		3469F967211DC58F006124DF /* OTSectionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTSectionModel.m; sourceTree = "<group>"; };
 		3469F968211DC58F006124DF /* OTTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTTableView.m; sourceTree = "<group>"; };
-		3469F969211DC58F006124DF /* MTScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTScrollView.h; sourceTree = "<group>"; };
-		3469F96A211DC58F006124DF /* MTScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTScrollView.m; sourceTree = "<group>"; };
 		3469F976211DC68B006124DF /* SettingCellDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingCellDataProtocol.h; path = OT/SettingCellDataProtocol.h; sourceTree = "<group>"; };
 		346A5522206B81B4002DD49A /* MTHorizontalPageFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHorizontalPageFlowLayout.m; sourceTree = "<group>"; };
 		346A5523206B81B4002DD49A /* MTHorizontalPageFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHorizontalPageFlowLayout.h; sourceTree = "<group>"; };
@@ -146,6 +130,9 @@
 		34BC8298207E324E009D5ED5 /* SimpleItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleItem.m; sourceTree = "<group>"; };
 		34BC8299207E324E009D5ED5 /* SimpleItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleItem.h; sourceTree = "<group>"; };
 		34BC829A207E324E009D5ED5 /* SettingCheckItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCheckItem.h; sourceTree = "<group>"; };
+		8931AF7EB3E49BEE85A0087C /* libPods-JLKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JLKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA88DD2F20B1BEB2C73A8E3B /* Pods-JLKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLKitDemo/Pods-JLKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D2F6244D95ABCFE46FC53E38 /* Pods-JLKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLKitDemo/Pods-JLKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F40A18A6207530F8008D7798 /* UIWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIWebViewController.h; sourceTree = "<group>"; };
 		F40A18A7207530F8008D7798 /* UIWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIWebViewController.m; sourceTree = "<group>"; };
 		F40A18AD2075EDA5008D7798 /* one.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = one.html; sourceTree = "<group>"; };
@@ -227,10 +214,8 @@
 		F4AECA39205E5314000F6D37 /* GlobalFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalFunction.h; sourceTree = "<group>"; };
 		F4AECA3B205E5314000F6D37 /* UIAvaterGenerater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIAvaterGenerater.h; sourceTree = "<group>"; };
 		F4AECA3C205E5314000F6D37 /* UIAvaterGenerater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIAvaterGenerater.m; sourceTree = "<group>"; };
-		F4AECA3E205E5314000F6D37 /* InfiniteLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteLoopView.h; sourceTree = "<group>"; };
-		F4AECA3F205E5314000F6D37 /* InfiniteLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteLoopView.m; sourceTree = "<group>"; };
-		F4AECA40205E5314000F6D37 /* infinitLoopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = infinitLoopViewController.h; sourceTree = "<group>"; };
-		F4AECA41205E5314000F6D37 /* infinitLoopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = infinitLoopViewController.m; sourceTree = "<group>"; };
+		F4AECA3E205E5314000F6D37 /* InfinitePageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfinitePageView.h; sourceTree = "<group>"; };
+		F4AECA3F205E5314000F6D37 /* InfinitePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfinitePageView.m; sourceTree = "<group>"; };
 		F4AECA42205E5314000F6D37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4AECA43205E5314000F6D37 /* IOS11Adapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS11Adapter.h; sourceTree = "<group>"; };
 		F4AECA44205E5314000F6D37 /* IOS11Adapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOS11Adapter.m; sourceTree = "<group>"; };
@@ -279,26 +264,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECA7B9B560818B04F3AD757E /* libPods-JLKitDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EB1A1A9232F7D8045E30FAD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA88DD2F20B1BEB2C73A8E3B /* Pods-JLKitDemo.debug.xcconfig */,
+				D2F6244D95ABCFE46FC53E38 /* Pods-JLKitDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3469F94F211DC581006124DF /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				3469F952211DC58E006124DF /* MTScrollNavigationChildControllerProtocol.h */,
-				3469F956211DC58E006124DF /* MTScrollNavigationController.h */,
-				3469F953211DC58E006124DF /* MTScrollNavigationController.m */,
-				3469F951211DC58E006124DF /* MTScrollNavigationItem.h */,
-				3469F95C211DC58E006124DF /* MTScrollNavigationItem.m */,
-				3469F954211DC58E006124DF /* MTScrollTitleBar.h */,
-				3469F950211DC58D006124DF /* MTScrollTitleBar.m */,
-				3469F955211DC58E006124DF /* MTScrollTitleButton.h */,
-				3469F95D211DC58E006124DF /* MTScrollTitleButton.m */,
-				3469F969211DC58F006124DF /* MTScrollView.h */,
-				3469F96A211DC58F006124DF /* MTScrollView.m */,
 				3469F95E211DC58F006124DF /* OT */,
 				3469F957211DC58E006124DF /* UITableViewIndexBar */,
 			);
@@ -361,6 +345,8 @@
 			children = (
 				F4AEC9E5205E5314000F6D37 /* JLKitDemo */,
 				348D54001E27A5640005E96A /* Products */,
+				2EB1A1A9232F7D8045E30FAD /* Pods */,
+				DF781A55666D474778941168 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -396,6 +382,14 @@
 				F4AECA1D205E5314000F6D37 /* FullScreenPop */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		DF781A55666D474778941168 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8931AF7EB3E49BEE85A0087C /* libPods-JLKitDemo.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F49DDE122070B9F200793B40 /* Base */ = {
@@ -599,10 +593,8 @@
 		F4AECA3D205E5314000F6D37 /* infiniteLoop */ = {
 			isa = PBXGroup;
 			children = (
-				F4AECA3E205E5314000F6D37 /* InfiniteLoopView.h */,
-				F4AECA3F205E5314000F6D37 /* InfiniteLoopView.m */,
-				F4AECA40205E5314000F6D37 /* infinitLoopViewController.h */,
-				F4AECA41205E5314000F6D37 /* infinitLoopViewController.m */,
+				F4AECA3E205E5314000F6D37 /* InfinitePageView.h */,
+				F4AECA3F205E5314000F6D37 /* InfinitePageView.m */,
 			);
 			path = infiniteLoop;
 			sourceTree = "<group>";
@@ -706,6 +698,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 348D54161E27A5640005E96A /* Build configuration list for PBXNativeTarget "JLKitDemo" */;
 			buildPhases = (
+				2EE81507AAC9C94B14803A62 /* [CP] Check Pods Manifest.lock */,
 				348D53FB1E27A5640005E96A /* Sources */,
 				348D53FC1E27A5640005E96A /* Frameworks */,
 				348D53FD1E27A5640005E96A /* Resources */,
@@ -767,6 +760,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2EE81507AAC9C94B14803A62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JLKitDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		348D53FB1E27A5640005E96A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -776,9 +790,7 @@
 				F4AECAB5205E5314000F6D37 /* JLCellitem.m in Sources */,
 				F4AECAB9205E5314000F6D37 /* JLTableView.m in Sources */,
 				F4AECACA205E5314000F6D37 /* UIPanGestureRecognizer+PanDirection.m in Sources */,
-				3469F96F211DC58F006124DF /* MTScrollNavigationItem.m in Sources */,
 				F4AECAB6205E5314000F6D37 /* JLDragOrderCollectionViewLayout.m in Sources */,
-				3469F970211DC58F006124DF /* MTScrollTitleButton.m in Sources */,
 				F4AECAD7205E5314000F6D37 /* UINavigationController+Cloudox.m in Sources */,
 				F4AECAC3205E5314000F6D37 /* XMNavigationController+navigationBarUI.m in Sources */,
 				3469F973211DC58F006124DF /* OTSectionModel.m in Sources */,
@@ -806,9 +818,7 @@
 				F4AECAF1205E5315000F6D37 /* JLFoldAnimationer.m in Sources */,
 				F49DDE1A2070B9F200793B40 /* JLNavigationController.m in Sources */,
 				F4AECAE8205E5315000F6D37 /* TabBarViewController.m in Sources */,
-				3469F96B211DC58F006124DF /* MTScrollTitleBar.m in Sources */,
 				346A5524206B81B4002DD49A /* MTHorizontalPageFlowLayout.m in Sources */,
-				3469F975211DC58F006124DF /* MTScrollView.m in Sources */,
 				3401375A20726BFF002D46D2 /* MTHorizontalWaterFullLayout.m in Sources */,
 				F4AECAED205E5315000F6D37 /* JLHotAreaBtn.m in Sources */,
 				F4AECAB0205E5314000F6D37 /* MultifunctionBtn.m in Sources */,
@@ -825,7 +835,6 @@
 				F4AECAD9205E5314000F6D37 /* LoginCell.m in Sources */,
 				F4AECAC7205E5314000F6D37 /* XMNavigationController.m in Sources */,
 				F49DDE192070B9F200793B40 /* JLBaseViewController.m in Sources */,
-				F4AECACE205E5314000F6D37 /* infinitLoopViewController.m in Sources */,
 				F4AECAC1205E5314000F6D37 /* UIViewController+XMNavigationController.m in Sources */,
 				3401375D20726CC4002D46D2 /* TagItem.m in Sources */,
 				F40A18B12075F535008D7798 /* NSBundle+JL.m in Sources */,
@@ -835,7 +844,7 @@
 				F49DDE112070AC0D00793B40 /* HomeContainerController.m in Sources */,
 				F4AECAF2205E5315000F6D37 /* JLHorizontalPanInteraction.m in Sources */,
 				F4AECAD2205E5314000F6D37 /* main.m in Sources */,
-				F4AECACD205E5314000F6D37 /* InfiniteLoopView.m in Sources */,
+				F4AECACD205E5314000F6D37 /* InfinitePageView.m in Sources */,
 				F49DDE1B2070B9F200793B40 /* UINavigationController+DelegateManager.m in Sources */,
 				F4AECAAE205E5314000F6D37 /* BothsidesBtnViewController.m in Sources */,
 				F4AECAB4205E5314000F6D37 /* SettingViewController.m in Sources */,
@@ -851,7 +860,6 @@
 				F4AECAEF205E5315000F6D37 /* JLBaseAnimationEngine.m in Sources */,
 				34BC829C207E324E009D5ED5 /* SimpleItem.m in Sources */,
 				F4AECAC4205E5314000F6D37 /* XMNavigationController+PanGesture.m in Sources */,
-				3469F96C211DC58F006124DF /* MTScrollNavigationController.m in Sources */,
 				F4AECAD6205E5314000F6D37 /* UINavigationBar+BackGroundImage.m in Sources */,
 				3469F974211DC58F006124DF /* OTTableView.m in Sources */,
 			);
@@ -961,6 +969,7 @@
 		};
 		348D54171E27A5640005E96A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA88DD2F20B1BEB2C73A8E3B /* Pods-JLKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -977,6 +986,7 @@
 		};
 		348D54181E27A5640005E96A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2F6244D95ABCFE46FC53E38 /* Pods-JLKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

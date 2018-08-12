@@ -7,7 +7,7 @@
 //
 
 #import "HomeContainerController.h"
-#import "MTScrollNavigationController.h"
+#import "JLScrollNavigationController.h"
 #import "HomeViewController.h"
 #import "UIImage+JL.h"
 #import "GlobalFunction.h"
@@ -15,21 +15,21 @@
 #import "NavgiationBarOfViewControllerProtocol.h"
 
 @interface HomeContainerController ()<
-    MTScrollNavigationControllerDataSource,
-    MTScrollNavigationControllerDelegate
+    JLScrollNavigationControllerDataSource,
+    JLScrollNavigationControllerDelegate
 >
-@property(nonatomic,strong) MTScrollNavigationController *scrollNavigationController;
+@property(nonatomic,strong) JLScrollNavigationController *scrollNavigationController;
 @end
 
 @implementation HomeContainerController
 
-- (MTScrollNavigationController *)scrollNavigationController
+- (JLScrollNavigationController *)scrollNavigationController
 {
     if (_scrollNavigationController == nil) {
-        _scrollNavigationController = [[MTScrollNavigationController alloc]init];
+        _scrollNavigationController = [[JLScrollNavigationController alloc]init];
         _scrollNavigationController.scrollNavigationDelegate = self;
         _scrollNavigationController.scrollNavigationDataSource = self;
-        _scrollNavigationController.topTitleStyle = MTScrollTitleBarElementStyleAvarge;
+        _scrollNavigationController.topTitleStyle = JLScrollTitleBarElementStyleAvarge;
         _scrollNavigationController.scrollTitleBar.backgroundColor = [UIColor whiteColor];
         _scrollNavigationController.hidesTitleBarWhenScrollToTop = NO;
         _scrollNavigationController.headScrollEnable = NO;
@@ -81,11 +81,11 @@
 
 
 
-- (NSInteger)numberOfTitleInScrollNavigationController:(MTScrollNavigationController *)scrollNavigationController {
+- (NSInteger)numberOfTitleInScrollNavigationController:(JLScrollNavigationController *)scrollNavigationController {
     return 2;
 }
 
-- (UIViewController<MTScrollNavigationChildControllerProtocol> *)scrollNavigationController:(MTScrollNavigationController *)scrollNavigationController childViewControllerForIndex:(NSInteger)index {
+- (UIViewController<JLScrollNavigationChildControllerProtocol> *)scrollNavigationController:(JLScrollNavigationController *)scrollNavigationController childViewControllerForIndex:(NSInteger)index {
     if (index == 0) {
         return [[HomeViewController alloc]init];
     } else {
@@ -93,7 +93,7 @@
     }
 }
 
-- (NSString *)scrollNavigationController:(MTScrollNavigationController *)scrollNavigationController titleForIndex:(NSInteger)index {
+- (NSString *)scrollNavigationController:(JLScrollNavigationController *)scrollNavigationController titleForIndex:(NSInteger)index {
     if (index == 0) {
         return @"控件";
     } else {

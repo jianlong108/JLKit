@@ -9,9 +9,9 @@
 #import "HomeFunctionViewController.h"
 #import "MTHorizontalWaterFullLayout.h"
 #import "IOS11Adapter.h"
-#import "MTScrollNavigationChildControllerProtocol.h"
+#import "JLScrollNavigationChildControllerProtocol.h"
 
-@interface StringItemModel :NSObject<HorizontalWaterFullModelProtocol,MTScrollNavigationChildControllerProtocol>
+@interface StringItemModel :NSObject<HorizontalWaterFullModelProtocol,JLScrollNavigationChildControllerProtocol>
 
 @property (nonatomic, copy) NSString *str;
 
@@ -58,11 +58,14 @@
 
 @end
 
-@interface HomeFunctionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface HomeFunctionViewController ()<
+    UICollectionViewDelegate,
+    UICollectionViewDataSource,
+    CustomPresentViewControllerProtocol
+>
 
 @property (nonatomic, strong) NSMutableArray *dates;
 
-/**<#message#>*/
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end

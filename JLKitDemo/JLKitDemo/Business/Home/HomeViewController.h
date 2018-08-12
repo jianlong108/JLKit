@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "CustomPresentViewControllerProtocol.h"
 #import "OTTableViewController.h"
-#import "MTScrollNavigationChildControllerProtocol.h"
+#import "JLScrollNavigationChildControllerProtocol.h"
 
 @interface HomeViewController : OTTableViewController<
     CustomPresentViewControllerProtocol,
-    MTScrollNavigationChildControllerProtocol
+    JLScrollNavigationChildControllerProtocol
 >
 
 
