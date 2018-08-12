@@ -1,0 +1,16 @@
+PODS:
+  - JLContainer (0.0.2)
+
+DEPENDENCIES:
+  - JLContainer (= 0.0.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JLContainer
+
+SPEC CHECKSUMS:
+  JLContainer: 862e8dbd85aa3b9f0b86dd440928d95dab0fe0d6
+
+PODFILE CHECKSUM: 5bb4df1101e42931c5640c0c279c685d19112e65
+
+COCOAPODS: 1.5.3
