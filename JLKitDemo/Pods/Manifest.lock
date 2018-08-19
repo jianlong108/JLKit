@@ -2,15 +2,15 @@ PODS:
   - JLContainer (0.0.2)
 
 DEPENDENCIES:
-  - JLContainer (= 0.0.2)
+  - JLContainer (from `~/Desktop/github/Container-BaseViewController`)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - JLContainer
+EXTERNAL SOURCES:
+  JLContainer:
+    :path: "~/Desktop/github/Container-BaseViewController"
 
 SPEC CHECKSUMS:
-  JLContainer: 862e8dbd85aa3b9f0b86dd440928d95dab0fe0d6
+  JLContainer: be91ae28ec5e024cdd448c16ee768f2129d090a7
 
-PODFILE CHECKSUM: 5bb4df1101e42931c5640c0c279c685d19112e65
+PODFILE CHECKSUM: f1cff786162a456f7805f88bf55ed9e70104ec8e
 
 COCOAPODS: 1.5.3

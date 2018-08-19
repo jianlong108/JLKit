@@ -12,6 +12,8 @@
 #import "OTSectionModel.h"
 #import "SettingViewController.h"
 #import "LoginViewController.h"
+#import "VerticalContainerViewController.h"
+#import "UIViewController+XMNavigationController.h"
 
 @interface MyViewController ()
 
@@ -42,7 +44,7 @@
     SimpleItem *model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         LoginViewController *vc = [[LoginViewController alloc]init];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
+        [weakSelf.myNavigationController pushViewController:vc animated:YES];
     };
     model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
     model.title = @"登录页";
@@ -51,12 +53,21 @@
     model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         SettingViewController *vc = [[SettingViewController alloc]init];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
+        [weakSelf.myNavigationController pushViewController:vc animated:YES];
     };
     model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
     model.title = @"设置";
     [sectionOne.items addObject:model];
     
+    model = [[SimpleItem alloc]init];
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        VerticalContainerViewController *vc = [[VerticalContainerViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [weakSelf.myNavigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.title = @"竖直容器";
+    [sectionOne.items addObject:model];
     
     [self.sectionItems addObject:sectionOne];
 }
