@@ -34,9 +34,9 @@
         _scrollNavigationController.hidesTitleBarWhenScrollToTop = NO;
         _scrollNavigationController.headScrollEnable = NO;
         
-        _scrollNavigationController.scrollTitleBarItemColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
-        _scrollNavigationController.scrollTitleBarItemSelectColor = UIColorFromRGB(0x14b9c7);
-        _scrollNavigationController.scrollTitleBarLineViewSelectColor = UIColorFromRGB(0x14b9c7);
+        _scrollNavigationController.scrollTitleBarItemColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
+        _scrollNavigationController.scrollTitleBarItemSelectColor = [UIColor whiteColor];//UIColorFromRGB(0x14b9c7);
+        _scrollNavigationController.scrollTitleBarLineViewSelectColor = [UIColor whiteColor];//UIColorFromRGB(0x14b9c7);
         _scrollNavigationController.scrollTitleBarItemFont = [UIFont systemFontOfSize:15];
         _scrollNavigationController.scrollTitleBarLineViewHeight = 3;
     }
@@ -46,10 +46,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.edgesForExtendedLayout = UIRectEdgeAll;
-    
-    self.view.backgroundColor = [UIColor orangeColor];
     
     //防止内存占用严重时,view会被释放,会重新调用viewdidload方法.
     [self.scrollNavigationController.view removeFromSuperview];
@@ -63,7 +59,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    self.scrollNavigationController.view.frame = CGRectMake(0, 20, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 20);
+    self.scrollNavigationController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) - 20);
 }
 
 
@@ -79,7 +75,13 @@
     return nil;
 }
 
-
+- (UIColor *)scrollNavigationController:(JLScrollNavigationController *)scrollNavigationController scrollTitleBarBackgroundColorWithIndex:(NSUInteger)index
+{
+    if (index == 0) {
+        return [UIColor colorWithRed:151/255.0 green:234/255.0 blue:250/255.0 alpha:1.0f];
+    }
+    return [UIColor colorWithRed:115/255.0 green:248/255.0 blue:95/255.0 alpha:1.0f];
+}
 
 - (NSInteger)numberOfTitleInScrollNavigationController:(JLScrollNavigationController *)scrollNavigationController {
     return 2;

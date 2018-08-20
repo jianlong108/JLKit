@@ -78,7 +78,7 @@
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    InfiniteLoops *loop = [[InfiniteLoops alloc] initWithFrame:CGRectMake(0, 100, CGRectGetWidth(self.view.frame), 300) scrollDuration:3.f];
+    InfiniteLoops *loop = [[InfiniteLoops alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300) scrollDuration:3.f];
     loop.backgroundColor = [UIColor blackColor];
     [self.view addSubview:loop];
     loop.imageURLStrings = @[@"1.jpg", @"2.jpg", @"3.jpg",@"4.jpg",@"5.jpg",@"6.jpg",@"7.jpg",@"8.jpg",@"9.jpg",@"10.jpg"];
