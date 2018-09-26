@@ -7,99 +7,125 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0981D2E23D8DA5302B4FD723377DA3D7 /* JLScrollNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC737EDC003CCDAFC487F6C9271A02C /* JLScrollNavigationItem.m */; };
-		11B8F9C47FBF37F2FA3E7FD8B7B01DE5 /* JLScrollNavigationItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CBF3AE77ACB218EA219A6B5135090CD /* JLScrollNavigationItem.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1746FBA04AC79085F8CC076B7DC35602 /* JLScrollNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 50995B10EDA32DDC56B92CEBB25E8AF4 /* JLScrollNavigationController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		17B8EF94F71160E333D2F23DF36C4792 /* JLVerticalScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F896F3364C99AF2025FDBA92B48642 /* JLVerticalScrollController.m */; };
-		17F435352E6EB18BA7D6AB0DE7E52D9B /* JLScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76833A7B0C9065B8FD32156962D418C9 /* JLScrollView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1E5F1AC406DCA41D37A9C9C24D06D791 /* JLScrollTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C290CE7097BBA8130DEE31A3BAFDC768 /* JLScrollTitleButton.m */; };
-		24C31290675024A3920E9388613D2048 /* JLContainer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D73D1B2D304BF4261C88984D23799F5 /* JLContainer-dummy.m */; };
-		259B6F38999A553B91D22765CCBF21A0 /* JLScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C38149ACA494F8A535DDA26BAD71D53C /* JLScrollTitleBar.m */; };
-		26EFED619C83B4F2ED3CB37E244C1F62 /* JLVerticalScrollController.h in Headers */ = {isa = PBXBuildFile; fileRef = E06D6D2122DCD378F2127678A5CBD55D /* JLVerticalScrollController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		353CC787634276354CBEF0FEA2C8B278 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD46FBC041420035C341CC6342582587 /* UIKit.framework */; };
-		398502FA1B79C4D041ECDBF4C0DD8B60 /* JLScrollNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAB3053FF8B02CEBBC4C3236D8130459 /* JLScrollNavigationController.m */; };
-		51A639A9CB41E5ECD1C577D2AF978EE0 /* Pods-JLKitDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BF5CA48902B29A7B1E5D35C182BBD /* Pods-JLKitDemo-dummy.m */; };
-		6FF0DD520F5A7E9A8167780EACF8E689 /* UIScrollView+OffsetAndContentInset.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA42218AD7D04F2317E2FE08DB968E1 /* UIScrollView+OffsetAndContentInset.m */; };
-		7CB98D0E557E20C4ABD2918F99D1E8B7 /* JLVerticalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95E30C09753BE87602BF7D39C0BB52A1 /* JLVerticalScrollView.m */; };
-		810375BFD9FB973F9748775A2E5CB38D /* JLScrollTitleBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 92EF9075B646062D916EFF8952E2AAFA /* JLScrollTitleBar.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8AAA75C8C92B47319245B3713F393793 /* UIScrollView+OffsetAndContentInset.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CDB617E2CCE3C721217771000C59A44 /* UIScrollView+OffsetAndContentInset.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		9F732FC88506093F9E4358FBC384463B /* JLScrollNavigationChildControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F166EAEA8C19C798522DB48D46D92965 /* JLScrollNavigationChildControllerProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AEA6472ECDF2CA5413695B95756C76CD /* JLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BE8FE5B10103FE76076DD21D9F6BDE /* JLScrollView.m */; };
-		B52F700969CE2CF0587DEBF0EA644B60 /* JLVerticalScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B593E3BDF7359EF00E0E8F67FEA03D92 /* JLVerticalScrollView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E2A044E7018F90DC20B707445E14BB26 /* JLScrollTitleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FEAA04DA3DAD226BD216F4BC3E2F740 /* JLScrollTitleButton.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		04E4E7590EC224BCB614C42D8BC951FF /* JLScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D60983ED71373C10503434D77D65BDD /* JLScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09E438646B3D043C63B4216ED998245C /* JLScrollTitleBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B5111D3660CDDEC3980E5F4BF5295 /* JLScrollTitleBar.m */; };
+		17581467BBD7711F15D6D5622D39D4B9 /* JLScrollNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5C7333FEC74A8DA2FBDF317768663E /* JLScrollNavigationItem.m */; };
+		1BDBF462E5D21267728611024663FF0C /* JLScrollNavigationItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 28E8EC9A2ACF6FD201B9DBB010438A59 /* JLScrollNavigationItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CEABD7BD402199B088DC4C3A7267860 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		27858971902CECE34C66CF53099B2FB1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		5678381D313818EA08849B21A2658518 /* JLVerticalScrollController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B1F40B3DDCD4F248A9592D0351E3F09 /* JLVerticalScrollController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5D24FE8931CA731574FDE3F49020E37E /* JLScrollNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BCDFF64F06A141A1DAA0F4CCE0700B7 /* JLScrollNavigationController.m */; };
+		6012D2BC59CD7FA2C9F00DA8A4E73347 /* JLVerticalScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB3B1BE5FB54FCDE4DDD5CF600210FF /* JLVerticalScrollController.m */; };
+		86AC724B75A07368E9EC161BC13FF222 /* JLScrollTitleButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA392C03F8FEEC8F638CC67B74ED746 /* JLScrollTitleButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		897D1D77133FCDA5C66D6C017041E804 /* UIScrollView+OffsetAndContentInset.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB3FB40DCC0A80EF3F75B49A1A0914 /* UIScrollView+OffsetAndContentInset.m */; };
+		8CC1510E4B5BE84C0616FB32D59B3ED0 /* JLScrollNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E19A9ADC7E4AFF93521348021CF5CA /* JLScrollNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F7F0843A3E55D6FC2971B9719EFB477 /* JLVerticalScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 914A0D9D433FDE549D30368F77CA774A /* JLVerticalScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9D662C4A3D6E73B8437098086102789 /* JLContainer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 547B51BBBD4BD05F2BFA536279506E89 /* JLContainer-dummy.m */; };
+		B3626095B3D01D17073FD177F25A25FB /* JLScrollTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B253F0D686A9C8812AF4A9E0CBF07DA /* JLScrollTitleButton.m */; };
+		B839DAD153126DCC433AEF628B021954 /* Pods-JLKitDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7BF5CA48902B29A7B1E5D35C182BBD /* Pods-JLKitDemo-dummy.m */; };
+		C3EFE7259583F76103262FF3B6991158 /* JLScrollNavigationChildControllerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B7F25BCA13F6624599B4FE94F764E7A2 /* JLScrollNavigationChildControllerProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5899135F5A8F7BE97CFCC515C421D23 /* UICollectionView+AdjustContenSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 1221B50E939E94EFCBD6EB46335FD3F7 /* UICollectionView+AdjustContenSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8F83E0E06DE61E3DF7C75EAFC249F97 /* UIScrollView+OffsetAndContentInset.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E1D43BBF1B8712FECFFB0B363E07B4B /* UIScrollView+OffsetAndContentInset.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D694208A755D0BF906B6D245254E931C /* JLScrollTitleBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 57C7FBFC64B9A989DF0782A1F7C518F4 /* JLScrollTitleBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E01C89AA2A0913868B7B8C0615DBCF94 /* JLVerticalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CC6682715CA843B49A28A5A0A0329A /* JLVerticalScrollView.m */; };
+		E8095BDFB1D7C90C2B07909E497615C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		ECB1855F4C3FB31DA814FB3B604CBCF6 /* UICollectionView+AdjustContenSize.m in Sources */ = {isa = PBXBuildFile; fileRef = A96AD77A934B95C401DF301A90D40D9A /* UICollectionView+AdjustContenSize.m */; };
+		FE67E3563ACA2533F5E9EBD5B4129993 /* JLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A33E19EAD1515DB1F8E842C9096DB10 /* JLScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F7C5E877563F9EACFF99E690B91D6129 /* PBXContainerItemProxy */ = {
+		BDAB0D8FA00C5AB7A3C28F6C51BCD2A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C3754ED1AB5E26192216FD2CA293B68C;
+			remoteGlobalIDString = 86C6C98ABB6966A794882279CE66A25A;
 			remoteInfo = JLContainer;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BCDFF64F06A141A1DAA0F4CCE0700B7 /* JLScrollNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JLScrollNavigationController.m; sourceTree = "<group>"; };
 		0EE74BCEDDAE885B4851785078FF8A31 /* libJLContainer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJLContainer.a; path = libJLContainer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1221B50E939E94EFCBD6EB46335FD3F7 /* UICollectionView+AdjustContenSize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+AdjustContenSize.h"; sourceTree = "<group>"; };
 		1A7BF5CA48902B29A7B1E5D35C182BBD /* Pods-JLKitDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JLKitDemo-dummy.m"; sourceTree = "<group>"; };
 		1B26824264CBD41DC30B1908EFF9D35F /* Pods-JLKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		1CBF3AE77ACB218EA219A6B5135090CD /* JLScrollNavigationItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JLScrollNavigationItem.h; path = Source/JLScrollNavigationItem.h; sourceTree = "<group>"; };
+		21E19A9ADC7E4AFF93521348021CF5CA /* JLScrollNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JLScrollNavigationController.h; sourceTree = "<group>"; };
+		22CC6682715CA843B49A28A5A0A0329A /* JLVerticalScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JLVerticalScrollView.m; sourceTree = "<group>"; };
+		28E8EC9A2ACF6FD201B9DBB010438A59 /* JLScrollNavigationItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JLScrollNavigationItem.h; sourceTree = "<group>"; };
 		3462BBB83BD8EDDFD0B5EBA23B0E51C2 /* Pods-JLKitDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLKitDemo-frameworks.sh"; sourceTree = "<group>"; };
-		50995B10EDA32DDC56B92CEBB25E8AF4 /* JLScrollNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JLScrollNavigationController.h; path = Source/JLScrollNavigationController.h; sourceTree = "<group>"; };
+		3B1F40B3DDCD4F248A9592D0351E3F09 /* JLVerticalScrollController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JLVerticalScrollController.h; sourceTree = "<group>"; };
+		4A33E19EAD1515DB1F8E842C9096DB10 /* JLScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JLScrollView.m; sourceTree = "<group>"; };
+		4B253F0D686A9C8812AF4A9E0CBF07DA /* JLScrollTitleButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JLScrollTitleButton.m; sourceTree = "<group>"; };
+		4CA392C03F8FEEC8F638CC67B74ED746 /* JLScrollTitleButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JLScrollTitleButton.h; sourceTree = "<group>"; };
+		4D60983ED71373C10503434D77D65BDD /* JLScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JLScrollView.h; sourceTree = "<group>"; };
+		5224BD0E4A1E04EDF56F76C954A1C255 /* JLContainer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JLContainer.xcconfig; sourceTree = "<group>"; };
 		5244DA0E1B7D9791F9F761C90F2B6D92 /* Pods-JLKitDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JLKitDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		53BE8FE5B10103FE76076DD21D9F6BDE /* JLScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JLScrollView.m; path = Source/JLScrollView.m; sourceTree = "<group>"; };
-		59F896F3364C99AF2025FDBA92B48642 /* JLVerticalScrollController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JLVerticalScrollController.m; path = Source/JLVerticalScrollController.m; sourceTree = "<group>"; };
+		547B51BBBD4BD05F2BFA536279506E89 /* JLContainer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JLContainer-dummy.m"; sourceTree = "<group>"; };
+		57C7FBFC64B9A989DF0782A1F7C518F4 /* JLScrollTitleBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JLScrollTitleBar.h; sourceTree = "<group>"; };
+		5B6B5111D3660CDDEC3980E5F4BF5295 /* JLScrollTitleBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JLScrollTitleBar.m; sourceTree = "<group>"; };
 		5BA59494D6D19285BFD38E502DC51364 /* Pods-JLKitDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JLKitDemo-resources.sh"; sourceTree = "<group>"; };
-		5FEAA04DA3DAD226BD216F4BC3E2F740 /* JLScrollTitleButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JLScrollTitleButton.h; path = Source/JLScrollTitleButton.h; sourceTree = "<group>"; };
 		68F0CC1FE93EF463F11008A2B3D18971 /* Pods-JLKitDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JLKitDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		6C2CA74D58F5D673FF3A36A71E3B5557 /* Pods-JLKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JLKitDemo.release.xcconfig"; sourceTree = "<group>"; };
-		76833A7B0C9065B8FD32156962D418C9 /* JLScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JLScrollView.h; path = Source/JLScrollView.h; sourceTree = "<group>"; };
-		7DA54B05B3C5DAA010C527C6992A4647 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		80EFC9592D454E61202E79EF0A357A9C /* JLContainer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLContainer-prefix.pch"; sourceTree = "<group>"; };
+		6E1D43BBF1B8712FECFFB0B363E07B4B /* UIScrollView+OffsetAndContentInset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+OffsetAndContentInset.h"; sourceTree = "<group>"; };
+		7D5C7333FEC74A8DA2FBDF317768663E /* JLScrollNavigationItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JLScrollNavigationItem.m; sourceTree = "<group>"; };
 		8A8FBE725696B2FA07FC9462D090C77C /* libPods-JLKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-JLKitDemo.a"; path = "libPods-JLKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CDB617E2CCE3C721217771000C59A44 /* UIScrollView+OffsetAndContentInset.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+OffsetAndContentInset.h"; path = "Source/UIScrollView+OffsetAndContentInset.h"; sourceTree = "<group>"; };
-		92EF9075B646062D916EFF8952E2AAFA /* JLScrollTitleBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JLScrollTitleBar.h; path = Source/JLScrollTitleBar.h; sourceTree = "<group>"; };
+		914A0D9D433FDE549D30368F77CA774A /* JLVerticalScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JLVerticalScrollView.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95E30C09753BE87602BF7D39C0BB52A1 /* JLVerticalScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JLVerticalScrollView.m; path = Source/JLVerticalScrollView.m; sourceTree = "<group>"; };
-		9BC737EDC003CCDAFC487F6C9271A02C /* JLScrollNavigationItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JLScrollNavigationItem.m; path = Source/JLScrollNavigationItem.m; sourceTree = "<group>"; };
-		9D73D1B2D304BF4261C88984D23799F5 /* JLContainer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JLContainer-dummy.m"; sourceTree = "<group>"; };
-		B593E3BDF7359EF00E0E8F67FEA03D92 /* JLVerticalScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JLVerticalScrollView.h; path = Source/JLVerticalScrollView.h; sourceTree = "<group>"; };
-		BFA42218AD7D04F2317E2FE08DB968E1 /* UIScrollView+OffsetAndContentInset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+OffsetAndContentInset.m"; path = "Source/UIScrollView+OffsetAndContentInset.m"; sourceTree = "<group>"; };
-		C290CE7097BBA8130DEE31A3BAFDC768 /* JLScrollTitleButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JLScrollTitleButton.m; path = Source/JLScrollTitleButton.m; sourceTree = "<group>"; };
-		C38149ACA494F8A535DDA26BAD71D53C /* JLScrollTitleBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JLScrollTitleBar.m; path = Source/JLScrollTitleBar.m; sourceTree = "<group>"; };
-		CB8D866E2E71CAFC36B4C952FC424CE0 /* JLContainer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JLContainer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		DD46FBC041420035C341CC6342582587 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		E06D6D2122DCD378F2127678A5CBD55D /* JLVerticalScrollController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JLVerticalScrollController.h; path = Source/JLVerticalScrollController.h; sourceTree = "<group>"; };
-		EAB3053FF8B02CEBBC4C3236D8130459 /* JLScrollNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JLScrollNavigationController.m; path = Source/JLScrollNavigationController.m; sourceTree = "<group>"; };
-		F166EAEA8C19C798522DB48D46D92965 /* JLScrollNavigationChildControllerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JLScrollNavigationChildControllerProtocol.h; path = Source/JLScrollNavigationChildControllerProtocol.h; sourceTree = "<group>"; };
-		FFA436706B79917232C7EB33E866C73B /* JLContainer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JLContainer.xcconfig; sourceTree = "<group>"; };
+		95695C3A2F9FAE6D13E7CFF61E6D060F /* JLContainer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JLContainer-prefix.pch"; sourceTree = "<group>"; };
+		9CEB3FB40DCC0A80EF3F75B49A1A0914 /* UIScrollView+OffsetAndContentInset.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+OffsetAndContentInset.m"; sourceTree = "<group>"; };
+		A96AD77A934B95C401DF301A90D40D9A /* UICollectionView+AdjustContenSize.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+AdjustContenSize.m"; sourceTree = "<group>"; };
+		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B7F25BCA13F6624599B4FE94F764E7A2 /* JLScrollNavigationChildControllerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JLScrollNavigationChildControllerProtocol.h; sourceTree = "<group>"; };
+		BFB3B1BE5FB54FCDE4DDD5CF600210FF /* JLVerticalScrollController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JLVerticalScrollController.m; sourceTree = "<group>"; };
+		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		26FE718D3C6BFA1DFA77BB043FE128EF /* Frameworks */ = {
+		35D31FCDC3FFBA7BC253055CECE7549D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				353CC787634276354CBEF0FEA2C8B278 /* UIKit.framework in Frameworks */,
+				1CEABD7BD402199B088DC4C3A7267860 /* Foundation.framework in Frameworks */,
+				27858971902CECE34C66CF53099B2FB1 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1B24CA145EB35CDA1CAFAEB45F88D7B /* Frameworks */ = {
+		3EE70CAD7E240260BBE8348972D81547 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8095BDFB1D7C90C2B07909E497615C0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D0336C5D54AC4F59BED5E3B5A09999F /* Development Pods */ = {
+		08D1A6DE84BB756E4C46242B72DB0698 /* JLContainer */ = {
 			isa = PBXGroup;
 			children = (
-				FB5F1C80EFA929505A87570CCD3717D5 /* JLContainer */,
+				B8F5B3F82F12FA308EB55AA7FB522A71 /* Source */,
+				70F8F85AC1BE3085B56FE749BA265E3C /* Support Files */,
 			);
-			name = "Development Pods";
+			name = JLContainer;
+			path = "/Users/JL/Desktop/Github/Container-BaseViewController";
+			sourceTree = "<absolute>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438B396F6B4147076630CAEFE34282C1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		438B396F6B4147076630CAEFE34282C1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */,
+				B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		5DAE89400FD156AF23CA60067A71775D /* Pods-JLKitDemo */ = {
@@ -117,12 +143,23 @@
 			path = "Target Support Files/Pods-JLKitDemo";
 			sourceTree = "<group>";
 		};
+		70F8F85AC1BE3085B56FE749BA265E3C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5224BD0E4A1E04EDF56F76C954A1C255 /* JLContainer.xcconfig */,
+				547B51BBBD4BD05F2BFA536279506E89 /* JLContainer-dummy.m */,
+				95695C3A2F9FAE6D13E7CFF61E6D060F /* JLContainer-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../JLKit/JLKitDemo/Pods/Target Support Files/JLContainer";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				5D0336C5D54AC4F59BED5E3B5A09999F /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				D9E49471973E5C2A32C1368BAB4A8151 /* Development Pods */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				D4E8C24E0DC28EE6658D8B82C5751F23 /* Products */,
 				A4A778DC0706B2C4FAD9A4ADB1710A4F /* Targets Support Files */,
 			);
@@ -136,32 +173,31 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		A8A432EEEAF8C5AE71B13C3FC8ABA73A /* Support Files */ = {
+		B8F5B3F82F12FA308EB55AA7FB522A71 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				FFA436706B79917232C7EB33E866C73B /* JLContainer.xcconfig */,
-				9D73D1B2D304BF4261C88984D23799F5 /* JLContainer-dummy.m */,
-				80EFC9592D454E61202E79EF0A357A9C /* JLContainer-prefix.pch */,
+				B7F25BCA13F6624599B4FE94F764E7A2 /* JLScrollNavigationChildControllerProtocol.h */,
+				21E19A9ADC7E4AFF93521348021CF5CA /* JLScrollNavigationController.h */,
+				0BCDFF64F06A141A1DAA0F4CCE0700B7 /* JLScrollNavigationController.m */,
+				28E8EC9A2ACF6FD201B9DBB010438A59 /* JLScrollNavigationItem.h */,
+				7D5C7333FEC74A8DA2FBDF317768663E /* JLScrollNavigationItem.m */,
+				57C7FBFC64B9A989DF0782A1F7C518F4 /* JLScrollTitleBar.h */,
+				5B6B5111D3660CDDEC3980E5F4BF5295 /* JLScrollTitleBar.m */,
+				4CA392C03F8FEEC8F638CC67B74ED746 /* JLScrollTitleButton.h */,
+				4B253F0D686A9C8812AF4A9E0CBF07DA /* JLScrollTitleButton.m */,
+				4D60983ED71373C10503434D77D65BDD /* JLScrollView.h */,
+				4A33E19EAD1515DB1F8E842C9096DB10 /* JLScrollView.m */,
+				3B1F40B3DDCD4F248A9592D0351E3F09 /* JLVerticalScrollController.h */,
+				BFB3B1BE5FB54FCDE4DDD5CF600210FF /* JLVerticalScrollController.m */,
+				914A0D9D433FDE549D30368F77CA774A /* JLVerticalScrollView.h */,
+				22CC6682715CA843B49A28A5A0A0329A /* JLVerticalScrollView.m */,
+				1221B50E939E94EFCBD6EB46335FD3F7 /* UICollectionView+AdjustContenSize.h */,
+				A96AD77A934B95C401DF301A90D40D9A /* UICollectionView+AdjustContenSize.m */,
+				6E1D43BBF1B8712FECFFB0B363E07B4B /* UIScrollView+OffsetAndContentInset.h */,
+				9CEB3FB40DCC0A80EF3F75B49A1A0914 /* UIScrollView+OffsetAndContentInset.m */,
 			);
-			name = "Support Files";
-			path = "../JLKit/JLKitDemo/Pods/Target Support Files/JLContainer";
-			sourceTree = "<group>";
-		};
-		B2B65941B7B55E0EB33B189DF35205E6 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				CB8D866E2E71CAFC36B4C952FC424CE0 /* JLContainer.podspec */,
-				7DA54B05B3C5DAA010C527C6992A4647 /* LICENSE */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FF5B08143E740C3777FEB0D3A952141C /* iOS */,
-			);
-			name = Frameworks;
+			name = Source;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		D4E8C24E0DC28EE6658D8B82C5751F23 /* Products */ = {
@@ -173,70 +209,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FB5F1C80EFA929505A87570CCD3717D5 /* JLContainer */ = {
+		D9E49471973E5C2A32C1368BAB4A8151 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F166EAEA8C19C798522DB48D46D92965 /* JLScrollNavigationChildControllerProtocol.h */,
-				50995B10EDA32DDC56B92CEBB25E8AF4 /* JLScrollNavigationController.h */,
-				EAB3053FF8B02CEBBC4C3236D8130459 /* JLScrollNavigationController.m */,
-				1CBF3AE77ACB218EA219A6B5135090CD /* JLScrollNavigationItem.h */,
-				9BC737EDC003CCDAFC487F6C9271A02C /* JLScrollNavigationItem.m */,
-				92EF9075B646062D916EFF8952E2AAFA /* JLScrollTitleBar.h */,
-				C38149ACA494F8A535DDA26BAD71D53C /* JLScrollTitleBar.m */,
-				5FEAA04DA3DAD226BD216F4BC3E2F740 /* JLScrollTitleButton.h */,
-				C290CE7097BBA8130DEE31A3BAFDC768 /* JLScrollTitleButton.m */,
-				76833A7B0C9065B8FD32156962D418C9 /* JLScrollView.h */,
-				53BE8FE5B10103FE76076DD21D9F6BDE /* JLScrollView.m */,
-				E06D6D2122DCD378F2127678A5CBD55D /* JLVerticalScrollController.h */,
-				59F896F3364C99AF2025FDBA92B48642 /* JLVerticalScrollController.m */,
-				B593E3BDF7359EF00E0E8F67FEA03D92 /* JLVerticalScrollView.h */,
-				95E30C09753BE87602BF7D39C0BB52A1 /* JLVerticalScrollView.m */,
-				8CDB617E2CCE3C721217771000C59A44 /* UIScrollView+OffsetAndContentInset.h */,
-				BFA42218AD7D04F2317E2FE08DB968E1 /* UIScrollView+OffsetAndContentInset.m */,
-				B2B65941B7B55E0EB33B189DF35205E6 /* Pod */,
-				A8A432EEEAF8C5AE71B13C3FC8ABA73A /* Support Files */,
+				08D1A6DE84BB756E4C46242B72DB0698 /* JLContainer */,
 			);
-			name = JLContainer;
-			path = "/Users/dalong/Desktop/github/Container-BaseViewController";
-			sourceTree = "<absolute>";
-		};
-		FF5B08143E740C3777FEB0D3A952141C /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				DD46FBC041420035C341CC6342582587 /* UIKit.framework */,
-			);
-			name = iOS;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		CA25221052D002FBFBC2B4068C853C09 /* Headers */ = {
+		1123D8700389B5711648B8F24FAA36CC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F732FC88506093F9E4358FBC384463B /* JLScrollNavigationChildControllerProtocol.h in Headers */,
-				1746FBA04AC79085F8CC076B7DC35602 /* JLScrollNavigationController.h in Headers */,
-				11B8F9C47FBF37F2FA3E7FD8B7B01DE5 /* JLScrollNavigationItem.h in Headers */,
-				810375BFD9FB973F9748775A2E5CB38D /* JLScrollTitleBar.h in Headers */,
-				E2A044E7018F90DC20B707445E14BB26 /* JLScrollTitleButton.h in Headers */,
-				17F435352E6EB18BA7D6AB0DE7E52D9B /* JLScrollView.h in Headers */,
-				26EFED619C83B4F2ED3CB37E244C1F62 /* JLVerticalScrollController.h in Headers */,
-				B52F700969CE2CF0587DEBF0EA644B60 /* JLVerticalScrollView.h in Headers */,
-				8AAA75C8C92B47319245B3713F393793 /* UIScrollView+OffsetAndContentInset.h in Headers */,
+				C3EFE7259583F76103262FF3B6991158 /* JLScrollNavigationChildControllerProtocol.h in Headers */,
+				8CC1510E4B5BE84C0616FB32D59B3ED0 /* JLScrollNavigationController.h in Headers */,
+				1BDBF462E5D21267728611024663FF0C /* JLScrollNavigationItem.h in Headers */,
+				D694208A755D0BF906B6D245254E931C /* JLScrollTitleBar.h in Headers */,
+				86AC724B75A07368E9EC161BC13FF222 /* JLScrollTitleButton.h in Headers */,
+				04E4E7590EC224BCB614C42D8BC951FF /* JLScrollView.h in Headers */,
+				5678381D313818EA08849B21A2658518 /* JLVerticalScrollController.h in Headers */,
+				9F7F0843A3E55D6FC2971B9719EFB477 /* JLVerticalScrollView.h in Headers */,
+				C5899135F5A8F7BE97CFCC515C421D23 /* UICollectionView+AdjustContenSize.h in Headers */,
+				C8F83E0E06DE61E3DF7C75EAFC249F97 /* UIScrollView+OffsetAndContentInset.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C3754ED1AB5E26192216FD2CA293B68C /* JLContainer */ = {
+		86C6C98ABB6966A794882279CE66A25A /* JLContainer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FE768A837C5DDEFF70BDFCB308CA65B1 /* Build configuration list for PBXNativeTarget "JLContainer" */;
+			buildConfigurationList = 2068F9784E19150E238CA6BB4D398028 /* Build configuration list for PBXNativeTarget "JLContainer" */;
 			buildPhases = (
-				0A7F72430CEE93E7F431A099EF12EC9E /* Sources */,
-				26FE718D3C6BFA1DFA77BB043FE128EF /* Frameworks */,
-				CA25221052D002FBFBC2B4068C853C09 /* Headers */,
+				DBB67E858ACDEE091A4EBC9679E1A5A6 /* Sources */,
+				35D31FCDC3FFBA7BC253055CECE7549D /* Frameworks */,
+				1123D8700389B5711648B8F24FAA36CC /* Headers */,
 			);
 			buildRules = (
 			);
@@ -247,17 +257,17 @@
 			productReference = 0EE74BCEDDAE885B4851785078FF8A31 /* libJLContainer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		E464159C669CB2E32733E53806FC7B23 /* Pods-JLKitDemo */ = {
+		A0D61AD2B7C362ECAF9EB56E50F725C8 /* Pods-JLKitDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F60D4319E6E097D3DF6A1BA01DB66673 /* Build configuration list for PBXNativeTarget "Pods-JLKitDemo" */;
+			buildConfigurationList = F706582275BD27D4FD2BF1A7DBF1FC92 /* Build configuration list for PBXNativeTarget "Pods-JLKitDemo" */;
 			buildPhases = (
-				402E11E648842045F2F6348B10C24F63 /* Sources */,
-				F1B24CA145EB35CDA1CAFAEB45F88D7B /* Frameworks */,
+				F43F3B416C91125DC6F327AA89386635 /* Sources */,
+				3EE70CAD7E240260BBE8348972D81547 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CC2EC5BC5BA56BEB37EBD71FC67F9B4C /* PBXTargetDependency */,
+				C142E3122CC34B0D6D9B8BC85824CFFB /* PBXTargetDependency */,
 			);
 			name = "Pods-JLKitDemo";
 			productName = "Pods-JLKitDemo";
@@ -270,8 +280,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -285,50 +295,51 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C3754ED1AB5E26192216FD2CA293B68C /* JLContainer */,
-				E464159C669CB2E32733E53806FC7B23 /* Pods-JLKitDemo */,
+				86C6C98ABB6966A794882279CE66A25A /* JLContainer */,
+				A0D61AD2B7C362ECAF9EB56E50F725C8 /* Pods-JLKitDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0A7F72430CEE93E7F431A099EF12EC9E /* Sources */ = {
+		DBB67E858ACDEE091A4EBC9679E1A5A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24C31290675024A3920E9388613D2048 /* JLContainer-dummy.m in Sources */,
-				398502FA1B79C4D041ECDBF4C0DD8B60 /* JLScrollNavigationController.m in Sources */,
-				0981D2E23D8DA5302B4FD723377DA3D7 /* JLScrollNavigationItem.m in Sources */,
-				259B6F38999A553B91D22765CCBF21A0 /* JLScrollTitleBar.m in Sources */,
-				1E5F1AC406DCA41D37A9C9C24D06D791 /* JLScrollTitleButton.m in Sources */,
-				AEA6472ECDF2CA5413695B95756C76CD /* JLScrollView.m in Sources */,
-				17B8EF94F71160E333D2F23DF36C4792 /* JLVerticalScrollController.m in Sources */,
-				7CB98D0E557E20C4ABD2918F99D1E8B7 /* JLVerticalScrollView.m in Sources */,
-				6FF0DD520F5A7E9A8167780EACF8E689 /* UIScrollView+OffsetAndContentInset.m in Sources */,
+				A9D662C4A3D6E73B8437098086102789 /* JLContainer-dummy.m in Sources */,
+				5D24FE8931CA731574FDE3F49020E37E /* JLScrollNavigationController.m in Sources */,
+				17581467BBD7711F15D6D5622D39D4B9 /* JLScrollNavigationItem.m in Sources */,
+				09E438646B3D043C63B4216ED998245C /* JLScrollTitleBar.m in Sources */,
+				B3626095B3D01D17073FD177F25A25FB /* JLScrollTitleButton.m in Sources */,
+				FE67E3563ACA2533F5E9EBD5B4129993 /* JLScrollView.m in Sources */,
+				6012D2BC59CD7FA2C9F00DA8A4E73347 /* JLVerticalScrollController.m in Sources */,
+				E01C89AA2A0913868B7B8C0615DBCF94 /* JLVerticalScrollView.m in Sources */,
+				ECB1855F4C3FB31DA814FB3B604CBCF6 /* UICollectionView+AdjustContenSize.m in Sources */,
+				897D1D77133FCDA5C66D6C017041E804 /* UIScrollView+OffsetAndContentInset.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		402E11E648842045F2F6348B10C24F63 /* Sources */ = {
+		F43F3B416C91125DC6F327AA89386635 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51A639A9CB41E5ECD1C577D2AF978EE0 /* Pods-JLKitDemo-dummy.m in Sources */,
+				B839DAD153126DCC433AEF628B021954 /* Pods-JLKitDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CC2EC5BC5BA56BEB37EBD71FC67F9B4C /* PBXTargetDependency */ = {
+		C142E3122CC34B0D6D9B8BC85824CFFB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JLContainer;
-			target = C3754ED1AB5E26192216FD2CA293B68C /* JLContainer */;
-			targetProxy = F7C5E877563F9EACFF99E690B91D6129 /* PBXContainerItemProxy */;
+			target = 86C6C98ABB6966A794882279CE66A25A /* JLContainer */;
+			targetProxy = BDAB0D8FA00C5AB7A3C28F6C51BCD2A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1EE19F5DD95931924296F637BF18BD8F /* Debug */ = {
+		0F1B438E6CBF5F0E56248FBFF48D8E21 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -338,12 +349,10 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -351,7 +360,6 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -360,8 +368,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -386,88 +392,15 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		37D7CCC6B5A4D5C0D3FF6BFCE71BC87C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFA436706B79917232C7EB33E866C73B /* JLContainer.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/JLContainer/JLContainer-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = JLContainer;
-				PRODUCT_NAME = JLContainer;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		5B0CB4433EA460A61D9CD4D927F539C5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFA436706B79917232C7EB33E866C73B /* JLContainer.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/JLContainer/JLContainer-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = JLContainer;
-				PRODUCT_NAME = JLContainer;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A946F483506861DD88AD8143FA2A485E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B26824264CBD41DC30B1908EFF9D35F /* Pods-JLKitDemo.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		C7BEED337B2E65265B0FBA61E12CF840 /* Release */ = {
+		19279F96F893D68A3ADDF5EE92B1B6DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C2CA74D58F5D673FF3A36A71E3B5557 /* Pods-JLKitDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
@@ -481,7 +414,41 @@
 			};
 			name = Release;
 		};
-		F4568DEE257655D290C2B9CEAB37C934 /* Release */ = {
+		3870125DBF30186536050F18A499A551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B26824264CBD41DC30B1908EFF9D35F /* Pods-JLKitDemo.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		768410FD66A1EAB814EA968568A2D485 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5224BD0E4A1E04EDF56F76C954A1C255 /* JLContainer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "Target Support Files/JLContainer/JLContainer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F56DF7BFDA67977E27A17105A78C9DA2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -491,12 +458,10 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -504,7 +469,6 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -513,8 +477,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -539,32 +501,50 @@
 			};
 			name = Release;
 		};
+		FB0A3D4BC2CC40FEF32A99345FA795B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5224BD0E4A1E04EDF56F76C954A1C255 /* JLContainer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "Target Support Files/JLContainer/JLContainer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2068F9784E19150E238CA6BB4D398028 /* Build configuration list for PBXNativeTarget "JLContainer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				768410FD66A1EAB814EA968568A2D485 /* Debug */,
+				FB0A3D4BC2CC40FEF32A99345FA795B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1EE19F5DD95931924296F637BF18BD8F /* Debug */,
-				F4568DEE257655D290C2B9CEAB37C934 /* Release */,
+				0F1B438E6CBF5F0E56248FBFF48D8E21 /* Debug */,
+				F56DF7BFDA67977E27A17105A78C9DA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F60D4319E6E097D3DF6A1BA01DB66673 /* Build configuration list for PBXNativeTarget "Pods-JLKitDemo" */ = {
+		F706582275BD27D4FD2BF1A7DBF1FC92 /* Build configuration list for PBXNativeTarget "Pods-JLKitDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A946F483506861DD88AD8143FA2A485E /* Debug */,
-				C7BEED337B2E65265B0FBA61E12CF840 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FE768A837C5DDEFF70BDFCB308CA65B1 /* Build configuration list for PBXNativeTarget "JLContainer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5B0CB4433EA460A61D9CD4D927F539C5 /* Debug */,
-				37D7CCC6B5A4D5C0D3FF6BFCE71BC87C /* Release */,
+				3870125DBF30186536050F18A499A551 /* Debug */,
+				19279F96F893D68A3ADDF5EE92B1B6DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,7 +11,6 @@
 #import "IOS11Adapter.h"
 #import "JLScrollNavigationChildControllerProtocol.h"
 
-#import "InfiniteLoops.h"
 
 @interface StringItemModel :NSObject<HorizontalWaterFullModelProtocol,JLScrollNavigationChildControllerProtocol>
 
@@ -78,17 +77,10 @@
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    InfiniteLoops *loop = [[InfiniteLoops alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 300) scrollDuration:3.f];
-    loop.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:loop];
-    loop.imageURLStrings = @[@"1.jpg", @"2.jpg", @"3.jpg",@"4.jpg",@"5.jpg",@"6.jpg",@"7.jpg",@"8.jpg",@"9.jpg",@"10.jpg"];
-    loop.clickAction = ^(NSInteger index) {
-        NSLog(@"curIndex: %ld", index);
-    };
-    
     // Do any additional setup after loading the view.
     MTHorizontalWaterFullLayout *layout = [[MTHorizontalWaterFullLayout alloc]initWithDataes:self.dates maxWidth:300 itemHeight:[UIFont systemFontOfSize:14].lineHeight];
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 400, 300, 300) collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:layout];
+    collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     collectionView.backgroundColor = [UIColor whiteColor];
     collectionView.dataSource = self;
     collectionView.delegate = self;
@@ -96,6 +88,7 @@
     [self.view addSubview:collectionView];
     _collectionView = collectionView;
 }
+
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {

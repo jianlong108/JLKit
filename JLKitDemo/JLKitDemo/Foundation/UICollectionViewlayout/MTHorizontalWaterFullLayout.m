@@ -7,6 +7,7 @@
 //
 
 #import "MTHorizontalWaterFullLayout.h"
+#import "UICollectionView+AdjustContenSize.h"
 
 @interface MTHorizontalWaterFullLayout()
 
@@ -24,7 +25,7 @@
 @property (nonatomic, assign) CGFloat currentRowWidth;
 /**当前总高度*/
 @property (nonatomic, assign) CGFloat currentContentHeight;
-/**<#message#>*/
+
 @property (nonatomic, assign) CGFloat itemHeight;
 
 @property (nonatomic, assign) CGFloat oringnalX;
@@ -34,7 +35,6 @@
 
 @property (nonatomic, assign) CGFloat oringnalMaxX;
 
-/**<#message#>*/
 @property (nonatomic, assign) CGFloat maxWidth;
 
 @end
@@ -103,7 +103,10 @@
 /** 计算collectionView的滚动范围 */
 - (CGSize)collectionViewContentSize
 {
-    return CGSizeMake(_maxWidth,self.currentContentHeight);
+    CGSize size = self.collectionView.minRequiredContentSize;
+    size.width  = fmax(size.width, _maxWidth);
+    size.height = fmax(size.height, self.currentContentHeight);
+    return size;
 }
 
 /** 设置每个item的属性(主要是frame) */
