@@ -11,6 +11,7 @@
 		3401375A20726BFF002D46D2 /* MTHorizontalWaterFullLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375820726BFF002D46D2 /* MTHorizontalWaterFullLayout.m */; };
 		3401375D20726CC4002D46D2 /* TagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375C20726CC4002D46D2 /* TagItem.m */; };
 		3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */; };
+		3456D6A9216CA7EB00B8BADA /* ReplicatorProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456D6A8216CA7EB00B8BADA /* ReplicatorProgressView.m */; };
 		3469F96D211DC58F006124DF /* MTTableViewSectionIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95A211DC58E006124DF /* MTTableViewSectionIndexBar.m */; };
 		3469F96E211DC58F006124DF /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95B211DC58E006124DF /* UITableView+IndexBar.m */; };
 		3469F971211DC58F006124DF /* OTRowItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95F211DC58F006124DF /* OTRowItemModel.m */; };
@@ -101,6 +102,8 @@
 		3401375C20726CC4002D46D2 /* TagItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagItem.m; sourceTree = "<group>"; };
 		3401375E20726E8A002D46D2 /* TagCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellTableViewCell.h; sourceTree = "<group>"; };
 		3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellTableViewCell.m; sourceTree = "<group>"; };
+		3456D6A7216CA7EB00B8BADA /* ReplicatorProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplicatorProgressView.h; sourceTree = "<group>"; };
+		3456D6A8216CA7EB00B8BADA /* ReplicatorProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplicatorProgressView.m; sourceTree = "<group>"; };
 		3469F958211DC58E006124DF /* MTTableViewSectionIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTableViewSectionIndexBar.h; sourceTree = "<group>"; };
 		3469F959211DC58E006124DF /* UITableView+IndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+IndexBar.h"; sourceTree = "<group>"; };
 		3469F95A211DC58E006124DF /* MTTableViewSectionIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTableViewSectionIndexBar.m; sourceTree = "<group>"; };
@@ -386,6 +389,8 @@
 				346A551B206B8164002DD49A /* UICollectionViewlayout */,
 				346A5530206B9629002DD49A /* PresentController */,
 				F4AECA1D205E5314000F6D37 /* FullScreenPop */,
+				3456D6A7216CA7EB00B8BADA /* ReplicatorProgressView.h */,
+				3456D6A8216CA7EB00B8BADA /* ReplicatorProgressView.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -901,6 +906,7 @@
 				F4AECABD205E5314000F6D37 /* NSObject+archive.m in Sources */,
 				F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */,
 				F4AECAB1205E5314000F6D37 /* HomeViewController.m in Sources */,
+				3456D6A9216CA7EB00B8BADA /* ReplicatorProgressView.m in Sources */,
 				F4AECAEF205E5315000F6D37 /* JLBaseAnimationEngine.m in Sources */,
 				34BC829C207E324E009D5ED5 /* SimpleItem.m in Sources */,
 				F4AECAC4205E5314000F6D37 /* XMNavigationController+PanGesture.m in Sources */,

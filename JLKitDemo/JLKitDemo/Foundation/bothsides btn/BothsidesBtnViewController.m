@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
     
     UIButton *btn  =[[UIButton alloc]initWithFrame:CGRectMake(100, 88, 200, 44)];
     [btn setTitle:@"点击切换按钮" forState:UIControlStateNormal];
