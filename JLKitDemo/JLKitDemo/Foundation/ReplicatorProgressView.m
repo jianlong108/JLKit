@@ -41,28 +41,66 @@ static NSString *const ReplicatorProgressViewAnimationKey = @"ReplicatorProgress
 
 - (void)_initlize
 {
+    _autoPlaying = YES;
     _activityLayer = [CAShapeLayer layer];
     
-    //使用贝塞尔曲线绘制矩形路径
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(self.center.x, self.center.y)];
-    [path addLineToPoint:CGPointMake(self.center.x + 20, self.center.y)];
-    [path addLineToPoint:CGPointMake(self.center.x + 10, self.center.y + 20)];
-    [path addLineToPoint:CGPointMake(self.center.x - 10 , self.center.y + 20)];
-    [path closePath];
-    _activityLayer.fillColor = [UIColor blueColor].CGColor;
-    _activityLayer.path = path.CGPath;
+    NSUInteger quareCount = 4;
+    CGFloat quareMargin = 35;
     //设置图层不可见
     _activityLayer.transform = CATransform3DMakeScale(0.01, 0.01, 0.01);
     
     [self.replicatorLayer addSublayer:_activityLayer];
     
     //复制的图层数为三个
-    self.replicatorLayer.instanceCount = 4;
+    self.replicatorLayer.instanceCount = quareCount;
     //设置每个复制图层延迟时间
-    self.replicatorLayer.instanceDelay = 1.f / 4.f;
+    self.replicatorLayer.instanceDelay = 1.f / quareCount;
     //设置每个图层之间的偏移
-    self.replicatorLayer.instanceTransform = CATransform3DMakeTranslation(35, 0, 0);
+    self.replicatorLayer.instanceTransform = CATransform3DMakeTranslation(quareMargin, 0, 0);
+}
+
+- (UIColor *)colorLumpFillColor
+{
+    if (_colorLumpFillColor) {
+        return _colorLumpFillColor;
+    }
+    return [UIColor blueColor];
+}
+
+- (CGFloat)colorLumpWidth
+{
+    if (_colorLumpWidth <= 0) {
+        _colorLumpWidth = 20;
+    }
+    return _colorLumpWidth;
+}
+
+- (CGFloat)colorLumpHeight
+{
+    if (_colorLumpHeight <= 0) {
+        _colorLumpHeight = 10;
+    }
+    return _colorLumpHeight;
+}
+
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    NSInteger quareCount = self.replicatorLayer.instanceCount;
+    CGFloat quareWidth = self.colorLumpWidth;
+    CGFloat quareHeight = self.colorLumpHeight;
+    CGFloat beginX = (CGRectGetWidth(self.bounds) - quareCount * (quareWidth + quareHeight))/2;
+    CGFloat beginY = CGRectGetHeight(self.bounds) / 2 + quareWidth/2;
+    //使用贝塞尔曲线绘制矩形路径
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(beginX, beginY)];
+    [path addLineToPoint:CGPointMake(beginX + quareWidth, beginY)];
+    [path addLineToPoint:CGPointMake(beginX + quareWidth + quareHeight, beginY - quareWidth)];
+    [path addLineToPoint:CGPointMake(beginX + quareHeight , beginY - quareWidth)];
+    [path closePath];
+    _activityLayer.fillColor = self.colorLumpFillColor.CGColor;
+    _activityLayer.path = path.CGPath;
 }
 
 - (CABasicAnimation *)alphaAnimation{

@@ -1,5 +1,5 @@
 //
-//  ProgressAnimationView.h
+//  ReplicatorLoadingView.h
 //  JLKitDemo
 //
 //  Created by wangjianlong on 2018/10/9.
@@ -8,18 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReplicatorProgressView : UIView
+NS_ASSUME_NONNULL_BEGIN
+
+@interface ReplicatorLoadingView : UIView
 
 @property (nonatomic, readonly) CAReplicatorLayer *replicatorLayer;
 
+@property (nonatomic, assign) CGFloat maxCircleHeight;
 @property (nonatomic, strong) UIColor *colorLumpFillColor;
-
-@property (nonatomic, assign) CGFloat colorLumpWidth;
-@property (nonatomic, assign) CGFloat colorLumpHeight;
 
 @property (nonatomic, assign) BOOL autoPlaying;
 
 - (void)startAnimation;
-- (void)stopAnimation;
 
 @end
+
+NS_ASSUME_NONNULL_END
