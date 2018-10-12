@@ -11,6 +11,8 @@
 		3401375A20726BFF002D46D2 /* MTHorizontalWaterFullLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375820726BFF002D46D2 /* MTHorizontalWaterFullLayout.m */; };
 		3401375D20726CC4002D46D2 /* TagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375C20726CC4002D46D2 /* TagItem.m */; };
 		3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */; };
+		34250C03216CE7F900ED0C1A /* ReplicatorLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34250C02216CE7F900ED0C1A /* ReplicatorLoadingView.m */; };
+		3456D6A9216CA7EB00B8BADA /* ReplicatorProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456D6A8216CA7EB00B8BADA /* ReplicatorProgressView.m */; };
 		3469F96D211DC58F006124DF /* MTTableViewSectionIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95A211DC58E006124DF /* MTTableViewSectionIndexBar.m */; };
 		3469F96E211DC58F006124DF /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95B211DC58E006124DF /* UITableView+IndexBar.m */; };
 		3469F971211DC58F006124DF /* OTRowItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95F211DC58F006124DF /* OTRowItemModel.m */; };
@@ -103,6 +105,10 @@
 		3401375C20726CC4002D46D2 /* TagItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagItem.m; sourceTree = "<group>"; };
 		3401375E20726E8A002D46D2 /* TagCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCellTableViewCell.h; sourceTree = "<group>"; };
 		3401375F20726E8A002D46D2 /* TagCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCellTableViewCell.m; sourceTree = "<group>"; };
+		34250C01216CE7F900ED0C1A /* ReplicatorLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplicatorLoadingView.h; sourceTree = "<group>"; };
+		34250C02216CE7F900ED0C1A /* ReplicatorLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplicatorLoadingView.m; sourceTree = "<group>"; };
+		3456D6A7216CA7EB00B8BADA /* ReplicatorProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReplicatorProgressView.h; sourceTree = "<group>"; };
+		3456D6A8216CA7EB00B8BADA /* ReplicatorProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplicatorProgressView.m; sourceTree = "<group>"; };
 		3469F958211DC58E006124DF /* MTTableViewSectionIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTableViewSectionIndexBar.h; sourceTree = "<group>"; };
 		3469F959211DC58E006124DF /* UITableView+IndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+IndexBar.h"; sourceTree = "<group>"; };
 		3469F95A211DC58E006124DF /* MTTableViewSectionIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTableViewSectionIndexBar.m; sourceTree = "<group>"; };
@@ -393,6 +399,10 @@
 				346A551B206B8164002DD49A /* UICollectionViewlayout */,
 				346A5530206B9629002DD49A /* PresentController */,
 				F4AECA1D205E5314000F6D37 /* FullScreenPop */,
+				3456D6A7216CA7EB00B8BADA /* ReplicatorProgressView.h */,
+				3456D6A8216CA7EB00B8BADA /* ReplicatorProgressView.m */,
+				34250C01216CE7F900ED0C1A /* ReplicatorLoadingView.h */,
+				34250C02216CE7F900ED0C1A /* ReplicatorLoadingView.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -724,6 +734,8 @@
 				348D53FB1E27A5640005E96A /* Sources */,
 				348D53FC1E27A5640005E96A /* Frameworks */,
 				348D53FD1E27A5640005E96A /* Resources */,
+				21B622E0D3DB4953D7D8869E /* [CP] Embed Pods Frameworks */,
+				4D70D6821E92554FBDF34631 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -783,6 +795,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		21B622E0D3DB4953D7D8869E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLKitDemo/Pods-JLKitDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2EE81507AAC9C94B14803A62 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -798,7 +825,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4D70D6821E92554FBDF34631 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLKitDemo/Pods-JLKitDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -824,6 +866,7 @@
 				F4AECAC9205E5314000F6D37 /* UINavigationController+FullScreenPopGesture.m in Sources */,
 				3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */,
 				F4AECAAF205E5314000F6D37 /* TwoFaceButton.m in Sources */,
+				34250C03216CE7F900ED0C1A /* ReplicatorLoadingView.m in Sources */,
 				F4AECAEE205E5315000F6D37 /* JLTextFiled.m in Sources */,
 				F4AECAD4205E5314000F6D37 /* TestMenuViewController.m in Sources */,
 				F4AECACC205E5314000F6D37 /* UIAvaterGenerater.m in Sources */,
@@ -883,6 +926,7 @@
 				F4AECABD205E5314000F6D37 /* NSObject+archive.m in Sources */,
 				F4AECAD8205E5314000F6D37 /* UIViewController+NavigationBar.m in Sources */,
 				F4AECAB1205E5314000F6D37 /* HomeViewController.m in Sources */,
+				3456D6A9216CA7EB00B8BADA /* ReplicatorProgressView.m in Sources */,
 				F4AECAEF205E5315000F6D37 /* JLBaseAnimationEngine.m in Sources */,
 				34BC829C207E324E009D5ED5 /* SimpleItem.m in Sources */,
 				F4AECAC4205E5314000F6D37 /* XMNavigationController+PanGesture.m in Sources */,

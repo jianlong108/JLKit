@@ -42,21 +42,27 @@
     [super viewDidLoad];
     // initialize CWNotification
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    if (@available(iOS 11.0,*)) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }
-    
-    
     self.notification = [CWStatusBarNotification new];
     
     // set default blue color (since iOS 7.1, default window tintColor is black)
     self.notification.notificationLabelBackgroundColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    [self.view addSubview:self.tableView];
     [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
     [self.tableView registerClass:[WeatherTableViewCell class] forCellReuseIdentifier:WeatherTableViewCell_ReuseIdentifer];
     [self setUpModel];
     
 //    [self requesetData];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    self.tableView.frame = self.view.bounds;
+}
+
+- (void)loadView
+{
+    self.view = [[UIView alloc]init];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -227,10 +233,10 @@
     return self.tableView;
 }
 
-- (void)setScrollViewContentInset:(UIEdgeInsets)inset
-{
-    self.tableView.contentInset = inset;
-}
+//- (void)setScrollViewContentInset:(UIEdgeInsets)inset
+//{
+//    self.tableView.contentInset = inset;
+//}
 
 - (NSString *)titleForScrollTitleBar
 {

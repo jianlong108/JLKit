@@ -140,7 +140,7 @@
 - (UIImageView *)leftImageView {
     if (!_leftImageView) {
         _leftImageView = [UIImageView new];
-        _leftImageView.contentMode = UIViewContentModeScaleAspectFit;
+        _leftImageView.contentMode = UIViewContentModeScaleAspectFill;
         //_leftImageView.backgroundColor = [UIColor yellowColor];
     }
     
@@ -157,7 +157,7 @@
 - (UIImageView *)middleImageView {
     if (!_middleImageView) {
         _middleImageView = [UIImageView new];
-        _middleImageView.contentMode = UIViewContentModeScaleAspectFit;
+        _middleImageView.contentMode = UIViewContentModeScaleAspectFill;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageClicked:)];
         [_middleImageView addGestureRecognizer:tap];
         //_middleImageView.backgroundColor = [UIColor redColor];
@@ -170,7 +170,7 @@
 - (UIImageView *)rightImageView {
     if (!_rightImageView) {
         _rightImageView = [UIImageView new];
-        _rightImageView.contentMode = UIViewContentModeScaleAspectFit;
+        _rightImageView.contentMode = UIViewContentModeScaleAspectFill;
         //_rightImageView.backgroundColor = [UIColor greenColor];
     }
     

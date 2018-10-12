@@ -9,6 +9,10 @@
 #import "TestIndexBarViewController.h"
 #import "UITableView+IndexBar.h"
 
+#import "ReplicatorProgressView.h"
+
+#import "ReplicatorLoadingView.h"
+
 @interface TestIndexBarViewController ()<
     UITableViewDelegate,
     UITableViewDataSource
@@ -16,15 +20,31 @@
 @property(nonatomic,strong) NSArray *datas;
 @property(nonatomic,strong) UITableView *tableView;
 
+@property (nonatomic, strong) CAReplicatorLayer *replicatorLayer;
+
+@property (nonatomic, strong) CAShapeLayer *activityLayer;
+
 @end
 
 @implementation TestIndexBarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
     
+    ReplicatorProgressView *animationView =[[ReplicatorProgressView alloc]initWithFrame:CGRectMake(0, 64, 200, 50)];
+    animationView.backgroundColor = [[UIColor orangeColor] colorWithAlphaComponent:0.2];
+    
+    animationView.center = CGPointMake(self.view.center.x, animationView.center.y) ;
+    [self.view addSubview:animationView];
+    
+    ReplicatorLoadingView *loadingAnimationView =[[ReplicatorLoadingView alloc]initWithFrame:CGRectMake(0, 150, 100, 100)];
+    loadingAnimationView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.2];
+
+    loadingAnimationView.center = CGPointMake(self.view.center.x, loadingAnimationView.center.y) ;
+    [self.view addSubview:loadingAnimationView];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
