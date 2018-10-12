@@ -7,7 +7,7 @@
 //
 
 #import "MTHorizontalWaterFullLayout.h"
-#import "UICollectionView+AdjustContenSize.h"
+//#import "UICollectionView+AdjustContenSize.h"
 
 @interface MTHorizontalWaterFullLayout()
 
@@ -103,7 +103,8 @@
 /** 计算collectionView的滚动范围 */
 - (CGSize)collectionViewContentSize
 {
-    CGSize size = self.collectionView.minRequiredContentSize;
+//    CGSize size = self.collectionView.minRequiredContentSize;
+    CGSize size = [super collectionViewContentSize];
     size.width  = fmax(size.width, _maxWidth);
     size.height = fmax(size.height, self.currentContentHeight);
     return size;

@@ -11,10 +11,7 @@
 #import "IOS11Adapter.h"
 #import "JLScrollNavigationChildControllerProtocol.h"
 
-<<<<<<< HEAD
 #import "SimpleCell.h"
-=======
->>>>>>> master
 
 @interface StringItemModel :NSObject<HorizontalWaterFullModelProtocol,JLScrollNavigationChildControllerProtocol>
 
@@ -76,28 +73,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-<<<<<<< HEAD
+
     [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
     [self setUpModel];
-=======
-    
-    // Do any additional setup after loading the view.
-    MTHorizontalWaterFullLayout *layout = [[MTHorizontalWaterFullLayout alloc]initWithDataes:self.dates maxWidth:300 itemHeight:[UIFont systemFontOfSize:14].lineHeight];
-    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:layout];
-    collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    collectionView.backgroundColor = [UIColor whiteColor];
-    collectionView.dataSource = self;
-    collectionView.delegate = self;
-    [collectionView registerClass:[StringCollectionViewCell class] forCellWithReuseIdentifier:@"flowlayout"];
-    [self.view addSubview:collectionView];
-    _collectionView = collectionView;
+
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.dates.count;
->>>>>>> master
 }
 
 - (void)setUpModel

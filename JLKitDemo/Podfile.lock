@@ -21,7 +21,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
-  - JLContainer (from `~/Desktop/github/Container-BaseViewController`)
+  - JLContainer (from `~/Desktop/Github/Container-BaseViewController`)
   - SDWebImage (~> 4.4.2)
 
 SPEC REPOS:
@@ -31,13 +31,13 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   JLContainer:
-    :path: "~/Desktop/github/Container-BaseViewController"
+    :path: "~/Desktop/Github/Container-BaseViewController"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   JLContainer: c02df1b1954389e53139cabbe417c2508a55eee8
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: 19a4a7023a6346af0d1f4385a86be035f5a03260
+PODFILE CHECKSUM: 2972471cd31bcea11de61a50991bfa46f0795750
 
 COCOAPODS: 1.5.3
