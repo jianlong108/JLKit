@@ -21,10 +21,13 @@
 #import "UIWebViewController.h"
 
 #import "NSBundle+JL.h"
+#import "WeatherTableViewCell.h"
 
 #import "CWStatusBarNotification.h"
 #import "IOS11Adapter.h"
 #import "JLScrollNavigationChildControllerProtocol.h"
+#import "WeatherModel.h"
+#import "AFNetworking.h"
 
 @interface HomeViewController ()<JLScrollNavigationChildControllerProtocol>
 
@@ -50,12 +53,28 @@
     // set default blue color (since iOS 7.1, default window tintColor is black)
     self.notification.notificationLabelBackgroundColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
     [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
+    [self.tableView registerClass:[WeatherTableViewCell class] forCellReuseIdentifier:WeatherTableViewCell_ReuseIdentifer];
     [self setUpModel];
+    
+//    [self requesetData];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+}
+
+- (void)requesetData
+{
+    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+    [session GET:@"https://www.sojson.com/open/api/weather/json.shtml" parameters:@{@"city":@"北京"} progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+    
 }
 
 - (void)setUpModel
@@ -65,7 +84,13 @@
     sectionOne.footerHeight = 7;
     sectionOne.headerHeight = 7;
     
-    SimpleItem *model = [[SimpleItem alloc]init];
+    SimpleItem *model;
+    
+    model = [[WeatherModel alloc]init];
+    model.reuseableIdentierOfCell = WeatherTableViewCell_ReuseIdentifer;
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         BothsidesBtnViewController *vc = [[BothsidesBtnViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];

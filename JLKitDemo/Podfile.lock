@@ -1,16 +1,43 @@
 PODS:
-  - JLContainer (0.0.2)
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - JLContainer (0.0.4)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.2.1)
   - JLContainer (from `~/Desktop/github/Container-BaseViewController`)
+  - SDWebImage (~> 4.4.2)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - SDWebImage
 
 EXTERNAL SOURCES:
   JLContainer:
     :path: "~/Desktop/github/Container-BaseViewController"
 
 SPEC CHECKSUMS:
-  JLContainer: be91ae28ec5e024cdd448c16ee768f2129d090a7
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  JLContainer: c02df1b1954389e53139cabbe417c2508a55eee8
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: f1cff786162a456f7805f88bf55ed9e70104ec8e
+PODFILE CHECKSUM: 19a4a7023a6346af0d1f4385a86be035f5a03260
 
 COCOAPODS: 1.5.3

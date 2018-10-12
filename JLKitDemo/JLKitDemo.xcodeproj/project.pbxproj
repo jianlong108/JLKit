@@ -29,6 +29,8 @@
 		F40A18AE2075EDA5008D7798 /* one.html in Resources */ = {isa = PBXBuildFile; fileRef = F40A18AD2075EDA5008D7798 /* one.html */; };
 		F40A18B12075F535008D7798 /* NSBundle+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18B02075F535008D7798 /* NSBundle+JL.m */; };
 		F432F82721209937007A8743 /* InfiniteLoops.m in Sources */ = {isa = PBXBuildFile; fileRef = F432F82621209937007A8743 /* InfiniteLoops.m */; };
+		F4658B72214E182E006EFAE3 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4658B71214E182E006EFAE3 /* WeatherTableViewCell.m */; };
+		F4658B75214E324F006EFAE3 /* WeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4658B74214E324F006EFAE3 /* WeatherModel.m */; };
 		F481F53321231F36006520D4 /* VerticalContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F481F53221231F36006520D4 /* VerticalContainerViewController.m */; };
 		F49DDE112070AC0D00793B40 /* HomeContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F49DDE102070AC0D00793B40 /* HomeContainerController.m */; };
 		F49DDE192070B9F200793B40 /* JLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F49DDE142070B9F200793B40 /* JLBaseViewController.m */; };
@@ -142,6 +144,11 @@
 		F40A18B02075F535008D7798 /* NSBundle+JL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+JL.m"; sourceTree = "<group>"; };
 		F432F82521209937007A8743 /* InfiniteLoops.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteLoops.h; sourceTree = "<group>"; };
 		F432F82621209937007A8743 /* InfiniteLoops.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteLoops.m; sourceTree = "<group>"; };
+		F4658B70214E182E006EFAE3 /* WeatherTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherTableViewCell.h; sourceTree = "<group>"; };
+		F4658B71214E182E006EFAE3 /* WeatherTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherTableViewCell.m; sourceTree = "<group>"; };
+		F4658B73214E324F006EFAE3 /* WeatherModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherModel.h; sourceTree = "<group>"; };
+		F4658B74214E324F006EFAE3 /* WeatherModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherModel.m; sourceTree = "<group>"; };
+		F4658B76214E33D1006EFAE3 /* WeatherModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherModelProtocol.h; sourceTree = "<group>"; };
 		F481F53121231F36006520D4 /* VerticalContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalContainerViewController.h; sourceTree = "<group>"; };
 		F481F53221231F36006520D4 /* VerticalContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalContainerViewController.m; sourceTree = "<group>"; };
 		F49DDE0F2070AC0D00793B40 /* HomeContainerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeContainerController.h; sourceTree = "<group>"; };
@@ -477,6 +484,11 @@
 				F4AEC9FC205E5314000F6D37 /* HomeViewController.m */,
 				F49DDE0F2070AC0D00793B40 /* HomeContainerController.h */,
 				F49DDE102070AC0D00793B40 /* HomeContainerController.m */,
+				F4658B70214E182E006EFAE3 /* WeatherTableViewCell.h */,
+				F4658B71214E182E006EFAE3 /* WeatherTableViewCell.m */,
+				F4658B73214E324F006EFAE3 /* WeatherModel.h */,
+				F4658B76214E33D1006EFAE3 /* WeatherModelProtocol.h */,
+				F4658B74214E324F006EFAE3 /* WeatherModel.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -822,6 +834,7 @@
 				F4AECAF0205E5315000F6D37 /* JLBaseInteractiveTransition.m in Sources */,
 				3469F96E211DC58F006124DF /* UITableView+IndexBar.m in Sources */,
 				F4AECACB205E5314000F6D37 /* UIViewController+FullScreenPop.m in Sources */,
+				F4658B75214E324F006EFAE3 /* WeatherModel.m in Sources */,
 				34BC8296207E3203009D5ED5 /* SimpleCell.m in Sources */,
 				F4AECABA205E5314000F6D37 /* TestTableViewController.m in Sources */,
 				F4AECAB7205E5314000F6D37 /* JLTabMoreView.m in Sources */,
@@ -850,6 +863,7 @@
 				3401375D20726CC4002D46D2 /* TagItem.m in Sources */,
 				F40A18B12075F535008D7798 /* NSBundle+JL.m in Sources */,
 				F4AECAC0205E5314000F6D37 /* NSObject+AssociateObj.m in Sources */,
+				F4658B72214E182E006EFAE3 /* WeatherTableViewCell.m in Sources */,
 				F432F82721209937007A8743 /* InfiniteLoops.m in Sources */,
 				F4AECAB2205E5314000F6D37 /* LoginViewController.m in Sources */,
 				F4AECAC5205E5314000F6D37 /* XMNavigationController+Stack.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "InfiniteLoops.h"
+#import "UIImageView+WebCache.h"
 
 @interface InfiniteLoops () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
@@ -145,6 +146,13 @@
     
     return _leftImageView;
 }
+- (void)setContentMode:(UIViewContentMode)contentMode
+{
+    [super setContentMode:contentMode];
+    [self.leftImageView setContentMode:contentMode];
+    [self.middleImageView setContentMode:contentMode];
+    [self.rightImageView setContentMode:contentMode];
+}
 
 - (UIImageView *)middleImageView {
     if (!_middleImageView) {
@@ -202,9 +210,24 @@
         
         // TODO: if need use image from server, can import SDWebImage SDK and modify the codes below.
         // fill image
-        self.leftImageView.image = [UIImage imageNamed:self.imageURLStrings[leftIndex]];
-        self.middleImageView.image = [UIImage imageNamed:self.imageURLStrings[curIndex]];
-        self.rightImageView.image = [UIImage imageNamed:self.imageURLStrings[rightIndex]];
+        NSString *imgUrl = self.imageURLStrings[leftIndex];
+        if ([imgUrl containsString:@"http"]||[imgUrl containsString:@"https"]) {
+            [self.leftImageView sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
+        }else {
+            self.leftImageView.image = [UIImage imageNamed:imgUrl];
+        }
+        imgUrl = self.imageURLStrings[curIndex];
+        if ([imgUrl containsString:@"http"]||[imgUrl containsString:@"https"]) {
+            [self.middleImageView sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
+        }else {
+            self.middleImageView.image = [UIImage imageNamed:imgUrl];
+        }
+        imgUrl = self.imageURLStrings[rightIndex];
+        if ([imgUrl containsString:@"http"]||[imgUrl containsString:@"https"]) {
+            [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
+        }else {
+            self.rightImageView.image = [UIImage imageNamed:imgUrl];
+        }
         
         // every scrolled, move current page to center
         [self setScrollViewContentOffsetCenter];
