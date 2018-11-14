@@ -85,4 +85,14 @@
     return _panInteractionGesture.interactionInProgress ? _panInteractionGesture : nil;
 }
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 @end

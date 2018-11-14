@@ -27,7 +27,7 @@
 
 @property (nonatomic, weak) HomeViewController *homeVc;
 @property (nonatomic, weak) HomeFunctionViewController *homeFunctionVc;
-
+@property(nonatomic,weak) InfiniteLoops *loop;
 @end
 
 @implementation HomeContainerController
@@ -44,12 +44,12 @@
         _scrollNavigationController.headScrollEnable = YES;
         
         _scrollNavigationController.scrollTitleBarItemColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
-        _scrollNavigationController.scrollTitleBarItemSelectColor = [UIColor whiteColor];//UIColorFromRGB(0x14b9c7);
-        _scrollNavigationController.scrollTitleBarLineViewSelectColor = [UIColor whiteColor];//UIColorFromRGB(0x14b9c7);
+        _scrollNavigationController.scrollTitleBarItemSelectColor = [UIColor whiteColor];
+        _scrollNavigationController.scrollTitleBarLineViewSelectColor = [UIColor whiteColor];
         _scrollNavigationController.scrollTitleBarItemFont = [UIFont systemFontOfSize:15];
         _scrollNavigationController.scrollTitleBarLineViewHeight = 3;
 
-        _scrollNavigationController.scrollStyle = JLScrollNaviContentControllerScrollStyle_contentControllerPriority;
+        _scrollNavigationController.scrollStyle = JLScrollNaviContentControllerScrollStyle_selfPriority;
     }
     return _scrollNavigationController;
 }
@@ -94,16 +94,43 @@
     return [UIColor colorWithRed:115/255.0 green:248/255.0 blue:95/255.0 alpha:1.0f];
 }
 
+- (void)headerTableViewController:(JLScrollNavigationController *)controller offsetHasReachCriticalValueWithScrollDirectionUp:(BOOL)isUp
+{
+    NSLog(@"offsetHasReachCriticalValueWithScrollDirectionUp %d",isUp);
+    CGFloat offsetY = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+    if (isUp) {
+        
+        CGRect rect = controller.scrollTitleBar.frame;
+        if (!CGRectEqualToRect(rect, CGRectMake(0, 170, CGRectGetWidth(rect), 44+offsetY))) {
+            _loop.frame = CGRectMake(0, 0, CGRectGetWidth(rect), 170 - offsetY);
+            controller.scrollTitleBar.frame = CGRectMake(0, CGRectGetMaxY(_loop.frame), CGRectGetWidth(rect), 44+offsetY);
+        }
+        
+    } else {
+        CGRect rect = controller.scrollTitleBar.frame;
+        
+        if (!CGRectEqualToRect(rect, CGRectMake(0, 170 , CGRectGetWidth(rect), 44))) {
+            _loop.frame = CGRectMake(0, 0, CGRectGetWidth(rect), 170);
+            controller.scrollTitleBar.frame = CGRectMake(0, CGRectGetMaxY(_loop.frame), CGRectGetWidth(rect), 44);
+        }
+    }
+}
+
 - (UIView *)headerViewForScrollNavigationController:(JLScrollNavigationController *)scrollNavigationController
 {
     
     InfiniteLoops *loop = [[InfiniteLoops alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 170) scrollDuration:3.f];
     [loop setContentMode:UIViewContentModeScaleToFill];
     [self.view addSubview:loop];
-    loop.imageURLStrings = @[@"https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1537025576&di=b83dea80577620cfe93972ddc5361298&src=http://x.itunes123.com/uploadfiles/3e5f9baf62af8980e6d8727f86fc9255.jpg", @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537035661333&di=75c393ea857d31921d82362ddbd28f53&imgtype=0&src=http%3A%2F%2Fi6.qhimg.com%2Ft017d518491f0aa0869.jpg", @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537035661333&di=9bad9481b07a7cc14c12e66f01488fcf&imgtype=0&src=http%3A%2F%2F01.imgmini.eastday.com%2Fmobile%2F20180801%2Fab115051b9871c67a9a408764eadf50a_wmk.jpeg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537035661330&di=92f0326acb21ff7b23ce7439b60f044b&imgtype=0&src=http%3A%2F%2Fliaocheng.dzwww.com%2Fyule%2Fylxt%2F201808%2FW020180817341168342768.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537036077815&di=fbb8c236e25a10f171212d82a57c5d3a&imgtype=0&src=http%3A%2F%2Fwww.wownews.tw%2Fupload_images_b%2F2015%2F10%2F23%2F016%2F5629fad047fd4.jpg",@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537036077812&di=c06bf13af87688977a62c04a6e3ac65f&imgtype=0&src=http%3A%2F%2Fs7.sinaimg.cn%2Fmw690%2F0060RFVZzy7klvAosku46%26690"];
+    loop.imageURLStrings = @[
+                             @"http://youimg1.c-ctrip.com/target/tg/380/211/325/c4c9ed50a1d54aabb827ccad5a6bbde0.jpg",
+                             @"http://youimg1.c-ctrip.com/target/tg/380/211/325/c4c9ed50a1d54aabb827ccad5a6bbde0.jpg",
+                             @"http://youimg1.c-ctrip.com/target/tg/380/211/325/c4c9ed50a1d54aabb827ccad5a6bbde0.jpg"
+                             ];
     loop.clickAction = ^(NSInteger index) {
         
     };
+    _loop = loop;
     return loop;
 }
 
@@ -148,7 +175,15 @@
     return 22;
 }
 
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 - (BOOL)hiddenNavigationBar
 {
