@@ -29,16 +29,6 @@ typedef enum JLScrollTitleBarElementStyle{
 
 - (BOOL)enableAutoAdjustWidth:(JLScrollTitleBar *)scrollTitleBar;
 
-
-/*!
- @method
- @abstract   设置选中后背景视图
- @discussion 设置选中后背景视图(默认为下方的滑动蓝色选中提示条)
- @param      scrollTitleBar AHScrollTitleBar
- @return     背景视图
- */
-- (UIView *)shadowViewForScrollTitleBar:(JLScrollTitleBar *)scrollTitleBar;
-
 /*!
  @method
  @abstract   按钮间隙
@@ -51,17 +41,14 @@ typedef enum JLScrollTitleBarElementStyle{
 /*!
  @method
  @abstract   右部视图
- @discussion
- @param      scrollTitleBar AHScrollTitleBar
+ @warning    当styele 不是默认类型时,不会压缩contentscrollview的显示
  @return     返回值为 UIView的子类 会显示在滑动导航后面
  */
 - (UIView *)rightViewForScrollTitleBar:(JLScrollTitleBar *)scrollTitleBar index:(NSUInteger)index;
 
 /*!
  @method
- @abstract   左部视图
- @discussion
- @param      注意:此时的elementDisplayStyle 一定不要为JLScrollTitleBarElementStyleDefault
+ @abstract   左部视图...注意:当styele 不是默认类型时,不会压缩contentscrollview的显示
  @return     返回值为 UIView的子类 会显示在滑动导航后面
  */
 - (UIView *)leftViewForScrollTitleBar:(JLScrollTitleBar *)scrollTitleBar index:(NSUInteger)index;
@@ -80,6 +67,7 @@ typedef enum JLScrollTitleBarElementStyle{
 
 @interface JLScrollTitleBar : UIView
 
+@property (nonatomic, readonly) UIImageView  *backGroundImgView;
 @property (nonatomic, readonly) UIScrollView *contentScrollView;
 @property (nonatomic, readonly) UIView *rightView;
 @property (nonatomic, readonly) UIView *leftView;
@@ -106,7 +94,10 @@ typedef enum JLScrollTitleBarElementStyle{
 @property (nonatomic, strong) UIColor *lineViewColor;
 @property (nonatomic, assign) CGFloat lineViewHeight;//默认为1, 范围[1,5]
 @property (nonatomic, assign) CGFloat lineViewWidth;
+//底部lineview的宽度根据对应的标题宽度适应 default NO
+@property (nonatomic, assign) BOOL lineViewWithtAdjustByView;
 @property (nonatomic, assign) CGFloat lineViewBottomMargin;
+@property (nonatomic, assign) CGFloat marginBetweenlineViewAndBtn;
 
 ////第一个按钮的X坐标 将以此坐标开始布局 JLScrollTitleBarElementStyleDefault布局时生效
 @property (nonatomic, assign) CGFloat firstBtnX;
@@ -116,12 +107,12 @@ typedef enum JLScrollTitleBarElementStyle{
 
 /**
  设置默认选中索引
-
+ @warning 设置的默认选中的值,在reloadData调用时依然失效,如需设置新的值,需要再次调用这个方法
  @param index 索引
  */
 - (void)setUpSelecteIndex:(NSUInteger)index;
 
-
+- (void)selectBtnWithIndex:(NSUInteger)index;
 /**
  如果数据源没有提供数据,返回NO,不做任何操作
 

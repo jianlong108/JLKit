@@ -7,53 +7,16 @@
 //
 
 #import "JLScrollNavigationController.h"
-#import <objc/runtime.h>
 #import "JLScrollView.h"
+#import "UIScrollView+OffsetAndContentInset.h"
 
 
-static int statusHeight; //状态栏高度  必须在启动是记录
-#define JLScrollTitleBarDefaultHeight 44
+#define IS_IPHONEX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
+#define STATUS_BAR_HEIGHT CGRectGetHeight([UIApplication sharedApplication].statusBarFrame)
 
-@interface UIScrollView(JLScrollNavigationController)
+#define ScrollTitleBarDefaultHeight (44 + STATUS_BAR_HEIGHT)
 
-@property (nonatomic,assign) CGFloat offsetOrginYForHeader;
-
-//是否在MTScrollNavigationController中调整过ContentInset
-@property (nonatomic,assign) BOOL adjuestContentInsetByMTScrollNavigationController;
-
-
-@end
-
-@implementation UIScrollView(JLScrollNavigationController)
-
-
-- (CGFloat)offsetOrginYForHeader
-{
-    NSNumber *number = objc_getAssociatedObject(self, @selector(offsetOrginYForHeader));
-    return number ? [number floatValue]:0.0;
-}
-
-- (void)setOffsetOrginYForHeader:(CGFloat)offsetOrginYForHeader
-{
-    objc_setAssociatedObject(self, @selector(offsetOrginYForHeader), [NSNumber numberWithFloat:offsetOrginYForHeader], OBJC_ASSOCIATION_RETAIN);
-}
-
-- (BOOL)adjuestContentInsetByMTScrollNavigationController
-{
-    NSNumber *number = objc_getAssociatedObject(self, @selector(adjuestContentInsetByMTScrollNavigationController));
-    
-    return number ? [number boolValue]:NO;
-    
-}
-
-- (void)setAdjuestContentInsetByMTScrollNavigationController:(BOOL)adjuestContentInsetByMTScrollNavigationController
-{
-    objc_setAssociatedObject(self, @selector(adjuestContentInsetByMTScrollNavigationController), [NSNumber numberWithBool:adjuestContentInsetByMTScrollNavigationController], OBJC_ASSOCIATION_RETAIN);
-    
-}
-
-@end
 
 @interface JLScrollNavigationController ()<
 UIScrollViewDelegate,
@@ -64,7 +27,6 @@ JLScrollTitleBarDataSource
 {
     
     NSInteger             _pageCount;           //总页数
-//    NSInteger             _currentPage;         //当前页数
     NSInteger             _pageIndexBeforeRotation;
     
     NSMutableDictionary   *_childViewControllerDic;//子控件视图
@@ -307,7 +269,11 @@ JLScrollTitleBarDataSource
     if(!self.scrollTitleBar)
         return;
     
-    self.scrollTitleBar.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, JLScrollTitleBarDefaultHeight);
+    CGFloat scrollTitleBarHeight = ScrollTitleBarDefaultHeight;
+    if ([_scrollNavigationDataSource respondsToSelector:@selector(scrollTitleBarHeightOfScrollNavigationController:)]) {
+        scrollTitleBarHeight = [_scrollNavigationDataSource scrollTitleBarHeightOfScrollNavigationController:self];
+    }
+    self.scrollTitleBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), scrollTitleBarHeight);
     
     if ([self.scrollTitleBar reloadData]) {
         [self.scrollTitleBar setUpSelecteIndex:_selectedIndex];
@@ -356,7 +322,11 @@ JLScrollTitleBarDataSource
     
     [self.headerView addSubview:self.customHeaderView];
     [self.headerView addSubview:self.scrollTitleBar];
-    self.scrollTitleBar.frame = CGRectMake(0, self.customHeaderView.frame.size.height, CGRectGetWidth(self.containerView.bounds), JLScrollTitleBarDefaultHeight);
+    CGFloat scrollTitleBarHeight = ScrollTitleBarDefaultHeight;
+    if ([_scrollNavigationDataSource respondsToSelector:@selector(scrollTitleBarHeightOfScrollNavigationController:)]) {
+        scrollTitleBarHeight = [_scrollNavigationDataSource scrollTitleBarHeightOfScrollNavigationController:self];
+    }
+    self.scrollTitleBar.frame = CGRectMake(0, self.customHeaderView.frame.size.height, CGRectGetWidth(self.containerView.bounds), scrollTitleBarHeight);
     
     
     [self.containerView insertSubview:self.headerView aboveSubview:self.scrollContentView];
@@ -542,7 +512,7 @@ JLScrollTitleBarDataSource
 {
     if (_scrollTitleBar == nil)
     {
-        _scrollTitleBar = [[JLScrollTitleBar alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, JLScrollTitleBarDefaultHeight) canScroll:YES];
+        _scrollTitleBar = [[JLScrollTitleBar alloc] initWithFrame:CGRectZero canScroll:YES];
         _scrollTitleBar.selectedTitleColor = self.scrollTitleBarItemSelectColor;
         _scrollTitleBar.titleColor = self.scrollTitleBarItemColor;
         _scrollTitleBar.lineViewColor = self.scrollTitleBarLineViewSelectColor;
@@ -602,6 +572,21 @@ JLScrollTitleBarDataSource
     self.scrollTitleBar.lineViewWidth = scrollTitleBarLineViewWidth;
 }
 
+#pragma mark - interface
+
+- (void)scrollToSpecifiedControllerWithIndex:(NSUInteger)index
+{
+    if (index >= [self.scrollNavigationDataSource numberOfTitleInScrollNavigationController:self]) {
+        return;
+    }
+    if (index == self.selectedIndex) {
+        return;
+    }
+    [self.scrollTitleBar selectBtnWithIndex:index];
+}
+
+
+
 - (void)setUpDefaultSelectIndex:(NSInteger)index
 {
     _selectedIndex = index;
@@ -617,10 +602,6 @@ JLScrollTitleBarDataSource
 
 
 #pragma mark - 辅助方法
-+(void)setStatusHeight:(float) sHeight
-{
-    statusHeight=sHeight;
-}
 
 -(void)changeStatus:(NSNotification *)notification
 {
@@ -699,6 +680,10 @@ JLScrollTitleBarDataSource
     {
         return [controller titleForScrollTitleBar];
     }
+    if ([self.scrollNavigationDataSource respondsToSelector:@selector(scrollNavigationController:controllerTitleWithIndex:)]) {
+        return [self.scrollNavigationDataSource scrollNavigationController:self controllerTitleWithIndex:index];
+    }
+
     return @"";
 }
 
@@ -802,7 +787,7 @@ JLScrollTitleBarDataSource
 
 
 #pragma mark - 转屏
-
+/*
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     
     // Remember page index before rotation
@@ -817,7 +802,7 @@ JLScrollTitleBarDataSource
     _selectedIndex = _pageIndexBeforeRotation;
     
 }
-
+*/
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
     return UIInterfaceOrientationPortrait;
@@ -1070,6 +1055,19 @@ JLScrollTitleBarDataSource
     //移动到执行代理函数完成后记录
     _lastPage = _selectedIndex;
     
+    UIColor *backGroundColor = nil;
+    if ([_scrollNavigationDataSource respondsToSelector:@selector(scrollNavigationController:scrollTitleBarBackgroundColorWithIndex:)]) {
+        backGroundColor = [_scrollNavigationDataSource scrollNavigationController:self scrollTitleBarBackgroundColorWithIndex:_selectedIndex];
+    }
+    if (backGroundColor) {
+        self.scrollTitleBar.backGroundImgView.backgroundColor = backGroundColor;
+    } else {
+        if ([_scrollNavigationDataSource respondsToSelector:@selector(scrollNavigationController:scrollTitleBarBackgroundImageWithIndex:)]) {
+            UIImage *bgImg = [_scrollNavigationDataSource scrollNavigationController:self scrollTitleBarBackgroundImageWithIndex:_selectedIndex];
+            self.scrollTitleBar.backGroundImgView.image = bgImg;
+        }
+    }
+    
     self.pageChangedByClick = NO;
     self.currentShowIndex = _selectedIndex;
     self.currentWillShowIndex = MAXFLOAT;
@@ -1131,7 +1129,19 @@ JLScrollTitleBarDataSource
     
     [self _scrollContentViewContentOffsetDidChange:object];
     [self _currentShowContentScrollViewContentOffsetDidChange:object];
-    
+    [self _notifyDelegateForScrollViewDidScroll:object];
+}
+
+- (void)_notifyDelegateForScrollViewDidScroll:(UIScrollView *)object
+{
+    UIScrollView *scrollView = self.currentShowScrollView;
+    if ([scrollView isEqual:object])
+    {
+        if([self.scrollNavigationDelegate respondsToSelector:@selector(scrollNavigationController:contentControllerScrollViewDidScroll:)]){
+            [self.scrollNavigationDelegate scrollNavigationController:self contentControllerScrollViewDidScroll:scrollView];
+        }
+    }
+
 }
 
 - (void)_scrollContentViewContentOffsetDidChange:(UIScrollView *)object
@@ -1146,6 +1156,89 @@ JLScrollTitleBarDataSource
 }
 
 - (void)_currentShowContentScrollViewContentOffsetDidChange:(UIScrollView *)object
+{
+    if (self.scrollStyle == JLScrollNaviContentControllerScrollStyle_selfPriority) {
+        [self _selfPriority_currentShowContentScrollViewContentOffsetDidChange:object];
+    } else{
+        [self _contentControllerPriority_currentShowContentScrollViewContentOffsetDidChange:object];
+    }
+    
+}
+
+- (void)_selfPriority_currentShowContentScrollViewContentOffsetDidChange:(UIScrollView *)object
+{
+    UIScrollView *scrollView = self.currentShowScrollView;
+    if (scrollView != object || !self.headScrollEnable)
+    {
+        return;
+    }
+    CGRect headRect = self.headerView.frame;
+    
+    CGFloat disY = _contentOffsetY - scrollView.contentOffset.y;
+    
+    _contentOffsetY = scrollView.contentOffset.y;
+    
+    //向上滑,contentoffsetY增大
+    if(disY < 0)
+    {
+        if (_contentOffsetY > - self.headerView.frame.size.height)
+        {
+            headRect.origin.y += disY;
+            headRect.origin.y = MIN(CGRectGetMinY(headRect), _scrollThresholdValue);
+            if (!self.hidesTitleBarWhenScrollToTop)
+            {
+                headRect.origin.y = MAX(CGRectGetMinY(headRect), -self.customHeaderView.frame.size.height);
+            }
+        }
+        
+        if (_contentOffsetY >= -CGRectGetHeight(self.scrollTitleBar.frame)-STATUS_BAR_HEIGHT) {
+            if ([self.scrollNavigationDelegate respondsToSelector:@selector(headerTableViewController:offsetHasReachCriticalValueWithScrollDirectionUp:)]) {
+                [self.scrollNavigationDelegate headerTableViewController:self offsetHasReachCriticalValueWithScrollDirectionUp:YES];
+            }
+        }
+    }
+    else
+    {
+        if (headRect.origin.y < _scrollThresholdValue)
+        {
+            if ( _contentOffsetY + CGRectGetMaxY(self.headerView.frame)< _scrollThresholdValue)
+            {
+                headRect.origin.y += disY;
+                headRect.origin.y = MIN(CGRectGetMinY(headRect), _scrollThresholdValue);
+                headRect.origin.y = MIN(CGRectGetMinY(headRect), -_contentOffsetY - CGRectGetHeight(self.headerView.frame));
+                
+            }
+            else
+            {
+                CGFloat minHeaderOrginY = self.hidesTitleBarWhenScrollToTop ? -CGRectGetHeight(self.headerView.frame) : -CGRectGetHeight(self.customHeaderView.frame);
+                
+                if (headRect.origin.y > minHeaderOrginY )
+                {
+                    headRect.origin.y += disY;
+                    headRect.origin.y = MIN(CGRectGetMinY(headRect), _scrollThresholdValue);
+                }
+            }
+            
+        }
+        else
+        {
+            headRect.origin.y = _scrollThresholdValue;
+            
+        }
+        
+        if (_contentOffsetY <= -CGRectGetHeight(self.scrollTitleBar.frame)-STATUS_BAR_HEIGHT) {
+            if ([self.scrollNavigationDelegate respondsToSelector:@selector(headerTableViewController:offsetHasReachCriticalValueWithScrollDirectionUp:)]) {
+                [self.scrollNavigationDelegate headerTableViewController:self offsetHasReachCriticalValueWithScrollDirectionUp:NO];
+            }
+        }
+    }
+    
+    headRect.origin.y = MIN(CGRectGetMinY(headRect), _scrollThresholdValue);
+    self.headerView.frame = headRect;
+}
+
+
+- (void)_contentControllerPriority_currentShowContentScrollViewContentOffsetDidChange:(UIScrollView *)object
 {
     UIScrollView *scrollView = self.currentShowScrollView;
     if (scrollView != object || !self.headScrollEnable)
@@ -1167,13 +1260,13 @@ JLScrollTitleBarDataSource
     BOOL animated = NO;
     if(disY < 0)//上滑
     {
-        if (self.headerView.frame.origin.y > - (CGRectGetHeight(self.headerView.frame) - padding))
+        if (self.headerView.frame.origin.y > - (CGRectGetHeight(self.headerView.frame) - padding - _scrollThresholdValue))
         {
             headRect.origin.y += disY;
-            headRect.origin.y = MAX(CGRectGetMinY(headRect), -(CGRectGetHeight(self.headerView.frame) - padding));
+            headRect.origin.y = MAX(CGRectGetMinY(headRect), -(CGRectGetHeight(self.headerView.frame) - padding - _scrollThresholdValue));
         }
         else {
-            headRect.origin.y = -(CGRectGetHeight(self.headerView.frame) - padding);
+            headRect.origin.y = -(CGRectGetHeight(self.headerView.frame) - padding - _scrollThresholdValue);
             self.headerView.frame = headRect;
         }
     }
@@ -1205,6 +1298,7 @@ JLScrollTitleBarDataSource
         self.headerView.frame = headRect;
     }];
 }
+
 
 #pragma  mark - 电池条支持
 

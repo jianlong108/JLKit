@@ -14,30 +14,27 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - JLContainer (0.0.4)
+  - JLContainer (0.0.6)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.2.1)
-  - JLContainer (from `~/Desktop/Github/Container-BaseViewController`)
+  - JLContainer (= 0.0.6)
   - SDWebImage (~> 4.4.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - JLContainer
     - SDWebImage
-
-EXTERNAL SOURCES:
-  JLContainer:
-    :path: "~/Desktop/Github/Container-BaseViewController"
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  JLContainer: c02df1b1954389e53139cabbe417c2508a55eee8
+  JLContainer: 6914e068021b6ca21e162cc9b68540830826c0c2
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: 2972471cd31bcea11de61a50991bfa46f0795750
+PODFILE CHECKSUM: e4f3be2c8e67218f877dacfa6e46eb92ce73941d
 
 COCOAPODS: 1.5.3

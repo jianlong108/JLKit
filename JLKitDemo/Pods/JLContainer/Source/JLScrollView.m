@@ -7,6 +7,7 @@
 //
 
 #import "JLScrollView.h"
+#import <objc/runtime.h>
 
 @implementation JLScrollView
 
@@ -24,16 +25,20 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
+    BOOL shouldBeign = YES;
+    if ([self.delegate respondsToSelector:@selector(innerScrollView:gestureRecognizerShouldBegin:)]) {
+        shouldBeign = [self.delegate innerScrollView:self gestureRecognizerShouldBegin:gestureRecognizer];
+    }
     if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
         UIPanGestureRecognizer *pan = (UIPanGestureRecognizer *)gestureRecognizer;
         CGPoint speedXY = [pan velocityInView:gestureRecognizer.view];
         if (fabs(speedXY.x) > fabs(speedXY.y)) {
-            return YES;
+            shouldBeign = shouldBeign && YES;
         } else {
-            return NO;
+            shouldBeign = shouldBeign && NO;
         }
     }
-    return YES;
+    return shouldBeign;
 }
 
 //解决 scrollNavigation中Tableview 滑动删除
@@ -46,6 +51,35 @@
     return NO;
 }
 
+@end
 
+@implementation UIScrollView(AdjuestContentInset)
+
+
+- (CGFloat)offsetOrginYForHeader
+{
+    NSNumber *number = objc_getAssociatedObject(self, @selector(offsetOrginYForHeader));
+    return number ? [number floatValue]:0.0;
+}
+
+- (void)setOffsetOrginYForHeader:(CGFloat)offsetOrginYForHeader
+{
+    objc_setAssociatedObject(self, @selector(offsetOrginYForHeader), [NSNumber numberWithFloat:offsetOrginYForHeader], OBJC_ASSOCIATION_RETAIN);
+}
+
+- (BOOL)adjuestContentInsetByMTScrollNavigationController
+{
+    NSNumber *number = objc_getAssociatedObject(self, @selector(adjuestContentInsetByMTScrollNavigationController));
+    
+    return number ? [number boolValue]:NO;
+    
+}
+
+- (void)setAdjuestContentInsetByMTScrollNavigationController:(BOOL)adjuestContentInsetByMTScrollNavigationController
+{
+    objc_setAssociatedObject(self, @selector(adjuestContentInsetByMTScrollNavigationController), [NSNumber numberWithBool:adjuestContentInsetByMTScrollNavigationController], OBJC_ASSOCIATION_RETAIN);
+    
+}
 
 @end
+

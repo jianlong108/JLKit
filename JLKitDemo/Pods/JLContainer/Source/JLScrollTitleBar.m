@@ -1,6 +1,6 @@
 //
-//  JLScrollTitleBar.m
-//  JLContainer
+//  MTScrollTitleBar.m
+//  MiTalk
 //
 //  Created by 王建龙 on 2017/9/7.
 //  Copyright © 2017年 Xiaomi. All rights reserved.
@@ -9,49 +9,46 @@
 #import "JLScrollTitleBar.h"
 #import "JLScrollTitleButton.h"
 
-NSString *const JLScrollTitleBar_CustomBtn = @"CustomBtn";
-NSString *const JLScrollTitleBar_DefaultBtn = @"DefaultBtn";
-NSString *const JLScrollTitleBar_BtnObject = @"BtnObject";
-NSString *const JLScrollTitleBar_BtnType = @"BtnType";
+NSString *const MTScrollTitleBar_CustomBtn = @"CustomBtn";
+NSString *const MTScrollTitleBar_DefaultBtn = @"DefaultBtn";
+NSString *const MTScrollTitleBar_BtnObject = @"BtnObject";
+NSString *const MTScrollTitleBar_BtnType = @"BtnType";
 
-#define JLScrollTitileBarContentLeftOrRightSpace 15
-
-#define JLScrollTitileBar_title_tag 20170910
+#define MTScrollTitileBarContentLeftOrRightSpace 15
 
 
 @interface JLScrollTitleBar ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIView                 *contentView;
+@property (nonatomic, strong) UIImageView            *backGroundImgView;
 
 @property (nonatomic, strong) UIScrollView           *contentScrollView;
 
 @property (nonatomic, strong) NSMutableArray         *buttonOriginXArray;
 
 @property (nonatomic, strong) NSMutableArray         *buttonWidthArray;
+@property (nonatomic, strong) NSMutableArray         *buttonHeightArray;
 
 @property (nonatomic, strong) NSMutableArray         *buttonArray;
 
 @property (nonatomic, assign) NSInteger              buttonSpace;
 
 @property (nonatomic, assign) BOOL                   isAdjustTitleWidth;
-
-@property (nonatomic, assign) BOOL                   hasCustomShadowView;
-
 //内容宽度
 @property (nonatomic, assign) CGFloat                contentWidth;
 
-//背景线.默认是主题背景线
-@property (nonatomic, strong) UIView                 *shadowView;
-
 /**底部背景线*/
-@property (nonatomic, strong) UIView                 *lineView;
+@property (nonatomic, strong) UIView                 *indicateLineView;
+@property (nonatomic, strong) UIView                 *bottomSpliteLineView;
 
-@property (nonatomic, weak)   UIButton               *selectedTitleBtn;
+@property (nonatomic, weak)   JLScrollTitleButton    *selectedTitleBtn;
 
 @property (nonatomic, assign) NSUInteger             selectedIndex;
+@property (nonatomic, assign) NSUInteger             defaultIndex;
 
 @property (nonatomic, strong) UIView                 *rightView;
 @property (nonatomic, strong) UIView                 *leftView;
+@property (nonatomic, strong) UIView                 *selectBackCoverView;
 
 @end
 
@@ -72,9 +69,10 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
         _selectedByTouchDown = NO;
         _autoScroller = YES;
         _lineViewHeight = 1;
-        _lineViewWidth = 20;
+        _lineViewWidth = 12.0f;
         _lineViewBottomMargin = 3.5;
-        _firstBtnX = JLScrollTitileBarContentLeftOrRightSpace;
+        _marginBetweenlineViewAndBtn = 5.f;
+        _firstBtnX = MTScrollTitileBarContentLeftOrRightSpace;
         [self _initializeSubViews];
         
     }
@@ -92,8 +90,13 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    self.backGroundImgView.frame = self.bounds;
+    self.contentView.frame = self.bounds;
+    self.contentScrollView.frame = self.bounds;
     [self _setUpScrollContentViewFrame];
-    
+    [self _updateLeftViewWithSelectIndex:self.selectedIndex];
+    [self _updateRightViewWithSelectIndex:self.selectedIndex];
     [self _layoutTitlesForTopScrollerView:NO];
     if ((self.contentScrollView.contentSize.width <= self.contentScrollView.bounds.size.width) && self.contentScrollView.contentOffset.x != 0) {
         [self.contentScrollView setContentOffset:CGPointMake(0, 0)];
@@ -112,6 +115,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 {
     _buttonOriginXArray = [[NSMutableArray alloc] init];
     _buttonWidthArray = [[NSMutableArray alloc] init];
+    _buttonHeightArray = [[NSMutableArray alloc] init];
     _buttonArray = [[NSMutableArray alloc] init];
     
     //如果没有，就返回
@@ -144,7 +148,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 #pragma mark - button Click
 
 //适用于类似于tabbar.的点击效果
-- (void)selectNameButtonByTouchDown:(UIButton*)sender
+- (void)selectNameButtonByTouchDown:(JLScrollTitleButton *)sender
 {
     
     //如果是按下选中，则直接触发选中事件
@@ -155,7 +159,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
     
 }
 
-- (void)selectNameButtonByTouchUpInside:(UIButton*)sender
+- (void)selectNameButtonByTouchUpInside:(JLScrollTitleButton *)sender
 {
     
     if (self.selectedByTouchDown == NO) {
@@ -169,13 +173,29 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
     
 }
 
-- (void)_selectNameButton:(UIButton *)sender userClick:(BOOL)userClick
+- (void)_selectNameButton:(JLScrollTitleButton *)sender userClick:(BOOL)userClick
 {
     [self _setButtonStatet:sender userClick:userClick completion:nil];
     
 }
 
 #pragma mark - interface
+- (void)selectBtnWithIndex:(NSUInteger)index
+{
+    if (index >= [self.dataSource numberOfTitleInScrollTitleBar:self]) {
+        return;
+    }
+    if (index == self.selectedIndex) {
+        return;
+    }
+    JLScrollTitleButton *targetBtn = [self _objectAtIndex:index];
+    [self selectNameButtonByTouchUpInside:targetBtn];
+}
+
+- (void)showBottomSplitelineView:(BOOL)show
+{
+    _bottomSpliteLineView.hidden = !show;
+}
 
 - (void)updateTitleFromDataSource
 {
@@ -200,10 +220,10 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
     
     CGPoint p1 = fromRect.origin;
     CGPoint p2 = CGPointMake(fromRect.origin.x + fromRect.size.width, fromRect.origin.y);
-//    CGPoint p3 = toRect.origin;
+    //    CGPoint p3 = toRect.origin;
     CGPoint p4 = CGPointMake(toRect.origin.x + toRect.size.width, toRect.origin.y);
     
-//    CGFloat p1p4Xdist = p4.x - p1.x;
+    //    CGFloat p1p4Xdist = p4.x - p1.x;
     CGFloat p2p4Xdist = p4.x - p2.x;
     CGFloat maxStretch = (p2p4Xdist) - 2 * traction;
     
@@ -234,7 +254,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
     }
     
     CGRect finalRect = CGRectMake(finalX, finalY, finalW, finalH);
-    self.lineView.frame = finalRect;
+    self.indicateLineView.frame = finalRect;
 }
 
 
@@ -243,11 +263,11 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
     
     NSAssert(index < [self.dataSource numberOfTitleInScrollTitleBar:self], @"设置的索引值超过了合理范围,请检测代码");
     _selectedIndex = index;
-    
-    UIButton *button;
+    _defaultIndex = index;
+    JLScrollTitleButton *button;
     if (index < self.buttonArray.count) {
         
-        button = [self.buttonArray[index] objectForKey:JLScrollTitleBar_BtnObject];
+        button = [self.buttonArray[index] objectForKey:MTScrollTitleBar_BtnObject];
     }
     
     if (button) {
@@ -259,7 +279,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 - (void)showBadge:(BOOL)show atIndex:(NSInteger)index
 {
     if (index >= 0 && index <self.buttonArray.count) {
-        JLScrollTitleButton *btn = [self _objectAtIndex:index];
+        JLScrollTitleButton *btn = (JLScrollTitleButton *)[self _objectAtIndex:index];
         btn.redDot.hidden = !show;
     }
 }
@@ -267,8 +287,8 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 - (void)showNumAlert:(BOOL)show content:(NSString *)content atIndex:(NSInteger)index
 {
     if (index >= 0 && index <self.buttonArray.count) {
-       
-        JLScrollTitleButton *btn = [self _objectAtIndex:index];
+        
+        JLScrollTitleButton *btn = (JLScrollTitleButton *)[self _objectAtIndex:index];
         btn.alertLabelText = content;
         btn.alertLabel.hidden = !show;
     }
@@ -280,7 +300,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 {
     _titleFont = titleFont;
     for (NSDictionary *dic in self.buttonArray) {
-        UIButton *btn = dic[JLScrollTitleBar_BtnObject];
+        UIButton *btn = dic[MTScrollTitleBar_BtnObject];
         [btn.titleLabel setFont:_titleFont];
     }
 }
@@ -289,7 +309,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 {
     _titleColor = titleColor;
     for (NSDictionary *dic in self.buttonArray) {
-        UIButton *btn = dic[JLScrollTitleBar_BtnObject];
+        UIButton *btn = dic[MTScrollTitleBar_BtnObject];
         [btn setTitleColor:_titleColor forState:UIControlStateNormal];
     }
 }
@@ -298,7 +318,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 {
     _selectedTitleColor = selectedTitleColor;
     for (NSDictionary *dic in self.buttonArray) {
-        UIButton *btn = dic[JLScrollTitleBar_BtnObject];
+        UIButton *btn = dic[MTScrollTitleBar_BtnObject];
         [btn setTitleColor:_selectedTitleColor forState:UIControlStateSelected];
     }
 }
@@ -306,38 +326,50 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 - (void)setLineViewColor:(UIColor *)lineViewColor
 {
     _lineViewColor = lineViewColor;
-    [self.lineView setBackgroundColor:_lineViewColor];
+    [self.indicateLineView setBackgroundColor:_lineViewColor];
 }
 
 - (void)setLineViewHeight:(CGFloat)lineViewHeight
 {
     _lineViewHeight = lineViewHeight;
-    CGFloat height = CGRectGetHeight(self.lineView.frame);
+    CGFloat height = CGRectGetHeight(self.indicateLineView.frame);
     CGFloat dy = (height - lineViewHeight)/2;
-    self.lineView.frame = CGRectInset(self.lineView.frame, 0, dy);
-    self.lineView.layer.cornerRadius = _lineViewHeight / 2;
-    self.lineView.layer.masksToBounds = YES;
+    self.indicateLineView.frame = CGRectInset(self.indicateLineView.frame, 0, dy);
+    self.indicateLineView.layer.cornerRadius = _lineViewHeight / 2;
+    self.indicateLineView.layer.masksToBounds = YES;
 }
 
 - (void)setLineViewWidth:(CGFloat)lineViewWidth
 {
     _lineViewWidth = lineViewWidth;
-    CGFloat width = CGRectGetWidth(self.lineView.frame);
+    if (_lineViewWithtAdjustByView) {
+        return;
+    }
+    CGFloat width = CGRectGetWidth(self.indicateLineView.frame);
     CGFloat dx = (width - lineViewWidth)/2;
-    self.lineView.frame = CGRectInset(self.lineView.frame, dx, 0);
+    self.indicateLineView.frame = CGRectInset(self.indicateLineView.frame, dx, 0);
 }
 
 #pragma mark - private func
 
 - (void)_initializeSubViews
 {
+    if (_backGroundImgView == nil) {
+        _backGroundImgView = [[UIImageView alloc]initWithFrame:self.bounds];
+        _backGroundImgView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        _backGroundImgView.contentMode = UIViewContentModeScaleAspectFill;
+        _backGroundImgView.backgroundColor = [UIColor clearColor];
+        [self addSubview:_backGroundImgView];
+    }
     if (_contentView == nil) {
         _contentView = [[UIView alloc]initWithFrame:self.bounds];
+        _contentView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         _contentView.backgroundColor = [UIColor clearColor];
         [self addSubview:_contentView];
     }
     if (_contentScrollView == nil) {
         _contentScrollView = [[UIScrollView alloc]initWithFrame:self.bounds];
+        _contentScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         _contentScrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         _contentScrollView.delegate = self;
         _contentScrollView.showsVerticalScrollIndicator = NO;
@@ -352,7 +384,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 - (NSInteger)_indexOfObject:(UIButton *)sender
 {
     for (NSDictionary *dic  in self.buttonArray) {
-        UIButton *btn = [dic objectForKey:JLScrollTitleBar_BtnObject];
+        UIButton *btn = [dic objectForKey:MTScrollTitleBar_BtnObject];
         if ([btn isEqual:sender]) {
             return [self.buttonArray indexOfObject:dic];
         }
@@ -360,14 +392,14 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
     return -1;
 }
 
-- (UIButton *)_objectAtIndex:(NSInteger)index
+- (JLScrollTitleButton *)_objectAtIndex:(NSInteger)index
 {
     if (index < 0 || index >= self.buttonArray.count) {
         return nil;
     }
     NSDictionary *dic = self.buttonArray[index];
     
-    return [dic objectForKey:JLScrollTitleBar_BtnObject];
+    return [dic objectForKey:MTScrollTitleBar_BtnObject];
 }
 
 - (BOOL)_isCustomObjectAtIndex:(NSInteger)index
@@ -377,7 +409,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
     }
     NSDictionary *dic = self.buttonArray[index];
     
-    return [(NSString *)[dic objectForKey:JLScrollTitleBar_BtnType] isEqualToString:JLScrollTitleBar_CustomBtn];
+    return [(NSString *)[dic objectForKey:MTScrollTitleBar_BtnType] isEqualToString:MTScrollTitleBar_CustomBtn];
 }
 //计算 更新 单个btn 的宽度.
 - (CGFloat)_calculateBtnWidthBtn:(UIButton *)btn index:(NSUInteger)index isCustom:(BOOL)isCustom update:(BOOL)isUpdate
@@ -387,29 +419,38 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
         
         if (isCustom) {
             CGFloat width = CGRectGetWidth(btn.frame);
+            CGFloat height = CGRectGetHeight(btn.frame);
             if (isUpdate) {
                 [self.buttonWidthArray replaceObjectAtIndex:index withObject:@(floorf(width))];
+                [self.buttonHeightArray replaceObjectAtIndex:index withObject:@(floorf(height))];
             }else{
                 [self.buttonWidthArray addObject:@(floorf(width))];
+                [self.buttonHeightArray addObject:@(floorf(height))];
             }
             return floorf(width);
         }else{
-            CGFloat buttonWidth = [btn.titleLabel.text boundingRectWithSize:CGSizeMake(350, 50) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : btn.titleLabel.font} context:nil].size.width;
+            CGSize buttonSize = [btn.titleLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : btn.titleLabel.font} context:nil].size;
+            CGFloat buttonWidth = buttonSize.width;
+            CGFloat buttonHeight = buttonSize.height;
             if (isUpdate) {
                 [self.buttonWidthArray replaceObjectAtIndex:index withObject:@(floorf(buttonWidth))];
+                [self.buttonHeightArray replaceObjectAtIndex:index withObject:@(floorf(buttonHeight))];
             }else{
                 [self.buttonWidthArray addObject:@(floorf(buttonWidth))];
+                [self.buttonHeightArray addObject:@(floorf(buttonHeight))];
             }
             
             return floorf(buttonWidth);
         }
     }else{
         CGFloat perBtnWidth = (CGRectGetWidth(self.contentScrollView.frame) - CGRectGetWidth(self.rightView.frame)) / [self.dataSource numberOfTitleInScrollTitleBar:self];
-        
+        CGFloat buttonHeight = [btn.titleLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : btn.titleLabel.font} context:nil].size.height;
         if (isUpdate) {
             [self.buttonWidthArray replaceObjectAtIndex:index withObject:@(floorf(perBtnWidth))];
+            [self.buttonHeightArray replaceObjectAtIndex:index withObject:@(floorf(buttonHeight))];
         }else{
             [self.buttonWidthArray addObject:@(floorf(perBtnWidth))];
+            [self.buttonHeightArray addObject:@(floorf(buttonHeight))];
         }
         return floorf(perBtnWidth);
     }
@@ -441,8 +482,8 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
             
             button = [JLScrollTitleButton buttonWithType:UIButtonTypeCustom];
             button.clipsToBounds = NO;
-            [dic setObject:button forKey:JLScrollTitleBar_BtnObject];
-            [dic setObject:JLScrollTitleBar_DefaultBtn forKey:JLScrollTitleBar_BtnType];
+            [dic setObject:button forKey:MTScrollTitleBar_BtnObject];
+            [dic setObject:MTScrollTitleBar_DefaultBtn forKey:MTScrollTitleBar_BtnType];
             
             UIFont *font = self.titleFont;
             UIFont *selectTitleFont = self.selectTitleFont;
@@ -474,7 +515,6 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
             JLScrollTitleButton * btn = (JLScrollTitleButton *)button;
             btn.normalFont = font;
             btn.selectedFont = selectTitleFont;
-            
             CGFloat buttonWidth = [self _calculateBtnWidthBtn:button index:i isCustom:NO update:NO];
             btnWidth += buttonWidth;
             
@@ -484,8 +524,8 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
             btnWidth += buttonWidth;
             
             
-            [dic setObject:button forKey:JLScrollTitleBar_BtnObject];
-            [dic setObject:JLScrollTitleBar_CustomBtn forKey:JLScrollTitleBar_BtnType];
+            [dic setObject:button forKey:MTScrollTitleBar_BtnObject];
+            [dic setObject:MTScrollTitleBar_CustomBtn forKey:MTScrollTitleBar_BtnType];
         }
         
         
@@ -511,7 +551,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 {
     
     if (reloadData) {
-        self.selectedIndex = 0;
+        self.selectedIndex = _defaultIndex;
         [self _selectNameButton:[self _objectAtIndex:self.selectedIndex] userClick:NO];
     }
     for (UIView *view in self.contentScrollView.subviews) {
@@ -547,24 +587,27 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
     for (int i = 0; i < titleCount; i++)
     {
         NSDictionary *dic = self.buttonArray[i];
-        UIButton *button = [dic objectForKey:JLScrollTitleBar_BtnObject];
+        UIButton *button = [dic objectForKey:MTScrollTitleBar_BtnObject];
         CGFloat btnW = [self.buttonWidthArray[i] floatValue];
+        CGFloat btnH = [self.buttonHeightArray[i] floatValue];
+        
+        CGFloat btnY = CGRectGetHeight(self.contentScrollView.frame) - CGRectGetHeight(self.indicateLineView.frame) -_lineViewBottomMargin - btnH - _marginBetweenlineViewAndBtn;
         if (self.elementDisplayStyle == JLScrollTitleBarElementStyleAvarge)
         {
             
             xPos = unitAreaWidth * i + (unitAreaWidth - btnW)/2;
-            button.frame = CGRectMake((int)xPos, 0, btnW, CGRectGetHeight(self.contentScrollView.frame));
+            button.frame = CGRectMake((int)xPos, btnY, btnW, btnH);
             [self.buttonOriginXArray addObject:@(xPos)];
         }
         else
         {
-            if ([(NSString *)[dic objectForKey:JLScrollTitleBar_BtnType] isEqualToString:JLScrollTitleBar_CustomBtn])
+            if ([(NSString *)[dic objectForKey:MTScrollTitleBar_BtnType] isEqualToString:MTScrollTitleBar_CustomBtn])
             {
                 //自定义的按钮
                 
                 if (_isAdjustTitleWidth)
                 {
-                    button.frame = CGRectMake((int)xPos, 0, btnW, CGRectGetHeight(self.contentScrollView.frame));
+                    button.frame = CGRectMake((int)xPos, btnY, btnW, btnH);
                     [self.buttonOriginXArray addObject:@(xPos)];
                     xPos += btnW+_buttonSpace;
                 }
@@ -574,7 +617,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
                     [self.buttonOriginXArray addObject:@(xPos)];
                     xPos = perBtnWidth*i;
                     
-                    button.frame = CGRectMake((int)xPos, 0, perBtnWidth, CGRectGetHeight(self.contentScrollView.frame));
+                    button.frame = CGRectMake((int)xPos, btnY, perBtnWidth, btnH);
                 }
             }
             else
@@ -583,7 +626,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
                 if (_isAdjustTitleWidth)
                 {
                     
-                    button.frame = CGRectMake((int)xPos, 0, btnW, self.contentScrollView.frame.size.height);
+                    button.frame = CGRectMake((int)xPos, btnY, btnW, btnH);
                     [self.buttonOriginXArray addObject:@(xPos)];
                     
                     {
@@ -594,7 +637,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
                 {
                     [self.buttonOriginXArray addObject:@(xPos)];
                     
-                    button.frame = CGRectMake((int)xPos, 0, btnW, CGRectGetHeight(self.contentScrollView.frame));
+                    button.frame = CGRectMake((int)xPos, btnY, btnW, btnH);
                     xPos = btnW*i;
                 }
                 
@@ -611,62 +654,47 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
     
     if (self.elementDisplayStyle == JLScrollTitleBarElementStyleDefault)
     {
-        self.contentScrollView.contentSize = CGSizeMake(xPos - _buttonSpace+ JLScrollTitileBarContentLeftOrRightSpace, 0);
+        self.contentScrollView.contentSize = CGSizeMake(xPos - _buttonSpace+ MTScrollTitileBarContentLeftOrRightSpace, 0);
     }
     else
     {
-        self.contentScrollView.contentSize = CGSizeMake(xPos + JLScrollTitileBarContentLeftOrRightSpace - _buttonSpace, 0);
+        self.contentScrollView.contentSize = CGSizeMake(xPos + MTScrollTitileBarContentLeftOrRightSpace - _buttonSpace, 0);
         
     }
     
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(shadowViewForScrollTitleBar:)]) {
-        
-        UIView *customShadowView = [self.dataSource shadowViewForScrollTitleBar:self];
-        if (customShadowView != nil) {
+    if ([_buttonOriginXArray count] > 0) {
+        if (self.selectedIndex < _buttonOriginXArray.count){
             
-            self.shadowView = customShadowView;
-            self.shadowView.userInteractionEnabled = NO;
-            [self.contentScrollView addSubview:self.shadowView];
-            _hasCustomShadowView = YES;
+        }
+        else {
+            self.selectedIndex = 0;
+        }
+        UIView *lineView = [[UIView alloc] init];
+        
+        [lineView setUserInteractionEnabled:NO];
+        if (self.lineViewColor) {
+            [lineView setBackgroundColor:self.lineViewColor];
+            
+        }else {
+            [lineView setBackgroundColor:[UIColor colorWithRed:0xff/255.0 green:0x29/255.0 blue:0x66/255.0 alpha:1.0]];
         }
         
+        lineView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
+        [_contentScrollView addSubview:lineView];
+        self.indicateLineView = lineView;
     }
-    else{
-        if ([_buttonOriginXArray count]>0) {
-            if (self.selectedIndex < _buttonOriginXArray.count){
-                
-            }
-            else {
-                self.selectedIndex = 0;
-            }
-            UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake((CGRectGetWidth(_selectedTitleBtn.frame) - _lineViewWidth)/2.0 + CGRectGetMinX(_selectedTitleBtn.frame), CGRectGetHeight(_contentScrollView.frame) - _lineViewHeight - _lineViewBottomMargin, _lineViewWidth, _lineViewHeight)];
-            
-            [lineView setUserInteractionEnabled:NO];
-            if (self.lineViewColor) {
-                [lineView setBackgroundColor:self.lineViewColor];
-                
-            }else {
-                [lineView setBackgroundColor:[UIColor colorWithRed:0xff/255.0 green:0x29/255.0 blue:0x66/255.0 alpha:1.0]];
-            }
-            
-            lineView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
-            [_contentScrollView addSubview:lineView];
-            self.lineView = lineView;
-        }
-    }
+    
     //更新选中背景视图
     [self _updateShadowWithSelectedButton:self.selectedTitleBtn];
     
 }
 
-- (void)_setButtonStatet:(UIButton *)sender userClick:(BOOL)userClick completion:(void (^)(BOOL finish))setCompletion
+- (void)_setButtonStatet:(JLScrollTitleButton *)sender userClick:(BOOL)userClick completion:(void (^)(BOOL finish))setCompletion
 {
-    
     if ([self.selectedTitleBtn isEqual:sender]) {
         //避免重复点击.
         return;
     }
-    
     [self.selectedTitleBtn setSelected:NO];
     self.selectedTitleBtn = sender;
     [self.selectedTitleBtn setSelected:YES];
@@ -718,7 +746,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
         _leftView = nil;
         _leftView = leftView;
         CGRect viewFrame = _leftView.frame;
-        viewFrame.origin = CGPointMake(_firstBtnX, 0);
+        viewFrame.origin = CGPointMake(_firstBtnX, CGRectGetHeight(self.bounds) - viewFrame.size.height);
         viewFrame.size = CGSizeMake(viewFrame.size.width, CGRectGetHeight(self.bounds));
         _leftView.frame = viewFrame;
         [_contentView addSubview:_leftView];
@@ -740,8 +768,8 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
         _rightView = nil;
         _rightView = rightView;
         CGRect viewFrame = rightView.frame;
-        viewFrame.origin = CGPointMake(CGRectGetWidth(self.bounds) - viewFrame.size.width, 0);
-        viewFrame.size = CGSizeMake(viewFrame.size.width, CGRectGetHeight(self.bounds));
+        viewFrame.origin = CGPointMake(CGRectGetWidth(self.bounds) - viewFrame.size.width, CGRectGetHeight(self.bounds) - viewFrame.size.height);
+        viewFrame.size = CGSizeMake(viewFrame.size.width, viewFrame.size.height);
         rightView.frame = viewFrame;
         [_contentView addSubview:rightView];
     } else {
@@ -755,67 +783,24 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 {
     CGFloat rightViewW = CGRectGetWidth(_rightView.frame);
     CGFloat leftViewW = CGRectGetWidth(_leftView.frame);
-//    self.contentScrollView.frame = CGRectMake(leftViewW, 0, CGRectGetWidth(self.bounds)-rightViewW-leftViewW, CGRectGetHeight(self.bounds));
+    //    self.contentScrollView.frame = CGRectMake(leftViewW, 0, CGRectGetWidth(self.bounds)-rightViewW-leftViewW, CGRectGetHeight(self.bounds));
     self.contentScrollView.contentInset = UIEdgeInsetsMake(0, leftViewW, 0, rightViewW);
 }
 
 //更新选中背景视图
-- (void)_updateShadowWithSelectedButton:(UIButton*)btn
+- (void)_updateShadowWithSelectedButton:(JLScrollTitleButton*)btn
 {
-    
-    float shadowHeight = 0;
-    float shadowY = 0;
-    float shadowX = 0;
-    float shadowWidth = 0;
-    //如果是自定义的背景视图
-    if (_hasCustomShadowView == YES) {
-        
-        shadowHeight = self.contentScrollView.frame.size.height;
-        //按照默认选中的第一项按钮，设置背景视图宽度
-        shadowWidth = btn.frame.size.width;
-        shadowX = btn.frame.origin.x;
-        
-    }else{
-        
-        //默认滑动蓝条高度
-        shadowHeight = 1.f;
-        shadowY = self.contentScrollView.frame.size.height - shadowHeight;
-        shadowWidth = btn.frame.size.width;
-        shadowX = (btn.frame.size.width - shadowWidth)*0.5 + btn.frame.origin.x;
+    if (_lineViewWithtAdjustByView) {
+        CGFloat titleW = [btn.titleLabel.text boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGRectGetHeight(btn.frame)) options:0 attributes:@{NSFontAttributeName:btn.selectedFont} context:nil].size.width;
+        [self.indicateLineView setFrame:CGRectMake((CGRectGetWidth(btn.frame) - titleW)/2.0 + CGRectGetMinX(btn.frame), CGRectGetHeight(_contentScrollView.frame) - _lineViewHeight - _lineViewBottomMargin, titleW, _lineViewHeight)];
+    } else {
+        [self.indicateLineView setFrame:CGRectMake((CGRectGetWidth(btn.frame) - _lineViewWidth)/2.0 + CGRectGetMinX(btn.frame), CGRectGetHeight(_contentScrollView.frame) - _lineViewHeight - _lineViewBottomMargin, _lineViewWidth, _lineViewHeight)];
     }
     
-    CGRect rect = self.shadowView.frame;
-    rect.size.width = shadowWidth;
-    rect.size.height = shadowHeight;
-    rect.origin.y = shadowY;
-    rect.origin.x = shadowX;
-    //    self.shadowView.frame = rect;
-    
-    [self.lineView setFrame:CGRectMake((CGRectGetWidth(btn.frame) - _lineViewWidth)/2.0 + CGRectGetMinX(btn.frame), CGRectGetHeight(_contentScrollView.frame) - _lineViewHeight - _lineViewBottomMargin, _lineViewWidth, _lineViewHeight)];
 }
 
 - (CGRect)_lineViewRectForView:(UIView *)view
 {
-    float shadowHeight = 0;
-    float shadowY = 0;
-    float shadowX = 0;
-    float shadowWidth = 0;
-    //如果是自定义的背景视图
-    if (_hasCustomShadowView == YES) {
-        
-        shadowHeight = self.contentScrollView.frame.size.height;
-        //按照默认选中的第一项按钮，设置背景视图宽度
-        shadowWidth = view.frame.size.width;
-        shadowX = view.frame.origin.x;
-        
-    }else{
-        
-        shadowHeight = CGRectGetHeight(view.frame);
-        shadowY = self.contentScrollView.frame.size.height - shadowHeight;
-        shadowWidth = CGRectGetWidth(view.frame);
-        shadowX = view.frame.origin.x;
-    }
-    
     return CGRectMake((CGRectGetWidth(view.frame) - _lineViewWidth)/2.0 + CGRectGetMinX(view.frame), CGRectGetHeight(_contentScrollView.frame) - _lineViewHeight - _lineViewBottomMargin, _lineViewWidth, _lineViewHeight);
 }
 
@@ -824,22 +809,21 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 - (void)adjustScrollViewContentX:(UIButton *)sender
 {
     //判断是否支持自动滚动
-    if (!self.autoScroller || (self.contentScrollView.contentSize.width <= self.contentScrollView.bounds.size.width)) {
+    if (!self.autoScroller || (_contentScrollView.contentSize.width <= (_contentScrollView.bounds.size.width - _contentScrollView.contentInset.left - _contentScrollView.contentInset.right))) {
         return;
     }
+    CGFloat maxOffsetX = _contentScrollView.contentSize.width - CGRectGetWidth(_contentScrollView.frame) + _contentScrollView.contentInset.right;
+    CGFloat minOffsetX = -_contentScrollView.contentInset.left;
+    CGFloat needOffsetX = sender.center.x - (CGRectGetWidth(_contentScrollView.frame) - _contentScrollView.contentInset.left - _contentScrollView.contentInset.right)/2;
     
-    //    [self oneAdjustStyle:sender];
-    
-    CGFloat maxOffsetX = _contentScrollView.contentSize.width - CGRectGetWidth(_contentScrollView.frame);
-    CGFloat minOffsetX = 0;
-    CGFloat offsetX = sender.center.x - CGRectGetWidth(_contentScrollView.frame)/2;
-    if (offsetX < minOffsetX) {
-        offsetX = minOffsetX;
+    if (needOffsetX < minOffsetX) {
+        needOffsetX = minOffsetX;
     }
-    if (offsetX > maxOffsetX){
-        offsetX = maxOffsetX;
+    if (needOffsetX > maxOffsetX){
+        needOffsetX = maxOffsetX;
     }
-    [_contentScrollView setContentOffset:CGPointMake(offsetX, _contentScrollView.contentOffset.y) animated:YES];
+    NSLog(@"wjl maxOffsetX %f minOffsetX %f needOffsetX %f",maxOffsetX,minOffsetX,needOffsetX);
+    [_contentScrollView setContentOffset:CGPointMake(needOffsetX, _contentScrollView.contentOffset.y) animated:YES];
     
 }
 
@@ -848,7 +832,7 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
     CGFloat originX = CGRectGetMinX(sender.frame);
     CGFloat width = CGRectGetWidth(sender.frame);
     
-    UIView *firstView = [[_buttonArray objectAtIndex:0] objectForKey:JLScrollTitleBar_BtnObject];
+    UIView *firstView = [[_buttonArray objectAtIndex:0] objectForKey:MTScrollTitleBar_BtnObject];
     //    float firsrBtnx = [_buttonOriginXArray.firstObject floatValue];
     CGFloat firstBtnx = CGRectGetMinX(firstView.frame);
     // 如果点击到右边超出边界的的按钮时
@@ -865,4 +849,5 @@ NSString *const JLScrollTitleBar_BtnType = @"BtnType";
 }
 
 @end
+
 

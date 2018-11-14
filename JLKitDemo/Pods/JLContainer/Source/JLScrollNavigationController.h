@@ -10,6 +10,10 @@
 #import "JLScrollTitleBar.h"
 #import "JLScrollNavigationChildControllerProtocol.h"
 
+typedef NS_ENUM(NSUInteger, JLScrollNaviContentControllerScrollStyle) {
+    JLScrollNaviContentControllerScrollStyle_selfPriority,    // self.innerContentView scroll Priority High
+    JLScrollNaviContentControllerScrollStyle_contentControllerPriority// self.contentController scroll Priority High..eds:when scroll down make backgroundImg bigger
+} NS_ENUM_AVAILABLE_IOS(7_0);
 
 @protocol JLScrollNavigationControllerDataSource <NSObject>
 
@@ -25,18 +29,43 @@
 - (NSInteger)numberOfTitleInScrollNavigationController:(JLScrollNavigationController *)scrollNavigationController;
 
 /*!
- @method
- @abstract   某个下标的子视图控制器
- @discussion 某个下标的子视图控制器
+ @warnging   this method will be call more than once
  @param      scrollNavigationController 滚动导航视图控制器，子控制器需要实现ChildViewControllerDelegate委托，用于监听子视图显示前的事件回调
  @param      index 指定下标
- @return     某个子视图控制器
  */
 - (UIViewController<JLScrollNavigationChildControllerProtocol> *)scrollNavigationController:(JLScrollNavigationController *)scrollNavigationController
                                                                    childViewControllerForIndex:(NSInteger)index;
 
 
 @optional
+
+//当controller无法提供标题时,会试图调用此方法再次获取title
+- (NSString *)scrollNavigationController:(JLScrollNavigationController *)scrollNavigationController controllerTitleWithIndex:(NSUInteger)index;
+/*!
+ @method
+ @abstract   获取index对应的背景色
+ @param      scrollNavigationController JLScrollNavigationController
+ @return     颜色
+ */
+- (UIColor *)scrollNavigationController:(JLScrollNavigationController*)scrollNavigationController scrollTitleBarBackgroundColorWithIndex:(NSUInteger)index;
+
+/*!
+ @method
+ @abstract   获取index对应的图片
+ @param      scrollNavigationController JLScrollNavigationController
+ @return     img object
+ */
+- (UIImage *)scrollNavigationController:(JLScrollNavigationController*)scrollNavigationController scrollTitleBarBackgroundImageWithIndex:(NSUInteger)index;
+
+/*!
+ @method
+ @abstract   自定义scrollTitleBar的高度
+ @discussion 默认是 44 + StatusBarHeight..
+ @param      scrollNavigationController MTScrollNavigationController
+ @return     高度
+ */
+- (CGFloat)scrollTitleBarHeightOfScrollNavigationController:(JLScrollNavigationController*)scrollNavigationController;
+
 /*!
  @method
  @abstract   自定义button的回调
@@ -103,6 +132,9 @@
 //解决 scrollNavigation中Tableview 滑动删除
 -(BOOL)scrollNavigationController:(JLScrollNavigationController*)scrollNavigationController canScrollWithGesture:(UIGestureRecognizer *)pan shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGesture;
 
+//询问代理,是否可以开始滑动
+-(BOOL)scrollNavigationController:(JLScrollNavigationController*)scrollNavigationController gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)pan;
+
 /*!
  * @brief  控件滑动
  * @param scrollNavigationController  滚动导航视图控制器
@@ -110,6 +142,8 @@
 - (void)scrollNavigationController:(JLScrollNavigationController*)scrollNavigationController
         contentScrollViewDidScroll:(UIScrollView*)contentScrollView;
 
+- (void)scrollNavigationController:(JLScrollNavigationController*)scrollNavigationController
+contentControllerScrollViewDidScroll:(UIScrollView*)contentControllerScrollView;
 
 /**
  点击索引事件 只有点击时才会触发...
@@ -124,6 +158,8 @@
 - (void)scrollNavigationController:(JLScrollNavigationController*)scrollNavigationController
                      didShowIndex:(NSInteger)fromIndex
                            toIndex:(NSInteger)toIndex;
+
+- (void)headerTableViewController:(JLScrollNavigationController *)controller offsetHasReachCriticalValueWithScrollDirectionUp:(BOOL)isUp;
 
 @end
 
@@ -147,6 +183,8 @@
 /**当底部视图区域可以滑动并且headView是否支持滚动，当滚动时TitleBar是否停留在顶部*/
 @property (nonatomic, assign) BOOL hidesTitleBarWhenScrollToTop;
 
+@property (nonatomic, assign) CGFloat scrollThresholdValue;
+@property (nonatomic, assign) JLScrollNaviContentControllerScrollStyle scrollStyle;
 
 /**顶部标题显示样式*/
 @property (nonatomic, assign) JLScrollTitleBarElementStyle topTitleStyle;
@@ -211,11 +249,5 @@
  */
 - (void)showNumAlert:(BOOL)show content:(NSString *)text atIndex:(NSInteger)index;
 
-/*!
- @method 状态栏高度
- @abstract   启动时设置状态栏高度
- @discussion 启动时设置状态栏高度
- */
-+(void)setStatusHeight:(float) sHeight;
 
 @end
