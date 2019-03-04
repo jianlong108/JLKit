@@ -1,3 +1,18 @@
+
+Podfile.lock
+JLKit.xcodeproj/project.xcworkspace/
+.DS_Store
+JLKit/.DS_Store
+JLKit/Assets.xcassets/.DS_Store
+JLKit/Assets.xcassets/AppIcon.appiconset/.DS_Store
+JLKit.xcodeproj/xcuserdata/
+JLKit.xcworkspace/
+Pods/
+build/
+.idea
+Carthage/
+
+
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
@@ -58,3 +73,7 @@ fastlane/screenshots
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+.xcbkplist
+xcschememanagement.plist
+**/project.xcworkspace
+
