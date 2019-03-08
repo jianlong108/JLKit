@@ -15,7 +15,7 @@
 #include "UINavigationBar+BackGroundImage.h"
 
 @implementation UIViewController (NavigationBar)
-
+/*
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -91,7 +91,7 @@
         } while (0);
     });
 }
-
+*/
 - (void)mt_viewDidLoad
 {
     [self mt_viewDidLoad];

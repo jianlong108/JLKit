@@ -14,6 +14,7 @@
 #import "JLFoldAnimationer.h"
 #import "JLHorizontalPanInteraction.h"
 #import "HomeContainerController.h"
+#import "PrincipleViewController.h"
 
 @interface TabBarViewController ()<
     UITabBarControllerDelegate
@@ -47,6 +48,10 @@
     UINavigationController *homeNav = [[JLNavigationController alloc]initWithRootViewController:[HomeContainerController new]];
     [self addChildViewController:homeNav];
     homeNav.title = @"主页";
+    
+    UINavigationController *appleCodeNav = [[UINavigationController alloc]initWithRootViewController:[PrincipleViewController new]];
+    [self addChildViewController:appleCodeNav];
+    appleCodeNav.title = @"寻根溯源";
     
     XMNavigationController *fullScrrenPop_Nav = [[XMNavigationController alloc]initWithRootViewController:[MyViewController new]];
     [self addChildViewController:fullScrrenPop_Nav];
