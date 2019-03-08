@@ -15,6 +15,10 @@
 		3456D6A9216CA7EB00B8BADA /* ReplicatorProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3456D6A8216CA7EB00B8BADA /* ReplicatorProgressView.m */; };
 		34646867222D0A93003AB5D2 /* PrincipleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34646866222D0A93003AB5D2 /* PrincipleViewController.m */; };
 		3464686A222D11A5003AB5D2 /* ClassLayoutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 34646869222D11A5003AB5D2 /* ClassLayoutVC.m */; };
+		3464687522325431003AB5D2 /* LockTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3464687322325430003AB5D2 /* LockTest.m */; };
+		3464687A2232543B003AB5D2 /* CustomKVOVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 346468772232543A003AB5D2 /* CustomKVOVC.m */; };
+		3464687B2232543B003AB5D2 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 346468782232543A003AB5D2 /* NSObject+KVO.m */; };
+		3464687E22325445003AB5D2 /* MethodForwardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3464687D22325445003AB5D2 /* MethodForwardVC.m */; };
 		3469F96D211DC58F006124DF /* MTTableViewSectionIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95A211DC58E006124DF /* MTTableViewSectionIndexBar.m */; };
 		3469F96E211DC58F006124DF /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95B211DC58E006124DF /* UITableView+IndexBar.m */; };
 		3469F971211DC58F006124DF /* OTRowItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3469F95F211DC58F006124DF /* OTRowItemModel.m */; };
@@ -114,6 +118,14 @@
 		34646866222D0A93003AB5D2 /* PrincipleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrincipleViewController.m; sourceTree = "<group>"; };
 		34646868222D11A5003AB5D2 /* ClassLayoutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassLayoutVC.h; sourceTree = "<group>"; };
 		34646869222D11A5003AB5D2 /* ClassLayoutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassLayoutVC.m; sourceTree = "<group>"; };
+		3464687322325430003AB5D2 /* LockTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockTest.m; sourceTree = "<group>"; };
+		3464687422325431003AB5D2 /* LockTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockTest.h; sourceTree = "<group>"; };
+		346468762232543A003AB5D2 /* NSObject+KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO.h"; sourceTree = "<group>"; };
+		346468772232543A003AB5D2 /* CustomKVOVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomKVOVC.m; sourceTree = "<group>"; };
+		346468782232543A003AB5D2 /* NSObject+KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
+		346468792232543B003AB5D2 /* CustomKVOVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomKVOVC.h; sourceTree = "<group>"; };
+		3464687C22325445003AB5D2 /* MethodForwardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodForwardVC.h; sourceTree = "<group>"; };
+		3464687D22325445003AB5D2 /* MethodForwardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodForwardVC.m; sourceTree = "<group>"; };
 		3469F958211DC58E006124DF /* MTTableViewSectionIndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTTableViewSectionIndexBar.h; sourceTree = "<group>"; };
 		3469F959211DC58E006124DF /* UITableView+IndexBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+IndexBar.h"; sourceTree = "<group>"; };
 		3469F95A211DC58E006124DF /* MTTableViewSectionIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTableViewSectionIndexBar.m; sourceTree = "<group>"; };
@@ -486,6 +498,14 @@
 				34646866222D0A93003AB5D2 /* PrincipleViewController.m */,
 				34646868222D11A5003AB5D2 /* ClassLayoutVC.h */,
 				34646869222D11A5003AB5D2 /* ClassLayoutVC.m */,
+				3464687422325431003AB5D2 /* LockTest.h */,
+				3464687322325430003AB5D2 /* LockTest.m */,
+				346468792232543B003AB5D2 /* CustomKVOVC.h */,
+				346468772232543A003AB5D2 /* CustomKVOVC.m */,
+				346468762232543A003AB5D2 /* NSObject+KVO.h */,
+				346468782232543A003AB5D2 /* NSObject+KVO.m */,
+				3464687C22325445003AB5D2 /* MethodForwardVC.h */,
+				3464687D22325445003AB5D2 /* MethodForwardVC.m */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -872,6 +892,7 @@
 				F4AECAC9205E5314000F6D37 /* UINavigationController+FullScreenPopGesture.m in Sources */,
 				3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */,
 				F4AECAAF205E5314000F6D37 /* TwoFaceButton.m in Sources */,
+				3464687E22325445003AB5D2 /* MethodForwardVC.m in Sources */,
 				34250C03216CE7F900ED0C1A /* ReplicatorLoadingView.m in Sources */,
 				34646867222D0A93003AB5D2 /* PrincipleViewController.m in Sources */,
 				F4AECAEE205E5315000F6D37 /* JLTextFiled.m in Sources */,
@@ -879,7 +900,9 @@
 				F4AECACC205E5314000F6D37 /* UIAvaterGenerater.m in Sources */,
 				346A5536206B9629002DD49A /* MTPresentationController.m in Sources */,
 				F4AECABE205E5314000F6D37 /* NSString+JL.m in Sources */,
+				3464687B2232543B003AB5D2 /* NSObject+KVO.m in Sources */,
 				3469F971211DC58F006124DF /* OTRowItemModel.m in Sources */,
+				3464687A2232543B003AB5D2 /* CustomKVOVC.m in Sources */,
 				F4AECAD0205E5314000F6D37 /* IOS11Adapter.m in Sources */,
 				F4AECAF0205E5315000F6D37 /* JLBaseInteractiveTransition.m in Sources */,
 				3469F96E211DC58F006124DF /* UITableView+IndexBar.m in Sources */,
@@ -889,6 +912,7 @@
 				F4AECABA205E5314000F6D37 /* TestTableViewController.m in Sources */,
 				F4AECAB7205E5314000F6D37 /* JLTabMoreView.m in Sources */,
 				F4AECAF1205E5315000F6D37 /* JLFoldAnimationer.m in Sources */,
+				3464687522325431003AB5D2 /* LockTest.m in Sources */,
 				F49DDE1A2070B9F200793B40 /* JLNavigationController.m in Sources */,
 				F4AECAE8205E5315000F6D37 /* TabBarViewController.m in Sources */,
 				346A5524206B81B4002DD49A /* MTHorizontalPageFlowLayout.m in Sources */,
