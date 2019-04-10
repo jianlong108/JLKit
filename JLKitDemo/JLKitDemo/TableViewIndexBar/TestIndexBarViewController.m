@@ -68,8 +68,8 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self.tableView addCustomSectionTitles:@[@"火",@"a",@"b",@"h",@"j",@"z"]];
-    [self.tableView showTitlesContentView];
+//    [self.tableView addCustomSectionTitles:@[@"火",@"a",@"b",@"h",@"j",@"z"]];
+//    [self.tableView showTitlesContentView];
 }
 - (NSArray *)datas{
     if (_datas == nil) {

@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "UIViewController+PresentController.h"
 #import "HomeFunctionViewController.h"
-#import "SimpleItem.h"
+#import "SimpleCellItem.h"
 #import "OTSectionModel.h"
 
 #import "SimpleCell.h"
@@ -46,28 +46,11 @@
     
     // set default blue color (since iOS 7.1, default window tintColor is black)
     self.notification.notificationLabelBackgroundColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
-    [self.view addSubview:self.tableView];
-    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
+    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:[SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel]];
     [self.tableView registerClass:[WeatherTableViewCell class] forCellReuseIdentifier:WeatherTableViewCell_ReuseIdentifer];
     [self setUpModel];
     
 //    [self requesetData];
-}
-
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-    self.tableView.frame = self.view.bounds;
-}
-
-- (void)loadView
-{
-    self.view = [[UIView alloc]init];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
 }
 
 - (void)requesetData
@@ -90,67 +73,94 @@
     sectionOne.footerHeight = 7;
     sectionOne.headerHeight = 7;
     
-    SimpleItem *model;
+    SimpleCellItem *model;
     
     model = [[WeatherModel alloc]init];
     model.reuseableIdentierOfCell = WeatherTableViewCell_ReuseIdentifer;
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         BothsidesBtnViewController *vc = [[BothsidesBtnViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"基础控件展示";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        BothsidesBtnViewController *vc = [[BothsidesBtnViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"基础控件展示";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        BothsidesBtnViewController *vc = [[BothsidesBtnViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"基础控件展示";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        BothsidesBtnViewController *vc = [[BothsidesBtnViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"基础控件展示";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestTableViewController *vc = [[TestTableViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"可拖动tableview";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestMenuViewController *vc = [[TestMenuViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"菜单view";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestDragCollecViewController *vc = [[TestDragCollecViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"可拖动九宫格";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestIndexBarViewController *vc = [[TestIndexBarViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"indexbar";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         HomeFunctionViewController *home = [[HomeFunctionViewController alloc]init];
         [weakSelf customPresentViewController:home animated:YES completion:nil];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"presentController_中部";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
         NSString *pathResource = [[NSBundle mainBundle] pathForResource:@"one" ofType:@"html"];
@@ -158,11 +168,11 @@
         UIWebViewController *webVc = [[UIWebViewController alloc]initWithURL:url];
         [weakSelf.navigationController pushViewController:webVc animated:YES];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"UIWebViewController";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
         [self displayShare];
@@ -176,15 +186,15 @@
 //            [self.notification displayNotificationWithView:customView forDuration:3];
         });
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"UIActivityViewController";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         [self dismissViewControllerAnimated:YES completion:nil];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"HomeViewController 被present";
     [sectionOne.items addObject:model];
     
@@ -233,10 +243,10 @@
     return self.tableView;
 }
 
-//- (void)setScrollViewContentInset:(UIEdgeInsets)inset
-//{
-//    self.tableView.contentInset = inset;
-//}
+- (void)setScrollViewContentInset:(UIEdgeInsets)inset
+{
+    self.tableView.contentInset = inset;
+}
 
 - (NSString *)titleForScrollTitleBar
 {

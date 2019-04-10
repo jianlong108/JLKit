@@ -60,18 +60,15 @@
     
     //防止内存占用严重时,view会被释放,会重新调用viewdidload方法.
     [self.scrollNavigationController.view removeFromSuperview];
+    self.scrollNavigationController.view.frame = self.view.bounds;
     [self.view addSubview:self.scrollNavigationController.view];
+    self.scrollNavigationController.view.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
     
     [self.scrollNavigationController removeFromParentViewController];
     [self addChildViewController:_scrollNavigationController];
     [_scrollNavigationController didMoveToParentViewController:self];
 }
 
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-    self.scrollNavigationController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds));
-}
 
 
 #pragma mark - navigationBar

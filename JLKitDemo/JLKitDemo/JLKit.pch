@@ -1,0 +1,25 @@
+//
+//  JLKit.pch
+//  JLKitDemo
+//
+//  Created by wangjianlong on 2019/4/10.
+//  Copyright © 2019 JL. All rights reserved.
+//
+
+#ifndef JLKit_pch
+#define JLKit_pch
+
+#define JLDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
+
+#define SCREEN_SCALE [UIScreen mainScreen].scale
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define UI_SCALE_Height SCREEN_HEIGHT/667.0
+#define UI_SCALE_Width SCREEN_WIDTH/375.0
+
+#define IS_STR_NIL(objStr) (![objStr isKindOfClass:[NSString class]] || objStr == nil || [objStr length] <= 0)
+#define IS_DICT_NIL(objDict) (![objDict isKindOfClass:[NSDictionary class]] || objDict == nil || [objDict count] <= 0)
+#define IS_ARRAY_NIL(objArray) (![objArray isKindOfClass:[NSArray class]] || objArray == nil || [objArray count] <= 0)
+
+#endif /* JLKit_pch */

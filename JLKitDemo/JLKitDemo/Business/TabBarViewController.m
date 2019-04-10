@@ -45,18 +45,20 @@
 //              context:nil];
     
     
-    UINavigationController *homeNav = [[JLNavigationController alloc]initWithRootViewController:[HomeContainerController new]];
+    UINavigationController *homeNav = [[JLNavigationController alloc]initWithRootViewController:[HomeViewController new]];
     [self addChildViewController:homeNav];
-    homeNav.title = @"主页";
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [[UIColor blueColor] colorWithAlphaComponent:0.4]} forState:UIControlStateSelected];
+    
+    homeNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"主页" image:[UIImage imageNamed:@"icon_tabbar_addressbook_normal"] selectedImage:[[UIImage imageNamed:@"icon_tabbar_addressbook_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     UINavigationController *appleCodeNav = [[UINavigationController alloc]initWithRootViewController:[PrincipleViewController new]];
     [self addChildViewController:appleCodeNav];
-    appleCodeNav.title = @"寻根溯源";
+    appleCodeNav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"寻根溯源" image:[UIImage imageNamed:@"icon_tabbar_discover_normal"] selectedImage:[[UIImage imageNamed:@"icon_tabbar_discover_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     XMNavigationController *fullScrrenPop_Nav = [[XMNavigationController alloc]initWithRootViewController:[MyViewController new]];
     [self addChildViewController:fullScrrenPop_Nav];
-    fullScrrenPop_Nav.title = @"我的";
-    
+    fullScrrenPop_Nav.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"我的" image:[UIImage imageNamed:@"icon_tabbar_my_normal"] selectedImage:[[UIImage imageNamed:@"icon_tabbar_my_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 
 

@@ -72,9 +72,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-
-    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
+    self.tableView.frame = self.view.bounds;
+    [self.view addSubview:self.tableView];
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:[SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel]];
     [self setUpModel];
 
 }
@@ -91,36 +92,36 @@
     sectionOne.footerHeight = 7;
     sectionOne.headerHeight = 7;
     
-    SimpleItem *model = [[SimpleItem alloc]init];
+    SimpleCellItem *model = [[SimpleCellItem alloc]init];
 
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"基础控件展示";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"可拖动tableview";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"菜单view";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"可拖动九宫格";
     [sectionOne.items addObject:model];
     

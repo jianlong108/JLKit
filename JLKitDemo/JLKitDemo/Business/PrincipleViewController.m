@@ -8,7 +8,7 @@
 
 #import "PrincipleViewController.h"
 #import "SimpleCell.h"
-#import "SimpleItem.h"
+#import "SimpleCellItem.h"
 
 @interface PrincipleViewController ()
 
@@ -19,11 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
+    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:[SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel]];
     
     OTSectionModel *section = [[OTSectionModel alloc]init];
-    SimpleItem *item = [[SimpleItem alloc]init];
-    item.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    SimpleCellItem *item = [[SimpleCellItem alloc]init];
+    item.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     item.title = @"消息转发";
     item.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         UIViewController *vc = [[NSClassFromString(@"MethodForwardVC") alloc]init];
@@ -31,8 +31,8 @@
     };
     [section.items addObject:item];
     
-    item = [[SimpleItem alloc]init];
-    item.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    item = [[SimpleCellItem alloc]init];
+    item.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     item.title = @"class解惑";
     item.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         UIViewController *vc = [[NSClassFromString(@"ClassLayoutVC") alloc]init];
@@ -40,9 +40,9 @@
     };
     [section.items addObject:item];
     
-    item = [[SimpleItem alloc]init];
+    item = [[SimpleCellItem alloc]init];
     item.title = @"自己实现KVO";
-    item.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    item.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     item.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         UIViewController *vc = [[NSClassFromString(@"CustomKVOVC") alloc]init];
         [self.navigationController pushViewController:vc animated:YES];

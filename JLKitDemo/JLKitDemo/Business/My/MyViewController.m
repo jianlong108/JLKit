@@ -8,7 +8,7 @@
 
 #import "MyViewController.h"
 #import "SimpleCell.h"
-#import "SimpleItem.h"
+#import "SimpleCellItem.h"
 #import "OTSectionModel.h"
 #import "SettingViewController.h"
 #import "LoginViewController.h"
@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
+    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:[SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel]];
    
 //    [self transitionSetting];
     self.title = @"我的";
@@ -41,31 +41,31 @@
     sectionOne.footerHeight = 7;
     sectionOne.headerHeight = 7;
     
-    SimpleItem *model = [[SimpleItem alloc]init];
+    SimpleCellItem *model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         LoginViewController *vc = [[LoginViewController alloc]init];
         [weakSelf.myNavigationController pushViewController:vc animated:YES];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"登录页";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         SettingViewController *vc = [[SettingViewController alloc]init];
         [weakSelf.myNavigationController pushViewController:vc animated:YES];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"设置";
     [sectionOne.items addObject:model];
     
-    model = [[SimpleItem alloc]init];
+    model = [[SimpleCellItem alloc]init];
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         VerticalContainerViewController *vc = [[VerticalContainerViewController alloc]init];
         vc.hidesBottomBarWhenPushed = YES;
         [weakSelf.myNavigationController pushViewController:vc animated:YES];
     };
-    model.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"竖直容器";
     [sectionOne.items addObject:model];
     

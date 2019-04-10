@@ -15,6 +15,8 @@ typedef NS_ENUM(NSUInteger, JLScrollNaviContentControllerScrollStyle) {
     JLScrollNaviContentControllerScrollStyle_contentControllerPriority// self.contentController scroll Priority High..eds:when scroll down make backgroundImg bigger
 } NS_ENUM_AVAILABLE_IOS(7_0);
 
+extern CGFloat const ScrollTitleBarDefaultHeight;
+
 @protocol JLScrollNavigationControllerDataSource <NSObject>
 
 @required
@@ -133,7 +135,7 @@ typedef NS_ENUM(NSUInteger, JLScrollNaviContentControllerScrollStyle) {
 -(BOOL)scrollNavigationController:(JLScrollNavigationController*)scrollNavigationController canScrollWithGesture:(UIGestureRecognizer *)pan shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGesture;
 
 //询问代理,是否可以开始滑动
--(BOOL)scrollNavigationController:(JLScrollNavigationController*)scrollNavigationController gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)pan;
+-(BOOL)scrollNavigationController:(JLScrollNavigationController*)scrollNavigationController gestureRecognizerShouldBegin:(UIGestureRecognizer *)pan;
 
 /*!
  * @brief  控件滑动

@@ -6,8 +6,6 @@
 //  Copyright © 2017年 JL. All rights reserved.
 //
 #import "SettingViewController.h"
-#import "LoginCell.h"
-#import "SimpleItem.h"
 #import "SimpleCell.h"
 #import "OTSectionModel.h"
 #import "UIImage+JL.h"
@@ -20,7 +18,7 @@
 
 - (void)setupGroup1
 {
-    SimpleItem *pushNotice = [SettingArrowItem itemWithIcon:@"MorePush" title:@"设置" destVcClass:[UIViewController class]];
+    SimpleCellItem *pushNotice = [SimpleCellItem itemWithTitle:@"设置"];
     pushNotice.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
     
     
