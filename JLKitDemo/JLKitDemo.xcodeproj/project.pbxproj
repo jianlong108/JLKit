@@ -57,6 +57,10 @@
 		34DE177E225DE3FF00990DD0 /* MTIndexViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DE1753225DE3FE00990DD0 /* MTIndexViewConfiguration.m */; };
 		34DE177F225DE3FF00990DD0 /* MTTableViewSectionIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DE1757225DE3FE00990DD0 /* MTTableViewSectionIndexBar.m */; };
 		34DE1780225DE3FF00990DD0 /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DE1758225DE3FE00990DD0 /* UITableView+IndexBar.m */; };
+		6869A95A29D92FAD00C1073A /* MasonryDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6869A95929D92FAD00C1073A /* MasonryDemoViewController.m */; };
+		6869A95D29D933B400C1073A /* CollectionLayoutDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6869A95C29D933B400C1073A /* CollectionLayoutDemoViewController.m */; };
+		6869A96129D93AAE00C1073A /* SystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6869A95F29D93AAE00C1073A /* SystemInfo.m */; };
+		6869A96429D963C600C1073A /* ContainerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6869A96329D963C600C1073A /* ContainerDemoViewController.m */; };
 		ECA7B9B560818B04F3AD757E /* libPods-JLKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8931AF7EB3E49BEE85A0087C /* libPods-JLKitDemo.a */; };
 		F40A18A8207530F8008D7798 /* UIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40A18A7207530F8008D7798 /* UIWebViewController.m */; };
 		F40A18AE2075EDA5008D7798 /* one.html in Resources */ = {isa = PBXBuildFile; fileRef = F40A18AD2075EDA5008D7798 /* one.html */; };
@@ -80,7 +84,6 @@
 		F4AECABD205E5314000F6D37 /* NSObject+archive.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA18205E5314000F6D37 /* NSObject+archive.m */; };
 		F4AECABE205E5314000F6D37 /* NSString+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA1A205E5314000F6D37 /* NSString+JL.m */; };
 		F4AECABF205E5314000F6D37 /* UIImage+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA1C205E5314000F6D37 /* UIImage+JL.m */; };
-		F4AECACF205E5314000F6D37 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4AECA42205E5314000F6D37 /* Info.plist */; };
 		F4AECAD0205E5314000F6D37 /* IOS11Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA44205E5314000F6D37 /* IOS11Adapter.m */; };
 		F4AECAD2205E5314000F6D37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA47205E5314000F6D37 /* main.m */; };
 		F4AECAD5205E5314000F6D37 /* MTNavigationItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA4E205E5314000F6D37 /* MTNavigationItemFactory.m */; };
@@ -205,6 +208,14 @@
 		34DE1756225DE3FE00990DD0 /* MTIndexViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTIndexViewConfiguration.h; sourceTree = "<group>"; };
 		34DE1757225DE3FE00990DD0 /* MTTableViewSectionIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTableViewSectionIndexBar.m; sourceTree = "<group>"; };
 		34DE1758225DE3FE00990DD0 /* UITableView+IndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+IndexBar.m"; sourceTree = "<group>"; };
+		6869A95829D92FAD00C1073A /* MasonryDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryDemoViewController.h; sourceTree = "<group>"; };
+		6869A95929D92FAD00C1073A /* MasonryDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryDemoViewController.m; sourceTree = "<group>"; };
+		6869A95B29D933B400C1073A /* CollectionLayoutDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionLayoutDemoViewController.h; sourceTree = "<group>"; };
+		6869A95C29D933B400C1073A /* CollectionLayoutDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionLayoutDemoViewController.m; sourceTree = "<group>"; };
+		6869A95F29D93AAE00C1073A /* SystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemInfo.m; sourceTree = "<group>"; };
+		6869A96029D93AAE00C1073A /* SystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemInfo.h; sourceTree = "<group>"; };
+		6869A96229D963C600C1073A /* ContainerDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerDemoViewController.h; sourceTree = "<group>"; };
+		6869A96329D963C600C1073A /* ContainerDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerDemoViewController.m; sourceTree = "<group>"; };
 		8931AF7EB3E49BEE85A0087C /* libPods-JLKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JLKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA88DD2F20B1BEB2C73A8E3B /* Pods-JLKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLKitDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JLKitDemo/Pods-JLKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D2F6244D95ABCFE46FC53E38 /* Pods-JLKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JLKitDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JLKitDemo/Pods-JLKitDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -561,6 +572,8 @@
 				F4AECA12205E5314000F6D37 /* Category */,
 				F4AECA39205E5314000F6D37 /* GlobalFunction.h */,
 				F4AECA42205E5314000F6D37 /* Info.plist */,
+				6869A96029D93AAE00C1073A /* SystemInfo.h */,
+				6869A95F29D93AAE00C1073A /* SystemInfo.m */,
 				F4AECA43205E5314000F6D37 /* IOS11Adapter.h */,
 				F4AECA44205E5314000F6D37 /* IOS11Adapter.m */,
 				F4AECA47205E5314000F6D37 /* main.m */,
@@ -616,6 +629,12 @@
 				F4658B73214E324F006EFAE3 /* WeatherModel.h */,
 				F4658B76214E33D1006EFAE3 /* WeatherModelProtocol.h */,
 				F4658B74214E324F006EFAE3 /* WeatherModel.m */,
+				6869A95829D92FAD00C1073A /* MasonryDemoViewController.h */,
+				6869A95929D92FAD00C1073A /* MasonryDemoViewController.m */,
+				6869A95B29D933B400C1073A /* CollectionLayoutDemoViewController.h */,
+				6869A95C29D933B400C1073A /* CollectionLayoutDemoViewController.m */,
+				6869A96229D963C600C1073A /* ContainerDemoViewController.h */,
+				6869A96329D963C600C1073A /* ContainerDemoViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -729,12 +748,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 348D54161E27A5640005E96A /* Build configuration list for PBXNativeTarget "JLKitDemo" */;
 			buildPhases = (
+				6869A95E29D9348300C1073A /* ShellScript */,
 				2EE81507AAC9C94B14803A62 /* [CP] Check Pods Manifest.lock */,
 				348D53FB1E27A5640005E96A /* Sources */,
 				348D53FC1E27A5640005E96A /* Frameworks */,
 				348D53FD1E27A5640005E96A /* Resources */,
-				29B8F2CBD4DC08D3B7C86FE9 /* [CP] Embed Pods Frameworks */,
-				CE00B0BAA6ED26D35FD108F2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -766,6 +784,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -787,28 +806,12 @@
 				F4AECAA9205E5314000F6D37 /* Assets.xcassets in Resources */,
 				F40A18AE2075EDA5008D7798 /* one.html in Resources */,
 				F4AECAAD205E5314000F6D37 /* LaunchScreen.storyboard in Resources */,
-				F4AECACF205E5314000F6D37 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		29B8F2CBD4DC08D3B7C86FE9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLKitDemo/Pods-JLKitDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2EE81507AAC9C94B14803A62 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -824,23 +827,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CE00B0BAA6ED26D35FD108F2 /* [CP] Copy Pods Resources */ = {
+		6869A95E29D9348300C1073A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JLKitDemo/Pods-JLKitDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if [[ \"$CONFIGURATION\" = \"Debug\" && \"$ARCHS\" = \"arm64\" ]]; then\n    InjectionSetup=\"/Applications/InjectionIII.app/Contents/Resources/InjectionSetup\"\n    if [[ -e \"$InjectionSetup\" ]]; then\n        sh \"$InjectionSetup\"\n    fi\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -873,12 +878,14 @@
 				3464687A2232543B003AB5D2 /* CustomKVOVC.m in Sources */,
 				34DE175D225DE3FE00990DD0 /* BothsidesBtnViewController.m in Sources */,
 				F4AECAD0205E5314000F6D37 /* IOS11Adapter.m in Sources */,
+				6869A96429D963C600C1073A /* ContainerDemoViewController.m in Sources */,
 				F4AECAF0205E5315000F6D37 /* JLBaseInteractiveTransition.m in Sources */,
 				F4658B75214E324F006EFAE3 /* WeatherModel.m in Sources */,
 				34DE1776225DE3FF00990DD0 /* UIPanGestureRecognizer+PanDirection.m in Sources */,
 				34DE177A225DE3FF00990DD0 /* TestDragCollecViewController.m in Sources */,
 				34DE177D225DE3FF00990DD0 /* TestTableViewController.m in Sources */,
 				F4AECAF1205E5315000F6D37 /* JLFoldAnimationer.m in Sources */,
+				6869A96129D93AAE00C1073A /* SystemInfo.m in Sources */,
 				3464687522325431003AB5D2 /* LockTest.m in Sources */,
 				34DE177B225DE3FF00990DD0 /* JLTabMoreView.m in Sources */,
 				34DE175F225DE3FE00990DD0 /* TestMenuViewController.m in Sources */,
@@ -902,6 +909,7 @@
 				34DE1777225DE3FF00990DD0 /* NavigationTranstionEngine.m in Sources */,
 				3401375D20726CC4002D46D2 /* TagItem.m in Sources */,
 				34DE177F225DE3FF00990DD0 /* MTTableViewSectionIndexBar.m in Sources */,
+				6869A95D29D933B400C1073A /* CollectionLayoutDemoViewController.m in Sources */,
 				34DE176D225DE3FE00990DD0 /* XMNavigationController+UIViewControllerInXMNavigationController.m in Sources */,
 				F40A18B12075F535008D7798 /* NSBundle+JL.m in Sources */,
 				F4658B72214E182E006EFAE3 /* WeatherTableViewCell.m in Sources */,
@@ -932,6 +940,7 @@
 				34DE176C225DE3FE00990DD0 /* XMNavigationController+navigationBarUI.m in Sources */,
 				F4AECAEF205E5315000F6D37 /* JLBaseAnimationEngine.m in Sources */,
 				F4AECAD6205E5314000F6D37 /* UINavigationBar+BackGroundImage.m in Sources */,
+				6869A95A29D92FAD00C1073A /* MasonryDemoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

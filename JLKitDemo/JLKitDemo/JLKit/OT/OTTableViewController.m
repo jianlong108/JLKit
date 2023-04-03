@@ -7,10 +7,10 @@
 //
 
 #import "OTTableViewController.h"
-#import <pthread.h>
+//#import <pthread.h>
 
 @interface OTTableViewController (){
-    pthread_mutex_t _mutex;
+//    pthread_mutex_t _mutex;
 }
 
 @property(nonatomic, strong) OTTableView *tableView;
@@ -25,18 +25,18 @@
 
 @implementation OTTableViewController
 
-- (void)dealloc
-{
-    pthread_mutex_destroy(&_mutex);
-}
+//- (void)dealloc
+//{
+//    pthread_mutex_destroy(&_mutex);
+//}
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        pthread_mutex_init(&_mutex, NULL);
-    }
-    return self;
-}
+//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+//        pthread_mutex_init(&_mutex, NULL);
+//    }
+//    return self;
+//}
 
 //- (void)loadView
 //{
@@ -46,11 +46,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = NO;
 #if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
+#else
+    self.automaticallyAdjustsScrollViewInsets = NO;
 #endif
     [self.view addSubview:self.tableView];
     self.tableView.frame = self.view.bounds;
@@ -143,7 +144,8 @@
     [self configCellWhenCellIsCreated:cell indexPath:indexPath];
     
     if (cell == nil) {
-        NSLog(@"wjl cell == nil please check tableview have regitster cell for identifer %@",identifer);
+        NSLog(@"wjl cell == nil please check tableview have regitster cell for identifer: %@",identifer);
+        cell = (UITableViewCell<OTCellProtocol> *)[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"default"];
     }
     
     return cell;
@@ -239,18 +241,18 @@
 - (id<OTItemProtocol>)getRowItemWithIndexPath:(NSIndexPath *)indexPath
 {
     
-    pthread_mutex_lock(&_mutex);
+//    pthread_mutex_lock(&_mutex);
     if (indexPath.section >= self.sectionItems.count) {
-        pthread_mutex_unlock(&_mutex);
+//        pthread_mutex_unlock(&_mutex);
         return nil;
     }
     id<OTSectionItemProtocol>section = self.sectionItems[indexPath.section];
     if (indexPath.item >= section.itemsOfSection.count) {
-        pthread_mutex_unlock(&_mutex);
+//        pthread_mutex_unlock(&_mutex);
         return nil;
     }
     
-    pthread_mutex_unlock(&_mutex);
+//    pthread_mutex_unlock(&_mutex);
     return [section.itemsOfSection objectAtIndex:indexPath.item];
 }
 
@@ -260,9 +262,9 @@
 
 - (NSIndexPath *)getIndexPathWithItemModel:(id<OTItemProtocol>)model
 {
-    pthread_mutex_lock(&_mutex);
+//    pthread_mutex_lock(&_mutex);
     if (!model || self.sectionItems.count<= 0) {
-        pthread_mutex_unlock(&_mutex);
+//        pthread_mutex_unlock(&_mutex);
         return nil;
     }
     NSIndexPath *indexPath = nil;
@@ -280,15 +282,15 @@
         }
     }
 
-    pthread_mutex_unlock(&_mutex);
+//    pthread_mutex_unlock(&_mutex);
     return indexPath;
 }
 
 - (NSIndexSet *)getIndexSetWithSectionModel:(id<OTSectionItemProtocol>)model
 {
-    pthread_mutex_lock(&_mutex);
+//    pthread_mutex_lock(&_mutex);
     if (!model || self.sectionItems.count<= 0) {
-        pthread_mutex_unlock(&_mutex);
+//        pthread_mutex_unlock(&_mutex);
         return nil;
     }
     NSIndexSet *indexSet = nil;
@@ -297,7 +299,7 @@
     if (index != NSNotFound) {
         indexSet = [NSIndexSet indexSetWithIndex:index];
     }
-    pthread_mutex_unlock(&_mutex);
+//    pthread_mutex_unlock(&_mutex);
     return indexSet;
 }
 

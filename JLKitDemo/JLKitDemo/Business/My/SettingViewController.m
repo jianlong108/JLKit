@@ -19,7 +19,7 @@
 - (void)setupGroup1
 {
     SimpleCellItem *pushNotice = [SimpleCellItem itemWithTitle:@"设置"];
-    pushNotice.reuseableIdentierOfCell = SimpleCell_ReuseIdentifer;
+    pushNotice.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainImgView];
     
     
     OTSectionModel *group = [[OTSectionModel alloc] init];
@@ -33,7 +33,7 @@
 {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:SimpleCell_ReuseIdentifer];
+    [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:[SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainImgView]];
     [self.tableView registerClass:[TagCellTableViewCell class] forCellReuseIdentifier:TagCellTableViewCell_ReuseIdentifer];
     // 2.添加数据
     [self setupGroup1];

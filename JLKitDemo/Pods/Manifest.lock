@@ -14,24 +14,34 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - JLContainer (0.0.7)
+  - JLContainer (0.0.6)
   - Masonry (0.6.4)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.2.1)
-  - JLContainer (= 0.0.7)
-  - Masonry (= 0.6.4)
-  - SDWebImage (~> 4.4.2)
+  - AFNetworking
+  - JLContainer (from `../../Container/Container/Container/JLContainer.podspec`)
+  - Masonry
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - Masonry
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  JLContainer:
+    :path: "../../Container/Container/Container/JLContainer.podspec"
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  JLContainer: 4cb6ff581da0134fe190e51828f5f74bad7c3220
+  AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
+  JLContainer: 6914e068021b6ca21e162cc9b68540830826c0c2
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
 
-PODFILE CHECKSUM: 0fa64e576b68e1726d3a3e73421f95bebfbdbef1
+PODFILE CHECKSUM: dac887eaefff70a822653a93abe6fa6cb3fe60f6
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.11.2

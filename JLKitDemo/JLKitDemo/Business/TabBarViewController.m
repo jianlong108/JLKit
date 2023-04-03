@@ -45,7 +45,7 @@
 //              context:nil];
     
     
-    UINavigationController *homeNav = [[JLNavigationController alloc]initWithRootViewController:[HomeViewController new]];
+    XMNavigationController *homeNav = [[XMNavigationController alloc]initWithRootViewController:[HomeViewController new]];
     [self addChildViewController:homeNav];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [[UIColor blueColor] colorWithAlphaComponent:0.4]} forState:UIControlStateSelected];

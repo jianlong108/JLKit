@@ -29,6 +29,7 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
 @property (nonatomic, strong) UIView *titleContainer;
 
 @property (nonatomic, strong) UILabel *titleLabel;
+
 @property (nonatomic, strong) UILabel *subTitleLabel;
 
 @property (nonatomic, strong) UILabel *accessoryLabel;
@@ -54,7 +55,6 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    if (![reuseIdentifier containsString:@"$$"]) return nil;
     NSArray *array = [reuseIdentifier componentsSeparatedByString:@"$$"];
     if (array.count < 2) return nil;
     NSString *typeStr = array.lastObject;
@@ -116,23 +116,23 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
 {
     [_spliteLineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self);
-        make.left.equalTo(self.contentView.mas_left).offset(15);
-        make.right.equalTo(self.mas_right).offset(0);
+        make.leading.equalTo(self.contentView.mas_trailing).offset(15);
+        make.trailing.equalTo(self.mas_trailing).offset(0);
         make.height.mas_equalTo(0.5);
     }];
     
     [_mainImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);
-        make.left.equalTo(self.contentView).offset(15);
+        make.leading.equalTo(self.contentView).offset(15);
         make.size.mas_equalTo(CGSizeMake(23, 23));
     }];
     
     [_titleContainer mas_makeConstraints:^(MASConstraintMaker *make) {
         if (_mainImgView) {
-            make.left.equalTo(_mainImgView.mas_right).offset(15);
+            make.leading.equalTo(_mainImgView.mas_trailing).offset(15);
             make.centerY.equalTo(_mainImgView);
         } else {
-            make.left.equalTo(self.contentView).offset(15);
+            make.leading.equalTo(self.contentView).offset(15);
             make.centerY.equalTo(self.contentView);
         }
         
@@ -145,35 +145,35 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
     }];
     
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.equalTo(_titleContainer);
-        make.right.lessThanOrEqualTo(_titleContainer);
+        make.top.leading.equalTo(_titleContainer);
+        make.trailing.lessThanOrEqualTo(_titleContainer);
     }];
     
     [_subTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_titleContainer);
+        make.leading.equalTo(_titleContainer);
         if (_titleLabel) {
             make.top.equalTo(_titleLabel.mas_bottom).offset(2.5);
         } else {
             make.top.equalTo(_titleContainer);
         }
-        make.right.lessThanOrEqualTo(self.titleContainer);
+        make.trailing.lessThanOrEqualTo(self.titleContainer);
     }];
     
     [_switchView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-15);
+        make.trailing.equalTo(self.contentView).offset(-15);
         make.centerY.equalTo(self.contentView);
     }];
     
     [_arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-14);
+        make.trailing.equalTo(self.contentView).offset(-14);
         make.centerY.equalTo(self.contentView);
     }];
     
     [_accessoryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         if (_arrowView) {
-            make.right.equalTo(_arrowView.mas_left).offset(-10);
+            make.trailing.equalTo(_arrowView.mas_leading).offset(-10);
         } else {
-            make.right.equalTo(self.contentView).offset(-15);
+            make.trailing.equalTo(self.contentView).offset(-15);
         }
         
         make.centerY.equalTo(self.contentView);
@@ -182,9 +182,9 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
 
     [_accessoryImgView mas_remakeConstraints:^(MASConstraintMaker *make) {
         if (!_arrowView.hidden) {
-            make.right.equalTo(_arrowView.mas_left).offset(-10);
+            make.trailing.equalTo(_arrowView.mas_leading).offset(-10);
         } else {
-            make.right.equalTo(self.contentView).offset(-10);
+            make.trailing.equalTo(self.contentView).offset(-10);
         }
         
         make.centerY.equalTo(self.contentView);

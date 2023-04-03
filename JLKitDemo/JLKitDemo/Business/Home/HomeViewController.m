@@ -28,6 +28,9 @@
 #import "JLScrollNavigationChildControllerProtocol.h"
 #import "WeatherModel.h"
 #import "AFNetworking.h"
+#import "MasonryDemoViewController.h"
+#import "CollectionLayoutDemoViewController.h"
+#import "ContainerDemoViewController.h"
 
 @interface HomeViewController ()<JLScrollNavigationChildControllerProtocol>
 
@@ -41,9 +44,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // initialize CWNotification
-    
+    self.tableView.backgroundColor = [UIColor whiteColor];
     self.notification = [CWStatusBarNotification new];
-    
+//    self.tableView.contentInset = UIEdgeInsetsMake(STATUS_BAR_HEIGHT, 0, 0, 0);
     // set default blue color (since iOS 7.1, default window tintColor is black)
     self.notification.notificationLabelBackgroundColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
     [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:[SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel]];
@@ -55,14 +58,14 @@
 
 - (void)requesetData
 {
-    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-    [session GET:@"https://www.sojson.com/open/api/weather/json.shtml" parameters:@{@"city":@"北京"} progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-    }];
+//    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
+//    [session GET:@"https://www.sojson.com/open/api/weather/json.shtml" parameters:@{@"city":@"北京"} progress:^(NSProgress * _Nonnull downloadProgress) {
+//
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//
+//    }];
     
 }
 
@@ -80,6 +83,37 @@
     [sectionOne.items addObject:model];
     
     model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        MasonryDemoViewController *vc = [[MasonryDemoViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"Masonry相关";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        CollectionLayoutDemoViewController *vc = [[CollectionLayoutDemoViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"collectionviewLayou展示";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        ContainerDemoViewController *vc = [[ContainerDemoViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"容器VC展示";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         BothsidesBtnViewController *vc = [[BothsidesBtnViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -89,33 +123,7 @@
     [sectionOne.items addObject:model];
     
     model = [[SimpleCellItem alloc]init];
-    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
-        BothsidesBtnViewController *vc = [[BothsidesBtnViewController alloc]init];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-    };
-    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
-    model.title = @"基础控件展示";
-    [sectionOne.items addObject:model];
-    
-    model = [[SimpleCellItem alloc]init];
-    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
-        BothsidesBtnViewController *vc = [[BothsidesBtnViewController alloc]init];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-    };
-    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
-    model.title = @"基础控件展示";
-    [sectionOne.items addObject:model];
-    
-    model = [[SimpleCellItem alloc]init];
-    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
-        BothsidesBtnViewController *vc = [[BothsidesBtnViewController alloc]init];
-        [weakSelf.navigationController pushViewController:vc animated:YES];
-    };
-    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
-    model.title = @"基础控件展示";
-    [sectionOne.items addObject:model];
-    
-    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestTableViewController *vc = [[TestTableViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -125,6 +133,7 @@
     [sectionOne.items addObject:model];
     
     model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestMenuViewController *vc = [[TestMenuViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -134,6 +143,7 @@
     [sectionOne.items addObject:model];
     
     model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestDragCollecViewController *vc = [[TestDragCollecViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -143,6 +153,7 @@
     [sectionOne.items addObject:model];
     
     model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         TestIndexBarViewController *vc = [[TestIndexBarViewController alloc]init];
         [weakSelf.navigationController pushViewController:vc animated:YES];
@@ -152,6 +163,7 @@
     [sectionOne.items addObject:model];
     
     model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         HomeFunctionViewController *home = [[HomeFunctionViewController alloc]init];
         [weakSelf customPresentViewController:home animated:YES completion:nil];
@@ -161,6 +173,7 @@
     [sectionOne.items addObject:model];
     
     model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
         NSString *pathResource = [[NSBundle mainBundle] pathForResource:@"one" ofType:@"html"];
@@ -173,24 +186,26 @@
     [sectionOne.items addObject:model];
     
     model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         
-        [self displayShare];
+//        [self displayShare];
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             HomeViewController *home = [[HomeViewController alloc]init];
             [_activityVC presentViewController:home animated:YES completion:nil];
 //            UIButton *customView = [UIButton buttonWithType:UIButtonTypeCustom];
 //            customView.backgroundColor = [UIColor orangeColor];
 //            [customView addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
 //            [self.notification displayNotificationWithView:customView forDuration:3];
-        });
+//        });
     };
     model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"UIActivityViewController";
     [sectionOne.items addObject:model];
     
     model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
         [self dismissViewControllerAnimated:YES completion:nil];
     };

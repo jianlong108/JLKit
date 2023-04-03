@@ -2,9 +2,9 @@
 platform :ios, '8.0'
 
 target 'JLKitDemo' do
-    pod 'SDWebImage', '~> 4.4.2'
-    pod 'AFNetworking', '~> 3.2.1'
-    pod 'JLContainer', :'0.0.7'
-    pod 'Masonry','0.6.4'
-#    pod 'JLContainer', :path => '~/Desktop/Github/Container-BaseViewController'
+    pod 'SDWebImage'
+    pod 'AFNetworking'
+#    pod 'JLContainer', :'0.0.7'
+    pod 'Masonry'
+    pod 'JLContainer', :path => '../../Container/Container/Container/JLContainer.podspec'
 end

@@ -17,6 +17,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+#if DEBUG
+#if TARGET_OS_SIMULATOR
+    NSString *injectionBundlePath = @"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle";
+#else
+    NSString *injectionBundlePath = [[NSBundle mainBundle] pathForResource:@"iOSInjection_Device" ofType:@"bundle"];
+#endif
+    NSBundle *injectionBundle = [NSBundle bundleWithPath:injectionBundlePath];
+    if (injectionBundle) {
+        [injectionBundle load];
+    } else {
+        NSLog(@"Not Found Injection Bundle");
+    }
+#endif
+    
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;

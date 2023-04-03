@@ -1,9 +1,9 @@
 //
-//  MTBaseViewController.m
-//  MiTalk
+//  JLBaseViewController.m
+//  JLKitDemo
 //
-//  Created by pingshw on 17/8/2.
-//  Copyright © 2017年 Xiaomi. All rights reserved.
+//  Created by wangjianlong on 2017/12/11.
+//  Copyright © 2017年 JL. All rights reserved.
 //
 
 #import "JLBaseViewController.h"
@@ -58,6 +58,10 @@
 }
 
 #pragma mark - NavgiationBarOfViewControllerProtocol
+
+- (void)setUpNavigationBarUI {
+    
+}
 
 - (NSArray<UIBarButtonItem *> *)navigationBarLeftBarButtonItems
 {
