@@ -15,10 +15,10 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - JLContainer (0.0.6)
-  - Masonry (0.6.4)
-  - SDWebImage (4.4.6):
-    - SDWebImage/Core (= 4.4.6)
-  - SDWebImage/Core (4.4.6)
+  - Masonry (1.1.0)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
 
 DEPENDENCIES:
   - AFNetworking
@@ -39,9 +39,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
   JLContainer: 6914e068021b6ca21e162cc9b68540830826c0c2
-  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
-  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 
 PODFILE CHECKSUM: dac887eaefff70a822653a93abe6fa6cb3fe60f6
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.9.3

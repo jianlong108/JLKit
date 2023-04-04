@@ -32,6 +32,14 @@
 #import "CollectionLayoutDemoViewController.h"
 #import "ContainerDemoViewController.h"
 
+
+#import "OpenGLOneViewController.h"
+#import "OpenGLTwoViewController.h"
+#import "OpenGLMultitextureViewController.h"
+#import "OpenGLTextureDynamicViewController.h"
+#import "OpenGL1ViewController.h"
+#import "OpenGL2ViewController.h"
+
 @interface HomeViewController ()<JLScrollNavigationChildControllerProtocol>
 
 @property (nonatomic, strong) CWStatusBarNotification *notification;
@@ -211,6 +219,67 @@
     };
     model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"HomeViewController 被present";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        OpenGL1ViewController *vc = [[OpenGL1ViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"0-显示";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        OpenGLOneViewController *vc = [[OpenGLOneViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"1-基础绘制,三角形";
+    [sectionOne.items addObject:model];
+    
+    
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        OpenGL2ViewController *vc = [[OpenGL2ViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"1-基础绘制,三角形_shader";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        OpenGLTwoViewController *vc = [[OpenGLTwoViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"2-纹理绘图";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        OpenGLMultitextureViewController *vc = [[OpenGLMultitextureViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"3-多纹理绘图";
+    [sectionOne.items addObject:model];
+    
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        OpenGLTextureDynamicViewController *vc = [[OpenGLTextureDynamicViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"4-多纹理动态绘图";
     [sectionOne.items addObject:model];
     
     [self.sectionItems addObject:sectionOne];
