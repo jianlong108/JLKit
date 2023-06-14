@@ -200,8 +200,8 @@
 //        [self displayShare];
         
 //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            HomeViewController *home = [[HomeViewController alloc]init];
-            [_activityVC presentViewController:home animated:YES completion:nil];
+//            HomeViewController *home = [[HomeViewController alloc]init];
+//            [_activityVC presentViewController:home animated:YES completion:nil];
 //            UIButton *customView = [UIButton buttonWithType:UIButtonTypeCustom];
 //            customView.backgroundColor = [UIColor orangeColor];
 //            [customView addTarget:self action:@selector(tap) forControlEvents:UIControlEventTouchUpInside];
@@ -284,11 +284,11 @@
     
     [self.sectionItems addObject:sectionOne];
 }
-- (void)tap
++ (void)tap
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         HomeViewController *home = [[HomeViewController alloc]init];
-        [self presentViewController:home animated:YES completion:nil];
+        [[UIApplication.sharedApplication keyWindow].rootViewController presentViewController:home animated:YES completion:nil];
     });
     
 }

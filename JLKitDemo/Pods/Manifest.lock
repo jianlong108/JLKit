@@ -1,27 +1,37 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - GCDWebServer/WebDAV (3.5.4):
+    - GCDWebServer/Core
+  - GCDWebServer/WebUploader (3.5.4):
+    - GCDWebServer/Core
   - JLContainer (0.0.6)
   - Masonry (1.1.0)
-  - SDWebImage (5.9.5):
-    - SDWebImage/Core (= 5.9.5)
-  - SDWebImage/Core (5.9.5)
+  - SDWebImage (5.15.8):
+    - SDWebImage/Core (= 5.15.8)
+  - SDWebImage/Core (5.15.8)
 
 DEPENDENCIES:
   - AFNetworking
+  - GCDWebServer
+  - GCDWebServer/WebDAV
+  - GCDWebServer/WebUploader
   - JLContainer (from `../../Container/Container/Container/JLContainer.podspec`)
   - Masonry
   - SDWebImage
@@ -29,6 +39,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - GCDWebServer
     - Masonry
     - SDWebImage
 
@@ -37,11 +48,12 @@ EXTERNAL SOURCES:
     :path: "../../Container/Container/Container/JLContainer.podspec"
 
 SPEC CHECKSUMS:
-  AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   JLContainer: 6914e068021b6ca21e162cc9b68540830826c0c2
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
+  SDWebImage: cb032eba469c54e0000e78bcb0a13cdde0a52798
 
-PODFILE CHECKSUM: dac887eaefff70a822653a93abe6fa6cb3fe60f6
+PODFILE CHECKSUM: 30d085886907a86fbea5782926ae30091ac7f32a
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.12.1

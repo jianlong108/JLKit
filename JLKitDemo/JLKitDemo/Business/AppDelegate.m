@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "TabBarViewController.h"
 
+#define USE_INJECTIONIII 0
+
 @interface AppDelegate ()
 
 @end
@@ -17,7 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+#if USE_INJECTIONIII
 #if DEBUG
 #if TARGET_OS_SIMULATOR
     NSString *injectionBundlePath = @"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle";
@@ -30,6 +32,7 @@
     } else {
         NSLog(@"Not Found Injection Bundle");
     }
+#endif
 #endif
     
     // Override point for customization after application launch.

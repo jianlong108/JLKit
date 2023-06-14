@@ -7,7 +7,7 @@
 //
 
 #import "SimpleCell.h"
-#import "UIImageView+WebCache.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "SimpleCellItem.h"
 #import "View+MASAdditions.h"
 

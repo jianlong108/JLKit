@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '8.0'
+platform :ios, '11.0'
 
 target 'JLKitDemo' do
     pod 'SDWebImage'
@@ -7,4 +7,21 @@ target 'JLKitDemo' do
 #    pod 'JLContainer', :'0.0.7'
     pod 'Masonry'
     pod 'JLContainer', :path => '../../Container/Container/Container/JLContainer.podspec'
+
+    pod "GCDWebServer"
+    pod "GCDWebServer/WebUploader"
+    pod "GCDWebServer/WebDAV"
+end
+
+post_install do |installer|
+  installer.generated_projects.each do |project|
+        project.targets.each do |target|
+            target.build_configurations.each do |config|
+                config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+             end
+        end
+  end
+  #   installer.pods_project.targets.each do |target|
+  #   flutter_additional_ios_build_settings(target)
+  # end
 end

@@ -7,7 +7,6 @@
 //
 
 #import "WeatherTableViewCell.h"
-#import "UIImage+GIF.h"
 
 NSString  * const WeatherTableViewCell_ReuseIdentifer = @"WeatherTableViewCell_ReuseIdentifer";
 
