@@ -10,6 +10,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SimpleCellItem.h"
 #import "View+MASAdditions.h"
+#import "JLKitDemo-Swift.h"
 
 #define CellisEmptyMask         0
 #define MainImageViewMask       1
@@ -43,7 +44,7 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
 @property (nonatomic, strong) UIView *spliteLineView;
 
 @property (nonatomic, assign) ElementType type;
-
+@property (nonatomic, strong) JLCornerView *customContentView;
 @end
 
 @implementation SimpleCell
@@ -60,6 +61,13 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
     NSString *typeStr = array.lastObject;
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         _type = (ElementType)typeStr.integerValue;
+        self.contentView.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
+        self.customContentView = [[JLCornerView alloc] init];
+        [self.contentView addSubview:self.customContentView];
+        [self.customContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView).insets(UIEdgeInsetsMake(0, 10, 0, 10));
+        }];
         [self initlizeContentViews];
         [self layoutContentViews];
     }
@@ -72,19 +80,19 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
         return;
     }
     UIView *spliteLineView = [[UIView alloc]init];
-    spliteLineView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.1];
-    [self.contentView addSubview:spliteLineView];
+    spliteLineView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
+    [self.customContentView addSubview:spliteLineView];
     _spliteLineView = spliteLineView;
     
     if ((_type & MainImageViewMask) == MainImageViewMask) {
-        [self.contentView addSubview:self.mainImgView];
+        [self.customContentView addSubview:self.mainImgView];
     }
     
     BOOL haveMainTitle = ((_type & MainTitleLabelMask) == MainTitleLabelMask);
     BOOL haveSubTitle = ((_type & SubTitleLabelMask) == SubTitleLabelMask);
     
     if (haveMainTitle || haveSubTitle) {
-        [self.contentView addSubview:self.titleContainer];
+        [self.customContentView addSubview:self.titleContainer];
     }
     
     if (haveMainTitle) {
@@ -96,18 +104,18 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
     }
     
     if ((_type & AccessorySwitchMask) == AccessorySwitchMask) {
-        [self.contentView addSubview:self.switchView];
+        [self.customContentView addSubview:self.switchView];
     }
     
     if ((_type & ArrowImgViewMask) == ArrowImgViewMask) {
-        [self.contentView addSubview:self.arrowView];
+        [self.customContentView addSubview:self.arrowView];
     }
     
     if ((_type & AccessoryTitleLabelMask) == AccessoryTitleLabelMask) {
-        [self.contentView addSubview:self.accessoryLabel];
+        [self.customContentView addSubview:self.accessoryLabel];
     }
     if ((_type & AccessoryImgViewMask) == AccessoryImgViewMask) {
-        [self.contentView addSubview:self.accessoryImgView];
+        [self.customContentView addSubview:self.accessoryImgView];
     }
 }
 
@@ -116,8 +124,8 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
 {
     [_spliteLineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self);
-        make.leading.equalTo(self.contentView.mas_trailing).offset(15);
-        make.trailing.equalTo(self.mas_trailing).offset(0);
+        make.leading.equalTo(self.customContentView).offset(15);
+        make.trailing.equalTo(self.customContentView).offset(-15);
         make.height.mas_equalTo(0.5);
     }];
     
@@ -132,8 +140,9 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
             make.leading.equalTo(_mainImgView.mas_trailing).offset(15);
             make.centerY.equalTo(_mainImgView);
         } else {
-            make.leading.equalTo(self.contentView).offset(15);
-            make.centerY.equalTo(self.contentView);
+            make.leading.top.equalTo(self.customContentView);
+//            make.leading.equalTo(self.contentView).offset(15);
+//            make.centerY.equalTo(self.contentView);
         }
         
         if (_subTitleLabel) {
@@ -160,23 +169,23 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
     }];
     
     [_switchView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(self.contentView).offset(-15);
-        make.centerY.equalTo(self.contentView);
+        make.trailing.equalTo(self.customContentView).offset(-15);
+        make.centerY.equalTo(self.customContentView);
     }];
     
     [_arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(self.contentView).offset(-14);
-        make.centerY.equalTo(self.contentView);
+        make.trailing.equalTo(self.customContentView).offset(-14);
+        make.centerY.equalTo(self.customContentView);
     }];
     
     [_accessoryLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         if (_arrowView) {
             make.trailing.equalTo(_arrowView.mas_leading).offset(-10);
         } else {
-            make.trailing.equalTo(self.contentView).offset(-15);
+            make.trailing.equalTo(self.customContentView).offset(-15);
         }
         
-        make.centerY.equalTo(self.contentView);
+        make.centerY.equalTo(self.customContentView);
         make.width.mas_lessThanOrEqualTo(200 * UI_SCALE_Width);
     }];
 
@@ -184,10 +193,10 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
         if (!_arrowView.hidden) {
             make.trailing.equalTo(_arrowView.mas_leading).offset(-10);
         } else {
-            make.trailing.equalTo(self.contentView).offset(-10);
+            make.trailing.equalTo(self.customContentView).offset(-10);
         }
         
-        make.centerY.equalTo(self.contentView);
+        make.centerY.equalTo(self.customContentView);
     }];
 }
 
@@ -331,6 +340,7 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
 - (UIView *)titleContainer{
     if (!_titleContainer) {
         _titleContainer = [[UIView alloc] init];
+        _titleContainer.backgroundColor = UIColor.clearColor;
     }
     return _titleContainer;
 }
@@ -340,7 +350,7 @@ NSString * const SimpleCell_ReuseIdentifer = @"SimpleCell_ReuseIdentifer";
     if (_titleLabel == nil) {
         _titleLabel = [[UILabel alloc]init];
         _titleLabel.font = [UIFont systemFontOfSize:15.0];
-        _titleLabel.textColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+        _titleLabel.textColor = [[UIColor clearColor] colorWithAlphaComponent:0.8];
     }
     return _titleLabel;
 }

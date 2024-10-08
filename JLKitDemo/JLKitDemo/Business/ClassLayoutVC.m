@@ -80,12 +80,12 @@
 - (void)self_class_super_class_superclass{
     // LLVM 6.0后增加了OBJC_OLD_DISPATCH_PROTOTYPES，需要在build setting中将Enable Strict Checking of objc_msgSend Calls设置为NO才可以使用objc_msgSend(id self, SEL op, ...);
 
-    NSLog(@"objc_msgSend(self, @selector(class)) == %@",objc_msgSend(self, @selector(class)));
+    //NSLog(@"objc_msgSend(self, @selector(class)) == %@",objc_msgSend(self, @selector(class)));
     NSLog(@"self.class == %@",self.class);
     
     
     struct objc_super tempSupe = {self,NSClassFromString(@"ClassLayoutVC"),NSClassFromString(@"UIViewController")};
-    NSLog(@"objc_msgSendSuper(&tempSupe, @selector(class)) == %@",objc_msgSendSuper(&tempSupe, @selector(class)));
+    //NSLog(@"objc_msgSendSuper(&tempSupe, @selector(class)) == %@",objc_msgSendSuper(&tempSupe, @selector(class)));
     NSLog(@"super.class == %@",super.class);
     
     

@@ -184,7 +184,7 @@
 
 - (BOOL)hiddenNavigationBar
 {
-    return YES;
+    return NO;
 }
 
 @end

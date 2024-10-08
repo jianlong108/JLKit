@@ -7,11 +7,8 @@
 //
 
 #import "OTTableViewController.h"
-//#import <pthread.h>
 
-@interface OTTableViewController (){
-//    pthread_mutex_t _mutex;
-}
+@interface OTTableViewController ()
 
 @property(nonatomic, strong) OTTableView *tableView;
 
@@ -25,30 +22,12 @@
 
 @implementation OTTableViewController
 
-//- (void)dealloc
-//{
-//    pthread_mutex_destroy(&_mutex);
-//}
-
-//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-//{
-//    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-//        pthread_mutex_init(&_mutex, NULL);
-//    }
-//    return self;
-//}
-
-//- (void)loadView
-//{
-//    self.view = self.tableView;
-//}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 #if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000
     if (@available(iOS 11.0, *)) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
     }
 #else
     self.automaticallyAdjustsScrollViewInsets = NO;

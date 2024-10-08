@@ -57,10 +57,14 @@
 		34DE177E225DE3FF00990DD0 /* MTIndexViewConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DE1753225DE3FE00990DD0 /* MTIndexViewConfiguration.m */; };
 		34DE177F225DE3FF00990DD0 /* MTTableViewSectionIndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DE1757225DE3FE00990DD0 /* MTTableViewSectionIndexBar.m */; };
 		34DE1780225DE3FF00990DD0 /* UITableView+IndexBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DE1758225DE3FE00990DD0 /* UITableView+IndexBar.m */; };
+		6808D55E2A2759A800FF0A53 /* BLNewMusicListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6808D55C2A2759A800FF0A53 /* BLNewMusicListTableViewCell.m */; };
+		682024252C9D6CB600EC5D4B /* JLCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682024242C9D6CB600EC5D4B /* JLCornerView.swift */; };
+		682024272CA11FA700EC5D4B /* BlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682024262CA11FA700EC5D4B /* BlurViewController.swift */; };
 		6869A95A29D92FAD00C1073A /* MasonryDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6869A95929D92FAD00C1073A /* MasonryDemoViewController.m */; };
 		6869A95D29D933B400C1073A /* CollectionLayoutDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6869A95C29D933B400C1073A /* CollectionLayoutDemoViewController.m */; };
 		6869A96129D93AAE00C1073A /* SystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6869A95F29D93AAE00C1073A /* SystemInfo.m */; };
 		6869A96429D963C600C1073A /* ContainerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6869A96329D963C600C1073A /* ContainerDemoViewController.m */; };
+		68A347422CB4DB5D00B1F0A6 /* SwiftAsyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A347412CB4DB5D00B1F0A6 /* SwiftAsyncViewController.swift */; };
 		68A9123129DADA990028CA92 /* OpenGLTextureDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A9121B29DADA980028CA92 /* OpenGLTextureDynamicViewController.m */; };
 		68A9123229DADA990028CA92 /* JLEAGLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A9121E29DADA980028CA92 /* JLEAGLContext.m */; };
 		68A9123329DADA990028CA92 /* OpenGL2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A9122129DADA980028CA92 /* OpenGL2ViewController.m */; };
@@ -97,7 +101,6 @@
 		F4AECABD205E5314000F6D37 /* NSObject+archive.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA18205E5314000F6D37 /* NSObject+archive.m */; };
 		F4AECABE205E5314000F6D37 /* NSString+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA1A205E5314000F6D37 /* NSString+JL.m */; };
 		F4AECABF205E5314000F6D37 /* UIImage+JL.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA1C205E5314000F6D37 /* UIImage+JL.m */; };
-		F4AECAD0205E5314000F6D37 /* IOS11Adapter.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA44205E5314000F6D37 /* IOS11Adapter.m */; };
 		F4AECAD2205E5314000F6D37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA47205E5314000F6D37 /* main.m */; };
 		F4AECAD5205E5314000F6D37 /* MTNavigationItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA4E205E5314000F6D37 /* MTNavigationItemFactory.m */; };
 		F4AECAD6205E5314000F6D37 /* UINavigationBar+BackGroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AECA52205E5314000F6D37 /* UINavigationBar+BackGroundImage.m */; };
@@ -221,6 +224,11 @@
 		34DE1756225DE3FE00990DD0 /* MTIndexViewConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTIndexViewConfiguration.h; sourceTree = "<group>"; };
 		34DE1757225DE3FE00990DD0 /* MTTableViewSectionIndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTTableViewSectionIndexBar.m; sourceTree = "<group>"; };
 		34DE1758225DE3FE00990DD0 /* UITableView+IndexBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+IndexBar.m"; sourceTree = "<group>"; };
+		6808D55C2A2759A800FF0A53 /* BLNewMusicListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLNewMusicListTableViewCell.m; sourceTree = "<group>"; };
+		6808D55D2A2759A800FF0A53 /* BLNewMusicListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLNewMusicListTableViewCell.h; sourceTree = "<group>"; };
+		682024232C9D6CB600EC5D4B /* JLKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JLKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		682024242C9D6CB600EC5D4B /* JLCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLCornerView.swift; sourceTree = "<group>"; };
+		682024262CA11FA700EC5D4B /* BlurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurViewController.swift; sourceTree = "<group>"; };
 		6869A95829D92FAD00C1073A /* MasonryDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryDemoViewController.h; sourceTree = "<group>"; };
 		6869A95929D92FAD00C1073A /* MasonryDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryDemoViewController.m; sourceTree = "<group>"; };
 		6869A95B29D933B400C1073A /* CollectionLayoutDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionLayoutDemoViewController.h; sourceTree = "<group>"; };
@@ -229,6 +237,7 @@
 		6869A96029D93AAE00C1073A /* SystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemInfo.h; sourceTree = "<group>"; };
 		6869A96229D963C600C1073A /* ContainerDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainerDemoViewController.h; sourceTree = "<group>"; };
 		6869A96329D963C600C1073A /* ContainerDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainerDemoViewController.m; sourceTree = "<group>"; };
+		68A347412CB4DB5D00B1F0A6 /* SwiftAsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftAsyncViewController.swift; sourceTree = "<group>"; };
 		68A9121A29DADA980028CA92 /* JLGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
 		68A9121B29DADA980028CA92 /* OpenGLTextureDynamicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLTextureDynamicViewController.m; sourceTree = "<group>"; };
 		68A9121C29DADA980028CA92 /* OpenGLTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLTwoViewController.h; sourceTree = "<group>"; };
@@ -299,8 +308,6 @@
 		F4AECA1C205E5314000F6D37 /* UIImage+JL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JL.m"; sourceTree = "<group>"; };
 		F4AECA39205E5314000F6D37 /* GlobalFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalFunction.h; sourceTree = "<group>"; };
 		F4AECA42205E5314000F6D37 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4AECA43205E5314000F6D37 /* IOS11Adapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS11Adapter.h; sourceTree = "<group>"; };
-		F4AECA44205E5314000F6D37 /* IOS11Adapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOS11Adapter.m; sourceTree = "<group>"; };
 		F4AECA47205E5314000F6D37 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4AECA4D205E5314000F6D37 /* MTNavigationItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationItemFactory.h; sourceTree = "<group>"; };
 		F4AECA4E205E5314000F6D37 /* MTNavigationItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationItemFactory.m; sourceTree = "<group>"; };
@@ -395,6 +402,8 @@
 				34DE16F8225DE3FE00990DD0 /* ReplicatorProgressView.m */,
 				34DE170B225DE3FE00990DD0 /* UICollectionViewlayout */,
 				34DE1752225DE3FE00990DD0 /* UITableViewIndexBar */,
+				682024242C9D6CB600EC5D4B /* JLCornerView.swift */,
+				682024232C9D6CB600EC5D4B /* JLKitDemo-Bridging-Header.h */,
 			);
 			path = JLKit;
 			sourceTree = "<group>";
@@ -642,8 +651,6 @@
 				F4AECA42205E5314000F6D37 /* Info.plist */,
 				6869A96029D93AAE00C1073A /* SystemInfo.h */,
 				6869A95F29D93AAE00C1073A /* SystemInfo.m */,
-				F4AECA43205E5314000F6D37 /* IOS11Adapter.h */,
-				F4AECA44205E5314000F6D37 /* IOS11Adapter.m */,
 				F4AECA47205E5314000F6D37 /* main.m */,
 				34DE16B4225DDC0100990DD0 /* JLKit.pch */,
 				F4AECA4D205E5314000F6D37 /* MTNavigationItemFactory.h */,
@@ -703,6 +710,10 @@
 				6869A95C29D933B400C1073A /* CollectionLayoutDemoViewController.m */,
 				6869A96229D963C600C1073A /* ContainerDemoViewController.h */,
 				6869A96329D963C600C1073A /* ContainerDemoViewController.m */,
+				6808D55D2A2759A800FF0A53 /* BLNewMusicListTableViewCell.h */,
+				6808D55C2A2759A800FF0A53 /* BLNewMusicListTableViewCell.m */,
+				682024262CA11FA700EC5D4B /* BlurViewController.swift */,
+				68A347412CB4DB5D00B1F0A6 /* SwiftAsyncViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -843,8 +854,9 @@
 				TargetAttributes = {
 					348D53FE1E27A5640005E96A = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = NVAFMDWZJC;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = G3WQ3ZCKCV;
+						LastSwiftMigration = 1600;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -927,10 +939,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JLKitDemo/Pods-JLKitDemo-resources.sh",
 				"${PODS_ROOT}/GCDWebServer/GCDWebUploader/GCDWebUploader.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit_Privacy.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GCDWebUploader.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SDWebImage.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SnapKit_Privacy.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -945,7 +961,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3464686A222D11A5003AB5D2 /* ClassLayoutVC.m in Sources */,
+				682024272CA11FA700EC5D4B /* BlurViewController.swift in Sources */,
 				34DE175C225DE3FE00990DD0 /* MultifunctionBtn.m in Sources */,
+				682024252C9D6CB600EC5D4B /* JLCornerView.swift in Sources */,
 				F4AECAD7205E5314000F6D37 /* UINavigationController+Cloudox.m in Sources */,
 				F4AECAD5205E5314000F6D37 /* MTNavigationItemFactory.m in Sources */,
 				34DE175B225DE3FE00990DD0 /* TwoFaceButton.m in Sources */,
@@ -955,6 +973,7 @@
 				34DE1774225DE3FF00990DD0 /* UINavigationController+FullScreenPopGesture.m in Sources */,
 				F4AECAE9205E5315000F6D37 /* TestIndexBarViewController.m in Sources */,
 				34DE1766225DE3FE00990DD0 /* InfinitePageView.m in Sources */,
+				6808D55E2A2759A800FF0A53 /* BLNewMusicListTableViewCell.m in Sources */,
 				34BC8274207DB61D009D5ED5 /* CWStatusBarNotification.m in Sources */,
 				3401376020726E8A002D46D2 /* TagCellTableViewCell.m in Sources */,
 				34DE1779225DE3FF00990DD0 /* JLCellitem.m in Sources */,
@@ -964,12 +983,12 @@
 				34646867222D0A93003AB5D2 /* PrincipleViewController.m in Sources */,
 				68A9123929DADA990028CA92 /* OpenGLTwoViewController.m in Sources */,
 				F4AECAEE205E5315000F6D37 /* JLTextFiled.m in Sources */,
+				68A347422CB4DB5D00B1F0A6 /* SwiftAsyncViewController.swift in Sources */,
 				F4AECABE205E5314000F6D37 /* NSString+JL.m in Sources */,
 				3464687B2232543B003AB5D2 /* NSObject+KVO.m in Sources */,
 				68A9123729DADA990028CA92 /* OpenGLMultitextureViewController.m in Sources */,
 				3464687A2232543B003AB5D2 /* CustomKVOVC.m in Sources */,
 				34DE175D225DE3FE00990DD0 /* BothsidesBtnViewController.m in Sources */,
-				F4AECAD0205E5314000F6D37 /* IOS11Adapter.m in Sources */,
 				6869A96429D963C600C1073A /* ContainerDemoViewController.m in Sources */,
 				68A9123129DADA990028CA92 /* OpenGLTextureDynamicViewController.m in Sources */,
 				F4AECAF0205E5315000F6D37 /* JLBaseInteractiveTransition.m in Sources */,
@@ -1151,14 +1170,16 @@
 			baseConfigurationReference = CA88DD2F20B1BEB2C73A8E3B /* Pods-JLKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NVAFMDWZJC;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = G3WQ3ZCKCV;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = JLKitDemo/JLKit.pch;
 				INFOPLIST_FILE = JLKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_MAP_FILE_PATH = /Users/jl/workspace/github/JLKit/JLKitDemo/linkmap.txt;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1183,9 +1204,13 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = JLKit.JL;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.passwordkeys.media;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = passkeys_dev;
+				SWIFT_OBJC_BRIDGING_HEADER = "JLKitDemo/JLKit/JLKitDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -1194,14 +1219,16 @@
 			baseConfigurationReference = D2F6244D95ABCFE46FC53E38 /* Pods-JLKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NVAFMDWZJC;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = G3WQ3ZCKCV;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = JLKitDemo/JLKit.pch;
 				INFOPLIST_FILE = JLKitDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
@@ -1225,9 +1252,12 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = JLKit.JL;
+				PRODUCT_BUNDLE_IDENTIFIER = sg.passwordkeys.media;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = passkeys_dev;
+				SWIFT_OBJC_BRIDGING_HEADER = "JLKitDemo/JLKit/JLKitDemo-Bridging-Header.h";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};

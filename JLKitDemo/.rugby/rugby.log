@@ -1,0 +1,43 @@
+* Rugby version: 1.22.0
+* Command: rugby 
+* Xcode 14.1 / Build version 14B47b
+* Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+* CPU: Intel(R) Core(TM) i7-8700B CPU @ 3.20GHz
+* Project: JLKitDemo
+* Git branch: master
+[33m---------------------------------[0m
+[32mPrepare[0m [33mRead project [0m[37m✓[0m
+[32mPrepare[0m [33mBackup [0mPods/Pods.xcodeproj
+[32mPrepare[0m [33mBackup [0mPods/Target Support Files
+[32mPrepare[0m [33mPods [0m(3)[33m:[0m
+[32mPrepare[0m [33m* [0mAFNetworking
+[32mPrepare[0m [33m* [0mMasonry
+[32mPrepare[0m [33m* [0mSDWebImage
+[32mPrepare[0m [33mCalculate checksums [0m[37m✓[0m
+[32mPrepare[0m [33mResolving dependencies graph[0m
+[32mPrepare[0m [33mBuild targets [0m(3)[33m:[0m
+[32mPrepare[0m [33m* [0mAFNetworking
+[32mPrepare[0m [33m* [0mMasonry
+[32mPrepare[0m [33m* [0mSDWebImage
+[32mPrepare[0m [33mAdd build target: [0mRugbyPods
+[32mPrepare[0m [33mSave project [0m[37m✓[0m
+[33m[1s][0m [32mPrepare[0m ✓
+[32mBuild[0m [33mBuilding [0m[33msim-x86_64: Debug[0m[33m [0m[37m✓[0m
+[32mBuild[0m [33mUpdate checksums [0m[37m✓[0m
+[33m[15s][0m [32mBuild[0m ✓
+[32mIntegration[0m [33mUpdate paths to built pods [0m[37m✓[0m
+[33m[1s][0m [32mIntegration[0m ✓
+[32mClean up[0m [33mRead project [0m[37m✓[0m
+[32mClean up[0m [33mRemove sources from project[0m
+[32mClean up[0m [33mRemove frameworks[0m
+[32mClean up[0m [33mRemove products[0m
+[32mClean up[0m [33mRemove build target[0m
+[32mClean up[0m [33mRemove built pods[0m
+[32mClean up[0m [33mRemove schemes[0m
+[32mClean up[0m [33mSave project [0m[37m✓[0m
+[33m[1s][0m [32mClean up[0m ✓
+[33m[16s][0m [32mCached 3/3 pods.[0m
+[33m[!] [0m[33mProject size [0m[32m↓75%[0m
+[33m[!] [0m[33mIndexing files count [0m[32m↓90%[0m
+[33m[!] [0m[33mTargets count [0m[32m↓60%[0m
+[33m[16s][0m [32mLet's roll 🏈[0m

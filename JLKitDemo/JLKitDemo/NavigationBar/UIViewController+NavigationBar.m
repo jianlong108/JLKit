@@ -92,18 +92,16 @@
     });
 }
 */
-- (void)mt_viewDidLoad
-{
+- (void)mt_viewDidLoad {
     [self mt_viewDidLoad];
     NSLog(@"%@ %@",NSStringFromSelector(_cmd),self);
     [self setUpNavigationBarUI];
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.edgesForExtendedLayout = UIRectEdgeAll;
 }
 
-- (void)mt_viewWillAppear:(BOOL)animated
-{
-    
+- (void)mt_viewWillAppear:(BOOL)animated {
+
     NSLog(@"%@ %@",NSStringFromSelector(_cmd),self);
     [self mt_viewWillAppear:animated];
     if (self.needUpdateNavigationBarWhenFullScreenPopFailed) {
@@ -117,8 +115,7 @@
     
 }
 
-- (void)mt_viewWillDisappear:(BOOL)animated
-{
+- (void)mt_viewWillDisappear:(BOOL)animated {
     [self mt_viewWillDisappear:animated];
     if ([self needUpdateNavigationBarWhenAttributeChange]) {
         [self.navigationController.topViewController setUpNavigationBarUI];
@@ -126,13 +123,11 @@
 }
 
 
-- (void)updateNavigationBarIfNeed
-{
+- (void)updateNavigationBarIfNeed {
     [self setUpNavigationBarUI];
 }
 
-- (void)setUpNavigationBarUI
-{
+- (void)setUpNavigationBarUI {
     if ([self conformsToProtocol:@protocol(NavgiationBarOfViewControllerProtocol)]) {
         
         BOOL hidenBackBtn = [self hidesBackButtonOfNavigationBar];
@@ -173,8 +168,7 @@
 
 #pragma mark - NavgiationBarOfViewControllerProtocol
 
-- (NSArray<UIBarButtonItem *> *)navigationBarRightBarButtonItems
-{
+- (NSArray<UIBarButtonItem *> *)navigationBarRightBarButtonItems {
     return nil;
 }
 
@@ -182,8 +176,7 @@
     return nil;
 }
 
-- (UIImage *)shadowImage
-{
+- (UIImage *)shadowImage {
     return nil;
 }
 
@@ -191,50 +184,41 @@
     return nil;
 }
 
-- (NSArray<UIBarButtonItem *> *)navigationBarLeftBarButtonItems
-{
+- (NSArray<UIBarButtonItem *> *)navigationBarLeftBarButtonItems {
     return nil;
 }
 
-- (CGFloat)alphaOfNavigationBar
-{
+- (CGFloat)alphaOfNavigationBar {
     return 1.0;
 }
 
-- (BOOL)hiddenNavigationBar
-{
+- (BOOL)hiddenNavigationBar {
     return NO;
 }
 
-- (BOOL)needUpdateNavigationBarWhenAttributeChange
-{
+- (BOOL)needUpdateNavigationBarWhenAttributeChange {
     return NO;
 }
 
-- (NSString *)backTitle
-{
+- (NSString *)backTitle {
     return nil;
 }
 
-- (NSString *)backTitleForPeakViewController
-{
+- (NSString *)backTitleForPeakViewController {
     return nil;
 }
 
-- (BOOL)hidesBackButtonOfNavigationBar
-{
+- (BOOL)hidesBackButtonOfNavigationBar {
     return YES;
 }
 
 #pragma mark - AssociateObject
 
-- (BOOL)needUpdateNavigationBarWhenFullScreenPopFailed
-{
+- (BOOL)needUpdateNavigationBarWhenFullScreenPopFailed {
     return objc_getAssociatedObject(self, _cmd);
 }
 
-- (void)setNeedUpdateNavigationBarWhenFullScreenPopFailed:(BOOL)needUpdateNavigationBarWhenFullScreenPopFailed
-{
+- (void)setNeedUpdateNavigationBarWhenFullScreenPopFailed:(BOOL)needUpdateNavigationBarWhenFullScreenPopFailed {
     objc_setAssociatedObject(self, @selector(needUpdateNavigationBarWhenFullScreenPopFailed), @(needUpdateNavigationBarWhenFullScreenPopFailed), OBJC_ASSOCIATION_ASSIGN);
 }
 

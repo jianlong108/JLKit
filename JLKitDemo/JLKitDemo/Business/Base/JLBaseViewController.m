@@ -28,21 +28,18 @@
 
 #pragma mark - 旋屏相关
 
-- (BOOL)shouldAutorotate
-{
+- (BOOL)shouldAutorotate {
     return NO;
 }
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationPortrait;
 }
 
 
 #pragma mark - 电池条默认样式
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
+- (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleDefault;
 }
 
@@ -63,15 +60,13 @@
     
 }
 
-- (NSArray<UIBarButtonItem *> *)navigationBarLeftBarButtonItems
-{
+- (NSArray<UIBarButtonItem *> *)navigationBarLeftBarButtonItems {
     return [MTNavigationItemFactory createBackBarItemsWithTitle:[self backTitle]
                                             touchUpInsideTarget:self
                                                          action:@selector(leftButtonAction:)];
 }
 
-- (NSArray<UIBarButtonItem *> *)navigationBarRightBarButtonItems
-{
+- (NSArray<UIBarButtonItem *> *)navigationBarRightBarButtonItems {
     return nil;
 }
 
@@ -80,7 +75,7 @@
 }
 
 - (UIImage *)navigationBarBackgroundImageForHomepage {
-    return [UIImage imageWithUIColor:UIColorFromIntValue_rgba(55, 149, 250, 1.0)];
+    return [UIImage imageWithUIColor:UIColorFromIntValue_rgba(155, 149, 250, 1.0)];
 }
 
 - (NSDictionary *)navigationBarTitleTextAttributes {
@@ -88,14 +83,12 @@
     return @{NSForegroundColorAttributeName : [UIColor whiteColor],
                                                NSFontAttributeName:[UIFont systemFontOfSize:15] };
 }
-- (CGFloat)alphaOfNavigationBar
-{
+- (CGFloat)alphaOfNavigationBar {
     return 1.0;
 }
 
-- (NSString *)title
-{
-    return @" ";
+- (NSString *)title {
+    return @"";
 }
 
 - (void)setTitle:(NSString *)title {
@@ -134,18 +127,16 @@
     return nil;
 }
 
-- (BOOL)hidesBackButtonOfNavigationBar
-{
+- (BOOL)hidesBackButtonOfNavigationBar {
     return YES;
 }
 
 
 #pragma mark - private
 
-- (UIViewController *)lastVC
-{
+- (UIViewController *)lastVC {
     __block UIViewController *vc = nil;
-    
+
     NSArray *vcArray = self.navigationController.viewControllers;
     [vcArray enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIViewController *tmpvc = obj;
@@ -159,4 +150,5 @@
     
     return vc;
 }
+
 @end

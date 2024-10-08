@@ -8,7 +8,6 @@
 
 #import "HomeFunctionViewController.h"
 #import "MTHorizontalWaterFullLayout.h"
-#import "IOS11Adapter.h"
 #import "JLScrollNavigationChildControllerProtocol.h"
 
 #import "SimpleCell.h"
@@ -73,6 +72,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.frame = self.view.bounds;
+    self.tableView.backgroundColor = [UIColor redColor];
     [self.view addSubview:self.tableView];
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.tableView registerClass:[SimpleCell class] forCellReuseIdentifier:[SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel]];

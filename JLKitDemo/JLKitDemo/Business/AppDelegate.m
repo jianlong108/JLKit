@@ -19,6 +19,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    if (@available(iOS 11.0, *)) {
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    } else {
+        [UIScrollView appearance].contentInsetAdjustmentBehavior = NO;
+    }
+
 #if USE_INJECTIONIII
 #if DEBUG
 #if TARGET_OS_SIMULATOR

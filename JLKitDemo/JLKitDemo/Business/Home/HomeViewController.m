@@ -24,7 +24,6 @@
 #import "WeatherTableViewCell.h"
 
 #import "CWStatusBarNotification.h"
-#import "IOS11Adapter.h"
 #import "JLScrollNavigationChildControllerProtocol.h"
 #import "WeatherModel.h"
 #import "AFNetworking.h"
@@ -39,6 +38,7 @@
 #import "OpenGLTextureDynamicViewController.h"
 #import "OpenGL1ViewController.h"
 #import "OpenGL2ViewController.h"
+#import "JLKitDemo-Swift.h"
 
 @interface HomeViewController ()<JLScrollNavigationChildControllerProtocol>
 
@@ -86,10 +86,31 @@
     
     SimpleCellItem *model;
     
-    model = [[WeatherModel alloc]init];
-    model.reuseableIdentierOfCell = WeatherTableViewCell_ReuseIdentifer;
-    [sectionOne.items addObject:model];
+//    model = [[WeatherModel alloc]init];
+//    model.reuseableIdentierOfCell = WeatherTableViewCell_ReuseIdentifer;
+//    [sectionOne.items addObject:model];
     
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        JLBlurViewController *vc = [[JLBlurViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"毛玻璃(不触发离屏渲染)";
+    [sectionOne.items addObject:model];
+
+
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        JLSwiftAsyncViewController *vc = [[JLSwiftAsyncViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"Swift异步处理";
+    [sectionOne.items addObject:model];
+
     model = [[SimpleCellItem alloc]init];
     model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
@@ -99,7 +120,7 @@
     model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"Masonry相关";
     [sectionOne.items addObject:model];
-    
+
     model = [[SimpleCellItem alloc]init];
     model.isHiddenSplitelineView = NO;
     model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {

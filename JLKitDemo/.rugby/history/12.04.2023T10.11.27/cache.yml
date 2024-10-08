@@ -1,0 +1,12 @@
+Debug-iphonesimulator:
+  sdk: sim
+  arch: x86_64
+  config: Debug
+  swift: '5.7'
+  xcargs:
+  - COMPILER_INDEX_STORE_ENABLE=NO
+  - SWIFT_COMPILATION_MODE=wholemodule
+  checksums:
+  - 'AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b'
+  - 'Masonry: 678fab65091a9290e40e2832a55e7ab731aad201'
+  - 'SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25'

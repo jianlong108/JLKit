@@ -29,7 +29,7 @@
 - (UIImage *)navigationBarBackgroundImage;
 - (NSArray<UIBarButtonItem *> *)navigationBarLeftBarButtonItems;
 - (NSArray<UIBarButtonItem *> *)navigationBarRightBarButtonItems;
-
+- (NSString *)title;
 
 - (void)leftButtonAction:(id)sender;
 

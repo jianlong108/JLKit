@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - BLOsSignPosts (0.0.1)
   - GCDWebServer (3.5.4):
     - GCDWebServer/Core (= 3.5.4)
   - GCDWebServer/Core (3.5.4)
@@ -23,18 +24,21 @@ PODS:
     - GCDWebServer/Core
   - JLContainer (0.0.6)
   - Masonry (1.1.0)
-  - SDWebImage (5.15.8):
-    - SDWebImage/Core (= 5.15.8)
-  - SDWebImage/Core (5.15.8)
+  - SDWebImage (5.18.10):
+    - SDWebImage/Core (= 5.18.10)
+  - SDWebImage/Core (5.18.10)
+  - SnapKit (5.7.1)
 
 DEPENDENCIES:
   - AFNetworking
+  - BLOsSignPosts (from `LocalPod/BLOsSignPosts/BLOsSignPosts.podspec`)
   - GCDWebServer
   - GCDWebServer/WebDAV
   - GCDWebServer/WebUploader
-  - JLContainer (from `../../Container/Container/Container/JLContainer.podspec`)
+  - JLContainer (from `LocalPod/Container/JLContainer.podspec`)
   - Masonry
   - SDWebImage
+  - SnapKit (from `https://github.com/SnapKit/SnapKit`, tag `5.7.1`)
 
 SPEC REPOS:
   trunk:
@@ -44,16 +48,28 @@ SPEC REPOS:
     - SDWebImage
 
 EXTERNAL SOURCES:
+  BLOsSignPosts:
+    :path: LocalPod/BLOsSignPosts/BLOsSignPosts.podspec
   JLContainer:
-    :path: "../../Container/Container/Container/JLContainer.podspec"
+    :path: LocalPod/Container/JLContainer.podspec
+  SnapKit:
+    :git: https://github.com/SnapKit/SnapKit
+    :tag: 5.7.1
+
+CHECKOUT OPTIONS:
+  SnapKit:
+    :git: https://github.com/SnapKit/SnapKit
+    :tag: 5.7.1
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  BLOsSignPosts: 8aed406b877d962af993d6b3324b9f4dff88834a
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   JLContainer: 6914e068021b6ca21e162cc9b68540830826c0c2
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SDWebImage: cb032eba469c54e0000e78bcb0a13cdde0a52798
+  SDWebImage: fc8f2d48bbfd72ef39d70e981bd24a3f3be53fec
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
 
-PODFILE CHECKSUM: 30d085886907a86fbea5782926ae30091ac7f32a
+PODFILE CHECKSUM: 0dcbec25025950babfbb1bc5af6eecd16a26bc77
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.9.3

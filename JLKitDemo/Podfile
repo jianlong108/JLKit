@@ -1,16 +1,17 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
-
+platform :ios, '13.0'
+ENV['SWIFT_VERSION'] = '5.0'
 target 'JLKitDemo' do
     pod 'SDWebImage'
     pod 'AFNetworking'
-#    pod 'JLContainer', :'0.0.7'
+   # pod 'JLContainer', :'0.0.7'
     pod 'Masonry'
-    pod 'JLContainer', :path => '../../Container/Container/Container/JLContainer.podspec'
-
+    pod 'JLContainer', :path => 'LocalPod/Container/JLContainer.podspec'
+    pod 'BLOsSignPosts', :path => 'LocalPod/BLOsSignPosts/BLOsSignPosts.podspec'
     pod "GCDWebServer"
     pod "GCDWebServer/WebUploader"
     pod "GCDWebServer/WebDAV"
+    pod 'SnapKit', :git=>"https://github.com/SnapKit/SnapKit",:tag=>"5.7.1", :inhibit_warnings => true
 end
 
 post_install do |installer|

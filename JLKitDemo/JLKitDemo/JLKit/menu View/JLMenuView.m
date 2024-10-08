@@ -34,7 +34,6 @@
 @implementation JLView
 
 - (void)drawRect:(CGRect)rect
-
 {
     CGFloat x = 0.0 ;//x为起始点的坐标x
     CGFloat y = 0.0;//y为起始点的坐标y

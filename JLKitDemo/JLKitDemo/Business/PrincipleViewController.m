@@ -54,45 +54,4 @@
     [self.tableView reloadData];
 }
 
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//
-//    Method_Bus *bus = [[Method_Bus alloc]init];
-//    NSLog(@"%@",bus.class);
-//
-//    NSLog(@"%@",self.class);
-//    NSLog(@"%@",super.class);
-
-//    int multiplier = 6;
-//    __block int multiplier = 6;
-//    int (^myBlock)(int) = ^(int num) {
-//        //block 内部想要修改外部变量,变量需要加__block修饰
-////        NSLog(@"%d",multiplier);
-//        multiplier +=2;
-//        return num * multiplier;
-//    };
-//    NSLog(@"%d",myBlock(2));
-//    NSLog(@"%d",multiplier);
-
-
-//    NSMutableArray *mArray = [NSMutableArray arrayWithObjects:@"a",@"b",@"abc",nil];
-//    NSMutableArray *mArrayCount = [NSMutableArray arrayWithCapacity:1];
-//    [mArray enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock: ^(NSString *obj,NSUInteger idx, BOOL *stop){
-//        [mArrayCount addObject:[NSNumber numberWithUnsignedInteger:obj.length]];
-//    }];
-
-//    NSLog(@"%@",self);
-
-
-
-
-//    [self runtime_class_test];
-//
-//    [self addnewclass];
-//
-//    LockTest *test = [[LockTest alloc]init];
-//    [test lock_test];
-//}
-
-
 @end

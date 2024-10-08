@@ -125,8 +125,8 @@ static void kvo_setter(id self, SEL _cmd, id newValue)
     void (*objc_msgSendSuperCasted)(void *, SEL, id) = (void *)objc_msgSendSuper;
     
     // call super's setter, which is original class's setter method
-    objc_msgSendSuper(&superclazz, _cmd, newValue);
-    
+//    objc_msgSendSuper(&superclazz, _cmd, newValue);
+    objc_msgSendSuper();
     // look up observers and call the blocks
     //    把这个观察的相关信息存在 associatedObject 里。观察的相关信息（观察者，被观察的 key, 和传入的 block ）封装在 PGObservationInfo 类里
     NSMutableArray *observers = objc_getAssociatedObject(self, (__bridge const void *)(JLKVOAssociatedObserverskey));
