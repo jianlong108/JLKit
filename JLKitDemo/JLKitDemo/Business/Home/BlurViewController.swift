@@ -20,21 +20,40 @@ class BlurredView: UIView {
             applyGaussianBlur()
         }
     }
+
+    override func didAddSubview(_ subview: UIView) {
+        super.didAddSubview(subview)
+        bringBlurLayerToFront()
+    }
+
     func setUpBlur() {
         if hasBlur { return }
         applyGaussianBlur()
+        bringBlurLayerToFront()
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-//        applyGaussianBlur()  // 确保在布局时应用模糊
+        self.blurLayer?.frame = self.layer.bounds
     }
+
+    func bringBlurLayerToFront() {
+        guard let realLayer = self.blurLayer, let _ = realLayer.superlayer else {
+            return
+        }
+        if let lastLayer = self.layer.sublayers?.last, lastLayer === realLayer {
+            return
+        }
+        realLayer.removeFromSuperlayer()
+        self.layer.addSublayer(realLayer)
+    }
+
     private func applyGaussianBlur() {
         if CGRectIsEmpty(bounds) { return }
         let tmpBounds = self.bounds
         let scale = UIScreen.main.scale
         let radious = self.blurRadius
-        // 截取视图的图像
+
         UIGraphicsBeginImageContextWithOptions(tmpBounds.size, false, 0)
         self.drawHierarchy(in: tmpBounds, afterScreenUpdates: true)
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
@@ -43,25 +62,15 @@ class BlurredView: UIView {
         }
         UIGraphicsEndImageContext()
 
-        // 将图像处理移至后台线程
         DispatchQueue.global(qos: .userInitiated).async {
-            // 创建 CIImage
             let ciImage = CIImage(image: image)
-
             // 创建高斯模糊滤镜
             let blurFilter = CIFilter(name: "CIGaussianBlur")
             blurFilter?.setValue(ciImage, forKey: kCIInputImageKey)
             blurFilter?.setValue(radious, forKey: kCIInputRadiusKey)
-
-            // 获取模糊后的图像
             guard let outputImage = blurFilter?.outputImage else { return }
-
-            // 创建 CIContext
             let context = CIContext()
-
-            // 设置输出图像的边界为视图的边界
             let outputBounds = ciImage?.extent.insetBy(dx: radious * scale, dy: radious * scale) ?? CGRect.zero
-
             if let cgImage = context.createCGImage(outputImage, from: outputBounds) {
                 DispatchQueue.main.async {
                     if self.blurLayer == nil {
@@ -83,7 +92,7 @@ class BlurredView: UIView {
 }
 
 
-class JLBlurView: UIView {
+class JLVisualEffectView: UIView {
     lazy var visualView: UIVisualEffectView = {
         let effect = UIBlurEffect(style: .light)
         let view = UIVisualEffectView(effect: effect)
@@ -106,11 +115,55 @@ class JLBlurView: UIView {
 
 @objc(JLBlurViewController)
 class BlurViewController: JLBaseViewController {
-    let blurredView = BlurredView(frame: CGRect(x: 0, y: 200, width: 200, height: 200))
-    let blurView = JLBlurView(frame: CGRect(x: 0, y: 400, width: 200, height: 200))
+    //let blurredView = BlurredView(frame: CGRect(x: 0, y: 200, width: 200, height: 200))
+    let blurredView = BlurredView()
+    let effectiveBlurView = JLVisualEffectView()
     var faceImgView = UIImageView(image: UIImage(named: "face"))
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = []
+
+
+        let topImgView = UIImageView(image: UIImage(named: "face"))
+//        topImgView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+
+        blurredView.backgroundColor = .red
+        view.addSubview(blurredView)
+        blurredView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.size.equalTo(CGSizeMake(200, 200))
+            make.top.equalToSuperview()
+        }
+        blurredView.addSubview(topImgView)
+        topImgView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        let imgView = UIImageView(image: UIImage(named: "face"))
+//        imgView.frame = CGRect(x: 0, y: 400, width: 200, height: 200)
+        self.view.addSubview(imgView)
+        imgView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.size.equalTo(CGSizeMake(200, 200))
+            make.top.equalTo(topImgView.snp.bottom)
+        }
+
+        effectiveBlurView.isHidden = true
+        self.view.addSubview(effectiveBlurView)
+        effectiveBlurView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.size.equalTo(CGSizeMake(200, 200))
+            make.top.equalTo(topImgView.snp.bottom)
+        }
+
+        //侦测人脸
+//        faceImgView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        self.view.addSubview(faceImgView)
+        faceImgView.snp.makeConstraints { make in
+            make.top.trailing.equalToSuperview()
+            make.size.equalTo(CGSizeMake(200, 200))
+        }
+
 
         let btn = UIButton(type: .custom)
         btn.backgroundColor = UIColor.orange
@@ -120,26 +173,20 @@ class BlurViewController: JLBaseViewController {
         btn.snp.makeConstraints { make in
             make.trailing.equalToSuperview().offset(-20)
             make.size.equalTo(CGSize(width: 100, height: 44))
-            make.top.equalToSuperview().offset(164)
+            make.top.equalTo(faceImgView.snp.bottom).offset(20)
         }
 
-
-        let imgView = UIImageView(image: UIImage(named: "face"))
-        imgView.frame = CGRect(x: 0, y: 400, width: 200, height: 200)
-        self.view.addSubview(imgView)
-
-        blurView.isHidden = true
-        self.view.addSubview(blurView)
-
-        let topImgView = UIImageView(image: UIImage(named: "face"))
-        topImgView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        blurredView.addSubview(topImgView)
-        blurredView.backgroundColor = .red
-        view.addSubview(blurredView)
-
-        //侦测人脸
-        faceImgView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-        self.view.addSubview(faceImgView)
+        let addbtn = UIButton(type: .custom)
+        addbtn.backgroundColor = UIColor.orange
+        addbtn.titleLabel?.adjustsFontSizeToFitWidth = true
+        addbtn.setTitle("自定义blur 增加视图", for: .normal)
+        addbtn.addTarget(self, action: #selector(handleAddLabel(sender:)), for: UIControl.Event.touchUpInside)
+        self.view.addSubview(addbtn)
+        addbtn.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().offset(-20)
+            make.size.equalTo(CGSize(width: 100, height: 44))
+            make.top.equalTo(btn.snp.bottom).offset(20)
+        }
     }
 
     func faceDetect() {
@@ -170,7 +217,20 @@ extension BlurViewController {
     @objc func handleBlur(sender: UIControl) {
         blurredView.setUpBlur()
         self.faceDetect()
-        blurView.isHidden = false
+        effectiveBlurView.isHidden = false
+    }
+
+    @objc func handleAddLabel(sender: UIControl) {
+        let label = UILabel()
+        label.backgroundColor = .blue
+        label.textColor = .white
+        label.text = "8989"
+        blurredView.addSubview(label)
+        label.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 100, height: 100))
+            make.center.equalToSuperview()
+        }
+
     }
 }
 

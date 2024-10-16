@@ -7,6 +7,7 @@ target 'JLKitDemo' do
    # pod 'JLContainer', :'0.0.7'
     pod 'Masonry'
     pod 'JLContainer', :path => 'LocalPod/Container/JLContainer.podspec'
+    pod 'A0APPLaunch', :path => 'LocalPod/A0APPLaunch/A0APPLaunch.podspec'
     pod 'BLOsSignPosts', :path => 'LocalPod/BLOsSignPosts/BLOsSignPosts.podspec'
     pod "GCDWebServer"
     pod "GCDWebServer/WebUploader"

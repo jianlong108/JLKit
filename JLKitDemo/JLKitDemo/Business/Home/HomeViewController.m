@@ -18,7 +18,7 @@
 #import "TestDragCollecViewController.h"
 #import "TestMenuViewController.h"
 #import "TestIndexBarViewController.h"
-#import "UIWebViewController.h"
+//#import "UIWebViewController.h"
 
 #import "NSBundle+JL.h"
 #import "WeatherTableViewCell.h"
@@ -49,8 +49,13 @@
 
 @implementation HomeViewController
 
+static inline size_t oc_align16(size_t x) {
+    return (x + 15) & ~15;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%lu",oc_align16(23));
     // initialize CWNotification
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.notification = [CWStatusBarNotification new];
@@ -109,6 +114,16 @@
     };
     model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"Swift异步处理";
+    [sectionOne.items addObject:model];
+
+    model = [[SimpleCellItem alloc]init];
+    model.isHiddenSplitelineView = NO;
+    model.cellClickBlock = ^(id obj, NSIndexPath *indexPath) {
+        JLArithmeticSetViewController *vc = [[JLArithmeticSetViewController alloc]init];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+    };
+    model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
+    model.title = @"Arithmetic";
     [sectionOne.items addObject:model];
 
     model = [[SimpleCellItem alloc]init];
@@ -207,8 +222,9 @@
         
         NSString *pathResource = [[NSBundle mainBundle] pathForResource:@"one" ofType:@"html"];
         NSURL *url = [NSURL fileURLWithPath:pathResource];
-        UIWebViewController *webVc = [[UIWebViewController alloc]initWithURL:url];
-        [weakSelf.navigationController pushViewController:webVc animated:YES];
+//       TODO: webview的组件
+//        UIWebViewController *webVc = [[UIWebViewController alloc]initWithURL:url];
+//        [weakSelf.navigationController pushViewController:webVc animated:YES];
     };
     model.reuseableIdentierOfCell = [SimpleCell simpleCellReuseIdentiferForElementType:ElementTypeContainMainTitleLabel];
     model.title = @"UIWebViewController";
@@ -305,16 +321,16 @@
     
     [self.sectionItems addObject:sectionOne];
 }
-+ (void)tap
-{
+
++ (void)tap {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         HomeViewController *home = [[HomeViewController alloc]init];
         [[UIApplication.sharedApplication keyWindow].rootViewController presentViewController:home animated:YES completion:nil];
     });
     
 }
-- (void)displayShare
-{
+
+- (void)displayShare {
     NSString *textToShare = @"请大家登录《iOS云端与网络通讯》服务网站";
     
     UIImage *imageToShare = [UIImage imageNamed:@"1"];
@@ -338,23 +354,19 @@
 }
 
 
-- (CGFloat)contentViewHeight
-{
+- (CGFloat)contentViewHeight {
     return 300;
 }
 
-- (UIScrollView *)contentScrollView
-{
+- (UIScrollView *)contentScrollView {
     return self.tableView;
 }
 
-- (void)setScrollViewContentInset:(UIEdgeInsets)inset
-{
+- (void)setScrollViewContentInset:(UIEdgeInsets)inset {
     self.tableView.contentInset = inset;
 }
 
-- (NSString *)titleForScrollTitleBar
-{
+- (NSString *)titleForScrollTitleBar {
     return @"控件";
 }
 

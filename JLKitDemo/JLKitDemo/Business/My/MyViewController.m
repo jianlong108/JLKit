@@ -15,8 +15,20 @@
 #import "VerticalContainerViewController.h"
 #import "UIViewController+XMNavigationController.h"
 
+@interface Test: NSObject
+@property (nonatomic, assign) int b;
+@end
+
+@implementation Test
+- (void)dealloc {
+    NSLog(@"Test dealloc");
+}
+
+@end
+
 @interface MyViewController ()
 
+@property (nonatomic, copy) void(^Testblock)(int);
 
 @end
 
@@ -32,6 +44,17 @@
     self.title = @"我的";
     
     [self setUpModel];
+    self.Testblock = ^(int a) {
+        Test *c = [[Test alloc] init];
+        NSLog(@"%d",c.b + a);
+    };
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // 调用后,c对象 释放
+    
+    self.Testblock(1);
 }
 
 - (void)setUpModel

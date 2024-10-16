@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MasonryDemoViewController : UIViewController
+@interface MasonryDemoViewController : JLBaseViewController
 
 @end
 

@@ -5,11 +5,15 @@
 //  Created by Wangjianlong on 2017/1/12.
 //  Copyright © 2017年 JL. All rights reserved.
 //
-
+#define SOURCEDEBUG 1
 #import "AppDelegate.h"
 #import "TabBarViewController.h"
 
-#define USE_INJECTIONIII 0
+#if SOURCEDEBUG
+    #import <A0APPLaunch/A0APPLaunch.h>
+
+#else
+#endif
 
 @interface AppDelegate ()
 
@@ -17,8 +21,17 @@
 
 @implementation AppDelegate
 
+// TODO: 测试代码
++(void)load {
+    sleep(3);
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+#if SOURCEDEBUG
+    [JLObectCCallTrace startOnlyMainThread];
+
+    [self ocCallParentTest];
+#endif
     if (@available(iOS 11.0, *)) {
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
     } else {
@@ -49,11 +62,12 @@
     TabBarViewController *tabarController = [[TabBarViewController alloc]init];
     
     self.window.rootViewController = tabarController;
-    
+#if SOURCEDEBUG
+    [JLObectCCallTrace stop];
+    [JLObectCCallTrace save];
+#endif
     return YES;
 }
-
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -79,6 +93,43 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - test
+
+- (void)ocCallParentTest {
+    sleep(2);
+    [self ocCallBrotherTest];
+    [self ocCallSubTest];
+}
+- (void)ocCallBrotherTest {
+    sleep(5);
+}
+
+- (void)ocCallSubTest {
+    sleep(1);
+    [self ocCallSubsUBTest];
+}
+
+- (void)ocCallSubsUBTest {
+    sleep(1);
+    [self testMethod];
+}
+
+
+- (void)testMethod {
+    @try {
+        [self abc];
+    } @catch (NSException *exception) {
+        NSLog(@"abc %@",exception);
+    } @finally {
+
+    }
+
+    NSLog(@"def");
+}
+- (void)abc {
+    [NSJSONSerialization JSONObjectWithData:nil options:nil error:nil];
 }
 
 

@@ -18,6 +18,15 @@
 
 @implementation MasonryDemoViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+//    if (self = [super init]) {
+//        NSLog(@"%s",__func__);
+//    }
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];

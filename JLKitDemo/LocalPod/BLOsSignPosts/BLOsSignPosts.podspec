@@ -30,5 +30,4 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '12.0'
   s.public_header_files = 'BLOsSignPosts/Classes/*.h'
   s.source_files = 'BLOsSignPosts/Classes/*'
-  s.public_header_files = 'BLOsSignPosts/Classes/*.h'
 end
